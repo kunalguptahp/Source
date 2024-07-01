@@ -1,0 +1,232 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HP.HPFx.Extensions.SubSonic</name>
+    </assembly>
+    <members>
+        <member name="T:HP.HPFx.Extensions.SubSonic.SubSonicExtensions">
+            <summary>
+            This class contains extension methods for the SubSonic framework.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.SubSonic.SubSonicExtensions.AndWhere(SubSonic.SqlQuery,SubSonic.Aggregate)">
+            <summary>
+            Convenience extension that prevents the caller from manually choosing a WHERE or an AND constraint.
+            </summary>
+            <param name="query">The <see cref="T:SubSonic.SqlQuery"/> to apply the new <see cref="T:SubSonic.Constraint"/> to.</param>
+            <param name="agg">The input for the new <see cref="T:SubSonic.Constraint"/>.</param>
+            <returns>The newly added <see cref="T:SubSonic.Constraint"/>.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.SubSonic.SubSonicExtensions.AndWhere(SubSonic.SqlQuery,System.String)">
+            <summary>
+            Convenience extension that prevents the caller from manually choosing a WHERE or an AND constraint.
+            </summary>
+            <param name="query">The <see cref="T:SubSonic.SqlQuery"/> to apply the new <see cref="T:SubSonic.Constraint"/> to.</param>
+            <param name="columnName">The input for the new <see cref="T:SubSonic.Constraint"/>.</param>
+            <returns>The newly added <see cref="T:SubSonic.Constraint"/>.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.SubSonic.SubSonicExtensions.AndWhere(SubSonic.SqlQuery,SubSonic.TableSchema.TableColumn)">
+            <summary>
+            Convenience extension that prevents the caller from manually choosing a WHERE or an AND constraint.
+            </summary>
+            <param name="query">The <see cref="T:SubSonic.SqlQuery"/> to apply the new <see cref="T:SubSonic.Constraint"/> to.</param>
+            <param name="column">The input for the new <see cref="T:SubSonic.Constraint"/>.</param>
+            <returns>The newly added <see cref="T:SubSonic.Constraint"/>.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.SubSonic.SubSonicExtensions.AndWhereExpression(SubSonic.SqlQuery,System.String)">
+            <summary>
+            Convenience extension that prevents the caller from manually choosing a WHERE or an AND constraint.
+            </summary>
+            <param name="query">The <see cref="T:SubSonic.SqlQuery"/> to apply the new <see cref="T:SubSonic.Constraint"/> to.</param>
+            <param name="columnName">The input for the new <see cref="T:SubSonic.Constraint"/>.</param>
+            <returns>The newly added <see cref="T:SubSonic.Constraint"/>.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.SubSonic.SubSonicExtensions.OrWhere(SubSonic.SqlQuery,SubSonic.Aggregate)">
+            <summary>
+            Convenience extension that prevents the caller from manually choosing a WHERE or an OR constraint.
+            </summary>
+            <param name="query">The <see cref="T:SubSonic.SqlQuery"/> to apply the new <see cref="T:SubSonic.Constraint"/> to.</param>
+            <param name="agg">The input for the new <see cref="T:SubSonic.Constraint"/>.</param>
+            <returns>The newly added <see cref="T:SubSonic.Constraint"/>.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.SubSonic.SubSonicExtensions.OrWhere(SubSonic.SqlQuery,System.String)">
+            <summary>
+            Convenience extension that prevents the caller from manually choosing a WHERE or an OR constraint.
+            </summary>
+            <param name="query">The <see cref="T:SubSonic.SqlQuery"/> to apply the new <see cref="T:SubSonic.Constraint"/> to.</param>
+            <param name="columnName">The input for the new <see cref="T:SubSonic.Constraint"/>.</param>
+            <returns>The newly added <see cref="T:SubSonic.Constraint"/>.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.SubSonic.SubSonicExtensions.OrWhere(SubSonic.SqlQuery,SubSonic.TableSchema.TableColumn)">
+            <summary>
+            Convenience extension that prevents the caller from manually choosing a WHERE or an OR constraint.
+            </summary>
+            <param name="query">The <see cref="T:SubSonic.SqlQuery"/> to apply the new <see cref="T:SubSonic.Constraint"/> to.</param>
+            <param name="column">The input for the new <see cref="T:SubSonic.Constraint"/>.</param>
+            <returns>The newly added <see cref="T:SubSonic.Constraint"/>.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.SubSonic.SubSonicExtensions.OrWhereExpression(SubSonic.SqlQuery,System.String)">
+            <summary>
+            Convenience extension that prevents the caller from manually choosing a WHERE or an OR constraint.
+            </summary>
+            <param name="query">The <see cref="T:SubSonic.SqlQuery"/> to apply the new <see cref="T:SubSonic.Constraint"/> to.</param>
+            <param name="columnName">The input for the new <see cref="T:SubSonic.Constraint"/>.</param>
+            <returns>The newly added <see cref="T:SubSonic.Constraint"/>.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.SubSonic.SubSonicExtensions.Filter``2(SubSonic.AbstractList{``0,``1})">
+            <summary>
+            Filters an existing collection based on the set criteria. This is an in-memory filter
+            Thanks to developingchris for this!
+            </summary>
+            <remarks>
+            Adapted from the the SubSonic v2.1 code generation templates.
+            </remarks>
+        </member>
+        <member name="M:HP.HPFx.Extensions.SubSonic.SubSonicExtensions.ExportToCSV``2(SubSonic.ActiveList{``0,``1},HP.HPFx.Extensions.Data.Export.ExportDataExtensions.ExportOptions)">
+            <summary>
+            Exports/formats the data in a SubSonic collection as a CSV-formatted string (which can easily be saved as a CSV file).
+            </summary>
+            <typeparam name="ItemType"></typeparam>
+            <typeparam name="ListType"></typeparam>
+            <param name="list">The SubSonic collection containing the data to export.</param>
+            <param name="options">A set of options that can be used to configure specific details of how the data is formatted/converted.</param>
+            <returns>A CSV-formatted string.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.SubSonic.SubSonicExtensions.ExportToCSV``2(SubSonic.ActiveList{``0,``1})">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="T:HP.HPFx.Utility.SubSonic.SubSonicUtility">
+            <summary>
+            Contains utility methods related to SubSonic.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Utility.SubSonic.SubSonicUtility.GetOrderBy(System.String)">
+            <summary>
+            Utility method for getting the SubSonic Query OrderBy object based on a GridView sort expression (e.g. "Id DESC").
+            </summary>
+            <param name="sortExpression"></param>
+            <returns>
+            SubSonic.OrderBy
+            </returns>
+        </member>
+        <member name="M:HP.HPFx.Utility.SubSonic.SubSonicUtility.SetPaging(SubSonic.Query,System.Int32,System.Int32)">
+            <summary>
+            Convenience method for setting a SubSonic Query instance's pagination settings based upon 
+            ObjectDataSource-style paging variables.
+            </summary>
+            <param name="query"></param>
+            <param name="maximumRows"></param>
+            <param name="startRowIndex"></param>
+        </member>
+        <member name="M:HP.HPFx.Utility.SubSonic.SubSonicUtility.SetPaging(SubSonic.SqlQuery,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Convenience method for setting a SubSonic Query instance's pagination settings based upon 
+            ObjectDataSource-style paging variables.
+            </summary>
+            <param name="query"></param>
+            <param name="pageSize"></param>
+            <param name="pageIndex">The zero-based page index.</param>
+        </member>
+        <member name="M:HP.HPFx.Utility.SubSonic.SubSonicUtility.SetPaging(SubSonic.Query,HP.HPFx.Data.Query.QueryPaginationSpecification)">
+            <summary>
+            Convenience method for setting a SubSonic Query instance's pagination settings based upon 
+            ObjectDataSource-style paging variables.
+            </summary>
+            <param name="query"></param>
+            <param name="qps"></param>
+        </member>
+        <member name="M:HP.HPFx.Utility.SubSonic.SubSonicUtility.SetPaging(SubSonic.SqlQuery,HP.HPFx.Data.Query.QueryPaginationSpecification)">
+            <summary>
+            Convenience method for setting a SubSonic Query instance's pagination settings based upon 
+            ObjectDataSource-style paging variables.
+            </summary>
+            <param name="query"></param>
+            <param name="qps"></param>
+        </member>
+        <member name="M:HP.HPFx.Utility.SubSonic.SubSonicUtility.SetOrderBy(SubSonic.TableSchema.Table,SubSonic.SqlQuery,HP.HPFx.Data.Query.QuerySortSpecification)">
+            <summary>
+            Convenience method for setting a SubSonic SqlQuery instance's OrderBy settings.
+            </summary>
+            <param name="schema"></param>
+            <param name="query"></param>
+            <param name="qss"></param>
+        </member>
+        <member name="M:HP.HPFx.Utility.SubSonic.SubSonicUtility.SetOrderBy(SubSonic.Query,System.String)">
+            <summary>
+            Convenience method for setting a SubSonic Query instance's OrderBy settings.
+            </summary>
+            <param name="query"></param>
+            <param name="sortExpression"></param>
+        </member>
+        <member name="M:HP.HPFx.Utility.SubSonic.SubSonicUtility.SetOrderBy(SubSonic.SqlQuery,System.String,System.Nullable{System.Web.UI.WebControls.SortDirection})">
+            <summary>
+            Convenience method for setting a SubSonic SqlQuery instance's OrderBy settings.
+            </summary>
+            <param name="query"></param>
+            <param name="sortExpression"></param>
+            <param name="direction"></param>
+        </member>
+        <member name="M:HP.HPFx.Utility.SubSonic.SubSonicUtility.SetOrderBy(SubSonic.Query,HP.HPFx.Data.Query.QuerySortSpecification)">
+            <summary>
+            Convenience method for setting a SubSonic Query instance's OrderBy settings.
+            </summary>
+            <param name="query"></param>
+            <param name="qss"></param>
+        </member>
+        <member name="M:HP.HPFx.Utility.SubSonic.SubSonicUtility.SetOrderBy(SubSonic.SqlQuery,HP.HPFx.Data.Query.QuerySortSpecification)">
+            <summary>
+            Convenience method for setting a SubSonic SqlQuery instance's OrderBy settings.
+            </summary>
+            <param name="query"></param>
+            <param name="qss"></param>
+        </member>
+        <member name="M:HP.HPFx.Utility.SubSonic.SubSonicUtility.CreateQuery_DistinctColumnValues(System.String,System.String,System.String,System.Nullable{System.Int32})">
+            <summary>
+            Creates a <see cref="T:SubSonic.Query"/> that can be used to retrieve the distinct values within a specific table column.
+            </summary>
+            <param name="tableName">The name of the DB table.</param>
+            <param name="columnName">The name of the DB column.</param>
+            <param name="columnValuePrefix">Optional. If not null, only column values that begin with the specified string will be returned.</param>
+            <param name="rowStatusFilter">If not null, filters the results by the specified RowStatus.</param>
+            <returns>A <see cref="T:SubSonic.Query"/> that can be executed (e.g. as a DataSet) to retrieve 
+            the distinct values within a specified column of a specified table.</returns>
+        </member>
+        <member name="M:HP.HPFx.Utility.SubSonic.SubSonicUtility.CreateQuery_DistinctColumnValues(System.String,System.String,System.String,System.Nullable{System.Int32},System.Int32,System.Int32)">
+            <summary>
+            Creates a <see cref="T:SubSonic.Query"/> that can be used to retrieve the distinct values within a specific table column.
+            </summary>
+            <param name="tableName">The name of the DB table.</param>
+            <param name="columnName">The name of the DB column.</param>
+            <param name="columnValuePrefix">Optional. If not null, only column values that begin with the specified string will be returned.</param>
+            <param name="rowStatusFilter">If not null, filters the results by the specified RowStatus.</param>
+            <param name="pageIndex">The 0-based page index.</param>
+            <param name="pageSize">The maximum number of items per page.</param>
+            <returns>A <see cref="T:SubSonic.Query"/> that can be executed (e.g. as a DataSet) to retrieve 
+            the distinct values within a specified column of a specified table.</returns>
+        </member>
+        <member name="M:HP.HPFx.Utility.SubSonic.SubSonicUtility.GetCountInsteadOfRecords(SubSonic.DataProvider,System.Data.IDbCommand)">
+            <summary>
+            Executes a SELECT-type query as a SELECT COUNT instead.
+            </summary>
+            <param name="dataProvider"></param>
+            <param name="dbCommand">A DB command generated (at least originally) by SubSonic.</param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:HP.HPFx.Utility.SubSonic.SubSonicUtility.YieldFetch``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``2})" -->
+        <!-- Badly formed XML comment ignored for member "M:HP.HPFx.Utility.SubSonic.SubSonicUtility.YieldFetchCount``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Int32})" -->
+        <!-- Badly formed XML comment ignored for member "M:HP.HPFx.Utility.SubSonic.SubSonicUtility.YieldDataTables``2(System.Collections.Generic.IEnumerable{``1},System.Boolean)" -->
+        <!-- Badly formed XML comment ignored for member "M:HP.HPFx.Utility.SubSonic.SubSonicUtility.YieldDataTables``3(HP.HPFx.Data.Query.IQuerySpecification,System.Func{``2,``1},System.Int32)" -->
+        <member name="M:HP.HPFx.Utility.SubSonic.SubSonicUtility.GetSchema``1">
+            <summary>
+            Convenience method.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Utility.SubSonic.SubSonicUtility.GetPrimaryKey``1">
+            <summary>
+            Convenience method.
+            </summary>
+        </member>
+    </members>
+</doc>

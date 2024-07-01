@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://nant.sf.net/schemas/nant.xsd" name="ScriptLib">
+
+	<target name="DB.Rebuild.SchemaOnly" depends="fn.DB.Setup.ClearLog,fn.DB.Setup.Schema" 
+			description="Cleans and rebuilds the DB's entire schema (but no data).">
+	</target>
+
+	<target name="DB.Rebuild" depends="fn.DB.Setup.ClearLog,fn.DB.Setup.Schema,fn.DB.Setup.Data.Bootstrap,fn.DB.Setup.Data.UnitTest" 
+			description="Cleans and rebuilds the DB's entire schema and data.">
+	</target>
+
+	<target name="DB.RestoreData.Bootstrap" depends="fn.DB.Setup.ClearLog,fn.DB.Setup.CleanData,fn.DB.Setup.Data.Bootstrap"
+			description="Cleans and rebuilds the DB's data (but not schema).">
+	</target>
+
+	<target name="DB.RestoreData.SortingPaging" depends="fn.DB.Setup.ClearLog,fn.DB.Setup.CleanData,fn.DB.Setup.Data.SortingPaging"
+			description="Cleans and rebuilds the DB's data (but not schema).">
+	</target>
+
+	<target name="DB.RestoreData.Simple" depends="fn.DB.Setup.ClearLog,fn.DB.Setup.CleanData,fn.DB.Setup.Data.Bootstrap,fn.DB.Setup.Data.Simple"
+			description="Cleans and rebuilds the DB's data (but not schema).">
+	</target>
+
+	<target name="DB.RestoreData.UnitTest" depends="fn.DB.Setup.ClearLog,fn.DB.Setup.CleanData,fn.DB.Setup.Data.Bootstrap,fn.DB.Setup.Data.UnitTest"
+			description="Cleans and rebuilds the DB's data (but not schema).">
+	</target>
+
+	<target name="DB.RestoreData.Representative" depends="fn.DB.Setup.ClearLog,fn.DB.Setup.CleanData,fn.DB.Setup.Data.Bootstrap,fn.DB.Setup.Data.Representative"
+			description="Cleans and rebuilds the DB's data (but not schema).">
+	</target>
+
+	<target name="DB.RestoreData.QA" depends="DB.RestoreData.Representative,fn.DB.Setup.Data.QA"
+			description="Cleans and rebuilds the DB's data (but not schema).">
+	</target>
+
+	<target name="DB.RestoreData.Demo" depends="DB.RestoreData.Representative,fn.DB.Setup.Data.Demo"
+			description="Cleans and rebuilds the DB's data (but not schema).">
+	</target>
+
+	<target name="DB.Schema.Reseed" depends="fn.DB.Setup.ClearLog,fn.DB.Setup.ReseedSchema"
+			description="Reseeds all Identity columns in the DB's entire schema.">
+	</target>
+
+	<target name="fn.DB.Setup.Init">
+		<!--Validate the preconditions of the target.-->
+
+		<!--Declare/initialize local properties.-->
+		<property name="Private.DB.Setup.RootFolderPath" value="${path::combine(project::get-base-directory(),'..')}"/>
+		<property name="Private.DB.Setup.DbConnectionString" value="Provider=SQLOLEDB;server=localhost;database=ElementsCPSDB;Trusted_Connection=yes;MultipleActiveResultSets=true;"/>
+		<property name="Private.DB.Setup.SqlScriptFolderPath" value="${Private.DB.Setup.RootFolderPath}\DB\ElementsCPSDB\Scripts\Setup"/>
+		<property name="Private.DB.Setup.SqlUtilityScriptFolderPath" value="${Private.DB.Setup.RootFolderPath}\DB\ElementsCPSDB\Scripts\Utility"/>
+		<property name="Private.DB.Setup.LogFolderPath" value="${Private.DB.Setup.RootFolderPath}\Scripts\"/>
+		<property name="Private.DB.Setup.LogFilePath" value="${Private.DB.Setup.LogFolderPath}\DB.Setup.log"/>
+
+		<!--Validate the properties.-->
+		<fail unless="${directory::exists(Private.DB.Setup.RootFolderPath)}" message="RootFolderPath not found: ${Private.DB.Setup.RootFolderPath}."/>
+
+		<echo level="Debug" message="Create log folder (if necessary)."/>
+		<mkdir dir="${Private.DB.Setup.LogFolderPath}" unless="${directory::exists(Private.DB.Setup.LogFolderPath)}"/>
+	</target>
+
+	<target name="fn.DB.Setup.ClearLog" depends="fn.DB.Setup.Init">
+		<echo level="Debug" message="Create log folder (if necessary)."/>
+		<mkdir dir="${Private.DB.Setup.LogFolderPath}" unless="${directory::exists(Private.DB.Setup.LogFolderPath)}"/>
+
+		<echo level="Debug" message="Delete the existing log file (if necessary)."/>
+		<delete file="${Private.DB.Setup.LogFilePath}" if="${file::exists(Private.DB.Setup.LogFilePath)}"/>
+	</target>
+
+	<target name="fn.DB.Setup.CleanSchema" depends="fn.DB.Setup.Init">
+		<echo message="Cleaning DB schema."/>
+		<sql
+			connstring="${Private.DB.Setup.DbConnectionString}"
+			transaction="true"
+			delimiter="GO"
+			delimstyle="Line"
+			batch="true"
+			print="true"
+			source="${Private.DB.Setup.SqlUtilityScriptFolderPath}\DB.Clean.Schema.sql"
+			output="${Private.DB.Setup.LogFilePath}"
+			append="true"
+		/>
+	</target>
+
+	<target name="fn.DB.Setup.CleanData" depends="fn.DB.Setup.Init">
+		<echo message="Cleaning DB data."/>
+		<sql
+			connstring="${Private.DB.Setup.DbConnectionString}"
+			transaction="true"
+			delimiter="GO"
+			delimstyle="Line"
+			batch="true"
+			print="true"
+			source="${Private.DB.Setup.SqlUtilityScriptFolderPath}\DB.Clean.Data.sql"
+			output="${Private.DB.Setup.LogFilePath}"
+			append="true"
+		/>
+	</target>
+
+	<target name="fn.DB.Setup.ReseedSchema">
+		<echo message="Reseeding all DB schema identity columns."/>
+		<sql
+			connstring="${Private.DB.Setup.DbConnectionString}"
+			transaction="true"
+			delimiter="GO"
+			delimstyle="Line"
+			batch="true"
+			print="true"
+			source="${Private.DB.Setup.SqlUtilityScriptFolderPath}\DB.Schema.ReseedAllIdentities.sql"
+			output="${Private.DB.Setup.LogFilePath}"
+			append="true"
+		/>
+	</target>
+
+	<target name="fn.DB.Setup.Schema" depends="fn.DB.Setup.Init,fn.DB.Setup.CleanSchema">
+		<echo message="Deploying DB schema."/>
+		<sql
+			connstring="${Private.DB.Setup.DbConnectionString}"
+			transaction="true"
+			delimiter="GO"
+			delimstyle="Line"
+			batch="false"
+			print="true"
+			source="${Private.DB.Setup.SqlScriptFolderPath}\ElementsCPSDB.Setup.Schema.sql"
+			output="${Private.DB.Setup.LogFilePath}"
+			append="true"
+		/>
+	</target>
+
+	<target name="fn.DB.Setup.Data.Bootstrap" depends="fn.DB.Setup.Init">
+		<echo message="Loading DB data: 'Bootstrap' data."/>
+		<sql
+			connstring="${Private.DB.Setup.DbConnectionString}"
+			transaction="true"
+			delimiter="GO"
+			delimstyle="Line"
+			batch="false"
+			print="true"
+			source="${Private.DB.Setup.SqlScriptFolderPath}\ElementsCPSDB.Setup.Data.TestData.001.BootstrapData.sql"
+			output="${Private.DB.Setup.LogFilePath}"
+			append="true"
+		/>
+	</target>
+
+	<target name="fn.DB.Setup.Data.SortingPaging" depends="fn.DB.Setup.Init">
+		<echo message="Loading DB data: 'Bootstrap' data."/>
+		<sql
+			connstring="${Private.DB.Setup.DbConnectionString}"
+			transaction="true"
+			delimiter="GO"
+			delimstyle="Line"
+			batch="false"
+			print="true"
+			source="${Private.DB.Setup.SqlScriptFolderPath}\ElementsCPSDB.Setup.Data.TestData.001b.SortingPagingTestData.sql"
+			output="${Private.DB.Setup.LogFilePath}"
+			append="true"
+		/>
+	</target>
+
+	<target name="fn.DB.Setup.Data.Simple" depends="fn.DB.Setup.Init">
+		<echo message="Loading DB data: 'Simple' data."/>
+		<sql
+			connstring="${Private.DB.Setup.DbConnectionString}"
+			transaction="true"
+			delimiter="GO"
+			delimstyle="Line"
+			batch="false"
+			print="true"
+			source="${Private.DB.Setup.SqlScriptFolderPath}\ElementsCPSDB.Setup.Data.TestData.002a.SimpleTestData.sql"
+			output="${Private.DB.Setup.LogFilePath}"
+			append="true"
+		/>
+	</target>
+
+	<target name="fn.DB.Setup.Data.UnitTest" depends="fn.DB.Setup.Init">
+		<echo message="Loading DB data: 'Unit Test' data."/>
+		<sql
+			connstring="${Private.DB.Setup.DbConnectionString}"
+			transaction="true"
+			delimiter="GO"
+			delimstyle="Line"
+			batch="false"
+			print="true"
+			source="${Private.DB.Setup.SqlScriptFolderPath}\ElementsCPSDB.Setup.Data.TestData.002e.UnitTestData.sql"
+			output="${Private.DB.Setup.LogFilePath}"
+			append="true"
+		/>
+	</target>
+
+	<target name="fn.DB.Setup.Data.Representative" depends="fn.DB.Setup.Init">
+		<echo message="Loading DB data: 'Representative' data."/>
+		<sql
+			connstring="${Private.DB.Setup.DbConnectionString}"
+			transaction="true"
+			delimiter="GO"
+			delimstyle="Line"
+			batch="false"
+			print="true"
+			source="${Private.DB.Setup.SqlScriptFolderPath}\ElementsCPSDB.Setup.Data.TestData.002b.RepresentativeTestData.sql"
+			output="${Private.DB.Setup.LogFilePath}"
+			append="true"
+		/>
+	</target>
+
+	<target name="fn.DB.Setup.Data.QA" depends="fn.DB.Setup.Init">
+		<echo message="Loading DB data: 'QA' data."/>
+		<sql
+			connstring="${Private.DB.Setup.DbConnectionString}"
+			transaction="true"
+			delimiter="GO"
+			delimstyle="Line"
+			batch="false"
+			print="true"
+			source="${Private.DB.Setup.SqlScriptFolderPath}\ElementsCPSDB.Setup.Data.TestData.002c.QATestData.sql"
+			output="${Private.DB.Setup.LogFilePath}"
+			append="true"
+		/>
+	</target>
+
+	<target name="fn.DB.Setup.Data.Demo" depends="fn.DB.Setup.Init">
+		<echo message="Loading DB data: 'DEMO' data."/>
+		<sql
+			connstring="${Private.DB.Setup.DbConnectionString}"
+			transaction="true"
+			delimiter="GO"
+			delimstyle="Line"
+			batch="false"
+			print="true"
+			source="${Private.DB.Setup.SqlScriptFolderPath}\ElementsCPSDB.Setup.Data.TestData.002d.DemoTestData.sql"
+			output="${Private.DB.Setup.LogFilePath}"
+			append="true"
+		/>
+	</target>
+
+	<!--
+	JW: This target will create/configure a new ElementsCPS virtual directory in IIS (under the http://localhost:80/ web site).
+	NOTE: The configuration of the ElementsCPS web root also includes configuration of multiple subfolders of the root.
+	-->
+	<target name="IIS.Setup"
+			description="Creates/configures the ElementsCPS virtual directory (plus its contents) in IIS.">
+		<echo message="Starting IIS set up."/>
+
+		<!--Validate the preconditions of the target.-->
+
+		<!--Declare/initialize local properties.-->
+		<property name="Private.IIS.Setup.WebRootPhysicalPath" value="C:\dev\svn\alpha\dev\ElementsCPS\trunk\Source\Production\WebRoot" overwrite="false"/>
+    <property name="Private.IIS.Setup.ServicesRootPhysicalPath" value="C:\dev\svn\alpha\dev\ElementsCPS\trunk\Source\Production" overwrite="false"/>
+
+    <!--Validate the properties.-->
+		<fail unless="${directory::exists(Private.IIS.Setup.WebRootPhysicalPath)}" message="WebRootPhysicalPath not found: ${Private.IIS.Setup.WebRootPhysicalPath}."/>
+		<echo message="WebRootPhysicalPath=${Private.IIS.Setup.WebRootPhysicalPath}"/>
+    <fail unless="${directory::exists(Private.IIS.Setup.ServicesRootPhysicalPath)}" message="ServicesRootPhysicalPath not found: ${Private.IIS.Setup.ServicesRootPhysicalPath}."/>
+    <echo message="ServicesRootPhysicalPath=${Private.IIS.Setup.ServicesRootPhysicalPath}"/>
+
+    <!--Configure the app's webroot folder -->
+
+		<!--Configure the /ElementsCPS/ VirDir-->
+		<mkiisdir 
+			vdirname="/ElementsCPS/" 
+			dirpath="${Private.IIS.Setup.WebRootPhysicalPath}" 
+			authanonymous="false"
+			authntlm="true"
+			/>
+
+		<!--Configure the WebUI app's root folder -->
+
+		<!--Configure the /ElementsCPS/WebUI/ VirDir-->
+		<mkiisdir 
+			vdirname="/ElementsCPS/WebUI/" 
+			dirpath="${Private.IIS.Setup.WebRootPhysicalPath}\WebUI" 
+			appfriendlyname="ElementsCPS WebUI"
+			authanonymous="false"
+			authntlm="true"
+			defaultdoc="Default.aspx"
+			/>
+
+    <!--Configure the WebUI app's root folder -->
+
+    <!--Configure the /ElementsCPSServices/ VirDir-->
+    <mkiisdir
+			vdirname="/ElementsCPSServices/"
+			dirpath="${Private.IIS.Setup.ServicesRootPhysicalPath}"
+			appfriendlyname="ElementsCPSServices"
+			authanonymous="true"
+			authntlm="false"
+			defaultdoc="Default.aspx"
+			/>
+
+    <!--Configure all of the WebUI app's content subfolders -->
+
+        <!--Configure the /ElementsCPS/WebUI/Redirect/ VirDir-->
+      <mkiisdir
+			vdirname="/ElementsCPS/WebUI/Redirect/"
+			dirpath="${Private.IIS.Setup.WebRootPhysicalPath}\WebUI\Redirect"
+			appcreate="None"
+			defaultdoc="RedirectDefault.aspx"
+			/>
+
+        <!--Configure the /ElementsCPS/WebUI/ConfigurationService/ VirDir-->
+      <mkiisdir
+			vdirname="/ElementsCPS/WebUI/ConfigurationService/"
+			dirpath="${Private.IIS.Setup.WebRootPhysicalPath}\WebUI\ConfigurationService"
+			appcreate="None"
+			defaultdoc="ConfigurationServiceDefault.aspx"
+			/>
+
+        <!--Configure the /ElementsCPS/WebUI/DataAdmin/ VirDir-->
+		<mkiisdir 
+			vdirname="/ElementsCPS/WebUI/DataAdmin/" 
+			dirpath="${Private.IIS.Setup.WebRootPhysicalPath}\WebUI\DataAdmin" 
+			appcreate="None"
+			defaultdoc="DataAdminDefault.aspx"
+			/>
+
+		<!--Configure the /ElementsCPS/WebUI/MyInfo/ VirDir-->
+		<mkiisdir
+			vdirname="/ElementsCPS/WebUI/MyInfo/"
+			dirpath="${Private.IIS.Setup.WebRootPhysicalPath}\WebUI\MyInfo"
+			appcreate="None"
+			defaultdoc="MyInfoDefault.aspx"
+			/>
+
+		<!--Configure the /ElementsCPS/WebUI/Registration/ VirDir-->
+		<mkiisdir 
+			vdirname="/ElementsCPS/WebUI/Registration/" 
+			dirpath="${Private.IIS.Setup.WebRootPhysicalPath}\WebUI\Registration" 
+			appcreate="None"
+			defaultdoc="Register.aspx"
+			/>
+
+		<!--Configure the /ElementsCPS/WebUI/SystemAdmin/ VirDir-->
+		<mkiisdir 
+			vdirname="/ElementsCPS/WebUI/SystemAdmin/" 
+			dirpath="${Private.IIS.Setup.WebRootPhysicalPath}\WebUI\SystemAdmin" 
+			appcreate="None"
+			defaultdoc="SystemAdminDefault.aspx"
+			/>
+
+		<!--Configure the /ElementsCPS/WebUI/UserAdmin/ VirDir-->
+		<mkiisdir 
+			vdirname="/ElementsCPS/WebUI/UserAdmin/" 
+			dirpath="${Private.IIS.Setup.WebRootPhysicalPath}\WebUI\UserAdmin" 
+			appcreate="None"
+			defaultdoc="UserAdminDefault.aspx"
+			/>
+
+		<!--Configure all of the WebUI app's "completely inaccessible" folders -->
+
+		<!--Configure the /ElementsCPS/WebUI/bin/ VirDir-->
+		<mkiisdir 
+			vdirname="/ElementsCPS/WebUI/bin/"
+			dirpath="${Private.IIS.Setup.WebRootPhysicalPath}\WebUI\bin" 
+			appcreate="None"
+			accessread="false"
+			accessscript="false"
+			enabledefaultdoc="false"
+			enabledirbrowsing="false"
+			/>
+
+		<!--Configure the /ElementsCPS/WebUI/obj/ VirDir-->
+		<mkiisdir 
+			vdirname="/ElementsCPS/WebUI/obj/"
+			dirpath="${Private.IIS.Setup.WebRootPhysicalPath}\WebUI\obj" 
+			appcreate="None"
+			accessread="false"
+			accessscript="false"
+			enabledefaultdoc="false"
+			enabledirbrowsing="false"
+			/>
+
+		<!--Configure the /ElementsCPS/WebUI/Pages/ VirDir-->
+		<mkiisdir 
+			vdirname="/ElementsCPS/WebUI/Pages/"
+			dirpath="${Private.IIS.Setup.WebRootPhysicalPath}\WebUI\Pages" 
+			appcreate="None"
+			accessread="false"
+			accessscript="false"
+			enabledefaultdoc="false"
+			enabledirbrowsing="false"
+			/>
+
+		<!--Configure the /ElementsCPS/WebUI/Properties/ VirDir-->
+		<mkiisdir 
+			vdirname="/ElementsCPS/WebUI/Properties/"
+			dirpath="${Private.IIS.Setup.WebRootPhysicalPath}\WebUI\Properties" 
+			appcreate="None"
+			accessread="false"
+			accessscript="false"
+			enabledefaultdoc="false"
+			enabledirbrowsing="false"
+			/>
+
+		<!--Configure the /ElementsCPS/WebUI/UserControls/ VirDir-->
+		<mkiisdir 
+			vdirname="/ElementsCPS/WebUI/UserControls/"
+			dirpath="${Private.IIS.Setup.WebRootPhysicalPath}\WebUI\UserControls" 
+			appcreate="None"
+			accessread="false"
+			accessscript="false"
+			enabledefaultdoc="false"
+			enabledirbrowsing="false"
+			/>
+
+		<!--Delete VirDirs that used to exist but have since been removed -->
+
+		<!--Remove (if present) the /ElementsCPS/WebUI/App_Configs/ VirDir-->
+		<!--<deliisdir failonerror="false"
+			vdirname="/ElementsCPS/WebUI/App_Configs/"
+			/>-->
+
+		<echo message="Completed IIS set up."/>
+	</target>
+
+</project>

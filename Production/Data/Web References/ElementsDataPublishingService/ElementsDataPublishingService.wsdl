@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:redtar="http://dps.rssx.hp.com/dps/redirect" xmlns:tns="http://dps.rssx.hp.com/dps" xmlns:js="http://dps.rssx.hp.com/dps/jumpstation" xmlns:err="http://dps.rssx.hp.com/dps/error" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:reach="http://dps.rssx.hp.com/dps/reach" xmlns:cfggrp="http://dps.rssx.hp.com/dps/configservice" name="ElementsDataPublishingService" targetNamespace="http://dps.rssx.hp.com/dps" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://dps.rssx.hp.com/dps">
+      <xsd:import schemaLocation="http://erroj2.americas.hpqcorp.net:50038/dps/ElementsDataPublishingService?xsd=5" namespace="http://dps.rssx.hp.com/dps/redirect" />
+      <xsd:import schemaLocation="http://erroj2.americas.hpqcorp.net:50038/dps/ElementsDataPublishingService?xsd=2" namespace="http://dps.rssx.hp.com/dps/configservice" />
+      <xsd:import schemaLocation="http://erroj2.americas.hpqcorp.net:50038/dps/ElementsDataPublishingService?xsd=3" namespace="http://dps.rssx.hp.com/dps/jumpstation" />
+      <xsd:import schemaLocation="http://erroj2.americas.hpqcorp.net:50038/dps/ElementsDataPublishingService?xsd=4" namespace="http://dps.rssx.hp.com/dps/reach" />
+      <xsd:import schemaLocation="http://erroj2.americas.hpqcorp.net:50038/dps/ElementsDataPublishingService?xsd=1" namespace="http://dps.rssx.hp.com/dps/error" />
+      <xsd:complexType name="dpsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="1" name="appName" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="clientSystemCode" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="contentKeyID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRedirectTargetByIDRequest">
+        <xsd:complexType>
+          <xsd:complexContent mixed="false">
+            <xsd:extension base="tns:dpsRequest" />
+          </xsd:complexContent>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getRedirectTargetByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="redirectTarget" type="redtar:T_redirect-target" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateRedirectTargetRequest">
+        <xsd:complexType>
+          <xsd:complexContent mixed="false">
+            <xsd:extension base="tns:dpsRequest">
+              <xsd:sequence>
+                <xsd:element minOccurs="1" maxOccurs="1" name="redirectTarget" type="redtar:T_redirect-target" />
+              </xsd:sequence>
+            </xsd:extension>
+          </xsd:complexContent>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateRedirectTargetResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="contentKeyID" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteRedirectTargetByIDRequest">
+        <xsd:complexType>
+          <xsd:complexContent mixed="false">
+            <xsd:extension base="tns:dpsRequest" />
+          </xsd:complexContent>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteRedirectTargetByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="statusCode" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateCfgGroupRequest">
+        <xsd:complexType>
+          <xsd:complexContent mixed="false">
+            <xsd:extension base="tns:dpsRequest">
+              <xsd:sequence>
+                <xsd:element minOccurs="1" maxOccurs="1" name="cfgGroup" type="cfggrp:CfgGroup" />
+              </xsd:sequence>
+            </xsd:extension>
+          </xsd:complexContent>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateCfgGroupResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="contentKeyID" type="xsd:long">
+              <xsd:annotation>
+                <xsd:documentation />
+              </xsd:annotation>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCfgGroupByIDRequest">
+        <xsd:complexType>
+          <xsd:complexContent mixed="false">
+            <xsd:extension base="tns:dpsRequest" />
+          </xsd:complexContent>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCfgGroupByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="cfgGroup" type="cfggrp:CfgGroup" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteCfgGroupByIDRequest">
+        <xsd:complexType>
+          <xsd:complexContent mixed="false">
+            <xsd:extension base="tns:dpsRequest" />
+          </xsd:complexContent>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteCfgGroupByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="statusCode" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateJumpstationRedirectRequest">
+        <xsd:complexType>
+          <xsd:complexContent mixed="false">
+            <xsd:extension base="tns:dpsRequest">
+              <xsd:sequence>
+                <xsd:element minOccurs="1" maxOccurs="1" name="jumpstationRedirect" type="js:JumpstationRedirector" />
+              </xsd:sequence>
+            </xsd:extension>
+          </xsd:complexContent>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateJumpstationRedirectResponse" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="contentKeyID" type="xsd:long" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getJumpstationRedirectByIDRequest">
+        <xsd:complexType>
+          <xsd:complexContent mixed="false">
+            <xsd:extension base="tns:dpsRequest" />
+          </xsd:complexContent>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getJumpstationRedirectByIDResponse" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="jumpstationRedirect" type="js:JumpstationRedirector" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteJumpstationRedirectByIDRequest">
+        <xsd:complexType>
+          <xsd:complexContent mixed="false">
+            <xsd:extension base="tns:dpsRequest" />
+          </xsd:complexContent>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteJumpstationRedirectByIDResponse" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="statusCode" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateJumpstationMacroRequest">
+        <xsd:complexType>
+          <xsd:complexContent mixed="false">
+            <xsd:extension base="tns:dpsRequest">
+              <xsd:sequence>
+                <xsd:element minOccurs="1" maxOccurs="1" name="jumpstationMacro" type="js:Macro" />
+              </xsd:sequence>
+            </xsd:extension>
+          </xsd:complexContent>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateJumpstationMacroResponse" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="contentKeyID" type="xsd:long" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getJumpstationMacroByIDRequest">
+        <xsd:complexType>
+          <xsd:complexContent mixed="false">
+            <xsd:extension base="tns:dpsRequest" />
+          </xsd:complexContent>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getJumpstationMacroByIDResponse" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="jumpstationMacro" type="js:Macro" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteJumpstationMacroByIDRequest">
+        <xsd:complexType>
+          <xsd:complexContent mixed="false">
+            <xsd:extension base="tns:dpsRequest" />
+          </xsd:complexContent>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteJumpstationMacroByIDResponse" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="statusCode" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateReachWorkflowRequest">
+        <xsd:complexType>
+          <xsd:complexContent mixed="false">
+            <xsd:extension base="tns:dpsRequest">
+              <xsd:sequence>
+                <xsd:element minOccurs="1" maxOccurs="1" name="reachWorkflow" type="reach:Workflow" />
+              </xsd:sequence>
+            </xsd:extension>
+          </xsd:complexContent>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateReachWorkflowResponse" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="contentKeyID" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getReachWorkflowByIDRequest">
+        <xsd:complexType>
+          <xsd:complexContent mixed="false">
+            <xsd:extension base="tns:dpsRequest" />
+          </xsd:complexContent>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getReachWorkflowByIDResponse" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="reachWorkflow" type="reach:Workflow" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteReachWorkflowByIDRequest">
+        <xsd:complexType>
+          <xsd:complexContent mixed="false">
+            <xsd:extension base="tns:dpsRequest" />
+          </xsd:complexContent>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteReachWorkflowByIDResponse" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="statusCode" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateReachModuleRequest">
+        <xsd:complexType>
+          <xsd:complexContent mixed="false">
+            <xsd:extension base="tns:dpsRequest">
+              <xsd:sequence>
+                <xsd:element minOccurs="1" maxOccurs="1" name="reachModule" type="reach:Module" />
+              </xsd:sequence>
+            </xsd:extension>
+          </xsd:complexContent>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateReachModuleResponse" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="contentKeyID" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getReachModuleByIDRequest">
+        <xsd:complexType>
+          <xsd:complexContent mixed="false">
+            <xsd:extension base="tns:dpsRequest" />
+          </xsd:complexContent>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getReachModuleByIDResponse" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="reachModule" type="reach:Module" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteReachModuleByIDRequest">
+        <xsd:complexType>
+          <xsd:complexContent mixed="false">
+            <xsd:extension base="tns:dpsRequest" />
+          </xsd:complexContent>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteReachModuleByIDResponse" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="statusCode" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getRedirectTargetByIDRequest">
+    <wsdl:part name="params" element="tns:getRedirectTargetByIDRequest" />
+  </wsdl:message>
+  <wsdl:message name="getRedirectTargetByIDResponse">
+    <wsdl:part name="params" element="tns:getRedirectTargetByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateRedirectTargetRequest">
+    <wsdl:part name="params" element="tns:updateRedirectTargetRequest" />
+  </wsdl:message>
+  <wsdl:message name="updateRedirectTargetResponse">
+    <wsdl:part name="params" element="tns:updateRedirectTargetResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteRedirectTargetByIDRequest">
+    <wsdl:part name="params" element="tns:deleteRedirectTargetByIDRequest" />
+  </wsdl:message>
+  <wsdl:message name="deleteRedirectTargetByIDResponse">
+    <wsdl:part name="params" element="tns:deleteRedirectTargetByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="DPSGenericFaultException">
+    <wsdl:part name="params" element="err:DPSGenericFault" />
+  </wsdl:message>
+  <wsdl:message name="updateCfgGroupRequest">
+    <wsdl:part name="params" element="tns:updateCfgGroupRequest" />
+  </wsdl:message>
+  <wsdl:message name="updateCfgGroupResponse">
+    <wsdl:part name="params" element="tns:updateCfgGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCfgGroupByIDRequest">
+    <wsdl:part name="params" element="tns:getCfgGroupByIDRequest" />
+  </wsdl:message>
+  <wsdl:message name="getCfgGroupByIDResponse">
+    <wsdl:part name="params" element="tns:getCfgGroupByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteCfgGroupByIDRequest">
+    <wsdl:part name="params" element="tns:deleteCfgGroupByIDRequest" />
+  </wsdl:message>
+  <wsdl:message name="deleteCfgGroupByIDResponse">
+    <wsdl:part name="params" element="tns:deleteCfgGroupByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateJumpstationRedirectRequest">
+    <wsdl:part name="params" element="tns:updateJumpstationRedirectRequest" />
+  </wsdl:message>
+  <wsdl:message name="updateJumpstationRedirectResponse">
+    <wsdl:part name="params" element="tns:updateJumpstationRedirectResponse" />
+  </wsdl:message>
+  <wsdl:message name="getJumpstationRedirectByIDRequest">
+    <wsdl:part name="params" element="tns:getJumpstationRedirectByIDRequest" />
+  </wsdl:message>
+  <wsdl:message name="getJumpstationRedirectByIDResponse">
+    <wsdl:part name="params" element="tns:getJumpstationRedirectByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteJumpstationRedirectByIDRequest">
+    <wsdl:part name="params" element="tns:deleteJumpstationRedirectByIDRequest" />
+  </wsdl:message>
+  <wsdl:message name="deleteJumpstationRedirectByIDResponse">
+    <wsdl:part name="params" element="tns:deleteJumpstationRedirectByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateJumpstationMacroRequest">
+    <wsdl:part name="params" element="tns:updateJumpstationMacroRequest" />
+  </wsdl:message>
+  <wsdl:message name="updateJumpstationMacroResponse">
+    <wsdl:part name="params" element="tns:updateJumpstationMacroResponse" />
+  </wsdl:message>
+  <wsdl:message name="getJumpstationMacroByIDRequest">
+    <wsdl:part name="params" element="tns:getJumpstationMacroByIDRequest" />
+  </wsdl:message>
+  <wsdl:message name="getJumpstationMacroByIDResponse">
+    <wsdl:part name="params" element="tns:getJumpstationMacroByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteJumpstationMacroByIDRequest">
+    <wsdl:part name="params" element="tns:deleteJumpstationMacroByIDRequest" />
+  </wsdl:message>
+  <wsdl:message name="deleteJumpstationMacroByIDResponse">
+    <wsdl:part name="params" element="tns:deleteJumpstationMacroByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateReachWorkflowRequest">
+    <wsdl:part name="params" element="tns:updateReachWorkflowRequest" />
+  </wsdl:message>
+  <wsdl:message name="updateReachWorkflowResponse">
+    <wsdl:part name="params" element="tns:updateReachWorkflowResponse" />
+  </wsdl:message>
+  <wsdl:message name="getReachWorkflowByIDRequest">
+    <wsdl:part name="params" element="tns:getReachWorkflowByIDRequest" />
+  </wsdl:message>
+  <wsdl:message name="getReachWorkflowByIDResponse">
+    <wsdl:part name="params" element="tns:getReachWorkflowByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteReachWorkflowByIDRequest">
+    <wsdl:part name="params" element="tns:deleteReachWorkflowByIDRequest" />
+  </wsdl:message>
+  <wsdl:message name="deleteReachWorkflowByIDResponse">
+    <wsdl:part name="params" element="tns:deleteReachWorkflowByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateReachModuleRequest">
+    <wsdl:part name="params" element="tns:updateReachModuleRequest" />
+  </wsdl:message>
+  <wsdl:message name="updateReachModuleResponse">
+    <wsdl:part name="params" element="tns:updateReachModuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="getReachModuleByIDRequest">
+    <wsdl:part name="params" element="tns:getReachModuleByIDRequest" />
+  </wsdl:message>
+  <wsdl:message name="getReachModuleByIDResponse">
+    <wsdl:part name="params" element="tns:getReachModuleByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteReachModuleByIDRequest">
+    <wsdl:part name="params" element="tns:deleteReachModuleByIDRequest" />
+  </wsdl:message>
+  <wsdl:message name="deleteReachModuleByIDResponse">
+    <wsdl:part name="params" element="tns:deleteReachModuleByIDResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ElementsDataPublishingService">
+    <wsdl:operation name="getRedirectTargetByID">
+      <wsdl:input message="tns:getRedirectTargetByIDRequest" />
+      <wsdl:output message="tns:getRedirectTargetByIDResponse" />
+      <wsdl:fault name="fault" message="tns:DPSGenericFaultException" />
+    </wsdl:operation>
+    <wsdl:operation name="updateRedirectTarget">
+      <wsdl:input message="tns:updateRedirectTargetRequest" />
+      <wsdl:output message="tns:updateRedirectTargetResponse" />
+      <wsdl:fault name="fault" message="tns:DPSGenericFaultException" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteRedirectTargetByID">
+      <wsdl:input message="tns:deleteRedirectTargetByIDRequest" />
+      <wsdl:output message="tns:deleteRedirectTargetByIDResponse" />
+      <wsdl:fault name="fault" message="tns:DPSGenericFaultException" />
+    </wsdl:operation>
+    <wsdl:operation name="updateCfgGroup">
+      <wsdl:input message="tns:updateCfgGroupRequest" />
+      <wsdl:output message="tns:updateCfgGroupResponse" />
+      <wsdl:fault name="fault" message="tns:DPSGenericFaultException" />
+    </wsdl:operation>
+    <wsdl:operation name="getCfgGroupByID">
+      <wsdl:input message="tns:getCfgGroupByIDRequest" />
+      <wsdl:output message="tns:getCfgGroupByIDResponse" />
+      <wsdl:fault name="fault" message="tns:DPSGenericFaultException" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteCfgGroupByID">
+      <wsdl:input message="tns:deleteCfgGroupByIDRequest" />
+      <wsdl:output message="tns:deleteCfgGroupByIDResponse" />
+      <wsdl:fault name="fault" message="tns:DPSGenericFaultException" />
+    </wsdl:operation>
+    <wsdl:operation name="updateJumpstationRedirect">
+      <wsdl:input message="tns:updateJumpstationRedirectRequest" />
+      <wsdl:output message="tns:updateJumpstationRedirectResponse" />
+      <wsdl:fault name="fault" message="tns:DPSGenericFaultException" />
+    </wsdl:operation>
+    <wsdl:operation name="getJumpstationRedirectByID">
+      <wsdl:input message="tns:getJumpstationRedirectByIDRequest" />
+      <wsdl:output message="tns:getJumpstationRedirectByIDResponse" />
+      <wsdl:fault name="fault" message="tns:DPSGenericFaultException" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteJumpstationRedirectByID">
+      <wsdl:input message="tns:deleteJumpstationRedirectByIDRequest" />
+      <wsdl:output message="tns:deleteJumpstationRedirectByIDResponse" />
+      <wsdl:fault name="fault" message="tns:DPSGenericFaultException" />
+    </wsdl:operation>
+    <wsdl:operation name="updateJumpstationMacro">
+      <wsdl:input message="tns:updateJumpstationMacroRequest" />
+      <wsdl:output message="tns:updateJumpstationMacroResponse" />
+      <wsdl:fault name="fault" message="tns:DPSGenericFaultException" />
+    </wsdl:operation>
+    <wsdl:operation name="getJumpstationMacroByID">
+      <wsdl:input message="tns:getJumpstationMacroByIDRequest" />
+      <wsdl:output message="tns:getJumpstationMacroByIDResponse" />
+      <wsdl:fault name="fault" message="tns:DPSGenericFaultException" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteJumpstationMacroByID">
+      <wsdl:input message="tns:deleteJumpstationMacroByIDRequest" />
+      <wsdl:output message="tns:deleteJumpstationMacroByIDResponse" />
+      <wsdl:fault name="fault" message="tns:DPSGenericFaultException" />
+    </wsdl:operation>
+    <wsdl:operation name="updateReachWorkflow">
+      <wsdl:input message="tns:updateReachWorkflowRequest" />
+      <wsdl:output message="tns:updateReachWorkflowResponse" />
+      <wsdl:fault name="fault" message="tns:DPSGenericFaultException" />
+    </wsdl:operation>
+    <wsdl:operation name="getReachWorkflowByID">
+      <wsdl:input message="tns:getReachWorkflowByIDRequest" />
+      <wsdl:output message="tns:getReachWorkflowByIDResponse" />
+      <wsdl:fault name="fault" message="tns:DPSGenericFaultException" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteReachWorkflowByID">
+      <wsdl:input message="tns:deleteReachWorkflowByIDRequest" />
+      <wsdl:output message="tns:deleteReachWorkflowByIDResponse" />
+      <wsdl:fault name="fault" message="tns:DPSGenericFaultException" />
+    </wsdl:operation>
+    <wsdl:operation name="updateReachModule">
+      <wsdl:input message="tns:updateReachModuleRequest" />
+      <wsdl:output message="tns:updateReachModuleResponse" />
+      <wsdl:fault name="fault" message="tns:DPSGenericFaultException" />
+    </wsdl:operation>
+    <wsdl:operation name="getReachModuleByID">
+      <wsdl:input message="tns:getReachModuleByIDRequest" />
+      <wsdl:output message="tns:getReachModuleByIDResponse" />
+      <wsdl:fault name="fault" message="tns:DPSGenericFaultException" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteReachModuleByID">
+      <wsdl:input message="tns:deleteReachModuleByIDRequest" />
+      <wsdl:output message="tns:deleteReachModuleByIDResponse" />
+      <wsdl:fault name="fault" message="tns:DPSGenericFaultException" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ElementsDataPublishingServiceSOAP" type="tns:ElementsDataPublishingService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getRedirectTargetByID">
+      <soap:operation soapAction="http://dps.rssx.hp.com/dps/getRedirectTargetByID" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateRedirectTarget">
+      <soap:operation soapAction="http://dps.rssx.hp.com/dps/updateRedirectTarget" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteRedirectTargetByID">
+      <soap:operation soapAction="http://dps.rssx.hp.com/dps/deleteRedirectTargetByID" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateCfgGroup">
+      <soap:operation soapAction="http://dps.rssx.hp.com/dps/updateCfgGroup" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCfgGroupByID">
+      <soap:operation soapAction="http://dps.rssx.hp.com/dps/getCfgGroupByID" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCfgGroupByID">
+      <soap:operation soapAction="http://dps.rssx.hp.com/dps/deleteCfgGroupByID" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateJumpstationRedirect">
+      <soap:operation soapAction="http://dps.rssx.hp.com/dps/updateJumpstationRedirect" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getJumpstationRedirectByID">
+      <soap:operation soapAction="http://dps.rssx.hp.com/dps/getJumpstationRedirectByID" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteJumpstationRedirectByID">
+      <soap:operation soapAction="http://dps.rssx.hp.com/dps/deleteJumpstationRedirectByID" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateJumpstationMacro">
+      <soap:operation soapAction="http://dps.rssx.hp.com/dps/updateJumpstationMacro" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getJumpstationMacroByID">
+      <soap:operation soapAction="http://dps.rssx.hp.com/dps/getJumpstationMacroByID" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteJumpstationMacroByID">
+      <soap:operation soapAction="http://dps.rssx.hp.com/dps/deleteJumpstationMacroByID" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateReachWorkflow">
+      <soap:operation soapAction="http://dps.rssx.hp.com/dps/updateReachWorkflow" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getReachWorkflowByID">
+      <soap:operation soapAction="http://dps.rssx.hp.com/dps/getReachWorkflowByID" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteReachWorkflowByID">
+      <soap:operation soapAction="http://dps.rssx.hp.com/dps/deleteReachWorkflowByID" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateReachModule">
+      <soap:operation soapAction="http://dps.rssx.hp.com/dps/updateReachModule" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getReachModuleByID">
+      <soap:operation soapAction="http://dps.rssx.hp.com/dps/getReachModuleByID" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteReachModuleByID">
+      <soap:operation soapAction="http://dps.rssx.hp.com/dps/deleteReachModuleByID" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ElementsDataPublishingService">
+    <wsdl:port name="ElementsDataPublishingServiceSOAP" binding="tns:ElementsDataPublishingServiceSOAP">
+      <soap:address location="http://erroj2.americas.hpqcorp.net:50038/dps/ElementsDataPublishingService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

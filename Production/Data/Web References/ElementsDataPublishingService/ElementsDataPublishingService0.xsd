@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://dps.rssx.hp.com/dps/redirect" targetNamespace="http://dps.rssx.hp.com/dps/redirect" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="T_redirect-target">
+    <xs:sequence>
+      <xs:element ref="redirect-content" />
+      <xs:element ref="redirect-selector-group" />
+    </xs:sequence>
+    <xs:attribute name="target_type" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="target_id" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:long" />
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="site" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="message_flag_id" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="last_update_date" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:date" />
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="description" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="creation_date" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:date" />
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="T_redirect-selector-item">
+    <xs:attribute name="att_value" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="att_key" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="T_redirect-selector-group">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" ref="redirect-selector-item" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="T_redirect-content-item">
+    <xs:attribute name="content_value" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:anyURI" />
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="content_key" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="T_redirect-content">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" ref="redirect-content-item" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="redirect-target" type="T_redirect-target" />
+  <xs:element name="redirect-selector-item" type="T_redirect-selector-item" />
+  <xs:element name="redirect-selector-group" type="T_redirect-selector-group" />
+  <xs:element name="redirect-content-item" type="T_redirect-content-item" />
+  <xs:element name="redirect-content" type="T_redirect-content" />
+</xs:schema>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:tns="http://dps.rssx.hp.com/dps/configservice" elementFormDefault="qualified" targetNamespace="http://dps.rssx.hp.com/dps/configservice" xmlns="http://www.w3.org/2001/XMLSchema">
+  <complexType name="CfgGroup">
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="cfgGroupLabel" type="tns:CfgGroupLabel" />
+      <element minOccurs="0" maxOccurs="unbounded" name="cfgItem" type="tns:CfgItem" />
+      <element minOccurs="1" maxOccurs="unbounded" name="selectorItem" type="tns:SelectorItem" />
+    </sequence>
+    <attribute name="id" type="long" />
+    <attribute name="type" type="string" />
+    <attribute name="name" type="string" />
+    <attribute name="appName" type="string" />
+    <attribute name="appVersion" type="string" />
+  </complexType>
+  <complexType name="SelectorItem">
+    <sequence minOccurs="0" maxOccurs="unbounded">
+      <element name="selectorValue" type="string" />
+    </sequence>
+    <attribute name="selectorName" type="string" />
+    <attribute name="selectorGroupName" type="string" />
+    <attribute name="negation" type="boolean" />
+  </complexType>
+  <complexType name="CfgGroupLabel">
+    <attribute name="labelName" type="string" />
+    <attribute name="labelValue" type="string" />
+  </complexType>
+  <complexType name="CfgItemLabel">
+    <attribute name="labelName" type="string" />
+    <attribute name="labelValue" type="string" />
+  </complexType>
+  <complexType name="CfgItem">
+    <sequence>
+      <element minOccurs="1" maxOccurs="unbounded" name="cfgItemLabel" type="tns:CfgItemLabel" />
+    </sequence>
+    <attribute name="type" type="string" />
+  </complexType>
+</schema>

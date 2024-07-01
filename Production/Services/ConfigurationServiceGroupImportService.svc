@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="HP.ElementsCPS.Services.ConfigurationServiceGroupImportService" CodeBehind="ConfigurationServiceGroupImportService.svc.cs" %>

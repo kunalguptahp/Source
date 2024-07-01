@@ -1,0 +1,21 @@
+<%@ Master Language="C#" MasterPageFile="~/App_MasterPages/DefaultPortalMaster.master" AutoEventWireup="true" CodeBehind="JumpstationMaster.master.cs" Inherits="HP.ElementsCPS.Apps.WebUI.MasterPages.JumpstationMaster" %>
+<%@ Register TagPrefix="HPFxPortal" Namespace="HP.HPFx.Web.UI.Portal" Assembly="HP.HPFx.Web.Portal" %>
+<asp:Content ID="HeadContent" ContentPlaceHolderID="PageHead" runat="server">
+	<%--Leave this section to be filled by inheriting content pages. --%>
+	<asp:ContentPlaceHolder ID="PageHead" runat="server">
+	</asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="PortalNavigationContent" ContentPlaceHolderID="PortalNavigationTreeArea" runat="server">
+	<HPFxPortal:PortalNavigationTree runat="server" ID="hpNavTree">
+		<HPFxPortal:PortalNavigationControl id="ntiHome" runat="server" Text="Jumpstation Home" NavigateUrl="~/Jumpstation/JumpstationDefault.aspx" />
+		<HPFxPortal:PortalNavigationSeparator runat="server" />
+		<HPFxPortal:PortalNavigationControl id="ntiJumpstationGroupList" runat="server" Text="Jumpstation" NavigateUrl="~/Jumpstation/JumpstationGroupList.aspx"  />
+		<HPFxPortal:PortalNavigationControl id="ntiJumpstationGroupByQueryParameterList" runat="server" Text="Jumpstation By Query Parameter" NavigateUrl="~/Jumpstation/JumpstationGroupByQueryParameterList.aspx"  />
+		<HPFxPortal:PortalNavigationSeparator ID="PortalNavigationSeparator1" runat="server" />		
+	</HPFxPortal:PortalNavigationTree>
+</asp:Content>
+<asp:Content ID="PageContent" ContentPlaceHolderID="PageContentArea" runat="server">
+	<%--Leave this section to be filled by inheriting content pages. --%>
+	<asp:ContentPlaceHolder ID="PageContentArea" runat="server">
+	</asp:ContentPlaceHolder>
+</asp:Content>

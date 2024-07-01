@@ -1,0 +1,47 @@
+<%@ Master Language="C#" MasterPageFile="~/App_MasterPages/DefaultPortalMaster.master" AutoEventWireup="true" CodeBehind="SystemAdminMaster.master.cs" Inherits="HP.ElementsCPS.Apps.WebUI.MasterPages.SystemAdminMaster" %>
+<%@ MasterType TypeName="HP.ElementsCPS.Apps.WebUI.MasterPages.DefaultPortalMaster" %>
+<%@ Register TagPrefix="HPFxPortal" Namespace="HP.HPFx.Web.UI.Portal" Assembly="HP.HPFx.Web.Portal" %>
+<asp:Content ID="HeadContent" ContentPlaceHolderID="PageHead" runat="server">
+	<%--Leave this section to be filled by inheriting content pages. --%>
+	<asp:ContentPlaceHolder ID="PageHead" runat="server">
+	</asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="PortalNavigationContent" ContentPlaceHolderID="PortalNavigationTreeArea" runat="server">
+	<HPFxPortal:PortalNavigationTree runat="server" ID="hpNavTree">
+		<HPFxPortal:PortalNavigationControl id="ntiHome" runat="server" Text="System Admin Home" NavigateUrl="~/SystemAdmin/SystemAdminDefault.aspx" />
+
+		<HPFxPortal:PortalNavigationSpacer id="ntSpacer1" runat="server" />
+
+		<HPFxPortal:PortalNavigationTreeNode id="ntnSystemInfo" runat="server" Text="System Info">
+			<HPFxPortal:PortalNavigationControl id="ntiDashboard" runat="server" Text="Dashboard" NavigateUrl="~/SystemAdmin/SystemAdminDashboard.aspx" />
+			<HPFxPortal:PortalNavigationControl id="ntiLogList" runat="server" Text="List Logs" NavigateUrl="~/SystemAdmin/LogList.aspx" />
+		</HPFxPortal:PortalNavigationTreeNode>
+
+		<HPFxPortal:PortalNavigationSpacer runat="server" />
+		<HPFxPortal:PortalNavigationSeparator runat="server" />
+
+		<HPFxPortal:PortalNavigationTreeNode id="ntnSystemConfiguration" runat="server" Text="System Configuration">
+			<HPFxPortal:PortalNavigationControl id="ntiDataImport" runat="server" Text="Data Import" NavigateUrl="~/SystemAdmin/DataImport.aspx" />
+			<HPFxPortal:PortalNavigationControl id="ntiSystemAdminFileUpload" runat="server" Text="File Upload" NavigateUrl="~/SystemAdmin/SystemAdminFileUpload.aspx" />
+			<HPFxPortal:PortalNavigationControl id="ntiSystemAdminFileDownload" runat="server" Text="File Download" NavigateUrl="~/SystemAdmin/SystemAdminFileDownload.aspx" />
+			<HPFxPortal:PortalNavigationControl id="ntiSystemAdminProcessConsole" runat="server" Text="Process Console" NavigateUrl="~/SystemAdmin/SystemAdminProcessConsole.aspx" />
+		</HPFxPortal:PortalNavigationTreeNode>
+
+		<HPFxPortal:PortalNavigationSeparator id="ntSeparator1" runat="server" />
+
+		<HPFxPortal:PortalNavigationTreeNode id="ntnSystemDevelopment" runat="server" Text="Developer Pages">
+			<HPFxPortal:PortalNavigationControl id="ntiDevScaffold" runat="server" Text="Dev Scaffold" NavigateUrl="~/SystemAdmin/DevScaffold.aspx" />
+			<HPFxPortal:PortalNavigationControl id="ntiDevTestPage" runat="server" Text="Test Page" NavigateUrl="~/SystemAdmin/DevTestPage.aspx" />
+			<HPFxPortal:PortalNavigationControl id="ntiSystemLog" runat="server" Text="System Log" NavigateUrl="~/SystemAdmin/SystemLog.aspx" />
+			<HPFxPortal:PortalNavigationControl id="ntiSystemStatusReport" runat="server" Text="System Status" Enabled="false" SkinID="NotImplemented" />
+		</HPFxPortal:PortalNavigationTreeNode>
+
+		<HPFxPortal:PortalNavigationSeparator id="ntSeparator2" runat="server" />
+
+	</HPFxPortal:PortalNavigationTree>
+</asp:Content>
+<asp:Content ID="PageContent" ContentPlaceHolderID="PageContentArea" runat="server">
+	<%--Leave this section to be filled by inheriting content pages. --%>
+	<asp:ContentPlaceHolder ID="PageContentArea" runat="server">
+	</asp:ContentPlaceHolder>
+</asp:Content>

@@ -1,0 +1,832 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HP.HPFx.Extensions.Watin</name>
+    </assembly>
+    <members>
+        <member name="T:HP.HPFx.Extensions.Watin.EnhancedIE">
+            <summary>
+            Customized subclass of the standard WatiN IE class which stores (and provides easy access to) 
+            the HTTP Response Status Code of each navigation/GoTo operation performed.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.EnhancedIE.AttachSHDocVwEventHandlers">
+            <summary>
+            Performs event wire-up initialization of the event handlers needed to support the NavigationStatusCode property.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.EnhancedIE.shDocVw_InternetExplorer_BeforeNavigate2(System.Object,System.Object@,System.Object@,System.Object@,System.Object@,System.Object@,System.Boolean@)">
+            <summary>
+            Resets the NavigationStatusCode property.
+            </summary>
+            <param name="pDisp"></param>
+            <param name="URL"></param>
+            <param name="Flags"></param>
+            <param name="TargetFrameName"></param>
+            <param name="PostData"></param>
+            <param name="Headers"></param>
+            <param name="Cancel"></param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.EnhancedIE.shDocVw_InternetExplorer_NavigateComplete2(System.Object,System.Object@)">
+            <summary>
+            Updates the NavigationStatusCode property.
+            </summary>
+            <param name="pDisp"></param>
+            <param name="URL"></param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.EnhancedIE.shDocVw_InternetExplorer_NavigateError(System.Object,System.Object@,System.Object@,System.Object@,System.Boolean@)">
+            <summary>
+            Updates the NavigationStatusCode property.
+            </summary>
+            <param name="pDisp"></param>
+            <param name="URL"></param>
+            <param name="Frame"></param>
+            <param name="StatusCode"></param>
+            <param name="Cancel"></param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.EnhancedIE.UpdateNavigationStatusCode(System.Object)">
+            <summary>
+            Helper method for the shDocVw_InternetExplorer_NavigateError method.
+            </summary>
+            <param name="StatusCode"></param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.EnhancedIE.IsNavigationError(System.Int32)">
+            <summary>
+            Indicates whether a specified HTTP Status code value indicates a "navigation error" or not.
+            </summary>
+            <remarks>
+            A "navigation error" is any HTTP Status Code &gt;= 400.
+            </remarks>
+            <param name="httpStatusCode"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown if <paramref name="httpStatusCode"/> is invalid.</exception>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.EnhancedIE.IsNavigationSuccess(System.Int32)">
+            <summary>
+            Indicates whether a specified HTTP Status code value indicates a "navigation success" or not.
+            </summary>
+            <remarks>
+            A "navigation success" is HTTP Status Code == 200.
+            </remarks>
+            <param name="httpStatusCode"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown if <paramref name="httpStatusCode"/> is invalid.</exception>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.EnhancedIE.WaitForComplete">
+            <summary>
+            Overridden in order to implement the "FailOnNavigationError", "EnableWaitForAsynchronousPostBackComplete", and "EnableWaitForAjaxPageRequestManagerInitialization" features.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.EnhancedIE.WaitForComplete(System.Int32)">
+            <summary>
+            Overridden in order to implement the "FailOnNavigationError", "EnableWaitForAsynchronousPostBackComplete", and "EnableWaitForAjaxPageRequestManagerInitialization" features.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.EnhancedIE.ContainsHtml(System.String)">
+            <summary>
+            Determines whether the HTML inside the HTML Body element contains the given <paramref name="html"/>.
+            </summary>
+            <param name="html">The HTML.</param>
+            <returns><c>true</c> if the specified html is contained in <see cref="P:WatiN.Core.Document.Html"/>; otherwise, <c>false</c>.</returns>
+            <seealso cref="M:WatiN.Core.Document.ContainsText(System.String)"/>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.EnhancedIE.ContainsHtml(System.Text.RegularExpressions.Regex)">
+            <summary>
+            Determines whether the HTML inside the HTML Body element contains the given <paramref name="regex"/>.
+            </summary>
+            <param name="regex">The regular expression to match with.</param>
+            <returns><c>true</c> if the specified HTML is contained in <see cref="P:WatiN.Core.Document.Html"/>; otherwise, <c>false</c>.</returns>
+            <seealso cref="M:WatiN.Core.Document.ContainsText(System.Text.RegularExpressions.Regex)"/>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.EnhancedIE.WaitUntilContainsHtml(System.String,System.Int32)">
+            <summary>
+            Waits until the HTML inside the HTML Body element contains the specified <paramref name="html"/>.
+            </summary>
+            <param name="html">The text.</param>
+            <param name="timeOut">The number of seconds to wait.</param>
+            <returns><see name="TimeoutException"/> if the specified html is not found within the time out period.</returns>
+            <seealso cref="M:WatiN.Core.Document.WaitUntilContainsText(System.String,System.Int32)"/>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.EnhancedIE.WaitUntilContainsHtml(System.String)">
+            <summary>
+            Convenience overload.
+            </summary>
+            <seealso cref="M:WatiN.Core.Document.WaitUntilContainsText(System.String)"/>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.EnhancedIE.WaitUntilContainsHtml(System.Text.RegularExpressions.Regex,System.Int32)">
+            <summary>
+            Waits until the specified <paramref name="regex"/> matches some HTML inside the HTML Body element.
+            </summary>
+            <param name="regex">The regular expression to match with.</param>
+            <param name="timeOut">The number of seconds to wait.</param>
+            <returns><see name="TimeoutException"/>if the specified html is not found within the time out period.</returns>
+            <seealso cref="M:WatiN.Core.Document.WaitUntilContainsText(System.Text.RegularExpressions.Regex,System.Int32)"/>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.EnhancedIE.WaitUntilContainsHtml(System.Text.RegularExpressions.Regex)">
+            <summary>
+            Convenience overload.
+            </summary>
+            <seealso cref="M:WatiN.Core.Document.WaitUntilContainsText(System.Text.RegularExpressions.Regex)"/>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.EnhancedIE.WaitUntilExcludesHtml(System.String,System.Int32)">
+            <summary>
+            Waits until the HTML inside the HTML Body element does not contain the specified <paramref name="html"/>.
+            </summary>
+            <param name="html">The text.</param>
+            <param name="timeOut">The number of seconds to wait.</param>
+            <returns><see name="TimeoutException"/>if the specified html is found during the entire the time out period.</returns>
+            <seealso cref="M:WatiN.Core.Document.WaitUntilContainsText(System.String,System.Int32)"/>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.EnhancedIE.WaitUntilExcludesHtml(System.String)">
+            <summary>
+            Convenience overload.
+            </summary>
+            <seealso cref="M:WatiN.Core.Document.WaitUntilContainsText(System.String)"/>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.EnhancedIE.WaitUntilExcludesHtml(System.Text.RegularExpressions.Regex,System.Int32)">
+            <summary>
+            Waits until the specified <paramref name="regex"/> does not match any HTML inside the HTML Body element.
+            </summary>
+            <param name="regex">The regular expression to match with.</param>
+            <param name="timeOut">The number of seconds to wait.</param>
+            <returns><see name="TimeoutException"/>if the specified html is found during the entire the time out period.</returns>
+            <seealso cref="M:WatiN.Core.Document.WaitUntilContainsText(System.Text.RegularExpressions.Regex,System.Int32)"/>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.EnhancedIE.WaitUntilExcludesHtml(System.Text.RegularExpressions.Regex)">
+            <summary>
+            Convenience overload.
+            </summary>
+            <seealso cref="M:WatiN.Core.Document.WaitUntilContainsText(System.Text.RegularExpressions.Regex)"/>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.EnhancedIE.WaitUntilExcludesText(System.String,System.Int32)">
+            <summary>
+            Waits until the <see cref="P:WatiN.Core.Document.Text"/> inside the HTML Body element does not contain the specified <paramref name="text"/>.
+            </summary>
+            <param name="text">The text.</param>
+            <param name="timeOut">The number of seconds to wait.</param>
+            <returns><see name="TimeoutException"/>if the specified text is found during the entire the time out period.</returns>
+            <seealso cref="M:WatiN.Core.Document.WaitUntilContainsText(System.String,System.Int32)"/>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.EnhancedIE.WaitUntilExcludesText(System.String)">
+            <summary>
+            Convenience overload.
+            </summary>
+            <seealso cref="M:WatiN.Core.Document.WaitUntilContainsText(System.String)"/>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.EnhancedIE.WaitUntilExcludesText(System.Text.RegularExpressions.Regex,System.Int32)">
+            <summary>
+            Waits until the specified <paramref name="regex"/> does not match the <see cref="P:WatiN.Core.Document.Text"/> inside the HTML Body element.
+            </summary>
+            <param name="regex">The regular expression to match with.</param>
+            <param name="timeOut">The number of seconds to wait.</param>
+            <returns><see name="TimeoutException"/>if the specified text is found during the entire the time out period.</returns>
+            <seealso cref="M:WatiN.Core.Document.WaitUntilContainsText(System.Text.RegularExpressions.Regex,System.Int32)"/>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.EnhancedIE.WaitUntilExcludesText(System.Text.RegularExpressions.Regex)">
+            <summary>
+            Convenience overload.
+            </summary>
+            <seealso cref="M:WatiN.Core.Document.WaitUntilContainsText(System.Text.RegularExpressions.Regex)"/>
+        </member>
+        <member name="P:HP.HPFx.Extensions.Watin.EnhancedIE.EnableWaitForAsynchronousPostBackComplete">
+            <summary>
+            Indicates whether the instance will automatically wait for asynchronous PostBacks to complete when interacting with the client.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Extensions.Watin.EnhancedIE.EnableWaitForAjaxPageRequestManagerInitialization">
+            <summary>
+            Indicates whether the instance will automatically wait for the PageRequestManager client script instance to initialize when interacting with the client.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Extensions.Watin.EnhancedIE.NavigationStatusCode">
+            <summary>
+            Indicates the HTTP Response Status Code of the most recent navigation/GoTo operation performed.
+            </summary>
+            <remarks>
+            May return null in some cases, such as when no previous navigation has occurred 
+            or when accessed while the navigation is still executing (and before the status code is available).
+            </remarks>
+        </member>
+        <member name="P:HP.HPFx.Extensions.Watin.EnhancedIE.FailOnNavigationError">
+            <summary>
+            If <c>true</c>, any navigation that results in a navigation error will cause an assertion failure.
+            </summary>
+            <seealso cref="M:HP.HPFx.Extensions.Watin.EnhancedIE.AssertNavigationSucceeded"/>
+        </member>
+        <member name="P:HP.HPFx.Extensions.Watin.EnhancedIE.FailOnNavigationStatusNotOK">
+            <summary>
+            If <c>true</c>, any navigation that results in any HTTP Status code except 200 (i.e. OK).
+            </summary>
+            <seealso cref="M:HP.HPFx.Extensions.Watin.EnhancedIE.AssertNavigationSucceeded"/>
+        </member>
+        <member name="P:HP.HPFx.Extensions.Watin.EnhancedIE.PreviousNavigationFailed">
+            <summary>
+            Indicates whether the previous "navigation" operation failed (based on the HTTP Status code of the response).
+            </summary>
+            <seealso cref="M:HP.HPFx.Extensions.Watin.EnhancedIE.IsNavigationError(System.Int32)"/>
+            <seealso cref="P:HP.HPFx.Extensions.Watin.EnhancedIE.NavigationStatusCode"/>
+        </member>
+        <member name="P:HP.HPFx.Extensions.Watin.EnhancedIE.PreviousNavigationOK">
+            <summary>
+            Indicates whether the previous "navigation" operation succeeded (based on the HTTP Status code of the response).
+            </summary>
+            <seealso cref="M:HP.HPFx.Extensions.Watin.EnhancedIE.IsNavigationSuccess(System.Int32)"/>
+            <seealso cref="P:HP.HPFx.Extensions.Watin.EnhancedIE.NavigationStatusCode"/>
+        </member>
+        <member name="T:HP.HPFx.Extensions.Watin.Utility.WatinExpressiveness.WatinExpressivenessExtensions">
+            <summary>
+            This class contains extension methods that can be used within WatiN test methods to make the test suite's code more maintainable.
+            </summary>
+            <remarks>
+            The primary purpose of this class is to provide extension and utility methods which can be used to make the application's WatiN test suite more maintainable by:
+            1. making it easier to implement tests using a higher proportion of declarative coding style;
+            2. decreasing the amount of unnecessary code duplication in test code;
+            3. making the test suite's code more readable and understandable;
+            4. enabling a certain degree of simulated polymorphism (by using extension methods instead of inheritance) without the drawbacks of true inheritance.
+            </remarks>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.Utility.WatinExpressiveness.WatinExpressivenessExtensions.ShouldFireKeyPressEvent(System.Char)">
+            <summary>
+            A utility method that attempts to simulate the logic browsers use to determine whether to fire the KeyPress event 
+            based upon the KeyCode of the corresponding KeyDown event.
+            </summary>
+            <remarks>
+            See here: http://www.quirksmode.org/js/keys.html
+            See here for WinForms-specific info: http://msdn.microsoft.com/en-us/library/system.windows.forms.control.keypress.aspx
+            </remarks>
+            <param name="keyCode">The KeyCode of the KeyDown event.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.Utility.WatinExpressiveness.WatinExpressivenessExtensions.TypeKeystroke(WatiN.Core.Element,System.Char,System.Char,System.Boolean,System.Boolean)">
+            <summary>
+            Simulate a regular client-side keyboard key press on a specified <see cref="T:WatiN.Core.TextField"/> by firing the 
+            <see cref="M:WatiN.Core.Element.KeyDown(System.Char)"/>, <see cref="M:WatiN.Core.Element.KeyPress(System.Char)"/> (conditional), and <see cref="M:WatiN.Core.Element.KeyUp(System.Char)"/> events 
+            and (conditionally) appending the value of the key to the <see cref="P:WatiN.Core.TextField.Text"/>.
+            </summary>
+            <param name="element">The <see cref="T:WatiN.Core.Element"/> the key press should be applied to.</param>
+            <param name="keyCode"> A valid KeyCode. Refer to <see cref="T:HP.HPFx.Web.UI.ClientScript.JSKeyCode"/> for information about the valid values.</param>
+            <param name="inputChar">The <see cref="T:System.Char"/> that should be passed to the <see cref="M:WatiN.Core.Element.KeyPress(System.Char)"/> and <see cref="M:WatiN.Core.TextField.AppendText(System.String)"/> methods.</param>
+            <param name="shouldFireKeyPressEvent">If <c>false</c>, the <see cref="M:WatiN.Core.Element.KeyPress(System.Char)"/> method will not be invoked.</param>
+            <param name="shouldAppendInputCharToText">If <c>false</c>, the <see cref="M:WatiN.Core.TextField.AppendText(System.String)"/> method will not be invoked.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.Utility.WatinExpressiveness.WatinExpressivenessExtensions.TypeKeystroke(WatiN.Core.Element,System.Char,System.Boolean,System.Boolean)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.Utility.WatinExpressiveness.WatinExpressivenessExtensions.TypeKeystroke(WatiN.Core.Element,System.Char,System.Boolean)">
+            <summary>
+            Simulate a regular client-side keyboard key press on a specified <see cref="T:WatiN.Core.Element"/> by firing the 
+            <see cref="M:WatiN.Core.Element.KeyDown(System.Char)"/>, <see cref="M:WatiN.Core.Element.KeyPress(System.Char)"/> (conditional), and <see cref="M:WatiN.Core.Element.KeyUp(System.Char)"/> events 
+            and (conditionally) appending the value of the key to the <see cref="P:WatiN.Core.TextField.Text"/>.
+            </summary>
+            <param name="element">The <see cref="T:WatiN.Core.Element"/> the key press should be applied to.</param>
+            <param name="keyCode"> A valid KeyCode. Refer to <see cref="T:HP.HPFx.Web.UI.ClientScript.JSKeyCode"/> for information about the valid values.</param>
+            <param name="shouldFireKeyPressEvent"></param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.Utility.WatinExpressiveness.WatinExpressivenessExtensions.TypeKeystroke(WatiN.Core.Element,System.Char)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.Utility.WatinExpressiveness.WatinExpressivenessExtensions.TypeKeystroke(WatiN.Core.Element,System.Int32)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.Utility.WatinExpressiveness.WatinExpressivenessExtensions.TypeKeystroke(WatiN.Core.Element,HP.HPFx.Web.UI.ClientScript.JSKeyCode)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.Utility.WatinExpressiveness.WatinExpressivenessExtensions.TypeKeystroke(WatiN.Core.Element,System.Int32,System.Boolean)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.Utility.WatinExpressiveness.WatinExpressivenessExtensions.TypeKeystroke(WatiN.Core.Element,HP.HPFx.Web.UI.ClientScript.JSKeyCode,System.Boolean)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.Utility.WatinExpressiveness.WatinExpressivenessExtensions.TypeKeystroke(WatiN.Core.TextField,System.Char,System.Char)">
+            <summary>
+            Simulate a regular client-side keyboard key press on a specified <see cref="T:WatiN.Core.TextField"/> by firing the 
+            <see cref="M:WatiN.Core.Element.KeyDown(System.Char)"/>, <see cref="M:WatiN.Core.Element.KeyPress(System.Char)"/>, and <see cref="M:WatiN.Core.Element.KeyUp(System.Char)"/> events 
+            and appending the value of the key to the <see cref="P:WatiN.Core.TextField.Text"/>.
+            </summary>
+            <param name="element">The <see cref="T:WatiN.Core.Element"/> the key press should be applied to.</param>
+            <param name="keyCode"> A valid KeyCode. Refer to <see cref="T:HP.HPFx.Web.UI.ClientScript.JSKeyCode"/> for information about the valid values.</param>
+            <param name="inputChar">The <see cref="T:System.Char"/> that should be passed to the <see cref="M:WatiN.Core.Element.KeyPress(System.Char)"/> and <see cref="M:WatiN.Core.TextField.AppendText(System.String)"/> methods.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.Utility.WatinExpressiveness.WatinExpressivenessExtensions.TypeKeystroke(WatiN.Core.TextField,System.Int32,System.Char)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.Utility.WatinExpressiveness.WatinExpressivenessExtensions.TypeKeystroke(WatiN.Core.TextField,HP.HPFx.Web.UI.ClientScript.JSKeyCode,System.Char)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.Utility.WatinExpressiveness.WatinExpressivenessExtensions.TypeKeystrokes(WatiN.Core.TextField,System.Collections.Generic.IEnumerable{System.Char})">
+            <summary>
+            Types multiple keystrokes on a specified <see cref="T:WatiN.Core.Element"/>.
+            </summary>
+            <param name="element"></param>
+            <param name="keyCodes"></param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.Utility.WatinExpressiveness.WatinExpressivenessExtensions.TypeKeystrokes(WatiN.Core.TextField,System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.Utility.WatinExpressiveness.WatinExpressivenessExtensions.TypeKeystrokes(WatiN.Core.TextField,System.Collections.Generic.IEnumerable{HP.HPFx.Web.UI.ClientScript.JSKeyCode})">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="T:HP.HPFx.Extensions.Watin.WatinAssert">
+            <summary>
+            WatiN Assertion class.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinAssert.PageBodyTextContains(System.String,WatiN.Core.IE)">
+            <summary>
+            Asserts that the current page of an IE instance contains a specified string.
+            </summary>
+            <param name="substring">The string to match.</param>
+            <param name="ie">The IE instance to examine.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinAssert.PageBodyTextContains(System.Collections.Generic.IEnumerable{System.String},WatiN.Core.IE)">
+            <summary>
+            Asserts that the current page of an IE instance contains each of a set of specified strings.
+            </summary>
+            <param name="substrings">The strings to match.</param>
+            <param name="ie">The IE instance to examine.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinAssert.PageBodyTextExcludes(System.String,WatiN.Core.IE)">
+            <summary>
+            Asserts that the current page of an IE instance does not contain a specified string.
+            </summary>
+            <param name="substring">The string to match.</param>
+            <param name="ie">The IE instance to examine.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinAssert.PageBodyTextExcludes(System.Collections.Generic.IEnumerable{System.String},WatiN.Core.IE)">
+            <summary>
+            Asserts that the current page of an IE instance does not contain any of a set of specified strings.
+            </summary>
+            <param name="substrings">The strings to match.</param>
+            <param name="ie">The IE instance to examine.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinAssert.PageBodyHtmlContains(System.String,WatiN.Core.IE)">
+            <summary>
+            Asserts that the current page of an IE instance contains a specified html fragment.
+            </summary>
+            <param name="substring">The html to match.</param>
+            <param name="ie">The IE instance to examine.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinAssert.PageBodyHtmlContains(System.Collections.Generic.IEnumerable{System.String},WatiN.Core.IE)">
+            <summary>
+            Asserts that the current page of an IE instance contains each of a set of specified strings.
+            </summary>
+            <param name="substrings">The strings to match.</param>
+            <param name="ie">The IE instance to examine.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinAssert.PageBodyHtmlExcludes(System.String,WatiN.Core.IE)">
+            <summary>
+            Asserts that the current page of an IE instance does not contain a specified html fragment.
+            </summary>
+            <param name="substring">The html to match.</param>
+            <param name="ie">The IE instance to examine.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinAssert.PageBodyHtmlExcludes(System.Collections.Generic.IEnumerable{System.String},WatiN.Core.IE)">
+            <summary>
+            Asserts that the current page of an IE instance does not contain any of a set of specified strings.
+            </summary>
+            <param name="substrings">The strings to match.</param>
+            <param name="ie">The IE instance to examine.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinAssert.PageBodyTextContainsSequentially(System.Collections.Generic.IEnumerable{System.String},WatiN.Core.IE)">
+            <summary>
+            Asserts that the current page of an IE instance contains (in the order specified) a specified set of html fragments.
+            </summary>
+            <param name="textFragments">The html strings to match.</param>
+            <param name="ie">The IE instance to examine.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinAssert.PageBodyHtmlContainsSequentially(System.Collections.Generic.IEnumerable{System.String},WatiN.Core.IE)">
+            <summary>
+            Asserts that the current page of an IE instance contains (in the order specified) a specified set of html fragments.
+            </summary>
+            <param name="htmlFragments">The html strings to match.</param>
+            <param name="ie">The IE instance to examine.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinAssert.Exists(WatiN.Core.Element,System.String)">
+            <summary>
+            Asserts that a specified <see cref="T:WatiN.Core.Element"/>'s <see cref="P:WatiN.Core.Element.Enabled"/> property returns a specified value.
+            </summary>
+            <param name="element">The element to examine.</param>
+            <param name="elementFriendlyName">A unique identifier that indicates which element was passed (to a developer).</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinAssert.IsEnabled(System.Boolean,WatiN.Core.Element,System.String)">
+            <summary>
+            Asserts that a specified <see cref="T:WatiN.Core.Element"/>'s <see cref="P:WatiN.Core.Element.Enabled"/> property returns a specified value.
+            </summary>
+            <param name="expectedEnabled">The expected value of the element's Enabled property.</param>
+            <param name="element">The element to examine.</param>
+            <param name="elementFriendlyName">A unique identifier that indicates which element was passed (to a developer).</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinAssert.IsVisible(System.Boolean,WatiN.Core.Element,System.String)">
+            <summary>
+            Asserts that a specified <see cref="T:WatiN.Core.Element"/>'s visibility is as expected.
+            </summary>
+            <param name="expectedVisible"><c>true</c> if <paramref name="element"/> is expected to be visible, else <c>false</c>.</param>
+            <param name="element">The <see cref="T:WatiN.Core.Element"/> to examine.</param>
+            <param name="message">An assertion error message that indicates what value is required or what value is validated</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinAssert.IsVisible(System.Boolean,WatiN.Core.Element)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinAssert.TextEquals(System.String,WatiN.Core.Element)">
+            <summary>
+            Asserts that a specified <see cref="T:WatiN.Core.Element"/>'s <see cref="P:WatiN.Core.Element.Text"/> property returns a specified value.
+            </summary>
+            <param name="expectedText">The expected value of the element's Text property.</param>
+            <param name="element">The element to examine.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinAssert.HttpStatusCodeEquals(System.Int32,WatiN.Core.IE)">
+            <summary>
+            Asserts that the previous HTTP Response of an IE instance returned a specified HTTP Status Code.
+            </summary>
+            <param name="expectedStatusCode">The expected status code.</param>
+            <param name="ie">The IE instance to examine.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinAssert.HttpStatusCodeEquals(System.Decimal,WatiN.Core.IE)">
+            <summary>
+            Asserts that the previous HTTP Response of an IE instance returned a specified HTTP Status Code and SubStatus Code.
+            </summary>
+            <param name="expectedStatusCode">The expected status code.</param>
+            <param name="ie">The IE instance to examine.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinAssert.HttpStatusCodeEquals(System.Net.HttpStatusCode,WatiN.Core.IE)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinAssert.HttpStatusCodeEquals(System.String,WatiN.Core.IE)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinTest.TestPageHttpStatusCode(System.Uri,System.String)">
+            <summary>
+            Convenience overload.
+            </summary>
+            <param name="uri"></param>
+            <param name="expectedStatusCode"></param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinTest.TestPageOpensWithoutServerError(System.Uri)">
+            <summary>
+            Tests that the app's "directly accessible" pages can be accessed without a server error.
+            </summary>
+            <param name="pageUri">The Uri of the page to test.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinTest.TestPageOpensWithoutServerError(System.String)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinTest.TestPageOpensWithoutServerError(System.String,System.Uri)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinTest.TestPageOpensWithoutServerError(System.String,System.String)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinTest.TestPageOpensWithServerError(System.Uri)">
+            <summary>
+            Tests that certain app URLs and/or pages return  a server error when accessed.
+            </summary>
+            <param name="pageUri">The absolute URL of the page to test.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinTest.TestPageOpensWithServerError(System.String)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinTest.TestPageOpensWithServerError(System.String,System.Uri)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinTest.TestPageOpensWithServerError(System.String,System.String)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.ParseHttpStatusCode(System.Decimal,System.Int32@,System.Int32@)">
+            <summary>
+            Convenience overload.
+            </summary>
+            <param name="fullStatusCode">An HTTP Status Code, either with or without the HTTP SubStatus Code expressed as the floating point portion of the value.</param>
+            <param name="statusCode"></param>
+            <param name="subStatusCode"></param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.GetHttpStatusCode(System.Nullable{System.Decimal})">
+            <summary>
+            Returns the HTTP Status Code portion of a full Status Code value.
+            </summary>
+            <param name="fullStatusCode">An HTTP Status Code, either with or without the HTTP SubStatus Code expressed as the floating point portion of the value.</param>
+            <returns>An HTTP Status Code.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.GetHttpSubStatusCode(System.Nullable{System.Decimal})">
+            <summary>
+            Returns the HTTP SubStatus Code portion of a full Status Code value.
+            </summary>
+            <param name="fullStatusCode">An HTTP Status Code, either with or without the HTTP SubStatus Code expressed as the floating point portion of the value.</param>
+            <returns>An HTTP SubStatus Code.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.PageTitleContainsAny(WatiN.Core.IE,System.StringComparison,System.String[])">
+            <summary>
+            Indicates whether the Title of the current page of an IE instance contains any of a set of specified strings.
+            </summary>
+            <param name="ie">The IE instance to examine.</param>
+            <param name="comparisonType">Indicates the type of StringComparison to use.</param>
+            <param name="textValues">The string(s) to look for.</param>
+            <returns><c>true</c> if any of the strings in <paramref name="textValues"/> is found in the Title of <paramref name="ie"/>.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.PageTitleStartsWithAny(WatiN.Core.IE,System.StringComparison,System.String[])">
+            <summary>
+            Indicates whether the Title of the current page of an IE instance starts with any of a set of specified strings.
+            </summary>
+            <param name="ie">The IE instance to examine.</param>
+            <param name="comparisonType">Indicates the type of StringComparison to use.</param>
+            <param name="textValues">The string(s) to look for.</param>
+            <returns><c>true</c> if any of the strings in <paramref name="textValues"/> is found at the start of the Title of <paramref name="ie"/>.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.PageTitleEqualsAny(WatiN.Core.IE,System.StringComparison,System.String[])">
+            <summary>
+            Indicates whether the Title of the current page of an IE instance matches any of a set of specified strings.
+            </summary>
+            <param name="ie">The IE instance to examine.</param>
+            <param name="comparisonType">Indicates the type of StringComparison to use.</param>
+            <param name="textValues">The string(s) to look for.</param>
+            <returns><c>true</c> if any of the strings in <paramref name="textValues"/> matches the Title of <paramref name="ie"/>.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.PageTextContainsAny(WatiN.Core.IE,System.String[])">
+            <summary>
+            Indicates whether the text of the current page of an IE instance contains any of a set of specified strings.
+            </summary>
+            <param name="ie">The IE instance to examine.</param>
+            <param name="textValues">The string(s) to look for.</param>
+            <returns><c>true</c> if any of the strings in <paramref name="textValues"/> is found in the content of <paramref name="ie"/>.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.PageTextContainsAll(WatiN.Core.IE,System.String[])">
+            <summary>
+            Indicates whether the text of the current page of an IE instance contains all of a set of specified strings.
+            </summary>
+            <param name="ie">The IE instance to examine.</param>
+            <param name="textValues">The string(s) to look for.</param>
+            <returns><c>true</c> if all of the strings in <paramref name="textValues"/> is found in the content of <paramref name="ie"/>.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.PageBodyHtmlContainsAny(WatiN.Core.IE,System.String[])">
+            <summary>
+            Indicates whether the Body HTML of the current page of an IE instance contains any of a set of specified strings.
+            </summary>
+            <param name="ie">The IE instance to examine.</param>
+            <param name="htmlFragments">The string(s) to look for.</param>
+            <returns><c>true</c> if any of the strings in <paramref name="htmlFragments"/> is found in the content of <paramref name="ie"/>.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.PageBodyHtmlContainsAll(WatiN.Core.IE,System.String[])">
+            <summary>
+            Indicates whether the Body HTML of the current page of an IE instance contains all of a set of specified strings.
+            </summary>
+            <param name="ie">The IE instance to examine.</param>
+            <param name="htmlFragments">The string(s) to look for.</param>
+            <returns><c>true</c> if any of the strings in <paramref name="htmlFragments"/> is found in the content of <paramref name="ie"/>.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.FirstPageList(System.String[],System.Int32)">
+            <summary>
+            Utility method that returns the first set of page items for sort test
+            </summary>
+            <param name="searchOrder"></param>
+            <param name="itemsPerPage"></param>
+            <returns>Returns truncated list (i.e. itemsPerPage) of list items.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.IsResponseType_ErrorPage(WatiN.Core.IE)">
+            <summary>
+            Indicates whether the current page of an IE instance is an "error" page.
+            </summary>
+            <param name="ie">The IE instance to examine.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.IsResponseType_ForbiddenFileExtension(WatiN.Core.IE)">
+            <summary>
+            Indicates whether the current page of an IE instance is an "error page" of the type "This type of page is not served".
+            </summary>
+            <param name="ie">The IE instance to examine.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.IsResponseType_DirectoryListingDenied(WatiN.Core.IE)">
+            <summary>
+            Indicates whether the current page of an IE instance is an "error page" of the type "Directory Listing Denied".
+            </summary>
+            <param name="ie">The IE instance to examine.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.IsResponseType_ReadAccessForbidden(WatiN.Core.IE)">
+            <summary>
+            Indicates whether the current page of an IE instance is an "error page" of the type "Read Access Forbidden".
+            </summary>
+            <param name="ie">The IE instance to examine.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.IsResponseType_ExecuteAccessForbidden(WatiN.Core.IE)">
+            <summary>
+            Indicates whether the current page of an IE instance is an "error page" of the type "Execute Access Forbidden".
+            </summary>
+            <param name="ie">The IE instance to examine.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.IsResponseType_AccessDenied(WatiN.Core.IE)">
+            <summary>
+            Indicates whether the current page of an IE instance is an "error page" of the type "Access Denied".
+            </summary>
+            <param name="ie">The IE instance to examine.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.IsResponseType_AccessForbidden_403_2(WatiN.Core.IE)">
+            <summary>
+            Indicates whether the current page of an IE instance is an "error page" of the type "404 Page Not Found".
+            </summary>
+            <remarks>
+            This type of error is different than the "Page Not Found" error response. 
+            I think the reason is that ResourceNotFound is a result of a 404 Response from the ASP.NET Handler (e.g. for ASPX and ASMX requests),
+            while the PageNotFound is a result of a 404 Response from some other request handler (e.g. for CS, ASAX, ASCX, etc. requests).
+            </remarks>
+            <param name="ie">The IE instance to examine.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.IsResponseType_PageNotFound(WatiN.Core.IE)">
+            <summary>
+            Indicates whether the current page of an IE instance is an "error page" of the type "404 Page Not Found".
+            </summary>
+            <remarks>
+            This type of error is different than the "Page Not Found" error response. 
+            I think the reason is that ResourceNotFound is a result of a 404 Response from the ASP.NET Handler (e.g. for ASPX and ASMX requests),
+            while the PageNotFound is a result of a 404 Response from some other request handler (e.g. for CS, ASAX, ASCX, etc. requests).
+            </remarks>
+            <param name="ie">The IE instance to examine.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.IsResponseType_ResourceNotFound(WatiN.Core.IE)">
+            <summary>
+            Indicates whether the current page of an IE instance is an "error page" of the type "404 Resource Not Found".
+            </summary>
+            <remarks>
+            This type of error is different than the "Page Not Found" error response. 
+            I think the reason is that ResourceNotFound is a result of a 404 Response from the ASP.NET Handler (e.g. for ASPX and ASMX requests),
+            while the PageNotFound is a result of a 404 Response from some other request handler (e.g. for CS, ASAX, ASCX, etc. requests).
+            </remarks>
+            <param name="ie">The IE instance to examine.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.IsResponseType_ApplicationRuntimeError(WatiN.Core.IE)">
+            <summary>
+            Indicates whether the current page of an IE instance is an "error page" of the "Yellow Screen" type caused by unhandled application runtime exceptions.
+            </summary>
+            <param name="ie">The IE instance to examine.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.IsVisible(WatiN.Core.Element)">
+            <summary>
+            Indicates whether a specified <see cref="T:WatiN.Core.Element"/> is visible.
+            </summary>
+            <param name="element">The <see cref="T:WatiN.Core.Element"/> to examine.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.IsEnabled(WatiN.Core.Element)">
+            <summary>
+            Indicates whether a specified <see cref="T:WatiN.Core.Element"/> is both visible and enabled.
+            </summary>
+            <param name="element">The <see cref="T:WatiN.Core.Element"/> to examine.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.IsAsynchronousPostBackInProgress(WatiN.Core.IE)">
+            <summary>
+            Indicates whether the page is currently performing an asynchronous PostBack (or waiting for one to finish).
+            </summary>
+            <param name="ie">The <see cref="T:WatiN.Core.IE"/> instance to examine.</param>
+            <returns><c>true</c> if an unfinished asynchronous PostBack is occurring; else <c>false</c>.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.IsAjaxPageRequestManagerInitialized(WatiN.Core.IE)">
+            <summary>
+            Indicates whether a non-<c>null</c> object can be obtained using the client script expression 
+            <c>Sys.WebForms.PageRequestManager.getInstance()</c>.
+            </summary>
+            <param name="ie">The <see cref="T:WatiN.Core.IE"/> instance to examine.</param>
+            <returns><c>true</c> if a PageRequestManager instance is obtainable; else <c>false</c>.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.WaitUntilAsynchronousPostBackComplete(WatiN.Core.IE,System.TimeSpan,System.Nullable{System.Int32})">
+            <summary>
+            Waits for a specified <see cref="T:WatiN.Core.IE"/> instance to complete any asynchronous PostBacks that are in progress.
+            </summary>
+            <param name="ie">The <see cref="T:WatiN.Core.IE"/> instance to wait for.</param>
+            <param name="waitInterval">The interval to wait between each poll of the <paramref name="ie"/> instance's status.</param>
+            <param name="maxWaitCount">The maximum number of times the <paramref name="ie"/> instance's status will be polled.</param>
+            <returns><c>true</c> if the last poll indicated no asynchronous PostBacks were in progress; else <c>false</c>.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.WaitUntilAsynchronousPostBackComplete(WatiN.Core.IE)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.WaitUntilAjaxPageRequestManagerInitialized(WatiN.Core.IE,System.TimeSpan,System.Nullable{System.Int32})">
+            <summary>
+            Waits for a specified <see cref="T:WatiN.Core.IE"/> instance's PageRequestManager client script instance to initialize.
+            </summary>
+            <param name="ie">The <see cref="T:WatiN.Core.IE"/> instance to wait for.</param>
+            <param name="waitInterval">The interval to wait between each poll of the <paramref name="ie"/> instance's status.</param>
+            <param name="maxWaitCount">The maximum number of times the <paramref name="ie"/> instance's status will be polled.</param>
+            <returns><c>true</c> if the last poll indicated no asynchronous PostBacks were in progress; else <c>false</c>.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.WaitUntilAjaxPageRequestManagerInitialized(WatiN.Core.IE)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.EvaluateClientScript(WatiN.Core.IE,System.String)">
+            <summary>
+            Executes/evaluates a specified client-side script, and returns the value of the last expression.
+            </summary>
+            <param name="ie">The <see cref="T:WatiN.Core.IE"/> instance to evaluate the script with.</param>
+            <param name="clientScript">The client-side script to execute/evaluate.</param>
+            <returns>null, or the string value of the last expression executed.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.EvaluateClientScriptAsBoolean(WatiN.Core.IE,System.String)">
+            <summary>
+            Executes/evaluates a specified client-side script, and returns the value of the last expression.
+            </summary>
+            <param name="ie">The <see cref="T:WatiN.Core.IE"/> instance to evaluate the script with.</param>
+            <param name="clientScript">The client-side script to execute/evaluate.</param>
+            <returns>null, or the boolean value of the last expression executed.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.CloseAllExistingBrowserInstances">
+            <summary>
+            Closes any and all existing browser instances.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.CloseAllExistingBrowserInstances(System.Boolean)">
+            <summary>
+            Closes any and all existing browser instances.
+            </summary>
+            <param name="ignoreExceptions">If <c>true</c>, any <see cref="T:System.Exception"/>s thrown within this method will be caught and ignored.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.OpenWebPageToInitializeWebApplication(System.Uri)">
+            <summary>
+            Opens a web page of a web application in order to ensure that the web app is running (and to force any necessary IIS or app initialization to occur).
+            </summary>
+            <param name="pageUri">The page in the application that should be loaded to start the app.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.OpenWebPageToInitializeWebApplication(System.Uri,System.Boolean)">
+            <summary>
+            Opens a web page of a web application in order to ensure that the web app is running (and to force any necessary IIS or app initialization to occur).
+            </summary>
+            <param name="pageUri">The page in the application that should be loaded to start the app.</param>
+            <param name="ignoreTimeoutExceptions">If <c>true</c>, any <see cref="T:WatiN.Core.Exceptions.TimeoutException"/>s thrown within this method will be caught and ignored.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.GetIEVersionFromRegistry">
+            <summary>
+            Returns the version of IE currently installed on the local machine, based on the value in the Windows Registry.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.NewIE(System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Factory method for creating new <see cref="T:WatiN.Core.IE"/> instances.
+            </summary>
+            <param name="failOnNavigationErrors"></param>
+            <param name="enableWaitForAjaxPageRequestManagerInitialization"></param>
+            <param name="enableWaitForAsynchronousPostBackComplete"></param>
+            <returns>A new <see cref="T:HP.HPFx.Extensions.Watin.EnhancedIE"/> instance.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.NewIE(System.Boolean,System.Boolean)">
+            <summary>
+            Convenience overload.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.NewIE(System.Boolean)">
+            <summary>
+            Convenience overload.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.NewIE">
+            <summary>
+            Convenience overload.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Watin.WatinUtility.InitializeWatinSettings">
+            <summary>
+            Initializes global/shared WatiN settings (e.g. the IE.Settings.WaitForCompleteTimeOut setting).
+            </summary>
+        </member>
+    </members>
+</doc>

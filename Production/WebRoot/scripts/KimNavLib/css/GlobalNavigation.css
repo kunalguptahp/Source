@@ -1,0 +1,236 @@
+/*Global Navigation Style Sheet*/
+
+/*Features for the outer table - Header Table*/
+table.TopTableProps
+{
+	width:99%;
+	background-color:#003366;
+	margin-left:5px;
+}
+
+/* Features for the first row of the Header Table - Black*/
+tr.FirstRowColor 
+{
+	background-color:#333333;
+}
+
+/* Features for the table in the first row of the Header Table */
+table.Row1TableProps
+{
+	width:100%;
+	padding-top:0;
+	padding-bottom:0px;
+}
+
+/*Features for the texts -  "PeopleFinder", "Search" */
+.LinkWhite 
+{
+	color:#FFFFFF;
+	font-family:Arial, Verdana, Helvetica;
+	text-decoration:none;
+}
+
+/*Features for the texts after the links are visited-  "PeopleFinder", "Search" */
+.LinkWhite:visited
+{
+	color:#FFFFFF;
+	font-family:Arial, Verdana, Helvetica;
+	text-decoration:none;
+}
+
+.LinkWhite:hover
+{
+	color:#FFFFFF;
+	font-family:Arial, Verdana, Helvetica;
+	text-decoration:underline;
+}
+
+/*Features for the @hp symbol */
+.WhiteHeaderMediumGN 
+{
+	font-family: Arial, Verdana, Helvetica;
+	font-size: .75em;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+.WhiteHeaderMediumGN:visited
+{
+	font-family: Arial, Verdana, Helvetica;
+	font-size: .75em;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.WhiteHeaderMediumGN:hover
+{
+	font-family: Arial, Verdana, Helvetica;
+	font-size: .75em;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+/*Features for the texts - "This Site", "Intranet"*/
+.WhiteTextSmall 
+{
+	font-family:Arial, Verdana, Helvetica;
+	font-size:xx-small;
+	font-weight:normal;
+	color:#FFFFFF;
+	text-decoration:none;
+}
+
+/*Features for the texts - "This Site", "Intranet" - Visited*/
+.WhiteTextSmall:visited 
+{
+	font-family:Arial, Verdana, Helvetica;
+	font-size:xx-small;
+	font-weight:normal;
+	color:#FFFFFF;
+	text-decoration:none;
+}
+
+/*Features for the texts - "This Site", "Intranet" - Hover*/
+.WhiteTextSmall:hover
+{
+	font-family:Arial, Verdana, Helvetica;
+	font-size:xx-small;
+	font-weight:normal;
+	color:#FFFFFF;
+	text-decoration:underline;
+}
+
+/*Features for the texts - "This Site", "Intranet" - Mozilla*/
+html>body .WhiteTextSmall 
+{
+	font-family:Arial, Verdana, Helvetica;
+	font-size:x-small;
+	font-weight:normal;
+	color:#FFFFFF;
+	text-decoration:none;
+}
+
+/*Features for the texts - "This Site", "Intranet" - Visited - Mozilla**/
+html>body .WhiteTextSmall:visited 
+{
+	font-family:Arial, Verdana, Helvetica;
+	font-size:x-small;
+	font-weight:normal;
+	color:#FFFFFF;
+	text-decoration:none;
+}
+
+/*Features for the texts - "This Site", "Intranet" - Hover - Mozilla**/
+html>body .WhiteTextSmall:hover
+{
+	font-family:Arial, Verdana, Helvetica;
+	font-size:x-small;
+	font-weight:normal;
+	color:#FFFFFF;
+	text-decoration:underline;
+}
+
+/*Features for the White Line to draw margins*/
+.BG_White_FF 
+{
+
+	background-color:#FFFFFF;
+}
+
+.BG_Banner_Line 
+{
+
+	background-color:#003366;
+}
+
+/*Features for the Textfields of PeopleFinder and Search*/
+.TextFields 
+{
+	height:18px;
+	border-top-color:#666666;
+	border-right-color:#CCCCCC;
+	border-bottom-color:#CCCCCC;
+	border-left-color:#666666;
+	border-top-width:1px;
+	border-right-width:1px;
+	border-bottom-width:1px;
+	border-left-width:1px;
+	width:120px;
+}
+
+/*Features for the Navigation Buttons*/
+.NavigationButtons
+{
+	border-top-width:1px;
+	border-right-width:1px;
+	border-bottom-width:1px;
+	border-left-width:1px;
+	border-top-color:#CCCCCC;
+	border-right-color:#000000;
+	border-bottom-color:#000000;
+	border-left-color:#CCCCCC;
+	border-top-style:solid;
+	border-right-style:solid;
+	border-bottom-style:solid;
+	border-left-style:solid;
+	font-family:Arial, Verdana, Helvetica;
+	font-weight:normal;
+	background-position:center;
+	margin-right:-6px;
+	color:#FFFFFF;
+	background-color:transparent;
+}
+
+html>body .NavigationButtons
+{
+	border-top-width:1px;
+	border-right-width:1px;
+	border-bottom-width:1px;
+	border-left-width:1px;
+	border-top-color:#CCCCCC;
+	border-right-color:#000000;
+	border-bottom-color:#000000;
+	border-left-color:#CCCCCC;
+	border-top-style:solid;
+	border-right-style:solid;
+	border-bottom-style:solid;
+	border-left-style:solid;
+	font-family:Arial, Verdana, Helvetica;
+	font-weight:normal;
+	background-position:center;
+	margin-right:-4px;
+	color:#FFFFFF;
+	background-color:transparent;
+}
+
+/*Features for the Quick Links drop down*/
+.QuickLinks 
+{
+	font-family:Arial, Verdana, Helvetica;
+	margin:0px;
+	padding:0px;
+	background-color: #E6E6E6;
+	font-weight:bold;
+}
+/*Features for the Radio Buttons*/
+.RadioButton 
+{
+	width:13px;
+	height:14px;
+}
+
+/*Features for the Radio Buttons - Mozilla*/
+html>body .RadioButton 
+{
+	height:0.8em;
+	width:1.0em;
+}
+
+/*Margin for Global Navigation Menu*/
+.GlobalNavButtonMargin
+{
+	padding-left:10px;
+	padding-top:6px;
+	height:18px;
+}

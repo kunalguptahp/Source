@@ -1,0 +1,36 @@
+.bannerSkin {
+    BACKGROUND: green;
+}
+
+.EmailPasswordSkin
+{
+	color:#003366;  
+	padding:5px;
+	font-size:12px;
+	font-weight:bold;
+}
+
+.ColorModuleHeader {
+	background: #003366;
+	color: #ffffff;
+	font-size: x-small;
+	font-family: Arial, Verdana, Helvetica;
+	font-weight:bold;
+	padding-left: 10px;
+	padding-right: 10px;
+	height: 20px;
+	vertical-align:middle;
+}
+
+.ColorModuleHeaderArrow {
+	background: #003366;
+	color: #ffffff;
+	font-size: x-small;
+	font-family: Arial, Verdana, Helvetica;
+	font-weight:bold;
+	padding-left: 10px;
+	padding-right: 10px;
+	height: 20px;
+	vertical-align:middle;
+	list-style-image : url(http://portal.hp.com/lib/navigation/images/header_arrow.gif);
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://erroj2.americas.hpqcorp.net:50038/dps/ElementsDataPublishingService?xsd=1" filename="ElementsDataPublishingService.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://erroj2.americas.hpqcorp.net:50038/dps/ElementsDataPublishingService?xsd=5" filename="ElementsDataPublishingService0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://erroj2.americas.hpqcorp.net:50038/dps/ElementsDataPublishingService?WSDL" filename="ElementsDataPublishingService.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://erroj2.americas.hpqcorp.net:50038/dps/ElementsDataPublishingService?xsd=2" filename="ElementsDataPublishingService1.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://erroj2.americas.hpqcorp.net:50038/dps/ElementsDataPublishingService?xsd=4" filename="ElementsDataPublishingService2.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://erroj2.americas.hpqcorp.net:50038/dps/ElementsDataPublishingService?xsd=3" filename="ElementsDataPublishingService3.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

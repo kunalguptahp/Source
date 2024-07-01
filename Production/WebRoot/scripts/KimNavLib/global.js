@@ -1,0 +1,40 @@
+questFieldConfig.connectString="http://localhost/questobjects/server"; //"http://pfa.portal.hp.com/questobjects/server";
+questFieldConfig.questletVersion=102;
+questFieldConfig.qoPath=goHPEP.libPath+"qo/";
+questFieldConfig.contentChannel="hp-name";
+questFieldConfig.useStyles=true;
+questFieldConfig.skinName="qo-hpr";
+if ( ( isHeader !=null) && ( isHeader==true ) )
+{
+    globalNavItemsFlag=true;
+    quickLinksFlag=true;
+    goHPSearchMenu.searchPeopleFinderPage="http://peoplefinder.portal.hp.com/peoplefinder";
+    goHPSearchMenu.searchHPPage="http://search.portal.hp.com/search/simple.asp";
+    goHPSearchMenu.siteSearchPage="http://search.portal.hp.com/search/simple.asp";
+    goHPEP.homePage="http://athp.hp.com/portal/index.jsp?epi_menuItemID=64fd85631df307d4461f32b5548b81f0&epi_menuID=a6ddab8675245252461f32b5548b81f0&epi_baseMenuID=a6ddab8675245252461f32b5548b81f0";
+    goHPEP.hpComPage="http://www.hp.com";
+    goHPEP.privacyPage="http://hrcms01.atl.hp.com:6017/public/pages/Data_Privacy/en_US/hr_policy_page_20011.htm";
+    goHPEP.feedbackPage="http://athp.hp.com/portal/athp_help/feedback/suggestion.htm";
+    goHPEP.termsOfUsagePage="http://welcome.hp.com/country/us/en/termsofuse.html";
+    goHPEP.supportPage="http://itsupport.hp.com/itsupport/";
+    g_MyLinks="http://athp.hp.com/portal/beans/custom_bookmark/jsp/confirmMyLinks.jsp";
+    g_DevFeedBack="http://sdswebapp1.sdd.hp.com/universalfeedback/default.asp?appname=athp_headerjs";
+    _HPEPAddGlobalNavMenuItem("g1","Job Tools &amp; Services" ,"10.1", "http://athp.hp.com/portal/site/athp/menuitem.0dfd84041fd0540a0da96c32238f82f0/");
+    _HPEPAddGlobalNavMenuItem("g2","Benefits, Careers &amp; Policies" ,"13.3", "http://athp.hp.com/portal/site/athp/menuitem.8db226267ca6ee9a0da96c32238f82f0/");
+    _HPEPAddGlobalNavMenuItem("g3","Organizations &amp; Locations" ,"12.5", "http://athp.hp.com/portal/site/athp/menuitem.0f61045382dc0d55461f32b5548b81f0/");
+    _HPEPAddQuickLinksMenuItem('1', 'Approval Central', 'http://athp.hp.com/portal/site/appcen/');
+    _HPEPAddQuickLinksMenuItem('2', 'Conference Room Reservations', 'http://wps.corp.hp.com/onboard/');
+    _HPEPAddQuickLinksMenuItem('3', 'Contact HR' , 'http://contact.hr.hp.com/Contact-HR.htm');
+    _HPEPAddQuickLinksMenuItem('4', 'Collaboration Central' , 'http://collabcentral.hp.com/');
+    _HPEPAddQuickLinksMenuItem('5', 'Ethics at HP' , 'http://ca.corp.hp.com/ethics/');
+    _HPEPAddQuickLinksMenuItem('6', 'E-Victor', 'http://evictor.hp.com/');
+    _HPEPAddQuickLinksMenuItem('7', 'Get IT @hp', 'http://getit.hp.com/');
+    _HPEPAddQuickLinksMenuItem('8', 'IT Security', 'http://itsecurity.hp.com/');
+    _HPEPAddQuickLinksMenuItem('9', 'Job Searcher', 'http://staffing.corp.hp.com/recruitsoft/js_main_panel.asp');
+    _HPEPAddQuickLinksMenuItem('10', 'Learn@hp', 'http://learn.hp.com');
+    _HPEPAddQuickLinksMenuItem('11', 'Market Vision', 'http://marketintelligence.corp.hp.com/');
+    _HPEPAddQuickLinksMenuItem('12', 'Procurement Central', 'http://procurementcentral.corp.hp.com/');
+    _HPEPAddQuickLinksMenuItem('13', 'Rewarding an Employee (eAwards)', 'http://eawards.hp.com/');
+    _HPEPAddQuickLinksMenuItem('14', 'Solution Source', 'http://solutionsource.corp.hp.com/default.htm');
+    _HPEPAddQuickLinksMenuItem('15', 'Travel', 'http://travel.hp.com/');
+}

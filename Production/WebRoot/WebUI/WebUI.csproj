@@ -1,0 +1,2734 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{090D2102-12A7-41DE-9C95-BEF9558A2C49}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HP.ElementsCPS.Apps.WebUI</RootNamespace>
+    <AssemblyName>HP.ElementsCPS.Apps.WebUI</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>true</IISExpressUseClassicPipelineMode>
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;LOG TEST</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;LOG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\HP.ElementsCPS.Apps.WebUI.xml</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'CIDebug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;LOG TEST</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'CIRelease|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;LOG</DefineConstants>
+    <DocumentationFile>bin\HP.ElementsCPS.WebUI.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Offline|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;LOG TEST OFFLINE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.0.20820.16598, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Dependencies\AjaxControlToolkit\Bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="AntiXSSLibrary, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d127efab8a9c114f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Dependencies\AntiXSSLibrary\NET20\AntiXSSLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Calendar, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Dependencies\Calendar\Calendar.dll</HintPath>
+    </Reference>
+    <Reference Include="HP.HPFx.Core, Version=1.0.0.182, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Dependencies\HPFx\HP.HPFx.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="HP.HPFx.Extensions.Log4net, Version=1.0.0.14, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Dependencies\HPFx\HP.HPFx.Extensions.Log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="HP.HPFx.Extensions.SubSonic, Version=1.0.0.34, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Dependencies\HPFx\HP.HPFx.Extensions.SubSonic.dll</HintPath>
+    </Reference>
+    <Reference Include="HP.HPFx.Web, Version=1.0.0.37, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Dependencies\HPFx\HP.HPFx.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="HP.HPFx.Web.Portal, Version=1.0.0.16, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Dependencies\HPFx\HP.HPFx.Web.Portal.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Dependencies\log4net\bin\net\2.0\release\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="NPOI, Version=1.2.4.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL" />
+    <Reference Include="PostBackRitalin, Version=0.10.3103.40880, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Dependencies\PostBackRitalin\bin\PostBackRitalin.dll</HintPath>
+    </Reference>
+    <Reference Include="ScriptReferenceProfiler, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Dependencies\ScriptReferenceProfiler\bin\ScriptReferenceProfiler.dll</HintPath>
+    </Reference>
+    <Reference Include="SubSonic, Version=2.1.0.0, Culture=neutral, PublicKeyToken=eadb47849839a332, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Dependencies\SubSonic\SubSonic\SubSonic.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.SQLite, Version=1.0.118.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\lib\net20\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.118.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Data.SQLite.Linq.1.0.118.0\lib\net20\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\App_Configs\app_offline.DEV.htm" />
+    <Content Include="App_Data\App_Configs\app_offline.ITG.htm" />
+    <Content Include="App_Data\App_Configs\app_offline.NONE.htm" />
+    <Content Include="App_Data\App_Configs\app_offline.PROD.htm" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationError.aspx.cs">
+      <DependentUpon>ApplicationError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApplicationError.aspx.designer.cs">
+      <DependentUpon>ApplicationError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\Code\WebControls\BaseEditDataUserControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Data\Code\WebControls\BaseListPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Data\Code\WebControls\BaseListViewUserControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Data\Code\WebControls\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Data\Code\WebControls\BaseRecordDetailPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Data\Code\WebControls\BaseRecordSummaryDetailPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Data\Code\WebControls\BaseRecordSummaryDetailUserControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Data\Code\WebControls\BaseSummariesListUserControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Data\Code\WebControls\BaseUpdatePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Data\Code\WebControls\BaseQuerySpecificationPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Data\Code\WebControls\CascadingDropDownList.cs" />
+    <Compile Include="App_Data\Code\WebControls\DataPagerPageStatisticsTemplate.cs" />
+    <Compile Include="App_Data\Code\WebControls\NPOIHelper.cs" />
+    <Compile Include="App_Data\Code\WebControls\RecordDetailUserControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Data\Code\WebControls\BaseQuerySpecificationEditDataUserControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_MasterPages\ConfigurationServiceMaster.master.cs">
+      <DependentUpon>ConfigurationServiceMaster.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_MasterPages\ConfigurationServiceMaster.master.designer.cs">
+      <DependentUpon>ConfigurationServiceMaster.master</DependentUpon>
+    </Compile>
+    <Compile Include="App_MasterPages\DefaultOverlayMaster.master.cs">
+      <DependentUpon>DefaultOverlayMaster.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_MasterPages\DefaultOverlayMaster.master.designer.cs">
+      <DependentUpon>DefaultOverlayMaster.master</DependentUpon>
+    </Compile>
+    <Compile Include="App_MasterPages\JumpstationMaster.master.cs">
+      <DependentUpon>JumpstationMaster.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_MasterPages\JumpstationMaster.master.designer.cs">
+      <DependentUpon>JumpstationMaster.master</DependentUpon>
+    </Compile>
+    <Compile Include="App_MasterPages\MyInfoMaster.Master.cs">
+      <DependentUpon>MyInfoMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_MasterPages\MyInfoMaster.Master.designer.cs">
+      <DependentUpon>MyInfoMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="App_MasterPages\RedirectMaster.master.cs">
+      <DependentUpon>RedirectMaster.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_MasterPages\RedirectMaster.master.designer.cs">
+      <DependentUpon>RedirectMaster.master</DependentUpon>
+    </Compile>
+    <Compile Include="App_MasterPages\DataAdminMaster.Master.cs">
+      <DependentUpon>DataAdminMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_MasterPages\DataAdminMaster.Master.designer.cs">
+      <DependentUpon>DataAdminMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="App_MasterPages\DefaultMaster.master.cs">
+      <DependentUpon>DefaultMaster.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_MasterPages\DefaultMaster.master.designer.cs">
+      <DependentUpon>DefaultMaster.master</DependentUpon>
+    </Compile>
+    <Compile Include="App_MasterPages\DefaultPortalMaster.master.cs">
+      <DependentUpon>DefaultPortalMaster.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_MasterPages\DefaultPortalMaster.master.designer.cs">
+      <DependentUpon>DefaultPortalMaster.master</DependentUpon>
+    </Compile>
+    <Compile Include="App_MasterPages\SiteMaster.Master.cs">
+      <DependentUpon>SiteMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_MasterPages\SiteMaster.Master.designer.cs">
+      <DependentUpon>SiteMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="App_MasterPages\SystemAdminMaster.master.cs">
+      <DependentUpon>SystemAdminMaster.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_MasterPages\SystemAdminMaster.master.designer.cs">
+      <DependentUpon>SystemAdminMaster.master</DependentUpon>
+    </Compile>
+    <Compile Include="App_MasterPages\UserAdminMaster.master.cs">
+      <DependentUpon>UserAdminMaster.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_MasterPages\UserAdminMaster.master.designer.cs">
+      <DependentUpon>UserAdminMaster.master</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigurationService\ConfigurationServiceDefault.aspx.cs">
+      <DependentUpon>ConfigurationServiceDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigurationService\ConfigurationServiceDefault.aspx.designer.cs">
+      <DependentUpon>ConfigurationServiceDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigurationService\ConfigurationServiceGroupImportList.aspx.cs">
+      <DependentUpon>ConfigurationServiceGroupImportList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigurationService\ConfigurationServiceGroupImportList.aspx.designer.cs">
+      <DependentUpon>ConfigurationServiceGroupImportList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigurationService\ConfigurationServiceGroupImportUpdate.aspx.cs">
+      <DependentUpon>ConfigurationServiceGroupImportUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigurationService\ConfigurationServiceGroupImportUpdate.aspx.designer.cs">
+      <DependentUpon>ConfigurationServiceGroupImportUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigurationService\ConfigurationServiceGroupList.aspx.cs">
+      <DependentUpon>ConfigurationServiceGroupList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigurationService\ConfigurationServiceGroupList.aspx.designer.cs">
+      <DependentUpon>ConfigurationServiceGroupList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigurationService\ConfigurationServiceGroupUpdate.aspx.cs">
+      <DependentUpon>ConfigurationServiceGroupUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigurationService\ConfigurationServiceGroupUpdate.aspx.designer.cs">
+      <DependentUpon>ConfigurationServiceGroupUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigurationService\ConfigurationServiceGroupSelectorUpdate.aspx.cs">
+      <DependentUpon>ConfigurationServiceGroupSelectorUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigurationService\ConfigurationServiceGroupSelectorUpdate.aspx.designer.cs">
+      <DependentUpon>ConfigurationServiceGroupSelectorUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigurationService\ConfigurationServiceGroupCopy.aspx.cs">
+      <DependentUpon>ConfigurationServiceGroupCopy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigurationService\ConfigurationServiceGroupCopy.aspx.designer.cs">
+      <DependentUpon>ConfigurationServiceGroupCopy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigurationService\ConfigurationServiceGroupSelectorCopy.aspx.cs">
+      <DependentUpon>ConfigurationServiceGroupSelectorCopy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigurationService\ConfigurationServiceGroupSelectorCopy.aspx.designer.cs">
+      <DependentUpon>ConfigurationServiceGroupSelectorCopy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigurationService\ConfigurationServiceGroupEditUpdate.aspx.cs">
+      <DependentUpon>ConfigurationServiceGroupEditUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigurationService\ConfigurationServiceGroupEditUpdate.aspx.designer.cs">
+      <DependentUpon>ConfigurationServiceGroupEditUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigurationService\ConfigurationServiceGroupMultiReplaceUpdate.aspx.cs">
+      <DependentUpon>ConfigurationServiceGroupMultiReplaceUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigurationService\ConfigurationServiceGroupMultiReplaceUpdate.aspx.designer.cs">
+      <DependentUpon>ConfigurationServiceGroupMultiReplaceUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigurationService\ConfigurationServiceGroupReport.aspx.cs">
+      <DependentUpon>ConfigurationServiceGroupReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigurationService\ConfigurationServiceGroupReport.aspx.designer.cs">
+      <DependentUpon>ConfigurationServiceGroupReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigurationService\ConfigurationServiceLabelValueImportUpdate.aspx.cs">
+      <DependentUpon>ConfigurationServiceLabelValueImportUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigurationService\ConfigurationServiceLabelValueImportUpdate.aspx.designer.cs">
+      <DependentUpon>ConfigurationServiceLabelValueImportUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigurationService\ConfigurationServiceGroupImportEditUpdate.aspx.cs">
+      <DependentUpon>ConfigurationServiceGroupImportEditUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigurationService\ConfigurationServiceGroupImportEditUpdate.aspx.designer.cs">
+      <DependentUpon>ConfigurationServiceGroupImportEditUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigurationService\ConfigurationServiceQueryParameterValueImportUpdate.aspx.cs">
+      <DependentUpon>ConfigurationServiceQueryParameterValueImportUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigurationService\ConfigurationServiceQueryParameterValueImportUpdate.aspx.designer.cs">
+      <DependentUpon>ConfigurationServiceQueryParameterValueImportUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\ApplicationList.aspx.cs">
+      <DependentUpon>ApplicationList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\ApplicationList.aspx.designer.cs">
+      <DependentUpon>ApplicationList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\ApplicationUpdate.aspx.cs">
+      <DependentUpon>ApplicationUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\ApplicationUpdate.aspx.designer.cs">
+      <DependentUpon>ApplicationUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\JumpstationDomainList.aspx.cs">
+      <DependentUpon>JumpstationDomainList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\JumpstationDomainList.aspx.designer.cs">
+      <DependentUpon>JumpstationDomainList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\JumpstationDomainUpdate.aspx.cs">
+      <DependentUpon>JumpstationDomainUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\JumpstationDomainUpdate.aspx.designer.cs">
+      <DependentUpon>JumpstationDomainUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\JumpstationMacroReport.aspx.cs">
+      <DependentUpon>JumpstationMacroReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\JumpstationMacroReport.aspx.designer.cs">
+      <DependentUpon>JumpstationMacroReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\JumpstationMacroMultiReplaceUpdate.aspx.cs">
+      <DependentUpon>JumpstationMacroMultiReplaceUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\JumpstationMacroMultiReplaceUpdate.aspx.designer.cs">
+      <DependentUpon>JumpstationMacroMultiReplaceUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\JumpstationMacroEditUpdate.aspx.cs">
+      <DependentUpon>JumpstationMacroEditUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\JumpstationMacroEditUpdate.aspx.designer.cs">
+      <DependentUpon>JumpstationMacroEditUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\JumpstationMacroValueUpdate.aspx.cs">
+      <DependentUpon>JumpstationMacroValueUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\JumpstationMacroValueUpdate.aspx.designer.cs">
+      <DependentUpon>JumpstationMacroValueUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\QueryParameterValueList.aspx.designer.cs">
+      <DependentUpon>QueryParameterValueList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\TenantGroupList.aspx.cs">
+      <DependentUpon>TenantGroupList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\TenantGroupList.aspx.designer.cs">
+      <DependentUpon>TenantGroupList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\TenantGroupUpdate.aspx.cs">
+      <DependentUpon>TenantGroupUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\TenantGroupUpdate.aspx.designer.cs">
+      <DependentUpon>TenantGroupUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\WorkflowModuleEditUpdate.aspx.cs">
+      <DependentUpon>WorkflowModuleEditUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\WorkflowModuleEditUpdate.aspx.designer.cs">
+      <DependentUpon>WorkflowModuleEditUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\WorkflowModuleMultiReplaceUpdate.aspx.cs">
+      <DependentUpon>WorkflowModuleMultiReplaceUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\WorkflowModuleMultiReplaceUpdate.aspx.designer.cs">
+      <DependentUpon>WorkflowModuleMultiReplaceUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigurationService\WorkflowVersionReport.aspx.cs">
+      <DependentUpon>WorkflowVersionReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigurationService\WorkflowVersionReport.aspx.designer.cs">
+      <DependentUpon>WorkflowVersionReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigurationService\WorkflowEditUpdate.aspx.cs">
+      <DependentUpon>WorkflowEditUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigurationService\WorkflowEditUpdate.aspx.designer.cs">
+      <DependentUpon>WorkflowEditUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigurationService\WorkflowList.aspx.cs">
+      <DependentUpon>WorkflowList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigurationService\WorkflowList.aspx.designer.cs">
+      <DependentUpon>WorkflowList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigurationService\WorkflowMultiReplaceUpdate.aspx.cs">
+      <DependentUpon>WorkflowMultiReplaceUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigurationService\WorkflowMultiReplaceUpdate.aspx.designer.cs">
+      <DependentUpon>WorkflowMultiReplaceUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigurationService\WorkflowReport.aspx.cs">
+      <DependentUpon>WorkflowReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigurationService\WorkflowReport.aspx.designer.cs">
+      <DependentUpon>WorkflowReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigurationService\WorkflowSelectorCopy.aspx.cs">
+      <DependentUpon>WorkflowSelectorCopy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigurationService\WorkflowSelectorCopy.aspx.designer.cs">
+      <DependentUpon>WorkflowSelectorCopy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigurationService\WorkflowSelectorUpdate.aspx.cs">
+      <DependentUpon>WorkflowSelectorUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigurationService\WorkflowSelectorUpdate.aspx.designer.cs">
+      <DependentUpon>WorkflowSelectorUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigurationService\WorkflowUpdate.aspx.cs">
+      <DependentUpon>WorkflowUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigurationService\WorkflowUpdate.aspx.designer.cs">
+      <DependentUpon>WorkflowUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\ConfigurationServiceApplicationTypeList.aspx.cs">
+      <DependentUpon>ConfigurationServiceApplicationTypeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\ConfigurationServiceApplicationTypeList.aspx.designer.cs">
+      <DependentUpon>ConfigurationServiceApplicationTypeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\ConfigurationServiceApplicationTypeUpdate.aspx.cs">
+      <DependentUpon>ConfigurationServiceApplicationTypeUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\ConfigurationServiceApplicationTypeUpdate.aspx.designer.cs">
+      <DependentUpon>ConfigurationServiceApplicationTypeUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\QueryParameterJumpstationGroupTypeList.aspx.cs">
+      <DependentUpon>QueryParameterJumpstationGroupTypeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\QueryParameterJumpstationGroupTypeList.aspx.designer.cs">
+      <DependentUpon>QueryParameterJumpstationGroupTypeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\QueryParameterJumpstationGroupTypeUpdate.aspx.cs">
+      <DependentUpon>QueryParameterJumpstationGroupTypeUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\QueryParameterJumpstationGroupTypeUpdate.aspx.designer.cs">
+      <DependentUpon>QueryParameterJumpstationGroupTypeUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\JumpstationMacroUpdate.aspx.cs">
+      <DependentUpon>JumpstationMacroUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\JumpstationMacroUpdate.aspx.designer.cs">
+      <DependentUpon>JumpstationMacroUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\JumpstationMacroList.aspx.cs">
+      <DependentUpon>JumpstationMacroList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\JumpstationMacroList.aspx.designer.cs">
+      <DependentUpon>JumpstationMacroList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\JumpstationApplicationList.aspx.cs">
+      <DependentUpon>JumpstationApplicationList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\JumpstationApplicationList.aspx.designer.cs">
+      <DependentUpon>JumpstationApplicationList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\JumpstationApplicationUpdate.aspx.cs">
+      <DependentUpon>JumpstationApplicationUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\JumpstationApplicationUpdate.aspx.designer.cs">
+      <DependentUpon>JumpstationApplicationUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\JumpstationGroupTypeList.aspx.cs">
+      <DependentUpon>JumpstationGroupTypeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\JumpstationGroupTypeList.aspx.designer.cs">
+      <DependentUpon>JumpstationGroupTypeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\JumpstationGroupTypeUpdate.aspx.cs">
+      <DependentUpon>JumpstationGroupTypeUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\JumpstationGroupTypeUpdate.aspx.designer.cs">
+      <DependentUpon>JumpstationGroupTypeUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\QueryParameterConfigurationServiceGroupTypeList.aspx.cs">
+      <DependentUpon>QueryParameterConfigurationServiceGroupTypeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\QueryParameterConfigurationServiceGroupTypeList.aspx.designer.cs">
+      <DependentUpon>QueryParameterConfigurationServiceGroupTypeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\QueryParameterConfigurationServiceGroupTypeUpdate.aspx.cs">
+      <DependentUpon>QueryParameterConfigurationServiceGroupTypeUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\QueryParameterConfigurationServiceGroupTypeUpdate.aspx.designer.cs">
+      <DependentUpon>QueryParameterConfigurationServiceGroupTypeUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\QueryParameterProxyURLTypeList.aspx.cs">
+      <DependentUpon>QueryParameterProxyURLTypeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\QueryParameterProxyURLTypeList.aspx.designer.cs">
+      <DependentUpon>QueryParameterProxyURLTypeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\QueryParameterProxyURLTypeUpdate.aspx.cs">
+      <DependentUpon>QueryParameterProxyURLTypeUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\QueryParameterProxyURLTypeUpdate.aspx.designer.cs">
+      <DependentUpon>QueryParameterProxyURLTypeUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\QueryParameterWorkflowTypeList.aspx.cs">
+      <DependentUpon>QueryParameterWorkflowTypeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\QueryParameterWorkflowTypeList.aspx.designer.cs">
+      <DependentUpon>QueryParameterWorkflowTypeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\QueryParameterWorkflowTypeUpdate.aspx.cs">
+      <DependentUpon>QueryParameterWorkflowTypeUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\QueryParameterWorkflowTypeUpdate.aspx.designer.cs">
+      <DependentUpon>QueryParameterWorkflowTypeUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\WorkflowApplicationList.aspx.cs">
+      <DependentUpon>WorkflowApplicationList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\WorkflowApplicationList.aspx.designer.cs">
+      <DependentUpon>WorkflowApplicationList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\WorkflowApplicationTypeList.aspx.cs">
+      <DependentUpon>WorkflowApplicationTypeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\WorkflowApplicationTypeList.aspx.designer.cs">
+      <DependentUpon>WorkflowApplicationTypeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\WorkflowApplicationTypeUpdate.aspx.cs">
+      <DependentUpon>WorkflowApplicationTypeUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\WorkflowApplicationTypeUpdate.aspx.designer.cs">
+      <DependentUpon>WorkflowApplicationTypeUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\WorkflowApplicationUpdate.aspx.cs">
+      <DependentUpon>WorkflowApplicationUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\WorkflowApplicationUpdate.aspx.designer.cs">
+      <DependentUpon>WorkflowApplicationUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\WorkflowConditionList.aspx.cs">
+      <DependentUpon>WorkflowConditionList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\WorkflowConditionList.aspx.designer.cs">
+      <DependentUpon>WorkflowConditionList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\WorkflowConditionUpdate.aspx.cs">
+      <DependentUpon>WorkflowConditionUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\WorkflowConditionUpdate.aspx.designer.cs">
+      <DependentUpon>WorkflowConditionUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\WorkflowModuleCategoryList.aspx.cs">
+      <DependentUpon>WorkflowModuleCategoryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\WorkflowModuleCategoryList.aspx.designer.cs">
+      <DependentUpon>WorkflowModuleCategoryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\WorkflowModuleCategoryUpdate.aspx.cs">
+      <DependentUpon>WorkflowModuleCategoryUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\WorkflowModuleCategoryUpdate.aspx.designer.cs">
+      <DependentUpon>WorkflowModuleCategoryUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\WorkflowModuleList.aspx.cs">
+      <DependentUpon>WorkflowModuleList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\WorkflowModuleList.aspx.designer.cs">
+      <DependentUpon>WorkflowModuleList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\WorkflowModuleSubCategoryList.aspx.cs">
+      <DependentUpon>WorkflowModuleSubCategoryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\WorkflowModuleSubCategoryList.aspx.designer.cs">
+      <DependentUpon>WorkflowModuleSubCategoryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\WorkflowModuleSubCategoryUpdate.aspx.cs">
+      <DependentUpon>WorkflowModuleSubCategoryUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\WorkflowModuleSubCategoryUpdate.aspx.designer.cs">
+      <DependentUpon>WorkflowModuleSubCategoryUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\WorkflowModuleUpdate.aspx.cs">
+      <DependentUpon>WorkflowModuleUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\WorkflowModuleUpdate.aspx.designer.cs">
+      <DependentUpon>WorkflowModuleUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\WorkflowTypeList.aspx.cs">
+      <DependentUpon>WorkflowTypeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\WorkflowTypeList.aspx.designer.cs">
+      <DependentUpon>WorkflowTypeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\WorkflowTypeUpdate.aspx.cs">
+      <DependentUpon>WorkflowTypeUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\WorkflowTypeUpdate.aspx.designer.cs">
+      <DependentUpon>WorkflowTypeUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Jumpstation\JumpstationGroupByQueryParameterList.aspx.cs">
+      <DependentUpon>JumpstationGroupByQueryParameterList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Jumpstation\JumpstationGroupByQueryParameterList.aspx.designer.cs">
+      <DependentUpon>JumpstationGroupByQueryParameterList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Jumpstation\JumpstationDefault.aspx.cs">
+      <DependentUpon>JumpstationDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Jumpstation\JumpstationDefault.aspx.designer.cs">
+      <DependentUpon>JumpstationDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Jumpstation\JumpstationGroupCopy.aspx.cs">
+      <DependentUpon>JumpstationGroupCopy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Jumpstation\JumpstationGroupCopy.aspx.designer.cs">
+      <DependentUpon>JumpstationGroupCopy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Jumpstation\JumpstationGroupEditUpdate.aspx.cs">
+      <DependentUpon>JumpstationGroupEditUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Jumpstation\JumpstationGroupEditUpdate.aspx.designer.cs">
+      <DependentUpon>JumpstationGroupEditUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Jumpstation\JumpstationGroupList.aspx.cs">
+      <DependentUpon>JumpstationGroupList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Jumpstation\JumpstationGroupList.aspx.designer.cs">
+      <DependentUpon>JumpstationGroupList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Jumpstation\JumpstationGroupMultiReplaceUpdate.aspx.cs">
+      <DependentUpon>JumpstationGroupMultiReplaceUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Jumpstation\JumpstationGroupMultiReplaceUpdate.aspx.designer.cs">
+      <DependentUpon>JumpstationGroupMultiReplaceUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Jumpstation\JumpstationGroupReport.aspx.cs">
+      <DependentUpon>JumpstationGroupReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Jumpstation\JumpstationGroupReport.aspx.designer.cs">
+      <DependentUpon>JumpstationGroupReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Jumpstation\JumpstationGroupSelectorCopy.aspx.cs">
+      <DependentUpon>JumpstationGroupSelectorCopy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Jumpstation\JumpstationGroupSelectorCopy.aspx.designer.cs">
+      <DependentUpon>JumpstationGroupSelectorCopy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Jumpstation\JumpstationGroupSelectorUpdate.aspx.cs">
+      <DependentUpon>JumpstationGroupSelectorUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Jumpstation\JumpstationGroupSelectorUpdate.aspx.designer.cs">
+      <DependentUpon>JumpstationGroupSelectorUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Jumpstation\JumpstationGroupUpdate.aspx.cs">
+      <DependentUpon>JumpstationGroupUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Jumpstation\JumpstationGroupUpdate.aspx.designer.cs">
+      <DependentUpon>JumpstationGroupUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\ConfigurationServiceGroupTypeList.aspx.cs">
+      <DependentUpon>ConfigurationServiceGroupTypeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\ConfigurationServiceGroupTypeList.aspx.designer.cs">
+      <DependentUpon>ConfigurationServiceGroupTypeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\ConfigurationServiceGroupTypeUpdate.aspx.cs">
+      <DependentUpon>ConfigurationServiceGroupTypeUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\ConfigurationServiceGroupTypeUpdate.aspx.designer.cs">
+      <DependentUpon>ConfigurationServiceGroupTypeUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\ConfigurationServiceApplicationList.aspx.cs">
+      <DependentUpon>ConfigurationServiceApplicationList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\ConfigurationServiceApplicationList.aspx.designer.cs">
+      <DependentUpon>ConfigurationServiceApplicationList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\ConfigurationServiceApplicationUpdate.aspx.cs">
+      <DependentUpon>ConfigurationServiceApplicationUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\ConfigurationServiceApplicationUpdate.aspx.designer.cs">
+      <DependentUpon>ConfigurationServiceApplicationUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\ConfigurationServiceItemList.aspx.cs">
+      <DependentUpon>ConfigurationServiceItemList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\ConfigurationServiceItemList.aspx.designer.cs">
+      <DependentUpon>ConfigurationServiceItemList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\ConfigurationServiceItemUpdate.aspx.cs">
+      <DependentUpon>ConfigurationServiceItemUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\ConfigurationServiceItemUpdate.aspx.designer.cs">
+      <DependentUpon>ConfigurationServiceItemUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\ConfigurationServiceLabelList.aspx.cs">
+      <DependentUpon>ConfigurationServiceLabelList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\ConfigurationServiceLabelList.aspx.designer.cs">
+      <DependentUpon>ConfigurationServiceLabelList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\ConfigurationServiceLabelUpdate.aspx.cs">
+      <DependentUpon>ConfigurationServiceLabelUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\ConfigurationServiceLabelUpdate.aspx.designer.cs">
+      <DependentUpon>ConfigurationServiceLabelUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\EntityTypeList.aspx.cs">
+      <DependentUpon>EntityTypeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\EntityTypeList.aspx.designer.cs">
+      <DependentUpon>EntityTypeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\EntityTypeUpdate.aspx.cs">
+      <DependentUpon>EntityTypeUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\EntityTypeUpdate.aspx.designer.cs">
+      <DependentUpon>EntityTypeUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\NoteDetail.aspx.cs">
+      <DependentUpon>NoteDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\NoteDetail.aspx.designer.cs">
+      <DependentUpon>NoteDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\NoteList.aspx.cs">
+      <DependentUpon>NoteList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\NoteList.aspx.designer.cs">
+      <DependentUpon>NoteList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\NoteSummariesOverlay.aspx.cs">
+      <DependentUpon>NoteSummariesOverlay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\NoteSummariesOverlay.aspx.designer.cs">
+      <DependentUpon>NoteSummariesOverlay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\NoteSummaryOverlay.aspx.cs">
+      <DependentUpon>NoteSummaryOverlay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\NoteSummaryOverlay.aspx.designer.cs">
+      <DependentUpon>NoteSummaryOverlay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\NoteTypeList.aspx.cs">
+      <DependentUpon>NoteTypeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\NoteTypeList.aspx.designer.cs">
+      <DependentUpon>NoteTypeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\NoteTypeUpdate.aspx.cs">
+      <DependentUpon>NoteTypeUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\NoteTypeUpdate.aspx.designer.cs">
+      <DependentUpon>NoteTypeUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\NoteUpdate.aspx.cs">
+      <DependentUpon>NoteUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\NoteUpdate.aspx.designer.cs">
+      <DependentUpon>NoteUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\ProxyURLGroupTypeUpdate.aspx.cs">
+      <DependentUpon>ProxyURLGroupTypeUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\ProxyURLGroupTypeUpdate.aspx.designer.cs">
+      <DependentUpon>ProxyURLGroupTypeUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\ProxyURLGroupTypeList.aspx.cs">
+      <DependentUpon>ProxyURLGroupTypeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\ProxyURLGroupTypeList.aspx.designer.cs">
+      <DependentUpon>ProxyURLGroupTypeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\QueryParameterValueList.aspx.cs">
+      <DependentUpon>QueryParameterValueList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\QueryParameterValueUpdate.aspx.cs">
+      <DependentUpon>QueryParameterValueUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\QueryParameterValueUpdate.aspx.designer.cs">
+      <DependentUpon>QueryParameterValueUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\ProxyURLTypeList.aspx.cs">
+      <DependentUpon>ProxyURLTypeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\ProxyURLTypeList.aspx.designer.cs">
+      <DependentUpon>ProxyURLTypeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\ProxyURLTypeUpdate.aspx.cs">
+      <DependentUpon>ProxyURLTypeUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\ProxyURLTypeUpdate.aspx.designer.cs">
+      <DependentUpon>ProxyURLTypeUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyInfo\MyInfoDefault.aspx.cs">
+      <DependentUpon>MyInfoDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyInfo\MyInfoDefault.aspx.designer.cs">
+      <DependentUpon>MyInfoDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyInfo\PersonDetailForMyInfo.aspx.cs">
+      <DependentUpon>PersonDetailForMyInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyInfo\PersonDetailForMyInfo.aspx.designer.cs">
+      <DependentUpon>PersonDetailForMyInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Redirect\ProxyURLCopy.aspx.cs">
+      <DependentUpon>ProxyURLCopy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Redirect\ProxyURLCopy.aspx.designer.cs">
+      <DependentUpon>ProxyURLCopy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Redirect\ProxyURLMultiReplaceUpdate.aspx.cs">
+      <DependentUpon>ProxyURLMultiReplaceUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Redirect\ProxyURLMultiReplaceUpdate.aspx.designer.cs">
+      <DependentUpon>ProxyURLMultiReplaceUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\DataAdminDefault.aspx.cs">
+      <DependentUpon>DataAdminDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\DataAdminDefault.aspx.designer.cs">
+      <DependentUpon>DataAdminDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\ProxyURLDomainList.aspx.cs">
+      <DependentUpon>ProxyURLDomainList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\ProxyURLDomainList.aspx.designer.cs">
+      <DependentUpon>ProxyURLDomainList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\ProxyURLDomainUpdate.aspx.cs">
+      <DependentUpon>ProxyURLDomainUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\ProxyURLDomainUpdate.aspx.designer.cs">
+      <DependentUpon>ProxyURLDomainUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\QueryParameterList.aspx.cs">
+      <DependentUpon>QueryParameterList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\QueryParameterList.aspx.designer.cs">
+      <DependentUpon>QueryParameterList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\QueryParameterUpdate.aspx.cs">
+      <DependentUpon>QueryParameterUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\QueryParameterUpdate.aspx.designer.cs">
+      <DependentUpon>QueryParameterUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\..\ProjectInfo.cs" />
+    <Compile Include="Redirect\ProxyURLMultiEditUpdate.aspx.cs">
+      <DependentUpon>ProxyURLMultiEditUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Redirect\ProxyURLMultiEditUpdate.aspx.designer.cs">
+      <DependentUpon>ProxyURLMultiEditUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Redirect\ProxyURLEditUpdate.aspx.cs">
+      <DependentUpon>ProxyURLEditUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Redirect\ProxyURLEditUpdate.aspx.designer.cs">
+      <DependentUpon>ProxyURLEditUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Redirect\ProxyURLList.aspx.cs">
+      <DependentUpon>ProxyURLList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Redirect\ProxyURLList.aspx.designer.cs">
+      <DependentUpon>ProxyURLList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Redirect\ProxyURLUpdate.aspx.cs">
+      <DependentUpon>ProxyURLUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Redirect\ProxyURLUpdate.aspx.designer.cs">
+      <DependentUpon>ProxyURLUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registration\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registration\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\DataImport.aspx.cs">
+      <DependentUpon>DataImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\DataImport.aspx.designer.cs">
+      <DependentUpon>DataImport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\SystemAdminFileDownload.aspx.cs">
+      <DependentUpon>SystemAdminFileDownload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\SystemAdminFileDownload.aspx.designer.cs">
+      <DependentUpon>SystemAdminFileDownload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\SystemAdminFileUpload.aspx.cs">
+      <DependentUpon>SystemAdminFileUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\SystemAdminFileUpload.aspx.designer.cs">
+      <DependentUpon>SystemAdminFileUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\SystemAdminProcessConsole.aspx.cs">
+      <DependentUpon>SystemAdminProcessConsole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\SystemAdminProcessConsole.aspx.designer.cs">
+      <DependentUpon>SystemAdminProcessConsole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\AppClientList.aspx.cs">
+      <DependentUpon>AppClientList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\AppClientList.aspx.designer.cs">
+      <DependentUpon>AppClientList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdmin\AppClientUpdate.aspx.cs">
+      <DependentUpon>AppClientUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataAdmin\AppClientUpdate.aspx.designer.cs">
+      <DependentUpon>AppClientUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAdmin\PersonDetail.aspx.cs">
+      <DependentUpon>PersonDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAdmin\PersonDetail.aspx.designer.cs">
+      <DependentUpon>PersonDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAdmin\PersonSummaryOverlay.aspx.cs">
+      <DependentUpon>PersonSummaryOverlay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAdmin\PersonSummaryOverlay.aspx.designer.cs">
+      <DependentUpon>PersonSummaryOverlay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAdmin\UserAdminDefault.aspx.cs">
+      <DependentUpon>UserAdminDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAdmin\UserAdminDefault.aspx.designer.cs">
+      <DependentUpon>UserAdminDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\DevScaffold.aspx.cs">
+      <DependentUpon>DevScaffold.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\DevScaffold.aspx.designer.cs">
+      <DependentUpon>DevScaffold.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\DevTestPage.aspx.cs">
+      <DependentUpon>DevTestPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\DevTestPage.aspx.designer.cs">
+      <DependentUpon>DevTestPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\LogDetail.aspx.cs">
+      <DependentUpon>LogDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\LogDetail.aspx.designer.cs">
+      <DependentUpon>LogDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\LogList.aspx.cs">
+      <DependentUpon>LogList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\LogList.aspx.designer.cs">
+      <DependentUpon>LogList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\SystemAdminDashboard.aspx.cs">
+      <DependentUpon>SystemAdminDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\SystemAdminDashboard.aspx.designer.cs">
+      <DependentUpon>SystemAdminDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\SystemAdminDefault.aspx.cs">
+      <DependentUpon>SystemAdminDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\SystemAdminDefault.aspx.designer.cs">
+      <DependentUpon>SystemAdminDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\SystemLog.aspx.cs">
+      <DependentUpon>SystemLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\SystemLog.aspx.designer.cs">
+      <DependentUpon>SystemLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\ViewLog.aspx.cs">
+      <DependentUpon>ViewLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\ViewLog.aspx.designer.cs">
+      <DependentUpon>ViewLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAdmin\PersonList.aspx.cs">
+      <DependentUpon>PersonList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAdmin\PersonList.aspx.designer.cs">
+      <DependentUpon>PersonList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAdmin\PersonUpdate.aspx.cs">
+      <DependentUpon>PersonUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAdmin\PersonUpdate.aspx.designer.cs">
+      <DependentUpon>PersonUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Redirect\RedirectDefault.aspx.cs">
+      <DependentUpon>RedirectDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Redirect\RedirectDefault.aspx.designer.cs">
+      <DependentUpon>RedirectDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AppClientListPanel.ascx.cs">
+      <DependentUpon>AppClientListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AppClientListPanel.ascx.designer.cs">
+      <DependentUpon>AppClientListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AppClientUpdatePanel.ascx.cs">
+      <DependentUpon>AppClientUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AppClientUpdatePanel.ascx.designer.cs">
+      <DependentUpon>AppClientUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ApplicationListPanel.ascx.cs">
+      <DependentUpon>ApplicationListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ApplicationListPanel.ascx.designer.cs">
+      <DependentUpon>ApplicationListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ApplicationUpdatePanel.ascx.cs">
+      <DependentUpon>ApplicationUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ApplicationUpdatePanel.ascx.designer.cs">
+      <DependentUpon>ApplicationUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceApplicationTypeListPanel.ascx.cs">
+      <DependentUpon>ConfigurationServiceApplicationTypeListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceApplicationTypeListPanel.ascx.designer.cs">
+      <DependentUpon>ConfigurationServiceApplicationTypeListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceApplicationTypeUpdatePanel.ascx.cs">
+      <DependentUpon>ConfigurationServiceApplicationTypeUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceApplicationTypeUpdatePanel.ascx.designer.cs">
+      <DependentUpon>ConfigurationServiceApplicationTypeUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceGroupImportListPanel.ascx.cs">
+      <DependentUpon>ConfigurationServiceGroupImportListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceGroupImportListPanel.ascx.designer.cs">
+      <DependentUpon>ConfigurationServiceGroupImportListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceGroupImportUpdatePanel.ascx.cs">
+      <DependentUpon>ConfigurationServiceGroupImportUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceGroupImportUpdatePanel.ascx.designer.cs">
+      <DependentUpon>ConfigurationServiceGroupImportUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceGroupSelectorListPanel.ascx.cs">
+      <DependentUpon>ConfigurationServiceGroupSelectorListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceGroupSelectorListPanel.ascx.designer.cs">
+      <DependentUpon>ConfigurationServiceGroupSelectorListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceGroupTypeListPanel.ascx.cs">
+      <DependentUpon>ConfigurationServiceGroupTypeListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceGroupTypeListPanel.ascx.designer.cs">
+      <DependentUpon>ConfigurationServiceGroupTypeListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceGroupTypeUpdatePanel.ascx.cs">
+      <DependentUpon>ConfigurationServiceGroupTypeUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceGroupTypeUpdatePanel.ascx.designer.cs">
+      <DependentUpon>ConfigurationServiceGroupTypeUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceApplicationListPanel.ascx.cs">
+      <DependentUpon>ConfigurationServiceApplicationListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceApplicationListPanel.ascx.designer.cs">
+      <DependentUpon>ConfigurationServiceApplicationListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceApplicationUpdatePanel.ascx.cs">
+      <DependentUpon>ConfigurationServiceApplicationUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceApplicationUpdatePanel.ascx.designer.cs">
+      <DependentUpon>ConfigurationServiceApplicationUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceGroupListPanel.ascx.cs">
+      <DependentUpon>ConfigurationServiceGroupListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceGroupListPanel.ascx.designer.cs">
+      <DependentUpon>ConfigurationServiceGroupListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceGroupUpdatePanel.ascx.cs">
+      <DependentUpon>ConfigurationServiceGroupUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceGroupUpdatePanel.ascx.designer.cs">
+      <DependentUpon>ConfigurationServiceGroupUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceItemListPanel.ascx.cs">
+      <DependentUpon>ConfigurationServiceItemListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceItemListPanel.ascx.designer.cs">
+      <DependentUpon>ConfigurationServiceItemListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceItemUpdatePanel.ascx.cs">
+      <DependentUpon>ConfigurationServiceItemUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceItemUpdatePanel.ascx.designer.cs">
+      <DependentUpon>ConfigurationServiceItemUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceLabelListPanel.ascx.cs">
+      <DependentUpon>ConfigurationServiceLabelListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceLabelListPanel.ascx.designer.cs">
+      <DependentUpon>ConfigurationServiceLabelListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceLabelUpdatePanel.ascx.cs">
+      <DependentUpon>ConfigurationServiceLabelUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceLabelUpdatePanel.ascx.designer.cs">
+      <DependentUpon>ConfigurationServiceLabelUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceGroupSelectorUpdatePanel.ascx.cs">
+      <DependentUpon>ConfigurationServiceGroupSelectorUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceGroupSelectorUpdatePanel.ascx.designer.cs">
+      <DependentUpon>ConfigurationServiceGroupSelectorUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceLabelValueImportListPanel.ascx.cs">
+      <DependentUpon>ConfigurationServiceLabelValueImportListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceLabelValueImportListPanel.ascx.designer.cs">
+      <DependentUpon>ConfigurationServiceLabelValueImportListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceLabelValueImportUpdatePanel.ascx.cs">
+      <DependentUpon>ConfigurationServiceLabelValueImportUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceLabelValueImportUpdatePanel.ascx.designer.cs">
+      <DependentUpon>ConfigurationServiceLabelValueImportUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceLabelValueUpdatePanel.ascx.cs">
+      <DependentUpon>ConfigurationServiceLabelValueUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceLabelValueUpdatePanel.ascx.designer.cs">
+      <DependentUpon>ConfigurationServiceLabelValueUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceGroupCopyPanel.ascx.cs">
+      <DependentUpon>ConfigurationServiceGroupCopyPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceGroupCopyPanel.ascx.designer.cs">
+      <DependentUpon>ConfigurationServiceGroupCopyPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceGroupSelectorCopyPanel.ascx.cs">
+      <DependentUpon>ConfigurationServiceGroupSelectorCopyPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceGroupSelectorCopyPanel.ascx.designer.cs">
+      <DependentUpon>ConfigurationServiceGroupSelectorCopyPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceGroupEditUpdatePanel.ascx.cs">
+      <DependentUpon>ConfigurationServiceGroupEditUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceGroupEditUpdatePanel.ascx.designer.cs">
+      <DependentUpon>ConfigurationServiceGroupEditUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceGroupMultiReplaceUpdatePanel.ascx.cs">
+      <DependentUpon>ConfigurationServiceGroupMultiReplaceUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceGroupMultiReplaceUpdatePanel.ascx.designer.cs">
+      <DependentUpon>ConfigurationServiceGroupMultiReplaceUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceGroupDescriptionMultiReplaceUpdatePanel.ascx.cs">
+      <DependentUpon>ConfigurationServiceGroupDescriptionMultiReplaceUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceGroupDescriptionMultiReplaceUpdatePanel.ascx.designer.cs">
+      <DependentUpon>ConfigurationServiceGroupDescriptionMultiReplaceUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceGroupMultiReplaceTemplate.cs" />
+    <Compile Include="UserControls\ConfigurationServiceGroupReportPanel.ascx.cs">
+      <DependentUpon>ConfigurationServiceGroupReportPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceGroupReportPanel.ascx.designer.cs">
+      <DependentUpon>ConfigurationServiceGroupReportPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceLabelValueReportPanel.ascx.cs">
+      <DependentUpon>ConfigurationServiceLabelValueReportPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceLabelValueReportPanel.ascx.designer.cs">
+      <DependentUpon>ConfigurationServiceLabelValueReportPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceGroupSelectorReportPanel.ascx.cs">
+      <DependentUpon>ConfigurationServiceGroupSelectorReportPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceGroupSelectorReportPanel.ascx.designer.cs">
+      <DependentUpon>ConfigurationServiceGroupSelectorReportPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceParameterValueReportPanel.ascx.cs">
+      <DependentUpon>ConfigurationServiceParameterValueReportPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceParameterValueReportPanel.ascx.designer.cs">
+      <DependentUpon>ConfigurationServiceParameterValueReportPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceGroupImportEditUpdatePanel.ascx.cs">
+      <DependentUpon>ConfigurationServiceGroupImportEditUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceGroupImportEditUpdatePanel.ascx.designer.cs">
+      <DependentUpon>ConfigurationServiceGroupImportEditUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceQueryParameterValueImportListPanel.ascx.cs">
+      <DependentUpon>ConfigurationServiceQueryParameterValueImportListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceQueryParameterValueImportListPanel.ascx.designer.cs">
+      <DependentUpon>ConfigurationServiceQueryParameterValueImportListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceQueryParameterValueImportUpdatePanel.ascx.cs">
+      <DependentUpon>ConfigurationServiceQueryParameterValueImportUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigurationServiceQueryParameterValueImportUpdatePanel.ascx.designer.cs">
+      <DependentUpon>ConfigurationServiceQueryParameterValueImportUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JumpstationGroupByQueryParameterListPanel.ascx.cs">
+      <DependentUpon>JumpstationGroupByQueryParameterListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\JumpstationGroupByQueryParameterListPanel.ascx.designer.cs">
+      <DependentUpon>JumpstationGroupByQueryParameterListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JumpstationDomainUpdatePanel.ascx.cs">
+      <DependentUpon>JumpstationDomainUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\JumpstationDomainUpdatePanel.ascx.designer.cs">
+      <DependentUpon>JumpstationDomainUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JumpstationDomainListPanel.ascx.cs">
+      <DependentUpon>JumpstationDomainListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\JumpstationDomainListPanel.ascx.designer.cs">
+      <DependentUpon>JumpstationDomainListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JumpstationMacroValueReportPanel.ascx.cs">
+      <DependentUpon>JumpstationMacroValueReportPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\JumpstationMacroValueReportPanel.ascx.designer.cs">
+      <DependentUpon>JumpstationMacroValueReportPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JumpstationMacroReportPanel.ascx.cs">
+      <DependentUpon>JumpstationMacroReportPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\JumpstationMacroReportPanel.ascx.designer.cs">
+      <DependentUpon>JumpstationMacroReportPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JumpstationMacroDescriptionMultiReplaceUpdatePanel.ascx.cs">
+      <DependentUpon>JumpstationMacroDescriptionMultiReplaceUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\JumpstationMacroDescriptionMultiReplaceUpdatePanel.ascx.designer.cs">
+      <DependentUpon>JumpstationMacroDescriptionMultiReplaceUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JumpstationMacroMultiReplaceTemplate.cs" />
+    <Compile Include="UserControls\JumpstationMacroMultiReplaceUpdatePanel.ascx.cs">
+      <DependentUpon>JumpstationMacroMultiReplaceUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\JumpstationMacroMultiReplaceUpdatePanel.ascx.designer.cs">
+      <DependentUpon>JumpstationMacroMultiReplaceUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JumpstationMacroEditUpdatePanel.ascx.cs">
+      <DependentUpon>JumpstationMacroEditUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\JumpstationMacroEditUpdatePanel.ascx.designer.cs">
+      <DependentUpon>JumpstationMacroEditUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JumpstationMacroValueUpdatePanel.ascx.cs">
+      <DependentUpon>JumpstationMacroValueUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\JumpstationMacroValueUpdatePanel.ascx.designer.cs">
+      <DependentUpon>JumpstationMacroValueUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JumpstationMacroValueListPanel.ascx.cs">
+      <DependentUpon>JumpstationMacroValueListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\JumpstationMacroValueListPanel.ascx.designer.cs">
+      <DependentUpon>JumpstationMacroValueListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\QueryParameterValueUpdatePanel.ascx.designer.cs">
+      <DependentUpon>QueryParameterValueUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TenantGroupListPanel.ascx.cs">
+      <DependentUpon>TenantGroupListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\TenantGroupListPanel.ascx.designer.cs">
+      <DependentUpon>TenantGroupListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TenantGroupUpdatePanel.ascx.cs">
+      <DependentUpon>TenantGroupUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\TenantGroupUpdatePanel.ascx.designer.cs">
+      <DependentUpon>TenantGroupUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowModuleEditUpdatePanel.ascx.cs">
+      <DependentUpon>WorkflowModuleEditUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowModuleEditUpdatePanel.ascx.designer.cs">
+      <DependentUpon>WorkflowModuleEditUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowModuleDescriptionMultiReplaceUpdatePanel.ascx.cs">
+      <DependentUpon>WorkflowModuleDescriptionMultiReplaceUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowModuleDescriptionMultiReplaceUpdatePanel.ascx.designer.cs">
+      <DependentUpon>WorkflowModuleDescriptionMultiReplaceUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowModuleEditListUpdatePanel.ascx.cs">
+      <DependentUpon>WorkflowModuleEditListUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowModuleEditListUpdatePanel.ascx.designer.cs">
+      <DependentUpon>WorkflowModuleEditListUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowModuleMultiReplaceTemplate.cs" />
+    <Compile Include="UserControls\WorkflowModuleMultiReplaceUpdatePanel.ascx.cs">
+      <DependentUpon>WorkflowModuleMultiReplaceUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowModuleMultiReplaceUpdatePanel.ascx.designer.cs">
+      <DependentUpon>WorkflowModuleMultiReplaceUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\QueryParameterValueEditUpdatePanel.ascx.designer.cs">
+      <DependentUpon>QueryParameterValueEditUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowURLReportPanel.ascx.cs">
+      <DependentUpon>WorkflowURLReportPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowURLReportPanel.ascx.designer.cs">
+      <DependentUpon>WorkflowURLReportPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowVersionReportPanel.ascx.cs">
+      <DependentUpon>WorkflowVersionReportPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowVersionReportPanel.ascx.designer.cs">
+      <DependentUpon>WorkflowVersionReportPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\QueryParameterJumpstationGroupTypeListPanel.ascx.cs">
+      <DependentUpon>QueryParameterJumpstationGroupTypeListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\QueryParameterJumpstationGroupTypeListPanel.ascx.designer.cs">
+      <DependentUpon>QueryParameterJumpstationGroupTypeListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\QueryParameterJumpstationGroupTypeUpdatePanel.ascx.cs">
+      <DependentUpon>QueryParameterJumpstationGroupTypeUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\QueryParameterJumpstationGroupTypeUpdatePanel.ascx.designer.cs">
+      <DependentUpon>QueryParameterJumpstationGroupTypeUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JumpstationLogPanel.ascx.cs">
+      <DependentUpon>JumpstationLogPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\JumpstationLogPanel.ascx.designer.cs">
+      <DependentUpon>JumpstationLogPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JumpstationGroupSelectorUpdatePanel.ascx.designer.cs">
+      <DependentUpon>JumpstationGroupSelectorUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JumpstationGroupUpdatePanel.ascx.designer.cs">
+      <DependentUpon>JumpstationGroupUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JumpstationMacroListPanel.ascx.cs">
+      <DependentUpon>JumpstationMacroListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\JumpstationMacroListPanel.ascx.designer.cs">
+      <DependentUpon>JumpstationMacroListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JumpstationMacroUpdatePanel.ascx.cs">
+      <DependentUpon>JumpstationMacroUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\JumpstationMacroUpdatePanel.ascx.designer.cs">
+      <DependentUpon>JumpstationMacroUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JumpstationQueryParameterValueEditListUpdatePanel.ascx.cs">
+      <DependentUpon>JumpstationQueryParameterValueEditListUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\JumpstationQueryParameterValueEditListUpdatePanel.ascx.designer.cs">
+      <DependentUpon>JumpstationQueryParameterValueEditListUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JumpstationApplicationListPanel.ascx.cs">
+      <DependentUpon>JumpstationApplicationListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\JumpstationApplicationListPanel.ascx.designer.cs">
+      <DependentUpon>JumpstationApplicationListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JumpstationApplicationUpdatePanel.ascx.cs">
+      <DependentUpon>JumpstationApplicationUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\JumpstationApplicationUpdatePanel.ascx.designer.cs">
+      <DependentUpon>JumpstationApplicationUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JumpstationGroupCopyPanel.ascx.cs">
+      <DependentUpon>JumpstationGroupCopyPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\JumpstationGroupCopyPanel.ascx.designer.cs">
+      <DependentUpon>JumpstationGroupCopyPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JumpstationGroupDescriptionMultiReplaceUpdatePanel.ascx.cs">
+      <DependentUpon>JumpstationGroupDescriptionMultiReplaceUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\JumpstationGroupDescriptionMultiReplaceUpdatePanel.ascx.designer.cs">
+      <DependentUpon>JumpstationGroupDescriptionMultiReplaceUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JumpstationGroupEditUpdatePanel.ascx.cs">
+      <DependentUpon>JumpstationGroupEditUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\JumpstationGroupEditUpdatePanel.ascx.designer.cs">
+      <DependentUpon>JumpstationGroupEditUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JumpstationGroupListPanel.ascx.cs">
+      <DependentUpon>JumpstationGroupListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\JumpstationGroupListPanel.ascx.designer.cs">
+      <DependentUpon>JumpstationGroupListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JumpstationGroupMultiReplaceTemplate.cs" />
+    <Compile Include="UserControls\JumpstationGroupMultiReplaceUpdatePanel.ascx.cs">
+      <DependentUpon>JumpstationGroupMultiReplaceUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\JumpstationGroupMultiReplaceUpdatePanel.ascx.designer.cs">
+      <DependentUpon>JumpstationGroupMultiReplaceUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JumpstationGroupReportPanel.ascx.cs">
+      <DependentUpon>JumpstationGroupReportPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\JumpstationGroupReportPanel.ascx.designer.cs">
+      <DependentUpon>JumpstationGroupReportPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JumpstationGroupSelectorCopyPanel.ascx.cs">
+      <DependentUpon>JumpstationGroupSelectorCopyPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\JumpstationGroupSelectorCopyPanel.ascx.designer.cs">
+      <DependentUpon>JumpstationGroupSelectorCopyPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JumpstationGroupSelectorListPanel.ascx.cs">
+      <DependentUpon>JumpstationGroupSelectorListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\JumpstationGroupSelectorListPanel.ascx.designer.cs">
+      <DependentUpon>JumpstationGroupSelectorListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JumpstationGroupSelectorReportPanel.ascx.cs">
+      <DependentUpon>JumpstationGroupSelectorReportPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\JumpstationGroupSelectorReportPanel.ascx.designer.cs">
+      <DependentUpon>JumpstationGroupSelectorReportPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JumpstationGroupTypeListPanel.ascx.cs">
+      <DependentUpon>JumpstationGroupTypeListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\JumpstationGroupTypeListPanel.ascx.designer.cs">
+      <DependentUpon>JumpstationGroupTypeListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JumpstationGroupTypeUpdatePanel.ascx.cs">
+      <DependentUpon>JumpstationGroupTypeUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\JumpstationGroupTypeUpdatePanel.ascx.designer.cs">
+      <DependentUpon>JumpstationGroupTypeUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JumpstationGroupUpdatePanel.ascx.cs">
+      <DependentUpon>JumpstationGroupUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\JumpstationParameterValueReportPanel.ascx.cs">
+      <DependentUpon>JumpstationParameterValueReportPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\JumpstationGroupSelectorUpdatePanel.ascx.cs">
+      <DependentUpon>JumpstationGroupSelectorUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\JumpstationParameterValueReportPanel.ascx.designer.cs">
+      <DependentUpon>JumpstationParameterValueReportPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\QueryParameterConfigurationServiceGroupTypeListPanel.ascx.cs">
+      <DependentUpon>QueryParameterConfigurationServiceGroupTypeListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\QueryParameterConfigurationServiceGroupTypeListPanel.ascx.designer.cs">
+      <DependentUpon>QueryParameterConfigurationServiceGroupTypeListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\QueryParameterConfigurationServiceGroupTypeUpdatePanel.ascx.cs">
+      <DependentUpon>QueryParameterConfigurationServiceGroupTypeUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\QueryParameterConfigurationServiceGroupTypeUpdatePanel.ascx.designer.cs">
+      <DependentUpon>QueryParameterConfigurationServiceGroupTypeUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\QueryParameterProxyURLTypeListPanel.ascx.cs">
+      <DependentUpon>QueryParameterProxyURLTypeListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\QueryParameterProxyURLTypeListPanel.ascx.designer.cs">
+      <DependentUpon>QueryParameterProxyURLTypeListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\QueryParameterProxyURLTypeUpdatePanel.ascx.cs">
+      <DependentUpon>QueryParameterProxyURLTypeUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\QueryParameterProxyURLTypeUpdatePanel.ascx.designer.cs">
+      <DependentUpon>QueryParameterProxyURLTypeUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\QueryParameterUpdatePanel.ascx.designer.cs">
+      <DependentUpon>QueryParameterUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\QueryParameterValueEditListUpdatePanel.ascx.cs">
+      <DependentUpon>QueryParameterValueEditListUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\QueryParameterValueEditListUpdatePanel.ascx.designer.cs">
+      <DependentUpon>QueryParameterValueEditListUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EntityTypeListPanel.ascx.cs">
+      <DependentUpon>EntityTypeListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\EntityTypeListPanel.ascx.designer.cs">
+      <DependentUpon>EntityTypeListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EntityTypeUpdatePanel.ascx.cs">
+      <DependentUpon>EntityTypeUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\EntityTypeUpdatePanel.ascx.designer.cs">
+      <DependentUpon>EntityTypeUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NoteDetailPanel.ascx.cs">
+      <DependentUpon>NoteDetailPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\NoteDetailPanel.ascx.designer.cs">
+      <DependentUpon>NoteDetailPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NoteListPanel.ascx.cs">
+      <DependentUpon>NoteListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\NoteListPanel.ascx.designer.cs">
+      <DependentUpon>NoteListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NoteSummariesListPanel.ascx.cs">
+      <DependentUpon>NoteSummariesListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\NoteSummariesListPanel.ascx.designer.cs">
+      <DependentUpon>NoteSummariesListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NoteSummaryDetailPanel.ascx.cs">
+      <DependentUpon>NoteSummaryDetailPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\NoteSummaryDetailPanel.ascx.designer.cs">
+      <DependentUpon>NoteSummaryDetailPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NoteTypeListPanel.ascx.cs">
+      <DependentUpon>NoteTypeListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\NoteTypeListPanel.ascx.designer.cs">
+      <DependentUpon>NoteTypeListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NoteTypeUpdatePanel.ascx.cs">
+      <DependentUpon>NoteTypeUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\NoteTypeUpdatePanel.ascx.designer.cs">
+      <DependentUpon>NoteTypeUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NoteUpdatePanel.ascx.cs">
+      <DependentUpon>NoteUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\NoteUpdatePanel.ascx.designer.cs">
+      <DependentUpon>NoteUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PersonDetailPanel.ascx.cs">
+      <DependentUpon>PersonDetailPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\PersonDetailPanel.ascx.designer.cs">
+      <DependentUpon>PersonDetailPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PersonRegistrationPanel.ascx.cs">
+      <DependentUpon>PersonRegistrationPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\PersonRegistrationPanel.ascx.designer.cs">
+      <DependentUpon>PersonRegistrationPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PersonSummaryDetailPanel.ascx.cs">
+      <DependentUpon>PersonSummaryDetailPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\PersonSummaryDetailPanel.ascx.designer.cs">
+      <DependentUpon>PersonSummaryDetailPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ProxyURLCopyPanel.ascx.cs">
+      <DependentUpon>ProxyURLCopyPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ProxyURLCopyPanel.ascx.designer.cs">
+      <DependentUpon>ProxyURLCopyPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ProxyURLGroupTypeUpdatePanel.ascx.cs">
+      <DependentUpon>ProxyURLGroupTypeUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ProxyURLGroupTypeUpdatePanel.ascx.designer.cs">
+      <DependentUpon>ProxyURLGroupTypeUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ProxyURLGroupTypeListPanel.ascx.cs">
+      <DependentUpon>ProxyURLGroupTypeListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ProxyURLGroupTypeListPanel.ascx.designer.cs">
+      <DependentUpon>ProxyURLGroupTypeListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ProxyURLMultiReplaceTemplate.cs" />
+    <Compile Include="UserControls\ProxyURLDescriptionMultiReplaceUpdatePanel.ascx.cs">
+      <DependentUpon>ProxyURLDescriptionMultiReplaceUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ProxyURLDescriptionMultiReplaceUpdatePanel.ascx.designer.cs">
+      <DependentUpon>ProxyURLDescriptionMultiReplaceUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ProxyURLMultiReplaceUpdatePanel.ascx.cs">
+      <DependentUpon>ProxyURLMultiReplaceUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ProxyURLMultiReplaceUpdatePanel.ascx.designer.cs">
+      <DependentUpon>ProxyURLMultiReplaceUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\QueryParameterValueMultiEditTemplate.cs" />
+    <Compile Include="UserControls\QueryParameterValueMultiUpdatePanel.ascx.cs">
+      <DependentUpon>QueryParameterValueMultiUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\QueryParameterValueMultiUpdatePanel.ascx.designer.cs">
+      <DependentUpon>QueryParameterValueMultiUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ProxyURLMultiEditUpdatePanel.ascx.cs">
+      <DependentUpon>ProxyURLMultiEditUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ProxyURLMultiEditUpdatePanel.ascx.designer.cs">
+      <DependentUpon>ProxyURLMultiEditUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CPSLogPanel.ascx.cs">
+      <DependentUpon>CPSLogPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\CPSLogPanel.ascx.designer.cs">
+      <DependentUpon>CPSLogPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ProxyURLEditUpdatePanel.ascx.cs">
+      <DependentUpon>ProxyURLEditUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ProxyURLEditUpdatePanel.ascx.designer.cs">
+      <DependentUpon>ProxyURLEditUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\QueryParameterValueEditUpdatePanel.ascx.cs">
+      <DependentUpon>QueryParameterValueEditUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ProxyURLListPanel.ascx.cs">
+      <DependentUpon>ProxyURLListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ProxyURLListPanel.ascx.designer.cs">
+      <DependentUpon>ProxyURLListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ProxyURLUpdatePanel.ascx.cs">
+      <DependentUpon>ProxyURLUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ProxyURLUpdatePanel.ascx.designer.cs">
+      <DependentUpon>ProxyURLUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\QueryParameterValueListPanel.ascx.cs">
+      <DependentUpon>QueryParameterValueListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\QueryParameterValueListPanel.ascx.designer.cs">
+      <DependentUpon>QueryParameterValueListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\QueryParameterValueUpdatePanel.ascx.cs">
+      <DependentUpon>QueryParameterValueUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ProxyURLTypeListPanel.ascx.cs">
+      <DependentUpon>ProxyURLTypeListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ProxyURLTypeListPanel.ascx.designer.cs">
+      <DependentUpon>ProxyURLTypeListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ProxyURLTypeUpdatePanel.ascx.cs">
+      <DependentUpon>ProxyURLTypeUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ProxyURLTypeUpdatePanel.ascx.designer.cs">
+      <DependentUpon>ProxyURLTypeUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LogDetailPanel.ascx.cs">
+      <DependentUpon>LogDetailPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LogDetailPanel.ascx.designer.cs">
+      <DependentUpon>LogDetailPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LogListPanel.ascx.cs">
+      <DependentUpon>LogListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LogListPanel.ascx.designer.cs">
+      <DependentUpon>LogListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PersonListPanel.ascx.cs">
+      <DependentUpon>PersonListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\PersonListPanel.ascx.designer.cs">
+      <DependentUpon>PersonListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PersonUpdatePanel.ascx.cs">
+      <DependentUpon>PersonUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\PersonUpdatePanel.ascx.designer.cs">
+      <DependentUpon>PersonUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ProxyURLDomainListPanel.ascx.cs">
+      <DependentUpon>ProxyURLDomainListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ProxyURLDomainListPanel.ascx.designer.cs">
+      <DependentUpon>ProxyURLDomainListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ProxyURLDomainUpdatePanel.ascx.cs">
+      <DependentUpon>ProxyURLDomainUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ProxyURLDomainUpdatePanel.ascx.designer.cs">
+      <DependentUpon>ProxyURLDomainUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\QueryParameterListPanel.ascx.cs">
+      <DependentUpon>QueryParameterListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\QueryParameterListPanel.ascx.designer.cs">
+      <DependentUpon>QueryParameterListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\QueryParameterUpdatePanel.ascx.cs">
+      <DependentUpon>QueryParameterUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\QueryParameterWorkflowTypeListPanel.ascx.cs">
+      <DependentUpon>QueryParameterWorkflowTypeListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\QueryParameterWorkflowTypeListPanel.ascx.designer.cs">
+      <DependentUpon>QueryParameterWorkflowTypeListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\QueryParameterWorkflowTypeUpdatePanel.ascx.cs">
+      <DependentUpon>QueryParameterWorkflowTypeUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\QueryParameterWorkflowTypeUpdatePanel.ascx.designer.cs">
+      <DependentUpon>QueryParameterWorkflowTypeUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowApplicationListPanel.ascx.cs">
+      <DependentUpon>WorkflowApplicationListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowApplicationListPanel.ascx.designer.cs">
+      <DependentUpon>WorkflowApplicationListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowApplicationTypeListPanel.ascx.cs">
+      <DependentUpon>WorkflowApplicationTypeListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowApplicationTypeListPanel.ascx.designer.cs">
+      <DependentUpon>WorkflowApplicationTypeListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowApplicationTypeUpdatePanel.ascx.cs">
+      <DependentUpon>WorkflowApplicationTypeUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowApplicationTypeUpdatePanel.ascx.designer.cs">
+      <DependentUpon>WorkflowApplicationTypeUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowApplicationUpdatePanel.ascx.cs">
+      <DependentUpon>WorkflowApplicationUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowApplicationUpdatePanel.ascx.designer.cs">
+      <DependentUpon>WorkflowApplicationUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowConditionEditListUpdatePanel.ascx.cs">
+      <DependentUpon>WorkflowConditionEditListUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowConditionEditListUpdatePanel.ascx.designer.cs">
+      <DependentUpon>WorkflowConditionEditListUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowConditionListPanel.ascx.cs">
+      <DependentUpon>WorkflowConditionListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowConditionListPanel.ascx.designer.cs">
+      <DependentUpon>WorkflowConditionListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowConditionUpdatePanel.ascx.cs">
+      <DependentUpon>WorkflowConditionUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowConditionUpdatePanel.ascx.designer.cs">
+      <DependentUpon>WorkflowConditionUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowDescriptionMultiReplaceUpdatePanel.ascx.cs">
+      <DependentUpon>WorkflowDescriptionMultiReplaceUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowDescriptionMultiReplaceUpdatePanel.ascx.designer.cs">
+      <DependentUpon>WorkflowDescriptionMultiReplaceUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowEditUpdatePanel.ascx.cs">
+      <DependentUpon>WorkflowEditUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowEditUpdatePanel.ascx.designer.cs">
+      <DependentUpon>WorkflowEditUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowListPanel.ascx.cs">
+      <DependentUpon>WorkflowListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowListPanel.ascx.designer.cs">
+      <DependentUpon>WorkflowListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowModuleCategoryListPanel.ascx.cs">
+      <DependentUpon>WorkflowModuleCategoryListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowModuleCategoryListPanel.ascx.designer.cs">
+      <DependentUpon>WorkflowModuleCategoryListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowModuleCategoryUpdatePanel.ascx.cs">
+      <DependentUpon>WorkflowModuleCategoryUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowModuleCategoryUpdatePanel.ascx.designer.cs">
+      <DependentUpon>WorkflowModuleCategoryUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowModuleConditionReportPanel.ascx.cs">
+      <DependentUpon>WorkflowModuleConditionReportPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowModuleConditionReportPanel.ascx.designer.cs">
+      <DependentUpon>WorkflowModuleConditionReportPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowModuleListPanel.ascx.cs">
+      <DependentUpon>WorkflowModuleListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowModuleListPanel.ascx.designer.cs">
+      <DependentUpon>WorkflowModuleListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowModuleReportPanel.ascx.cs">
+      <DependentUpon>WorkflowModuleReportPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowModuleReportPanel.ascx.designer.cs">
+      <DependentUpon>WorkflowModuleReportPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowModuleSubCategoryListPanel.ascx.cs">
+      <DependentUpon>WorkflowModuleSubCategoryListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowModuleSubCategoryListPanel.ascx.designer.cs">
+      <DependentUpon>WorkflowModuleSubCategoryListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowModuleSubCategoryUpdatePanel.ascx.cs">
+      <DependentUpon>WorkflowModuleSubCategoryUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowModuleSubCategoryUpdatePanel.ascx.designer.cs">
+      <DependentUpon>WorkflowModuleSubCategoryUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowModuleUpdatePanel.ascx.cs">
+      <DependentUpon>WorkflowModuleUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowModuleUpdatePanel.ascx.designer.cs">
+      <DependentUpon>WorkflowModuleUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowMultiReplaceTemplate.cs" />
+    <Compile Include="UserControls\WorkflowMultiReplaceUpdatePanel.ascx.cs">
+      <DependentUpon>WorkflowMultiReplaceUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowMultiReplaceUpdatePanel.ascx.designer.cs">
+      <DependentUpon>WorkflowMultiReplaceUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowParameterValueReportPanel.ascx.cs">
+      <DependentUpon>WorkflowParameterValueReportPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowParameterValueReportPanel.ascx.designer.cs">
+      <DependentUpon>WorkflowParameterValueReportPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowQueryParameterValueEditListUpdatePanel.ascx.cs">
+      <DependentUpon>WorkflowQueryParameterValueEditListUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowQueryParameterValueEditListUpdatePanel.ascx.designer.cs">
+      <DependentUpon>WorkflowQueryParameterValueEditListUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowReportPanel.ascx.cs">
+      <DependentUpon>WorkflowReportPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowReportPanel.ascx.designer.cs">
+      <DependentUpon>WorkflowReportPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowSelectorCopyPanel.ascx.cs">
+      <DependentUpon>WorkflowSelectorCopyPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowSelectorCopyPanel.ascx.designer.cs">
+      <DependentUpon>WorkflowSelectorCopyPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowSelectorListPanel.ascx.cs">
+      <DependentUpon>WorkflowSelectorListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowSelectorListPanel.ascx.designer.cs">
+      <DependentUpon>WorkflowSelectorListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowSelectorReportPanel.ascx.cs">
+      <DependentUpon>WorkflowSelectorReportPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowSelectorReportPanel.ascx.designer.cs">
+      <DependentUpon>WorkflowSelectorReportPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowSelectorUpdatePanel.ascx.cs">
+      <DependentUpon>WorkflowSelectorUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowSelectorUpdatePanel.ascx.designer.cs">
+      <DependentUpon>WorkflowSelectorUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowTypeListPanel.ascx.cs">
+      <DependentUpon>WorkflowTypeListPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowTypeListPanel.ascx.designer.cs">
+      <DependentUpon>WorkflowTypeListPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowTypeUpdatePanel.ascx.cs">
+      <DependentUpon>WorkflowTypeUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowTypeUpdatePanel.ascx.designer.cs">
+      <DependentUpon>WorkflowTypeUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowUpdatePanel.ascx.cs">
+      <DependentUpon>WorkflowUpdatePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkflowUpdatePanel.ascx.designer.cs">
+      <DependentUpon>WorkflowUpdatePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebMethods.asmx.cs">
+      <DependentUpon>WebMethods.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Core.csproj">
+      <Project>{db01d5dc-cd0c-4816-b36b-3e58aaec1c6e}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data\Data.csproj">
+      <Project>{2682fa1e-ef27-4442-8278-a855c68fa4a4}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Services.csproj">
+      <Project>{4d632a67-ab52-4533-8cbe-1e4b773f9a47}</Project>
+      <Name>Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\App_Configs\appSettings.CIDebug.config" />
+    <Content Include="App_Data\App_Configs\appSettings.CIRelease.config" />
+    <Content Include="App_Data\App_Configs\appSettings.Debug.config" />
+    <Content Include="App_Data\App_Configs\appSettings.DEV.config" />
+    <Content Include="App_Data\App_Configs\appSettings.ITG.config" />
+    <Content Include="App_Data\App_Configs\appSettings.Offline.config" />
+    <Content Include="App_Data\App_Configs\appSettings.PROD.config" />
+    <Content Include="App_Data\App_Configs\codedom.config" />
+    <Content Include="App_Data\App_Configs\connectionStrings.CIDebug.config" />
+    <Content Include="App_Data\App_Configs\connectionStrings.CIRelease.config" />
+    <Content Include="App_Data\App_Configs\connectionStrings.Debug.config" />
+    <Content Include="App_Data\App_Configs\connectionStrings.DEV.config" />
+    <Content Include="App_Data\App_Configs\connectionStrings.ITG.config" />
+    <Content Include="App_Data\App_Configs\connectionStrings.Offline.config" />
+    <Content Include="App_Data\App_Configs\connectionStrings.PROD.config" />
+    <Content Include="App_Data\App_Configs\log4net.CIDebug.config" />
+    <Content Include="App_Data\App_Configs\log4net.CIRelease.config" />
+    <Content Include="App_Data\App_Configs\log4net.Debug.config" />
+    <Content Include="App_Data\App_Configs\log4net.DEV.config" />
+    <Content Include="App_Data\App_Configs\log4net.ITG.config" />
+    <Content Include="App_Data\App_Configs\log4net.Offline.config" />
+    <Content Include="App_Data\App_Configs\appSettings.config" />
+    <Content Include="App_Data\App_Configs\connectionStrings.config" />
+    <Content Include="App_Data\App_Configs\log4net.config" />
+    <Content Include="App_Data\App_Configs\subSonicService.config" />
+    <Content Include="Default.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_MasterPages\DataAdminMaster.Master" />
+    <Content Include="App_MasterPages\DefaultMaster.master" />
+    <Content Include="App_MasterPages\DefaultPortalMaster.master" />
+    <Content Include="App_MasterPages\SiteMaster.Master" />
+    <Content Include="App_MasterPages\SystemAdminMaster.master" />
+    <Content Include="App_MasterPages\UserAdminMaster.master" />
+    <Content Include="Global.asax" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApplicationError.aspx" />
+    <Content Include="App_Themes\DefaultTheme\DefaultTheme.css" />
+    <Content Include="App_Themes\DefaultTheme\DefaultTheme.skin" />
+    <Content Include="DataAdmin\QueryParameterValueList.aspx" />
+    <Content Include="DataAdmin\QueryParameterValueUpdate.aspx" />
+    <Content Include="DataAdmin\ProxyURLTypeList.aspx" />
+    <Content Include="DataAdmin\ProxyURLTypeUpdate.aspx" />
+    <Content Include="DataAdmin\DataAdminDefault.aspx" />
+    <Content Include="DataAdmin\ProxyURLDomainList.aspx" />
+    <Content Include="DataAdmin\ProxyURLDomainUpdate.aspx" />
+    <Content Include="DataAdmin\QueryParameterList.aspx" />
+    <Content Include="DataAdmin\QueryParameterUpdate.aspx" />
+    <Content Include="Redirect\ProxyURLList.aspx" />
+    <Content Include="Redirect\ProxyURLUpdate.aspx" />
+    <Content Include="SystemAdmin\DevScaffold.aspx" />
+    <Content Include="SystemAdmin\DevTestPage.aspx" />
+    <Content Include="SystemAdmin\LogDetail.aspx" />
+    <Content Include="SystemAdmin\LogList.aspx" />
+    <Content Include="SystemAdmin\SystemAdminDashboard.aspx" />
+    <Content Include="SystemAdmin\SystemAdminDefault.aspx" />
+    <Content Include="SystemAdmin\SystemLog.aspx" />
+    <Content Include="SystemAdmin\ViewLog.aspx" />
+    <Content Include="UserAdmin\PersonList.aspx" />
+    <Content Include="UserAdmin\PersonUpdate.aspx" />
+    <Content Include="Redirect\RedirectDefault.aspx" />
+    <Content Include="UserControls\ProxyURLListPanel.ascx" />
+    <Content Include="UserControls\ProxyURLUpdatePanel.ascx" />
+    <Content Include="UserControls\QueryParameterValueListPanel.ascx" />
+    <Content Include="UserControls\QueryParameterValueUpdatePanel.ascx" />
+    <Content Include="UserControls\ProxyURLTypeListPanel.ascx" />
+    <Content Include="UserControls\ProxyURLTypeUpdatePanel.ascx" />
+    <Content Include="UserControls\LogDetailPanel.ascx" />
+    <Content Include="UserControls\LogListPanel.ascx" />
+    <Content Include="UserControls\PersonListPanel.ascx" />
+    <Content Include="UserControls\PersonUpdatePanel.ascx" />
+    <Content Include="UserControls\ProxyURLDomainListPanel.ascx" />
+    <Content Include="UserControls\ProxyURLDomainUpdatePanel.ascx" />
+    <Content Include="UserControls\QueryParameterListPanel.ascx" />
+    <Content Include="UserControls\QueryParameterUpdatePanel.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_MasterPages\RedirectMaster.master" />
+    <Content Include="DataAdmin\ProxyURLGroupTypeUpdate.aspx" />
+    <Content Include="DataAdmin\ProxyURLGroupTypeList.aspx" />
+    <Content Include="Redirect\ProxyURLCopy.aspx" />
+    <Content Include="Redirect\ProxyURLMultiReplaceUpdate.aspx" />
+    <Content Include="Redirect\ProxyURLMultiEditUpdate.aspx" />
+    <Content Include="Redirect\ProxyURLEditUpdate.aspx" />
+    <Content Include="UserAdmin\UserAdminDefault.aspx" />
+    <Content Include="UserControls\ProxyURLCopyPanel.ascx" />
+    <Content Include="UserControls\ProxyURLGroupTypeUpdatePanel.ascx" />
+    <Content Include="UserControls\ProxyURLGroupTypeListPanel.ascx" />
+    <Content Include="UserControls\ProxyURLDescriptionMultiReplaceUpdatePanel.ascx" />
+    <Content Include="UserControls\ProxyURLMultiReplaceUpdatePanel.ascx" />
+    <Content Include="UserControls\QueryParameterValueMultiUpdatePanel.ascx" />
+    <Content Include="UserControls\ProxyURLMultiEditUpdatePanel.ascx" />
+    <Content Include="UserControls\CPSLogPanel.ascx" />
+    <Content Include="UserControls\ProxyURLEditUpdatePanel.ascx" />
+    <Content Include="UserControls\QueryParameterValueEditUpdatePanel.ascx" />
+    <Content Include="WebMethods.asmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataAdmin\ConfigurationServiceGroupTypeList.aspx" />
+    <Content Include="DataAdmin\ConfigurationServiceGroupTypeUpdate.aspx" />
+    <Content Include="DataAdmin\ConfigurationServiceApplicationList.aspx" />
+    <Content Include="DataAdmin\ConfigurationServiceApplicationUpdate.aspx" />
+    <Content Include="UserControls\ConfigurationServiceGroupTypeListPanel.ascx" />
+    <Content Include="UserControls\ConfigurationServiceGroupTypeUpdatePanel.ascx" />
+    <Content Include="UserControls\ConfigurationServiceApplicationListPanel.ascx" />
+    <Content Include="UserControls\ConfigurationServiceApplicationUpdatePanel.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AccessForbidden.html" />
+    <Content Include="ApplicationError.InvalidUserInput.html" />
+    <Content Include="ApplicationError.Timeout.html" />
+    <Content Include="App_MasterPages\ConfigurationServiceMaster.master" />
+    <Content Include="ConfigurationService\ConfigurationServiceDefault.aspx" />
+    <Content Include="ConfigurationService\ConfigurationServiceGroupList.aspx" />
+    <Content Include="ConfigurationService\ConfigurationServiceGroupUpdate.aspx" />
+    <Content Include="DataAdmin\ConfigurationServiceItemList.aspx" />
+    <Content Include="DataAdmin\ConfigurationServiceItemUpdate.aspx" />
+    <Content Include="DataAdmin\ConfigurationServiceLabelList.aspx" />
+    <Content Include="DataAdmin\ConfigurationServiceLabelUpdate.aspx" />
+    <Content Include="UserControls\ConfigurationServiceGroupListPanel.ascx" />
+    <Content Include="UserControls\ConfigurationServiceGroupSelectorListPanel.ascx" />
+    <Content Include="UserControls\ConfigurationServiceGroupUpdatePanel.ascx" />
+    <Content Include="UserControls\ConfigurationServiceItemListPanel.ascx" />
+    <Content Include="UserControls\ConfigurationServiceItemUpdatePanel.ascx" />
+    <Content Include="UserControls\ConfigurationServiceLabelListPanel.ascx" />
+    <Content Include="UserControls\ConfigurationServiceLabelUpdatePanel.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\App_Configs\log4net.PROD.config" />
+    <Content Include="MyInfo\MyInfoDefault.aspx" />
+    <Content Include="MyInfo\PersonDetailForMyInfo.aspx" />
+    <Content Include="Scripts\csshover3.htc" />
+    <Content Include="Scripts\HP.ElementsCPS.Apps.WebUI.js" />
+    <Content Include="UserControls\PersonDetailPanel.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_MasterPages\MyInfoMaster.Master" />
+    <Content Include="Registration\Register.aspx" />
+    <Content Include="UserControls\PersonRegistrationPanel.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\App_Configs\app_offline.DEMO.htm" />
+    <Content Include="App_MasterPages\DefaultOverlayMaster.master" />
+    <Content Include="DataAdmin\EntityTypeList.aspx" />
+    <Content Include="DataAdmin\EntityTypeUpdate.aspx" />
+    <Content Include="DataAdmin\NoteDetail.aspx" />
+    <Content Include="DataAdmin\NoteList.aspx" />
+    <Content Include="DataAdmin\NoteSummariesOverlay.aspx" />
+    <Content Include="DataAdmin\NoteSummaryOverlay.aspx" />
+    <Content Include="DataAdmin\NoteTypeList.aspx" />
+    <Content Include="DataAdmin\NoteTypeUpdate.aspx" />
+    <Content Include="DataAdmin\NoteUpdate.aspx" />
+    <Content Include="UserAdmin\PersonDetail.aspx" />
+    <Content Include="UserAdmin\PersonSummaryOverlay.aspx" />
+    <Content Include="UserControls\EntityTypeListPanel.ascx" />
+    <Content Include="UserControls\EntityTypeUpdatePanel.ascx" />
+    <Content Include="UserControls\NoteDetailPanel.ascx" />
+    <Content Include="UserControls\NoteListPanel.ascx" />
+    <Content Include="UserControls\NoteSummariesListPanel.ascx" />
+    <Content Include="UserControls\NoteSummaryDetailPanel.ascx" />
+    <Content Include="UserControls\NoteTypeListPanel.ascx" />
+    <Content Include="UserControls\NoteTypeUpdatePanel.ascx" />
+    <Content Include="UserControls\NoteUpdatePanel.ascx" />
+    <Content Include="UserControls\PersonSummaryDetailPanel.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\App_Configs\appSettings.DEMO.config" />
+    <Content Include="App_Data\App_Configs\connectionStrings.DEMO.config" />
+    <Content Include="App_Data\App_Configs\log4net.DEMO.config" />
+    <Content Include="ConfigurationService\ConfigurationServiceGroupSelectorUpdate.aspx" />
+    <Content Include="ConfigurationService\ConfigurationServiceGroupCopy.aspx" />
+    <Content Include="ConfigurationService\ConfigurationServiceGroupSelectorCopy.aspx" />
+    <Content Include="ConfigurationService\ConfigurationServiceGroupEditUpdate.aspx" />
+    <Content Include="ConfigurationService\ConfigurationServiceGroupMultiReplaceUpdate.aspx" />
+    <Content Include="ConfigurationService\ConfigurationServiceGroupReport.aspx" />
+    <Content Include="UserControls\ConfigurationServiceGroupSelectorUpdatePanel.ascx" />
+    <Content Include="UserControls\ConfigurationServiceLabelValueUpdatePanel.ascx" />
+    <Content Include="UserControls\ConfigurationServiceGroupCopyPanel.ascx" />
+    <Content Include="UserControls\ConfigurationServiceGroupSelectorCopyPanel.ascx" />
+    <Content Include="UserControls\ConfigurationServiceGroupEditUpdatePanel.ascx" />
+    <Content Include="UserControls\ConfigurationServiceGroupMultiReplaceUpdatePanel.ascx" />
+    <Content Include="UserControls\ConfigurationServiceGroupDescriptionMultiReplaceUpdatePanel.ascx" />
+    <Content Include="UserControls\ConfigurationServiceGroupReportPanel.ascx" />
+    <Content Include="UserControls\ConfigurationServiceLabelValueReportPanel.ascx" />
+    <Content Include="UserControls\ConfigurationServiceGroupSelectorReportPanel.ascx" />
+    <Content Include="UserControls\ConfigurationServiceParameterValueReportPanel.ascx" />
+    <Content Include="UserControls\QueryParameterValueEditListUpdatePanel.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_MasterPages\JumpstationMaster.master" />
+    <Content Include="bin\AjaxControlToolkit.dll" />
+    <Content Include="bin\AjaxControlToolkit.pdb" />
+    <Content Include="bin\AntiXSSLibrary.dll" />
+    <Content Include="bin\AntiXSSLibrary.xml" />
+    <Content Include="bin\Calendar.dll" />
+    <Content Include="bin\HP.ElementsCPS.Apps.WebUI.dll" />
+    <Content Include="bin\HP.ElementsCPS.Apps.WebUI.pdb" />
+    <Content Include="bin\HP.ElementsCPS.Core.dll" />
+    <Content Include="bin\HP.ElementsCPS.Core.pdb" />
+    <Content Include="bin\HP.ElementsCPS.Data.dll" />
+    <Content Include="bin\HP.ElementsCPS.Data.pdb" />
+    <Content Include="bin\HP.HPFx.Core.dll" />
+    <Content Include="bin\HP.HPFx.Core.pdb" />
+    <Content Include="bin\HP.HPFx.Core.xml" />
+    <Content Include="bin\HP.HPFx.Extensions.Log4net.dll" />
+    <Content Include="bin\HP.HPFx.Extensions.Log4net.pdb" />
+    <Content Include="bin\HP.HPFx.Extensions.Log4net.xml" />
+    <Content Include="bin\HP.HPFx.Extensions.SubSonic.dll" />
+    <Content Include="bin\HP.HPFx.Extensions.SubSonic.pdb" />
+    <Content Include="bin\HP.HPFx.Extensions.SubSonic.xml" />
+    <Content Include="bin\HP.HPFx.Web.dll" />
+    <Content Include="bin\HP.HPFx.Web.pdb" />
+    <Content Include="bin\HP.HPFx.Web.Portal.dll" />
+    <Content Include="bin\HP.HPFx.Web.Portal.pdb" />
+    <Content Include="bin\HP.HPFx.Web.Portal.xml" />
+    <Content Include="bin\HP.HPFx.Web.xml" />
+    <Content Include="bin\log4net.dll" />
+    <Content Include="bin\log4net.xml" />
+    <Content Include="bin\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+    <Content Include="bin\Microsoft.Practices.EnterpriseLibrary.Data.dll" />
+    <Content Include="bin\Microsoft.Practices.ObjectBuilder.dll" />
+    <Content Include="bin\MySql.Data.dll" />
+    <Content Include="bin\PostBackRitalin.dll" />
+    <Content Include="bin\PostBackRitalin.pdb" />
+    <Content Include="bin\ScriptReferenceProfiler.dll" />
+    <Content Include="bin\Services.dll" />
+    <Content Include="bin\Services.pdb" />
+    <Content Include="bin\SubSonic.dll" />
+    <Content Include="bin\SubSonic.pdb" />
+    <Content Include="bin\SubSonic.xml" />
+    <Content Include="bin\System.Data.SQLite.dll" />
+    <Content Include="ConfigurationServiceGroupImport.xml" />
+    <Content Include="ConfigurationService\ConfigurationServiceGroupImportList.aspx" />
+    <Content Include="ConfigurationService\ConfigurationServiceGroupImportUpdate.aspx" />
+    <Content Include="ConfigurationService\ConfigurationServiceLabelValueImportUpdate.aspx" />
+    <Content Include="ConfigurationService\ConfigurationServiceGroupImportEditUpdate.aspx" />
+    <Content Include="ConfigurationService\ConfigurationServiceQueryParameterValueImportUpdate.aspx" />
+    <Content Include="DataAdmin\ApplicationList.aspx" />
+    <Content Include="DataAdmin\ApplicationUpdate.aspx" />
+    <Content Include="DataAdmin\JumpstationDomainList.aspx" />
+    <Content Include="DataAdmin\JumpstationDomainUpdate.aspx" />
+    <Content Include="DataAdmin\JumpstationMacroReport.aspx" />
+    <Content Include="DataAdmin\JumpstationMacroMultiReplaceUpdate.aspx" />
+    <Content Include="DataAdmin\JumpstationMacroEditUpdate.aspx" />
+    <Content Include="DataAdmin\JumpstationMacroValueUpdate.aspx" />
+    <Content Include="DataAdmin\TenantGroupList.aspx" />
+    <Content Include="DataAdmin\TenantGroupUpdate.aspx" />
+    <Content Include="DataAdmin\WorkflowModuleEditUpdate.aspx" />
+    <Content Include="DataAdmin\WorkflowModuleMultiReplaceUpdate.aspx" />
+    <Content Include="ConfigurationService\WorkflowVersionReport.aspx" />
+    <Content Include="ConfigurationService\WorkflowEditUpdate.aspx" />
+    <Content Include="ConfigurationService\WorkflowList.aspx" />
+    <Content Include="ConfigurationService\WorkflowMultiReplaceUpdate.aspx" />
+    <Content Include="ConfigurationService\WorkflowReport.aspx" />
+    <Content Include="ConfigurationService\WorkflowSelectorCopy.aspx" />
+    <Content Include="ConfigurationService\WorkflowSelectorUpdate.aspx" />
+    <Content Include="ConfigurationService\WorkflowUpdate.aspx" />
+    <Content Include="DataAdmin\ConfigurationServiceApplicationTypeList.aspx" />
+    <Content Include="DataAdmin\ConfigurationServiceApplicationTypeUpdate.aspx" />
+    <Content Include="DataAdmin\QueryParameterJumpstationGroupTypeList.aspx" />
+    <Content Include="DataAdmin\QueryParameterJumpstationGroupTypeUpdate.aspx" />
+    <Content Include="DataAdmin\JumpstationMacroUpdate.aspx" />
+    <Content Include="DataAdmin\JumpstationMacroList.aspx" />
+    <Content Include="DataAdmin\JumpstationApplicationList.aspx" />
+    <Content Include="DataAdmin\JumpstationApplicationUpdate.aspx" />
+    <Content Include="DataAdmin\JumpstationGroupTypeList.aspx" />
+    <Content Include="DataAdmin\JumpstationGroupTypeUpdate.aspx" />
+    <Content Include="DataAdmin\QueryParameterConfigurationServiceGroupTypeList.aspx" />
+    <Content Include="DataAdmin\QueryParameterConfigurationServiceGroupTypeUpdate.aspx" />
+    <Content Include="DataAdmin\QueryParameterProxyURLTypeList.aspx" />
+    <Content Include="DataAdmin\QueryParameterProxyURLTypeUpdate.aspx" />
+    <Content Include="DataAdmin\QueryParameterWorkflowTypeList.aspx" />
+    <Content Include="DataAdmin\QueryParameterWorkflowTypeUpdate.aspx" />
+    <Content Include="DataAdmin\WorkflowApplicationList.aspx" />
+    <Content Include="DataAdmin\WorkflowApplicationTypeList.aspx" />
+    <Content Include="DataAdmin\WorkflowApplicationTypeUpdate.aspx" />
+    <Content Include="DataAdmin\WorkflowApplicationUpdate.aspx" />
+    <Content Include="DataAdmin\WorkflowConditionList.aspx" />
+    <Content Include="DataAdmin\WorkflowConditionUpdate.aspx" />
+    <Content Include="DataAdmin\WorkflowModuleCategoryList.aspx" />
+    <Content Include="DataAdmin\WorkflowModuleCategoryUpdate.aspx" />
+    <Content Include="DataAdmin\WorkflowModuleList.aspx" />
+    <Content Include="DataAdmin\WorkflowModuleSubCategoryList.aspx" />
+    <Content Include="DataAdmin\WorkflowModuleSubCategoryUpdate.aspx" />
+    <Content Include="DataAdmin\WorkflowModuleUpdate.aspx" />
+    <Content Include="DataAdmin\WorkflowTypeList.aspx" />
+    <Content Include="DataAdmin\WorkflowTypeUpdate.aspx" />
+    <Content Include="Jumpstation\JumpstationGroupByQueryParameterList.aspx" />
+    <Content Include="Jumpstation\JumpstationDefault.aspx" />
+    <Content Include="Jumpstation\JumpstationGroupCopy.aspx" />
+    <Content Include="Jumpstation\JumpstationGroupEditUpdate.aspx" />
+    <Content Include="Jumpstation\JumpstationGroupList.aspx" />
+    <Content Include="Jumpstation\JumpstationGroupMultiReplaceUpdate.aspx" />
+    <Content Include="Jumpstation\JumpstationGroupReport.aspx" />
+    <Content Include="Jumpstation\JumpstationGroupSelectorCopy.aspx" />
+    <Content Include="Jumpstation\JumpstationGroupSelectorUpdate.aspx" />
+    <Content Include="Jumpstation\JumpstationGroupUpdate.aspx" />
+    <Content Include="lib\Ionic.Zip.dll" />
+    <Content Include="lib\NPOI.dll" />
+    <Content Include="SystemAdmin\DataImport.aspx" />
+    <Content Include="SystemAdmin\SystemAdminFileDownload.aspx" />
+    <Content Include="SystemAdmin\SystemAdminFileUpload.aspx" />
+    <Content Include="SystemAdmin\SystemAdminProcessConsole.aspx" />
+    <Content Include="DataAdmin\AppClientList.aspx" />
+    <Content Include="DataAdmin\AppClientUpdate.aspx" />
+    <Content Include="UserControls\AppClientListPanel.ascx" />
+    <Content Include="UserControls\AppClientUpdatePanel.ascx" />
+    <Content Include="UserControls\ApplicationListPanel.ascx" />
+    <Content Include="UserControls\ApplicationUpdatePanel.ascx" />
+    <Content Include="UserControls\ConfigurationServiceApplicationTypeListPanel.ascx" />
+    <Content Include="UserControls\ConfigurationServiceApplicationTypeUpdatePanel.ascx" />
+    <Content Include="UserControls\ConfigurationServiceGroupImportListPanel.ascx" />
+    <Content Include="UserControls\ConfigurationServiceGroupImportUpdatePanel.ascx" />
+    <Content Include="UserControls\ConfigurationServiceLabelValueImportListPanel.ascx" />
+    <Content Include="UserControls\ConfigurationServiceLabelValueImportUpdatePanel.ascx" />
+    <Content Include="UserControls\ConfigurationServiceGroupImportEditUpdatePanel.ascx" />
+    <Content Include="UserControls\ConfigurationServiceQueryParameterValueImportListPanel.ascx" />
+    <Content Include="UserControls\ConfigurationServiceQueryParameterValueImportUpdatePanel.ascx" />
+    <Content Include="UserControls\JumpstationGroupByQueryParameterListPanel.ascx" />
+    <Content Include="UserControls\JumpstationDomainUpdatePanel.ascx" />
+    <Content Include="UserControls\JumpstationDomainListPanel.ascx" />
+    <Content Include="UserControls\JumpstationMacroValueReportPanel.ascx" />
+    <Content Include="UserControls\JumpstationMacroReportPanel.ascx" />
+    <Content Include="UserControls\JumpstationMacroDescriptionMultiReplaceUpdatePanel.ascx" />
+    <Content Include="UserControls\JumpstationMacroMultiReplaceUpdatePanel.ascx" />
+    <Content Include="UserControls\JumpstationMacroEditUpdatePanel.ascx" />
+    <Content Include="UserControls\JumpstationMacroValueUpdatePanel.ascx" />
+    <Content Include="UserControls\JumpstationMacroValueListPanel.ascx" />
+    <Content Include="UserControls\TenantGroupListPanel.ascx" />
+    <Content Include="UserControls\TenantGroupUpdatePanel.ascx" />
+    <Content Include="UserControls\WorkflowModuleEditUpdatePanel.ascx" />
+    <Content Include="UserControls\WorkflowModuleDescriptionMultiReplaceUpdatePanel.ascx" />
+    <Content Include="UserControls\WorkflowModuleEditListUpdatePanel.ascx" />
+    <Content Include="UserControls\WorkflowModuleMultiReplaceUpdatePanel.ascx" />
+    <Content Include="UserControls\WorkflowURLReportPanel.ascx" />
+    <Content Include="UserControls\WorkflowVersionReportPanel.ascx" />
+    <Content Include="UserControls\QueryParameterJumpstationGroupTypeListPanel.ascx" />
+    <Content Include="UserControls\QueryParameterJumpstationGroupTypeUpdatePanel.ascx" />
+    <Content Include="UserControls\JumpstationLogPanel.ascx" />
+    <Content Include="UserControls\JumpstationMacroListPanel.ascx" />
+    <Content Include="UserControls\JumpstationMacroUpdatePanel.ascx" />
+    <Content Include="UserControls\JumpstationQueryParameterValueEditListUpdatePanel.ascx" />
+    <Content Include="UserControls\JumpstationApplicationListPanel.ascx" />
+    <Content Include="UserControls\JumpstationApplicationUpdatePanel.ascx" />
+    <Content Include="UserControls\JumpstationGroupCopyPanel.ascx" />
+    <Content Include="UserControls\JumpstationGroupDescriptionMultiReplaceUpdatePanel.ascx" />
+    <Content Include="UserControls\JumpstationGroupEditUpdatePanel.ascx" />
+    <Content Include="UserControls\JumpstationGroupListPanel.ascx" />
+    <Content Include="UserControls\JumpstationGroupMultiReplaceUpdatePanel.ascx" />
+    <Content Include="UserControls\JumpstationGroupReportPanel.ascx" />
+    <Content Include="UserControls\JumpstationGroupSelectorCopyPanel.ascx" />
+    <Content Include="UserControls\JumpstationGroupSelectorListPanel.ascx" />
+    <Content Include="UserControls\JumpstationGroupSelectorReportPanel.ascx" />
+    <Content Include="UserControls\JumpstationGroupTypeListPanel.ascx" />
+    <Content Include="UserControls\JumpstationGroupTypeUpdatePanel.ascx" />
+    <Content Include="UserControls\JumpstationGroupUpdatePanel.ascx" />
+    <Content Include="UserControls\JumpstationParameterValueReportPanel.ascx" />
+    <Content Include="UserControls\JumpstationGroupSelectorUpdatePanel.ascx" />
+    <Content Include="UserControls\QueryParameterConfigurationServiceGroupTypeListPanel.ascx" />
+    <Content Include="UserControls\QueryParameterConfigurationServiceGroupTypeUpdatePanel.ascx" />
+    <Content Include="UserControls\QueryParameterProxyURLTypeListPanel.ascx" />
+    <Content Include="UserControls\QueryParameterProxyURLTypeUpdatePanel.ascx" />
+    <Content Include="UserControls\QueryParameterWorkflowTypeListPanel.ascx" />
+    <Content Include="UserControls\QueryParameterWorkflowTypeUpdatePanel.ascx" />
+    <Content Include="UserControls\WorkflowApplicationListPanel.ascx" />
+    <Content Include="UserControls\WorkflowApplicationTypeListPanel.ascx" />
+    <Content Include="UserControls\WorkflowApplicationTypeUpdatePanel.ascx" />
+    <Content Include="UserControls\WorkflowApplicationUpdatePanel.ascx" />
+    <Content Include="UserControls\WorkflowConditionEditListUpdatePanel.ascx" />
+    <Content Include="UserControls\WorkflowConditionListPanel.ascx" />
+    <Content Include="UserControls\WorkflowConditionUpdatePanel.ascx" />
+    <Content Include="UserControls\WorkflowDescriptionMultiReplaceUpdatePanel.ascx" />
+    <Content Include="UserControls\WorkflowEditUpdatePanel.ascx" />
+    <Content Include="UserControls\WorkflowListPanel.ascx" />
+    <Content Include="UserControls\WorkflowModuleCategoryListPanel.ascx" />
+    <Content Include="UserControls\WorkflowModuleCategoryUpdatePanel.ascx" />
+    <Content Include="UserControls\WorkflowModuleConditionReportPanel.ascx" />
+    <Content Include="UserControls\WorkflowModuleListPanel.ascx" />
+    <Content Include="UserControls\WorkflowModuleReportPanel.ascx" />
+    <Content Include="UserControls\WorkflowModuleSubCategoryListPanel.ascx" />
+    <Content Include="UserControls\WorkflowModuleSubCategoryUpdatePanel.ascx" />
+    <Content Include="UserControls\WorkflowModuleUpdatePanel.ascx" />
+    <Content Include="UserControls\WorkflowMultiReplaceUpdatePanel.ascx" />
+    <Content Include="UserControls\WorkflowParameterValueReportPanel.ascx" />
+    <Content Include="UserControls\WorkflowQueryParameterValueEditListUpdatePanel.ascx" />
+    <Content Include="UserControls\WorkflowReportPanel.ascx" />
+    <Content Include="UserControls\WorkflowSelectorCopyPanel.ascx" />
+    <Content Include="UserControls\WorkflowSelectorListPanel.ascx" />
+    <Content Include="UserControls\WorkflowSelectorReportPanel.ascx" />
+    <Content Include="UserControls\WorkflowSelectorUpdatePanel.ascx" />
+    <Content Include="UserControls\WorkflowTypeListPanel.ascx" />
+    <Content Include="UserControls\WorkflowTypeUpdatePanel.ascx" />
+    <Content Include="UserControls\WorkflowUpdatePanel.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\ConfigureApp.bat" />
+    <None Include="bin\PostBuild.bat" />
+    <None Include="bin\SynchronizeFile.bat" />
+    <None Include="bin\SynchronizeFileIfSourceFileExists.bat" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\App_Logs\" />
+    <Folder Include="Pages\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52230</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52230/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\..\..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\build\net20\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\..\..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\build\net20\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\build\net20\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\build\net20\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
+</Project>

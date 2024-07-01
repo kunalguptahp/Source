@@ -1,0 +1,409 @@
+.leftNavHR {
+    BACKGROUND: #cccccc;
+}
+
+.leftNavSkin {
+    BORDER-RIGHT: #666666 1px solid;
+    FONT-SIZE: xx-small;
+    MARGIN-LEFT: 5px;
+    CURSOR: default;
+    COLOR: #003399;
+    MARGIN-RIGHT: 5px;
+    BACKGROUND-REPEAT: repeat;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+}
+
+.leftNavSkin A.leftNav:visited {
+    COLOR: #003366;
+    BACKGROUND-REPEAT: repeat;
+}
+
+.leftNavSkin A.leftNav:hover {
+    BACKGROUND-REPEAT: repeat;
+    TEXT-DECORATION: underline;
+}
+
+.leftNavSkin .leftNavHeader {
+    FONT-WEIGHT: bold;
+    FONT-SIZE: xx-small;
+    BACKGROUND: #666666;
+    COLOR: #ffffff;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+}
+
+.leftNavSkin .leftNavSelected {
+    FONT-WEIGHT: bold;
+    FONT-SIZE: xx-small;
+    COLOR: #000066;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    BACKGROUND-COLOR: #cccccc;
+    TEXT-DECORATION: none;
+}
+
+.nav2Skin {
+    PADDING-RIGHT: 5px;
+    PADDING-LEFT: 5px;
+    FONT-SIZE: xx-small;
+    Z-INDEX: 100;
+    BACKGROUND: #cccccc;
+    VISIBILITY: hidden;
+    PADDING-BOTTOM: 5px;
+    WIDTH: 180px;
+    COLOR: #000000;
+    PADDING-TOP: 5px;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    POSITION: absolute;
+}
+
+.nav2Skin A {
+    FONT-SIZE: xx-small;
+    COLOR: #000000;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    TEXT-DECORATION: none;
+}
+
+.nav2Skin LABEL {
+    FONT-WEIGHT: bold;
+    FONT-SIZE: xx-small;
+    CURSOR: default;
+    COLOR: #000000;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    TEXT-DECORATION: none;
+}
+
+.hNav2Skin {
+    MARGIN-TOP: 1px;
+    FONT-SIZE: xx-small;
+    BACKGROUND: #cccccc;
+    COLOR: #000000;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    POSITION: relative;
+}
+
+.hNav2Skin A {
+    FONT-SIZE: xx-small;
+    COLOR: #000000;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    TEXT-DECORATION: none;
+}
+
+.leftNavSkin .leftNavDown {
+    FONT-WEIGHT: bold;
+    FONT-SIZE: xx-small;
+    COLOR: #000033;
+    BACKGROUND-REPEAT: repeat;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    TEXT-DECORATION: none;
+}
+
+.leftNavSkin .leftNavDown:visited {
+    COLOR: #003366;
+    BACKGROUND-REPEAT: repeat;
+    TEXT-DECORATION: none;
+}
+
+.leftNavSkin .leftNavDown:hover {
+    COLOR: #003366;
+    text-decoration: underline;
+}
+
+.leftNavSkin .leftNavDownSelected {
+    FONT-WEIGHT: bold;
+    FONT-SIZE: xx-small;
+    COLOR: #000066;
+    BACKGROUND-REPEAT: repeat;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    BACKGROUND-COLOR: #cccccc;
+    TEXT-DECORATION: none;
+}
+
+.footerSkin {
+    BORDER-TOP: #003366 4px solid;
+    padding-top:7px;
+    padding-bottom:32px;
+    FONT-SIZE: x-small;
+    CURSOR: default;
+    COLOR: #000000;
+    FONT-FAMILY: Arial, Verdana, Helvetica;
+}
+
+.footerSkin A {
+    FONT-SIZE: x-small;
+    COLOR: #000000;
+    FONT-FAMILY: Arial, Verdana, Helvetica;
+}
+
+.footerSkin A:visited {
+    COLOR: #000000;
+}
+
+.searchSkin {
+    FONT-SIZE: x-small;
+    COLOR: #ffffff;
+    FONT-FAMILY: Arial, Verdana, Helvetica;
+    BACKGROUND-COLOR: #333333;
+}
+
+.searchSkin A {
+    FONT-SIZE: x-small;
+    COLOR: #ffffff;
+    FONT-FAMILY: Arial, Verdana, Helvetica;
+}
+
+.searchSkin A:visited {
+    COLOR: #ffffff;
+}
+
+.searchSkin .searchText {
+    BORDER-RIGHT: #cccccc 1px solid;
+    BORDER-TOP: #333333 1px solid;
+    FONT-SIZE: x-small;
+    BORDER-LEFT: #333333 1px solid;
+    BORDER-BOTTOM: #cccccc 1px solid;
+    FONT-FAMILY: Arial, Verdana, Helvetica;
+    BACKGROUND-COLOR: #ffffff;
+}
+
+.searchSkin TD {
+    FONT-SIZE: x-small;
+    COLOR: #ffffff;
+    FONT-FAMILY: Arial, Verdana, Helvetica;
+}
+
+.searchSkin LABEL {
+    FONT-SIZE: xx-small;
+    COLOR: #ffffff;
+}
+
+.searchSkin .searchRadio {
+    WIDTH: 10px;
+    HEIGHT: 14px;
+}
+
+.searchSkin .searchButton {
+    BORDER-RIGHT: #666666 1px solid;
+    BORDER-TOP: #cccccc 1px solid;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: x-small;
+    BACKGROUND: #999999;
+    BORDER-LEFT: #cccccc 1px solid;
+    COLOR: #ffffff;
+    BORDER-BOTTOM: #666666 1px solid;
+    FONT-FAMILY: Arial, Verdana, Helvetica;
+    HEIGHT: 20px;
+}
+
+.footerSkin .copyright {
+    FONT-SIZE: xx-small;
+}
+
+
+.bannerSkin .pagetitle {
+    FONT-SIZE: small;
+    COLOR: #ffffff;
+    FONT-FAMILY: Arial, Verdana, Helvetica;
+    TOP: 50px;
+}
+
+.warningMsg {
+	margin-left: 100px;
+    FONT-WEIGHT: bold;
+    FONT-SIZE:0.8em;
+    COLOR: #ff0000;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+	
+}
+
+.leftNavSkin A.leftNav {
+    FONT-SIZE: xx-small;
+    COLOR: #003366;
+    BACKGROUND-REPEAT: repeat;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    TEXT-DECORATION: none;
+}
+
+#nav2Down {
+    BACKGROUND-COLOR: #999999;
+}
+
+#nav2Down A {
+    COLOR: #ffffff;
+}
+
+#nav2DownHover
+{
+    BACKGROUND-COLOR: #cccccc;
+}
+
+#nav2DownHover A {
+    COLOR: blue;
+}
+
+#nav2DownSelectedHover
+{
+    BACKGROUND-COLOR: #999999;
+}
+
+#nav2DownSelectedHover A {
+    COLOR: #660066;
+}
+
+.nav1Down {
+    FONT-WEIGHT: bold;
+    FONT-SIZE: xx-small;
+    COLOR: #000000;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    BACKGROUND-COLOR: #cccccc;
+    padding-left:7px;
+    padding-right:7px;
+}
+
+.nav1DownHover {
+    FONT-WEIGHT: bold;
+    BACKGROUND-COLOR: #cccccc;
+    FONT-SIZE: xx-small;
+    COLOR: #000000;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    padding-left:7px;
+    padding-right:7px;
+}
+
+.nav1DownHover A {
+    FONT-SIZE: xx-small;
+    COLOR: #000000;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    TEXT-DECORATION: none;
+}
+
+.nav1Down A {
+    FONT-SIZE: xx-small;
+    COLOR: #000000;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    TEXT-DECORATION: none;
+}
+
+.nav1Up {
+    BACKGROUND-COLOR: #333333;
+    padding-left:7px;
+    padding-right:7px;
+}
+
+.nav1Filler {
+    BACKGROUND-COLOR: #333333;
+    padding-left:0px;
+    padding-right:0px;
+}
+
+.nav1Up A {
+    FONT-WEIGHT: bold;
+    FONT-SIZE: xx-small;
+    COLOR: #ffffff;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    WHITE-SPACE: nowrap;
+    TEXT-DECORATION: none;
+}
+
+.nav1Up A:visited {
+    COLOR: #ffffff;
+}
+
+.nav1Down A:visited {
+    COLOR: #000000;
+}
+
+.nav1UpHelp {
+    BACKGROUND-COLOR: #333333;
+    padding-left:7px;
+    padding-right:7px;
+}
+
+.nav1UpHelp A {
+    FONT-WEIGHT: bold;
+    FONT-SIZE: xx-small;
+    COLOR: #ffffff;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    WHITE-SPACE: nowrap;
+    TEXT-DECORATION: none;
+}
+
+.nav1UpHelp A:visited {
+    COLOR: #ffffff;
+}
+
+.nav1Up A:visited {
+    COLOR: #ffffff;
+}
+
+
+.nav2Skin A:visited {
+    COLOR: #000000;
+}
+
+.hNav2Skin A:visited {
+    COLOR: #000000;
+}
+
+/*Added by Venkatesh*/
+.SiteTitle {
+	FONT-SIZE: 1.25em;
+	COLOR: #000000;
+	FONT-FAMILY: Arial, Verdana, Helvetica;
+	BACKGROUND-COLOR: #ffffff;
+	font-weight: bold;
+	margin-left:10
+}
+.SiteTitleMd {
+	FONT-SIZE: 1.05em;
+	COLOR: #000000;
+	FONT-FAMILY: Arial, Verdana, Helvetica;
+	BACKGROUND-COLOR: #ffffff;
+	font-weight: bold;
+}
+.SiteTitleSml {
+	FONT-SIZE: 1em; 
+	COLOR: #000000; 
+	FONT-FAMILY: Arial, Verdana, Helvetica; 
+	BACKGROUND-COLOR: #ffffff
+}
+
+/*Added by Venkatesh*/
+
+/*Modified by Venkatesh - as suggested by Tal*/
+.greetingMsg {
+
+	FONT-SIZE: .75em;
+    COLOR: #000000;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+}
+/*Modified by Venkatesh - as suggested by Tal*/
+
+TR.BannerTitle {
+    padding-top:20px;
+    padding-left:18px;
+    margin-top:20px;
+    margin-left:18px;
+    vertical-align:baseline;
+
+}
+
+.nav1LinkHover {
+    FONT-WEIGHT: bold;
+    BACKGROUND-COLOR: #cccccc;
+    FONT-SIZE: xx-small;
+    COLOR: #000000;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    padding-left:7px;
+    padding-right:7px;
+}
+
+.nav1LinkHover A {
+    FONT-SIZE: xx-small;
+    COLOR:blue;/*Changed by Venkatesh*/
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    TEXT-DECORATION: none;
+}
+
+.nav1LinkHover A:visited {
+    COLOR: blue;
+}
+

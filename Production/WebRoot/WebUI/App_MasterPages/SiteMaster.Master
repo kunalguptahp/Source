@@ -1,0 +1,55 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteMaster.master.cs" Inherits="HP.ElementsCPS.Apps.WebUI.MasterPages.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<title>CPS</title>
+	<asp:ContentPlaceHolder ID="PageHead" runat="server">
+	</asp:ContentPlaceHolder>
+</head>
+<body>
+<%--	<asp:LoginName runat="server" ID="ctrlLoginName" FormatString="Hello {0}." />
+--%>
+	<asp:ContentPlaceHolder ID="PortalHeaderArea" runat="server">
+	</asp:ContentPlaceHolder>
+	<form id="form1" runat="server">
+	<asp:ScriptManager ID="ajaxScriptManager" runat="server" 
+		OnAsyncPostBackError="ajaxScriptManager_AsyncPostBackError">
+		<Scripts>
+			<asp:ScriptReference Path="~/scripts/HP.ElementsCPS.Apps.WebUI.js" />
+		</Scripts>
+	</asp:ScriptManager>
+	<!-- HP PORTAL UI : START OUTER TABLE -->
+	<table id="HP_PORTAL_UI_OUTER_TABLE" cellspacing="0" cellpadding="0" border="0">
+		<!-- HP PORTAL UI : START OUTER TABLE ROW -->
+		<tr id="HP_PORTAL_UI_OUTER_TABLE_ROW_NAVBAR_AND_CONTENT" valign="top" align="left">
+			<td id="HP_PORTAL_UI_OUTER_TABLE_CELL_NAVBAR">
+				<asp:ContentPlaceHolder ID="PortalNavigationTreeArea" runat="server">
+				</asp:ContentPlaceHolder>
+			</td>
+			<td style="width: 2px">
+				<img src="" alt="" style="visibility: hidden;" width="2" />
+			</td>
+			<td id="HP_PORTAL_UI_OUTER_TABLE_CELL_PAGE_CONTENT" style="width: 100%">
+				<!-- HP PORTAL UI : START PAGE CONTENT -->
+				<div>
+					<asp:ContentPlaceHolder ID="PageContentArea" runat="server">
+					</asp:ContentPlaceHolder>
+				</div>
+				<!-- HP PORTAL UI : END PAGE CONTENT -->
+			</td>
+		</tr>
+		<!-- HP PORTAL UI : END OUTER TABLE ROW -->
+		<!-- HP PORTAL UI : START OUTER TABLE ROW -->
+		<tr id="HP_PORTAL_UI_OUTER_TABLE_ROW_FOOTER" valign="top">
+			<td id="HP_PORTAL_UI_OUTER_TABLE_CELL_FOOTER" colspan="3">
+				<asp:ContentPlaceHolder ID="PortalFooterArea" runat="server">
+				</asp:ContentPlaceHolder>
+			</td>
+		</tr>
+		<!-- HP PORTAL UI : END OUTER TABLE ROW -->
+	</table>
+	<!-- HP PORTAL UI : END OUTER TABLE -->
+	</form>
+</body>
+</html>

@@ -1,0 +1,572 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HP.HPFx.Web.Portal</name>
+    </assembly>
+    <members>
+        <member name="T:HP.HPFx.Web.UI.Portal.PortalFooter">
+            <summary>
+            Summary description for PortalFooter.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalFooter.#ctor">
+            <summary>
+            Initializes a new instance of the PortalFooter class.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalFooter.RenderCode(System.Web.UI.HtmlTextWriter)">
+            <summary> 
+            Render this control to the writer parameter specified.
+            </summary>
+            <param name="writer"> The HTML writer to write out to </param>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalFooter.SaveViewState">
+            <summary>
+            NOTE: Refer to the base method's documentation for details.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalFooter.LoadViewState(System.Object)">
+            <summary>
+            NOTE: Refer to the base method's documentation for details.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalFooter.CreateJsFnParam(System.String)">
+            <summary>
+            Utility method/macro.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalFooter.PrivacyLevel">
+            <summary>
+            Indicates which HP Data Confidentiality Label will be displayed by the control.
+            </summary>
+            <remarks>
+            NOTE: For more info on the differences between the levels, refer to 
+            "http://legal.hp.com/legal/files/labels.asp".
+            </remarks>
+            <seealso cref="T:HP.HPFx.Web.UI.Portal.PortalFooter.ContentPrivacyLevel"/>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalFooter.FeedbackUrl">
+            <summary>
+            The URL of the Feedback hyperlink in the Footer.
+            </summary>
+            <remarks>
+            Note that this property doesn't necessarily have to point to a web page.
+            For example, you can cause it to open/create an email by using standard "mailto:" syntax.
+            </remarks>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalFooter.SupportUrl">
+            <summary>
+            The URL of the Support hyperlink in the Footer.
+            </summary>
+            <remarks>
+            Note that this property doesn't necessarily have to point to a web page.
+            For example, you can cause it to open/create an email by using standard "mailto:" syntax.
+            </remarks>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalFooter.TargetFrame">
+            <summary>
+            Gets or sets the name of the target window or frame which is targeted by this control's actions.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalFooter.Version">
+            <summary>
+            Optional. Gets or sets the version number of your site that will be displayed in the control.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalFooter.SeparatorColor">
+            <summary>
+            Gets or sets the color of the separator.
+            </summary>
+            <remarks>
+            HTML color names (e.g. \"red\") and RGB color codes (e.g. \"#FF0000\") are both acceptable inputs.
+            </remarks>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalFooter.SeparatorHeight">
+            <summary>
+            Gets or sets the vertical height of the separator, measured in pixels.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalFooter.EnablePageRevisionInfo">
+            <summary>
+            Enables or disables the automatic display of the page's "last modified date".
+            </summary>
+            <remarks>
+            The page revision info is normally displayed near the site's Version Number.
+            </remarks>
+            <seealso cref="P:HP.HPFx.Web.UI.Portal.PortalFooter.Version"/>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.Portal.PortalFooter.ContentPrivacyLevel">
+            <summary>
+            Contains all of the HP Data Confidentiality Labels/Levels supported by the PortalFooter control.
+            </summary>
+            <remarks>
+            NOTE: For more info on the differences between the levels, refer to 
+            "http://legal.hp.com/legal/files/labels.asp".
+            </remarks>
+            <seealso cref="P:HP.HPFx.Web.UI.Portal.PortalFooter.PrivacyLevel"/>
+        </member>
+        <member name="F:HP.HPFx.Web.UI.Portal.PortalFooter.ContentPrivacyLevel.Unspecified">
+            <summary>
+            Indicates that the system should decide which label to display (if any).
+            </summary>
+        </member>
+        <member name="F:HP.HPFx.Web.UI.Portal.PortalFooter.ContentPrivacyLevel.Restricted">
+            <summary>
+            Indicates that the control should display the "HP Restricted" label.
+            </summary>
+        </member>
+        <member name="F:HP.HPFx.Web.UI.Portal.PortalFooter.ContentPrivacyLevel.Public">
+            <summary>
+            Indicates that the control should display the "HP Public" label.
+            </summary>
+        </member>
+        <member name="F:HP.HPFx.Web.UI.Portal.PortalFooter.ContentPrivacyLevel.Confidential">
+            <summary>
+            Indicates that the control should display the "HP Confidential" label.
+            </summary>
+        </member>
+        <member name="F:HP.HPFx.Web.UI.Portal.PortalFooter.ContentPrivacyLevel.Private">
+            <summary>
+            Indicates that the control should display the "HP Private" label.
+            </summary>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.Portal.PortalHeader">
+            <summary>
+            Summary description for PortalHeader.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalHeader.#ctor">
+            <summary>
+            Initializes a new instance of the PortalHeader class.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalHeader.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            NOTE: This is a low-level method intended primarily for custom control authors.
+            Refer to the base method's documentation for details.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalHeader.RenderCode(System.Web.UI.HtmlTextWriter)">
+            <summary> 
+            Render this control to the writer parameter specified.
+            </summary>
+            <param name="writer"> The HTML writer to write out to </param>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalHeader.SaveViewState">
+            <summary>
+            NOTE: Refer to the base method's documentation for details.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalHeader.LoadViewState(System.Object)">
+            <summary>
+            NOTE: Refer to the base method's documentation for details.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalHeader.CreateJsFnParam(System.String)">
+            <summary>
+            Utility method/macro.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalHeader.PortalScriptUrl_Default">
+            <summary>
+            The URL of the file containing the default portal script.
+            </summary>
+            <seealso cref="P:HP.HPFx.Web.UI.Portal.PortalHeader.PortalScriptUrl"/>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalHeader.PortalScriptUrl_AtHP">
+            <summary>
+            The URL of the file containing the portal script used by the AtHP portal site.
+            </summary>
+            <seealso cref="P:HP.HPFx.Web.UI.Portal.PortalHeader.PortalScriptUrl"/>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalHeader.PortalScriptUrl_OldDefault">
+            <summary>
+            The URL of the file containing the obsolete "v5" version of the portal script.
+            </summary>
+            <seealso cref="P:HP.HPFx.Web.UI.Portal.PortalHeader.PortalScriptUrl"/>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalHeader.PortalScriptUrl">
+            <summary>
+            Gets or sets the URL of the file containing the portal script.
+            </summary>
+            <remarks>
+            Changing this allows you to override the normal portal behavior using custom scripts.
+            </remarks>
+            <seealso cref="P:HP.HPFx.Web.UI.Portal.PortalHeader.PortalScriptUrl_Default"/>
+            <seealso cref="P:HP.HPFx.Web.UI.Portal.PortalHeader.PortalScriptUrl_AtHP"/>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalHeader.Title">
+            <summary>
+            Gets or sets the site title to display at the top center of the banner.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalHeader.GreetingMessage">
+            <summary>
+            Gets or sets the text to display as a greeting to the user when a page loads.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalHeader.WarningMessage">
+            <summary>
+            Gets or sets the text that is displayed underneath the banner as a \"critical warning to the user\" when a page loads.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalHeader.SiteSearchId">
+            <summary>
+            Gets or sets your SiteSearch ID, which is created by the SiteSearch tool.
+            </summary>
+            <remarks>
+            NOTE: Entering an incorrect value can cause erroneous results or failure on the Search Results Page.
+            </remarks>
+            <seealso cref="P:HP.HPFx.Web.UI.Portal.PortalHeader.SiteSearchTitle"/>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalHeader.SiteSearchTitle">
+            <summary>
+            Gets or sets your site's "title" as displayed in the SiteSearch area of the Banner.
+            </summary>
+            <remarks>
+            NOTE: Entering an incorrect value can cause erroneous results or failure on the Search Results Page.
+            </remarks>
+            <seealso cref="P:HP.HPFx.Web.UI.Portal.PortalHeader.SiteSearchId"/>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalHeader.EnableMyLinks">
+            <summary>
+            Enables or disables the \"Add MyLinks\" button above the PeopleFinder text box.
+            </summary>
+            <remarks>
+            The Add MyLinks button allows the end-user to bookmark your page on their MyLinks module located on the homepage of the portal.
+            </remarks>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalHeader.EnableStandardBodyStyles">
+            <summary>
+            Enables or disables the @hp predefined body type styles.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalHeader.EnableLogOn">
+            <summary>
+            Enables or disables the Login button/link in the banner.
+            </summary>
+            <remarks>
+            The Login button is normally displayed above the PeopleFinder textbox.
+            </remarks>
+            <seealso cref="P:HP.HPFx.Web.UI.Portal.PortalHeader.LogOnSuccessUrl"/>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalHeader.LogOnSuccessUrl">
+            <summary>
+            Gets or sets a URL to which the user will be redirected after successfully logging in.
+            </summary>
+            <remarks>
+            This property is ignored if the 
+            <see cref="P:HP.HPFx.Web.UI.Portal.PortalHeader.EnableLogOn"/>
+            property is <c>false</c>.
+            <para>
+            If left empty, the user will automatically be redirected to the portal after successfully logging in.
+            </para>
+            </remarks>
+            <seealso cref="P:HP.HPFx.Web.UI.Portal.PortalHeader.EnableLogOn"/>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalHeader.BreadCrumb1">
+            <summary>
+            Gets or sets the PortalMenuItem to select within the PortalMenu (Level 1).
+            </summary>
+            <remarks>
+            The value must exactly match the menu item name.
+            </remarks>
+            <seealso cref="P:HP.HPFx.Web.UI.Portal.PortalMenuItem.Selected"/>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalHeader.BreadCrumb2">
+            <summary>
+            Gets or sets the PortalMenuItem to select within the PortalMenu (Level 2).
+            </summary>
+            <remarks>
+            The value must exactly match the menu item name.
+            </remarks>
+            <seealso cref="P:HP.HPFx.Web.UI.Portal.PortalMenuItem.Selected"/>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalHeader.BreadCrumb3">
+            <summary>
+            Gets or sets the PortalNavigationControl to select on the left navigation (i.e. PortalNavigationTree).
+            </summary>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.Portal.PortalMenu">
+            <summary>
+            Summary description for PortalMenu.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalMenu.#ctor">
+            <summary>
+            Initializes a new instance of the PortalMenu class.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalMenu.RenderCode(System.Web.UI.HtmlTextWriter)">
+            <summary> 
+            Render this control to the writer parameter specified.
+            </summary>
+            <param name="writer"> The HTML writer to write out to </param>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalMenu.SaveViewState">
+            <summary>
+            NOTE: Refer to the base method's documentation for details.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalMenu.LoadViewState(System.Object)">
+            <summary>
+            NOTE: Refer to the base method's documentation for details.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalMenu.HorizontalSubMenus">
+            <summary>
+            Indicates whether sub-menus (i.e. PortalMenuItems on Level 2) should be displayed horizontally or vertically.
+            </summary>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.Portal.PortalMenuItem">
+            <summary>
+            Summary description for PortalMenuItem.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalMenuItem.Render(System.Web.UI.HtmlTextWriter)">
+            <summary> 
+            Render this control to the writer parameter specified.
+            </summary>
+            <param name="writer"> The HTML writer to write out to </param>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalMenuItem.AddParsedSubObject(System.Object)">
+            <summary>
+            Overridden to ignore any "pure whiteSpace" child controls.
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalMenuItem.SaveViewState">
+            <summary>
+            NOTE: Refer to the base method's documentation for details.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalMenuItem.LoadViewState(System.Object)">
+            <summary>
+            NOTE: Refer to the base method's documentation for details.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalMenuItem.RenderContentsToString(System.Int32)">
+            <summary>
+            Utility method used when rendering an Item that has child controls.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalMenuItem.GetParentMenu">
+            <summary>
+            Returns the <see cref="T:HP.HPFx.Web.UI.Portal.PortalMenuItem"/> control that contains this control, or <c>null</c>.
+            </summary>
+            <returns>the <see cref="T:HP.HPFx.Web.UI.Portal.PortalMenuItem"/> control that contains this control, or <c>null</c></returns>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalMenuItem.GetParentHeader">
+            <summary>
+            Returns the <see cref="T:HP.HPFx.Web.UI.Portal.PortalHeader"/> control that contains this control, or <c>null</c>.
+            </summary>
+            <returns>the <see cref="T:HP.HPFx.Web.UI.Portal.PortalHeader"/> control that contains this control, or <c>null</c></returns>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalMenuItem.Select(System.Boolean)">
+            <summary>
+            Sets this item (plus all of the MenuItem's parent item(s), if specified) as the "Selected" item.
+            </summary>
+            <param name="recursively">If <c>true</c>, all of the MenuItems that contain this MenuItem will also be Selected.</param>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalMenuItem.CreateJsFnParam(System.String)">
+            <summary>
+            Utility method/macro.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalMenuItem.Text">
+            <summary>
+            Gets or sets the text displayed by the control.
+            </summary>
+            <remarks>
+            NOTE: If the value of the property is a single pipe character (i.e. "|"), then the control will display as a visible separator.
+            </remarks>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalMenuItem.NavigateUrl">
+            <summary>
+            Gets or sets the URL to link to when the control is clicked.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalMenuItem.TargetFrame">
+            <summary>
+            Gets or sets the name of the target window or frame which is targeted by this control's actions.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalMenuItem.Selected">
+            <summary>
+            Indicates whether this control is displayed as the "selected" one within it's level of the PortalMenu.
+            </summary>
+            <seealso cref="P:HP.HPFx.Web.UI.Portal.PortalHeader.BreadCrumb1"/>
+            <seealso cref="P:HP.HPFx.Web.UI.Portal.PortalHeader.BreadCrumb2"/>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.Portal.PortalNavigationControl">
+            <summary>
+            Summary description for PortalNavigationControl.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalNavigationControl.Render(System.Web.UI.HtmlTextWriter)">
+            <summary> 
+            Render this control to the writer parameter specified.
+            </summary>
+            <param name="writer"> The HTML writer to write out to </param>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalNavigationControl.SaveViewState">
+            <summary>
+            NOTE: Refer to the base method's documentation for details.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalNavigationControl.LoadViewState(System.Object)">
+            <summary>
+            NOTE: Refer to the base method's documentation for details.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalNavigationControl.RenderContentsToString(System.Int32)">
+            <summary>
+            Utility method used when rendering an Item that has child controls.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalNavigationControl.GetDisplayMode">
+            <summary> 
+            Indicates the current display mode of this control 
+            (based on the control's state).
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalNavigationControl.GetParentNode">
+            <summary>
+            Returns the <see cref="T:HP.HPFx.Web.UI.Portal.PortalNavigationTreeNode"/> control that contains this control, or <c>null</c>.
+            </summary>
+            <returns>the <see cref="T:HP.HPFx.Web.UI.Portal.PortalNavigationTreeNode"/> control that contains this control, or <c>null</c></returns>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalNavigationControl.CreateJsFnParam(System.String)">
+            <summary>
+            Utility method/macro.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalNavigationControl.Text">
+            <summary>
+            Gets or sets the text displayed by the control.
+            </summary>
+            <remarks>
+            NOTE: If the value of the property is a single pipe character (i.e. "|"), then the control will display as a visible separator.
+            <para>
+            If the value of the property contains only whitespace (e.g. "    "), then the control will display as an invisible spacer 
+            with the size relative to the length of the Text value (i.e. the number of whitespace characters).
+            </para>
+            </remarks>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalNavigationControl.NavigateUrl">
+            <summary>
+            Gets or sets the URL to link to when the control is clicked.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalNavigationControl.ImageUrl">
+            <summary>
+            Gets or sets the path to an image to display for the control.
+            </summary>
+            <remarks>
+            When set, the control will display as an image into the left vertical navigation area. 
+            No height or width parameters are required. 
+            However, if the image is larger than the navigation area, 
+            including padding and any visual spacing, 
+            the left vertical navigation area expands, effecting page layout. 
+            It is recommend that images be no wider than 130 pixels. 
+            </remarks>
+            <seealso cref="P:HP.HPFx.Web.UI.Portal.PortalNavigationControl.DisplayImageOnly"/>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalNavigationControl.TargetFrame">
+            <summary>
+            Gets or sets the name of the target window or frame which is targeted by this control's actions.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalNavigationControl.DisplayImageOnly">
+            <summary>
+            Indicates whether the control will display both image and text, or only the image.
+            </summary>
+            <seealso cref="P:HP.HPFx.Web.UI.Portal.PortalNavigationControl.ImageUrl"/>
+            <seealso cref="P:HP.HPFx.Web.UI.Portal.PortalNavigationControl.Text"/>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.Portal.PortalNavigationSeparator">
+            <summary>
+            Summary description for PortalNavigationSeparator.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalNavigationSeparator.RenderCode(System.Web.UI.HtmlTextWriter)">
+            <summary> 
+            Render this control to the writer parameter specified.
+            </summary>
+            <param name="writer"> The HTML writer to write out to </param>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.Portal.PortalNavigationSpacer">
+            <summary>
+            Summary description for PortalNavigationSpacer.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalNavigationSpacer.RenderCode(System.Web.UI.HtmlTextWriter)">
+            <summary> 
+            Render this control to the writer parameter specified.
+            </summary>
+            <param name="writer"> The HTML writer to write out to </param>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalNavigationSpacer.Height">
+            <summary>
+            Gets or sets the vertical height of the separator, measured in pixels.
+            </summary>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.Portal.PortalNavigationTree">
+            <summary>
+            Summary description for PortalNavigationTree.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalNavigationTree.#ctor">
+            <summary>
+            Initializes a new instance of the PortalNavigationTree class.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalNavigationTree.RenderCode(System.Web.UI.HtmlTextWriter)">
+            <summary> 
+            Render this control to the writer parameter specified.
+            </summary>
+            <param name="writer"> The HTML writer to write out to </param>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.Portal.PortalNavigationTreeNode">
+            <summary>
+            Summary description for PortalNavigationTreeNode.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalNavigationTreeNode.#ctor">
+            <summary>
+            Initializes a new instance of the PortalNavigationTreeNode class.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalNavigationTreeNode.RenderCode(System.Web.UI.HtmlTextWriter)">
+            <summary> 
+            Render this control to the writer parameter specified.
+            </summary>
+            <param name="writer"> The HTML writer to write out to </param>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalNavigationTreeNode.SaveViewState">
+            <summary>
+            NOTE: Refer to the base method's documentation for details.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.Portal.PortalNavigationTreeNode.LoadViewState(System.Object)">
+            <summary>
+            NOTE: Refer to the base method's documentation for details.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalNavigationTreeNode.Text">
+            <summary>
+            Gets or sets the text displayed by the control.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalNavigationTreeNode.NavigateUrl">
+            <summary>
+            Gets or sets the URL to link to when the control is clicked.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.Portal.PortalNavigationTreeNode.Collapsed">
+            <summary>
+            Indicates whether the control will be rendered as collapsed or expanded when initially displayed.
+            </summary>
+        </member>
+    </members>
+</doc>

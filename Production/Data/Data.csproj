@@ -1,0 +1,856 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2682FA1E-EF27-4442-8278-A855C68FA4A4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HP.ElementsCPS.Data</RootNamespace>
+    <AssemblyName>HP.ElementsCPS.Data</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;LOG TEST</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;LOG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\HP.ElementsCPS.Data.XML</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'CIDebug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\CIDebug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;LOG TEST</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'CIRelease|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\CIRelease\</OutputPath>
+    <DefineConstants>TRACE;LOG</DefineConstants>
+    <DocumentationFile>bin\CIRelease\HP.ElementsCPS.Data.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Offline|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Offline\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;LOG TEST OFFLINE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HP.HPFx.Core, Version=1.0.0.210, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\HP.HPFx.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="HP.HPFx.Extensions.Log4net, Version=1.0.0.14, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\HPFx\HP.HPFx.Extensions.Log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="HP.HPFx.Extensions.SubSonic, Version=1.0.0.24, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\HPFx\HP.HPFx.Extensions.SubSonic.dll</HintPath>
+    </Reference>
+    <Reference Include="HP.HPFx.Web, Version=1.0.0.61, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\HPFx\HP.HPFx.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\log4net\bin\net\2.0\release\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="SubSonic, Version=2.1.0.0, Culture=neutral, PublicKeyToken=eadb47849839a332, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\SubSonic\SubSonic\SubSonic.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\..\..\Windows\Microsoft.NET\Framework\v2.0.50727\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\ProjectInfo.cs" />
+    <Compile Include="CmService\ElementsPublisher.cs" />
+    <Compile Include="CmService\Environment.cs" />
+    <Compile Include="CmService\PublishException.cs" />
+    <Compile Include="Generated\Aardvark.generated.cs" />
+    <Compile Include="Generated\AardvarkController.generated.cs" />
+    <Compile Include="Generated\AllStructs.generated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generated\AppClient.generated.cs" />
+    <Compile Include="Generated\AppClientController.generated.cs" />
+    <Compile Include="Generated\Application.generated.cs" />
+    <Compile Include="Generated\ApplicationController.generated.cs" />
+    <Compile Include="Generated\ApplicationRole.generated.cs" />
+    <Compile Include="Generated\ApplicationRoleController.generated.cs" />
+    <Compile Include="Generated\ConfigurationServiceApplication.generated.cs" />
+    <Compile Include="Generated\ConfigurationServiceApplicationController.generated.cs" />
+    <Compile Include="Generated\ConfigurationServiceApplicationType.generated.cs" />
+    <Compile Include="Generated\ConfigurationServiceApplicationTypeController.generated.cs" />
+    <Compile Include="Generated\ConfigurationServiceGroup.generated.cs" />
+    <Compile Include="Generated\ConfigurationServiceGroupController.generated.cs" />
+    <Compile Include="Generated\ConfigurationServiceGroupImport.generated.cs" />
+    <Compile Include="Generated\ConfigurationServiceGroupImportController.generated.cs" />
+    <Compile Include="Generated\ConfigurationServiceGroupSelector.generated.cs" />
+    <Compile Include="Generated\ConfigurationServiceGroupSelectorController.generated.cs" />
+    <Compile Include="Generated\ConfigurationServiceGroupSelectorQueryParameterValue.generated.cs" />
+    <Compile Include="Generated\ConfigurationServiceGroupSelectorQueryParameterValueController.generated.cs" />
+    <Compile Include="Generated\ConfigurationServiceGroupStatus.generated.cs" />
+    <Compile Include="Generated\ConfigurationServiceGroupStatusController.generated.cs" />
+    <Compile Include="Generated\ConfigurationServiceGroupTag.generated.cs" />
+    <Compile Include="Generated\ConfigurationServiceGroupTagController.generated.cs" />
+    <Compile Include="Generated\ConfigurationServiceGroupType.generated.cs" />
+    <Compile Include="Generated\ConfigurationServiceGroupTypeController.generated.cs" />
+    <Compile Include="Generated\ConfigurationServiceItem.generated.cs" />
+    <Compile Include="Generated\ConfigurationServiceItemConfigurationServiceGroupType.generated.cs" />
+    <Compile Include="Generated\ConfigurationServiceItemConfigurationServiceGroupTypeController.generated.cs" />
+    <Compile Include="Generated\ConfigurationServiceItemController.generated.cs" />
+    <Compile Include="Generated\ConfigurationServiceLabel.generated.cs" />
+    <Compile Include="Generated\ConfigurationServiceLabelController.generated.cs" />
+    <Compile Include="Generated\ConfigurationServiceLabelType.generated.cs" />
+    <Compile Include="Generated\ConfigurationServiceLabelTypeController.generated.cs" />
+    <Compile Include="Generated\ConfigurationServiceLabelValue.generated.cs" />
+    <Compile Include="Generated\ConfigurationServiceLabelValueController.generated.cs" />
+    <Compile Include="Generated\ConfigurationServiceLabelValueImport.generated.cs" />
+    <Compile Include="Generated\ConfigurationServiceLabelValueImportController.generated.cs" />
+    <Compile Include="Generated\ConfigurationServiceQueryParameterValueImport.generated.cs" />
+    <Compile Include="Generated\ConfigurationServiceQueryParameterValueImportController.generated.cs" />
+    <Compile Include="Generated\DDLChangeLog.generated.cs" />
+    <Compile Include="Generated\DDLChangeLogController.generated.cs" />
+    <Compile Include="Generated\EntityType.generated.cs" />
+    <Compile Include="Generated\EntityTypeController.generated.cs" />
+    <Compile Include="Generated\JumpstationApplication.generated.cs" />
+    <Compile Include="Generated\JumpstationApplicationController.generated.cs" />
+    <Compile Include="Generated\JumpstationDomain.generated.cs" />
+    <Compile Include="Generated\JumpstationDomainController.generated.cs" />
+    <Compile Include="Generated\JumpstationGroup.generated.cs" />
+    <Compile Include="Generated\JumpstationGroupController.generated.cs" />
+    <Compile Include="Generated\JumpstationGroupPivot.generated.cs" />
+    <Compile Include="Generated\JumpstationGroupPivotController.generated.cs" />
+    <Compile Include="Generated\JumpstationGroupSelector.generated.cs" />
+    <Compile Include="Generated\JumpstationGroupSelectorController.generated.cs" />
+    <Compile Include="Generated\JumpstationGroupSelectorQueryParameterValue.generated.cs" />
+    <Compile Include="Generated\JumpstationGroupSelectorQueryParameterValueController.generated.cs" />
+    <Compile Include="Generated\JumpstationGroupStatus.generated.cs" />
+    <Compile Include="Generated\JumpstationGroupStatusController.generated.cs" />
+    <Compile Include="Generated\JumpstationGroupTag.generated.cs" />
+    <Compile Include="Generated\JumpstationGroupTagController.generated.cs" />
+    <Compile Include="Generated\JumpstationGroupType.generated.cs" />
+    <Compile Include="Generated\JumpstationGroupTypeController.generated.cs" />
+    <Compile Include="Generated\JumpstationMacro.generated.cs" />
+    <Compile Include="Generated\JumpstationMacroController.generated.cs" />
+    <Compile Include="Generated\JumpstationMacroStatus.generated.cs" />
+    <Compile Include="Generated\JumpstationMacroStatusController.generated.cs" />
+    <Compile Include="Generated\JumpstationMacroValue.generated.cs" />
+    <Compile Include="Generated\JumpstationMacroValueController.generated.cs" />
+    <Compile Include="Generated\Log.generated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generated\LogController.generated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generated\Note.generated.cs" />
+    <Compile Include="Generated\NoteController.generated.cs" />
+    <Compile Include="Generated\NoteType.generated.cs" />
+    <Compile Include="Generated\NoteTypeController.generated.cs" />
+    <Compile Include="Generated\Person.generated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generated\PersonController.generated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generated\PersonRole.generated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generated\PersonRoleController.generated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generated\ProxyURL.generated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generated\ProxyURLController.generated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generated\ProxyURLDomain.generated.cs" />
+    <Compile Include="Generated\ProxyURLDomainController.generated.cs" />
+    <Compile Include="Generated\ProxyURLGroupType.generated.cs" />
+    <Compile Include="Generated\ProxyURLGroupTypeController.generated.cs" />
+    <Compile Include="Generated\ProxyURLQueryParameterValue.generated.cs" />
+    <Compile Include="Generated\ProxyURLQueryParameterValueController.generated.cs" />
+    <Compile Include="Generated\ProxyURLStatus.generated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generated\ProxyURLStatusController.generated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generated\ProxyURLTag.generated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generated\ProxyURLTagController.generated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generated\ProxyURLType.generated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generated\ProxyURLTypeController.generated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generated\PublishTemp.generated.cs" />
+    <Compile Include="Generated\PublishTempController.generated.cs" />
+    <Compile Include="Generated\QueryParameter.generated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generated\QueryParameterConfigurationServiceGroupType.generated.cs" />
+    <Compile Include="Generated\QueryParameterConfigurationServiceGroupTypeController.generated.cs" />
+    <Compile Include="Generated\QueryParameterController.generated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generated\QueryParameterJumpstationGroupType.generated.cs" />
+    <Compile Include="Generated\QueryParameterJumpstationGroupTypeController.generated.cs" />
+    <Compile Include="Generated\QueryParameterProxyURLType.generated.cs" />
+    <Compile Include="Generated\QueryParameterProxyURLTypeController.generated.cs" />
+    <Compile Include="Generated\QueryParameterValue.generated.cs" />
+    <Compile Include="Generated\QueryParameterValueController.generated.cs" />
+    <Compile Include="Generated\QueryParameterWorkflowType.generated.cs" />
+    <Compile Include="Generated\QueryParameterWorkflowTypeController.generated.cs" />
+    <Compile Include="Generated\Role.generated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generated\RoleController.generated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generated\RowStatus.generated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generated\RowStatusController.generated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generated\StoredProcedures.generated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generated\Tag.generated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generated\TagController.generated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generated\Tenant.generated.cs" />
+    <Compile Include="Generated\TenantAppClient.generated.cs" />
+    <Compile Include="Generated\TenantAppClientController.generated.cs" />
+    <Compile Include="Generated\TenantController.generated.cs" />
+    <Compile Include="Generated\VwMapAppClient.generated.cs" />
+    <Compile Include="Generated\VwMapApplication.generated.cs" />
+    <Compile Include="Generated\VwMapConfigurationServiceApplication.generated.cs" />
+    <Compile Include="Generated\VwMapConfigurationServiceApplicationType.generated.cs" />
+    <Compile Include="Generated\VwMapConfigurationServiceGroup.generated.cs" />
+    <Compile Include="Generated\VwMapConfigurationServiceGroupImport.generated.cs" />
+    <Compile Include="Generated\VwMapConfigurationServiceGroupSelector.generated.cs" />
+    <Compile Include="Generated\VwMapConfigurationServiceGroupSelectorQueryParameterValue.generated.cs" />
+    <Compile Include="Generated\VwMapConfigurationServiceGroupTagTag.generated.cs" />
+    <Compile Include="Generated\VwMapConfigurationServiceGroupType.generated.cs" />
+    <Compile Include="Generated\VwMapConfigurationServiceItem.generated.cs" />
+    <Compile Include="Generated\VwMapConfigurationServiceItemConfigurationServiceGroupType.generated.cs" />
+    <Compile Include="Generated\VwMapConfigurationServiceLabel.generated.cs" />
+    <Compile Include="Generated\VwMapConfigurationServiceLabelConfigurationServiceGroupType.generated.cs" />
+    <Compile Include="Generated\VwMapConfigurationServiceLabelValue.generated.cs" />
+    <Compile Include="Generated\VwMapConfigurationServiceLabelValueImport.generated.cs" />
+    <Compile Include="Generated\VwMapConfigurationServiceQueryParameterValueImport.generated.cs" />
+    <Compile Include="Generated\VwMapEntityType.generated.cs" />
+    <Compile Include="Generated\VwMapJumpstationApplication.generated.cs" />
+    <Compile Include="Generated\VwMapJumpstationDomain.generated.cs" />
+    <Compile Include="Generated\VwMapJumpstationGroup.generated.cs" />
+    <Compile Include="Generated\VwMapJumpstationGroupCalcOnFly.generated.cs" />
+    <Compile Include="Generated\VwMapJumpstationGroupSelector.generated.cs" />
+    <Compile Include="Generated\VwMapJumpstationGroupSelectorQueryParameterValue.generated.cs" />
+    <Compile Include="Generated\VwMapJumpstationGroupTagTag.generated.cs" />
+    <Compile Include="Generated\VwMapJumpstationGroupType.generated.cs" />
+    <Compile Include="Generated\VwMapJumpstationMacro.generated.cs" />
+    <Compile Include="Generated\VwMapJumpstationMacroValue.generated.cs" />
+    <Compile Include="Generated\VwMapNote.generated.cs" />
+    <Compile Include="Generated\VwMapNoteType.generated.cs" />
+    <Compile Include="Generated\VwMapPerson.generated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generated\VwMapPersonRole.generated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generated\VwMapProxyURL.generated.cs" />
+    <Compile Include="Generated\VwMapProxyURLDomain.generated.cs" />
+    <Compile Include="Generated\VwMapProxyURLGroupType.generated.cs" />
+    <Compile Include="Generated\VwMapProxyURLQueryParameterValue.generated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generated\VwMapProxyURLTagTag.generated.cs" />
+    <Compile Include="Generated\VwMapProxyURLType.generated.cs" />
+    <Compile Include="Generated\VwMapQueryParameter.generated.cs" />
+    <Compile Include="Generated\VwMapQueryParameterConfigurationServiceGroupType.generated.cs" />
+    <Compile Include="Generated\VwMapQueryParameterJumpstationGroupType.generated.cs" />
+    <Compile Include="Generated\VwMapQueryParameterProxyURLType.generated.cs" />
+    <Compile Include="Generated\VwMapQueryParameterValue.generated.cs" />
+    <Compile Include="Generated\VwMapQueryParameterWorkflowType.generated.cs" />
+    <Compile Include="Generated\VwMapTenant.generated.cs" />
+    <Compile Include="Generated\VwMapWorkflow.generated.cs" />
+    <Compile Include="Generated\VwMapWorkflowApplication.generated.cs" />
+    <Compile Include="Generated\VwMapWorkflowApplicationType.generated.cs" />
+    <Compile Include="Generated\VwMapWorkflowCondition.generated.cs" />
+    <Compile Include="Generated\VwMapWorkflowModule.generated.cs" />
+    <Compile Include="Generated\VwMapWorkflowModuleCategory.generated.cs" />
+    <Compile Include="Generated\VwMapWorkflowModuleSubCategory.generated.cs" />
+    <Compile Include="Generated\VwMapWorkflowModuleTagTag.generated.cs" />
+    <Compile Include="Generated\VwMapWorkflowModuleVersion.generated.cs" />
+    <Compile Include="Generated\VwMapWorkflowModuleWorkflowCondition.generated.cs" />
+    <Compile Include="Generated\VwMapWorkflowSelector.generated.cs" />
+    <Compile Include="Generated\VwMapWorkflowSelectorQueryParameterValue.generated.cs" />
+    <Compile Include="Generated\VwMapWorkflowTagTag.generated.cs" />
+    <Compile Include="Generated\VwMapWorkflowType.generated.cs" />
+    <Compile Include="Generated\VwMapWorkflowWorkflowModule.generated.cs" />
+    <Compile Include="Generated\Workflow.generated.cs" />
+    <Compile Include="Generated\WorkflowApplication.generated.cs" />
+    <Compile Include="Generated\WorkflowApplicationController.generated.cs" />
+    <Compile Include="Generated\WorkflowApplicationType.generated.cs" />
+    <Compile Include="Generated\WorkflowApplicationTypeController.generated.cs" />
+    <Compile Include="Generated\WorkflowCondition.generated.cs" />
+    <Compile Include="Generated\WorkflowConditionController.generated.cs" />
+    <Compile Include="Generated\WorkflowController.generated.cs" />
+    <Compile Include="Generated\WorkflowModule.generated.cs" />
+    <Compile Include="Generated\WorkflowModuleCategory.generated.cs" />
+    <Compile Include="Generated\WorkflowModuleCategoryController.generated.cs" />
+    <Compile Include="Generated\WorkflowModuleController.generated.cs" />
+    <Compile Include="Generated\WorkflowModuleSubCategory.generated.cs" />
+    <Compile Include="Generated\WorkflowModuleSubCategoryController.generated.cs" />
+    <Compile Include="Generated\WorkflowModuleTag.generated.cs" />
+    <Compile Include="Generated\WorkflowModuleTagController.generated.cs" />
+    <Compile Include="Generated\WorkflowModuleVersion.generated.cs" />
+    <Compile Include="Generated\WorkflowModuleVersionController.generated.cs" />
+    <Compile Include="Generated\WorkflowModuleWorkflowCondition.generated.cs" />
+    <Compile Include="Generated\WorkflowModuleWorkflowConditionController.generated.cs" />
+    <Compile Include="Generated\WorkflowSelector.generated.cs" />
+    <Compile Include="Generated\WorkflowSelectorController.generated.cs" />
+    <Compile Include="Generated\WorkflowSelectorQueryParameterValue.generated.cs" />
+    <Compile Include="Generated\WorkflowSelectorQueryParameterValueController.generated.cs" />
+    <Compile Include="Generated\WorkflowStatus.generated.cs" />
+    <Compile Include="Generated\WorkflowStatusController.generated.cs" />
+    <Compile Include="Generated\WorkflowTag.generated.cs" />
+    <Compile Include="Generated\WorkflowTagController.generated.cs" />
+    <Compile Include="Generated\WorkflowType.generated.cs" />
+    <Compile Include="Generated\WorkflowTypeController.generated.cs" />
+    <Compile Include="Generated\WorkflowVersion.generated.cs" />
+    <Compile Include="Generated\WorkflowVersionController.generated.cs" />
+    <Compile Include="Generated\WorkflowWorkflowModule.generated.cs" />
+    <Compile Include="Generated\WorkflowWorkflowModuleController.generated.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="QuerySpecifications\AppClientQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\ApplicationQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\ConfigurationServiceApplicationQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\ConfigurationServiceApplicationTypeQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\ConfigurationServiceGroupImportQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\ConfigurationServiceGroupSelectorQueryParameterValueQuerySpecification.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QuerySpecifications\ConfigurationServiceGroupSelectorQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\ConfigurationServiceGroupTypeQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\ConfigurationServiceItemQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\ConfigurationServiceLabelQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\ConfigurationServiceGroupQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\ConfigurationServiceLabelValueImportQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\ConfigurationServiceLabelValueQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\ConfigurationServiceItemConfigurationServiceGroupTypeQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\ConfigurationServiceLabelConfigurationServiceGroupTypeQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\ConfigurationServiceQueryParameterValueImportQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\JumpstationDomainQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\JumpstationMacroValueQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\JumpstationMacroQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\ProxyURLQueryParameterValueQuerySpecification.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QuerySpecifications\QueryParameterJumpstationGroupTypeQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\JumpstationApplicationQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\JumpstationGroupQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\JumpstationGroupSelectorQueryParameterValueQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\JumpstationGroupSelectorQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\JumpstationGroupTypeQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\EntityTypeQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\NoteQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\NoteTypeQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\QueryParameterConfigurationServiceGroupTypeQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\ProxyURLGroupTypeQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\QueryParameterProxyURLTypeQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\ProxyURLQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\QueryParameterValueQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\QueryParameterQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\ProxyURLTypeQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\LogQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\PersonQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\ProxyURLDomainQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\QueryParameterWorkflowTypeQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\TenantQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\WorkflowApplicationQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\WorkflowApplicationTypeQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\WorkflowConditionQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\WorkflowModuleCategoryQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\WorkflowModuleQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\WorkflowModuleSubCategoryQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\WorkflowModuleWorkflowConditionQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\WorkflowQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\WorkflowSelectorQueryParameterValueQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\WorkflowSelectorQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\WorkflowTypeQuerySpecification.cs" />
+    <Compile Include="QuerySpecifications\WorkflowWorkflowModuleQuerySpecification.cs" />
+    <Compile Include="SubSonicClient\AppClient.cs" />
+    <Compile Include="SubSonicClient\Application.cs" />
+    <Compile Include="SubSonicClient\ApplicationCollection.cs" />
+    <Compile Include="SubSonicClient\ApplicationController.cs" />
+    <Compile Include="SubSonicClient\ApplicationRole.cs" />
+    <Compile Include="SubSonicClient\ApplicationRoleCollection.cs" />
+    <Compile Include="SubSonicClient\ApplicationRoleController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SubSonicClient\BaseActiveRecordController.cs" />
+    <Compile Include="SubSonicClient\BaseLifecycle.cs" />
+    <Compile Include="SubSonicClient\BaseReadOnlyRecordController.cs" />
+    <Compile Include="SubSonicClient\BaseRecordController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SubSonicClient\AppClientCollection.cs" />
+    <Compile Include="SubSonicClient\AppClientController.cs" />
+    <Compile Include="SubSonicClient\ConfigurationServiceApplicationTypeController.cs" />
+    <Compile Include="SubSonicClient\ConfigurationServiceGroupImportController.cs" />
+    <Compile Include="SubSonicClient\ConfigurationServiceGroupSelectorCollection.cs" />
+    <Compile Include="SubSonicClient\ConfigurationServiceGroupSelectorController.cs" />
+    <Compile Include="SubSonicClient\ConfigurationServiceGroupSelectorQueryParameterValue.cs" />
+    <Compile Include="SubSonicClient\ConfigurationServiceGroupSelectorQueryParameterValueController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SubSonicClient\ConfigurationServiceApplicationController.cs" />
+    <Compile Include="SubSonicClient\ConfigurationServiceGroupTypeController.cs" />
+    <Compile Include="SubSonicClient\ConfigurationServiceGroupTag.cs" />
+    <Compile Include="SubSonicClient\ConfigurationServiceGroupCollection.cs" />
+    <Compile Include="SubSonicClient\ConfigurationServiceGroupController.cs" />
+    <Compile Include="SubSonicClient\ConfigurationServiceGroupStateId.cs" />
+    <Compile Include="SubSonicClient\ConfigurationServiceItemController.cs" />
+    <Compile Include="SubSonicClient\ConfigurationServiceLabelController.cs" />
+    <Compile Include="SubSonicClient\ConfigurationServiceLabelValueController.cs" />
+    <Compile Include="SubSonicClient\ConfigurationServiceGroupTypeCollection.cs" />
+    <Compile Include="SubSonicClient\ConfigurationServiceItemConfigurationServiceGroupTypeController.cs" />
+    <Compile Include="SubSonicClient\ConfigurationServiceItem.cs" />
+    <Compile Include="SubSonicClient\ConfigurationServiceItemConfigurationServiceGroupType.cs" />
+    <Compile Include="SubSonicClient\ConfigurationServiceLabelValue.cs" />
+    <Compile Include="SubSonicClient\ConfigurationServiceGroupSelector.cs" />
+    <Compile Include="SubSonicClient\ConfigurationServiceLabelConfigurationServiceGroupTypeController.cs" />
+    <Compile Include="SubSonicClient\ConfigurationServiceLabelTypeId.cs" />
+    <Compile Include="SubSonicClient\ConfigurationServiceLabelId.cs" />
+    <Compile Include="SubSonicClient\ConfigurationServiceLabelValueImportController.cs" />
+    <Compile Include="SubSonicClient\ConfigurationServiceGroupImport.cs" />
+    <Compile Include="SubSonicClient\ConfigurationServiceLabelValueImport.cs" />
+    <Compile Include="SubSonicClient\ConfigurationServiceGroupImportCollection.cs" />
+    <Compile Include="SubSonicClient\ConfigurationServiceQueryParameterValueImport.cs" />
+    <Compile Include="SubSonicClient\ConfigurationServiceQueryParameterValueImportController.cs" />
+    <Compile Include="SubSonicClient\JumpstationGroupByQueryParameterController.cs" />
+    <Compile Include="SubSonicClient\JumpstationDomainController.cs" />
+    <Compile Include="SubSonicClient\JumpstationGroupPivot.cs" />
+    <Compile Include="SubSonicClient\RoleController.cs" />
+    <Compile Include="SubSonicClient\TenantAppClient.cs" />
+    <Compile Include="SubSonicClient\Tenant.cs" />
+    <Compile Include="SubSonicClient\TenantCollection.cs" />
+    <Compile Include="SubSonicClient\TenantController.cs" />
+    <Compile Include="SubSonicClient\VwMapAppClientController.cs" />
+    <Compile Include="SubSonicClient\VwMapApplicationController.cs" />
+    <Compile Include="SubSonicClient\VwMapJumpstationDomainController.cs" />
+    <Compile Include="SubSonicClient\JumpstationMacroValue.cs" />
+    <Compile Include="SubSonicClient\VwMapJumpstationGroupCalcOnFlyController.cs" />
+    <Compile Include="SubSonicClient\VwMapJumpstationMacroCollection.cs" />
+    <Compile Include="SubSonicClient\JumpstationMacroCollection.cs" />
+    <Compile Include="SubSonicClient\VwMapJumpstationMacroValueController.cs" />
+    <Compile Include="SubSonicClient\JumpstationMacroValueController.cs" />
+    <Compile Include="SubSonicClient\VwMapTenantController.cs" />
+    <Compile Include="SubSonicClient\WorkflowModuleCollection.cs" />
+    <Compile Include="SubSonicClient\VwMapWorkflowModuleCollection.cs" />
+    <Compile Include="SubSonicClient\VwMapConfigurationServiceQueryParameterValueImportController.cs" />
+    <Compile Include="SubSonicClient\VwMapConfigurationServiceGroupImportCollection.cs" />
+    <Compile Include="SubSonicClient\WorkflowModuleVersionController.cs" />
+    <Compile Include="SubSonicClient\WorkflowVersionController.cs" />
+    <Compile Include="SubSonicClient\QueryParameterWorkflowType.cs" />
+    <Compile Include="SubSonicClient\QueryParameterWorkflowTypeController.cs" />
+    <Compile Include="SubSonicClient\VwMapConfigurationServiceApplicationTypeController.cs" />
+    <Compile Include="SubSonicClient\VwMapConfigurationServiceGroupImportController.cs" />
+    <Compile Include="SubSonicClient\VwMapConfigurationServiceLabelValueImportController.cs" />
+    <Compile Include="SubSonicClient\VwMapJumpstationMacroController.cs" />
+    <Compile Include="SubSonicClient\JumpstationMacroController.cs" />
+    <Compile Include="SubSonicClient\JumpstationGroup.cs" />
+    <Compile Include="SubSonicClient\JumpstationGroupCollection.cs" />
+    <Compile Include="SubSonicClient\JumpstationGroupStateId.cs" />
+    <Compile Include="SubSonicClient\JumpstationMacro.cs" />
+    <Compile Include="SubSonicClient\JumpstationMacroStateId.cs" />
+    <Compile Include="SubSonicClient\VwMapJumpstationQueryParameterController.cs" />
+    <Compile Include="SubSonicClient\VwMapQueryParameterJumpstationGroupTypeController.cs" />
+    <Compile Include="SubSonicClient\VwMapJumpstationApplicationController.cs" />
+    <Compile Include="SubSonicClient\VwMapJumpstationGroupCollection.cs" />
+    <Compile Include="SubSonicClient\VwMapJumpstationGroupController.cs" />
+    <Compile Include="SubSonicClient\VwMapJumpstationGroupSelectorCollection.cs" />
+    <Compile Include="SubSonicClient\VwMapJumpstationGroupSelectorController.cs" />
+    <Compile Include="SubSonicClient\VwMapJumpstationGroupSelectorQueryParameterValueController.cs" />
+    <Compile Include="SubSonicClient\VwMapJumpstationGroupTagTagController.cs" />
+    <Compile Include="SubSonicClient\VwMapJumpstationGroupTypeController.cs" />
+    <Compile Include="SubSonicClient\QueryParameterJumpstationGroupType.cs" />
+    <Compile Include="SubSonicClient\QueryParameterJumpstationGroupTypeController.cs" />
+    <Compile Include="SubSonicClient\JumpstationApplicationController.cs" />
+    <Compile Include="SubSonicClient\JumpstationGroupController.cs" />
+    <Compile Include="SubSonicClient\JumpstationGroupSelector.cs" />
+    <Compile Include="SubSonicClient\JumpstationGroupSelectorCollection.cs" />
+    <Compile Include="SubSonicClient\JumpstationGroupSelectorController.cs" />
+    <Compile Include="SubSonicClient\JumpstationGroupSelectorQueryParameterValue.cs" />
+    <Compile Include="SubSonicClient\JumpstationGroupSelectorQueryParameterValueController.cs" />
+    <Compile Include="SubSonicClient\JumpstationGroupTag.cs" />
+    <Compile Include="SubSonicClient\JumpstationGroupTypeCollection.cs" />
+    <Compile Include="SubSonicClient\JumpstationGroupTypeController.cs" />
+    <Compile Include="SubSonicClient\VwMapConfigurationServiceLabelController.cs" />
+    <Compile Include="SubSonicClient\VwMapConfigurationServiceGroupSelectorCollection.cs" />
+    <Compile Include="SubSonicClient\VwMapConfigurationServiceItemConfigurationServiceGroupTypeController.cs" />
+    <Compile Include="SubSonicClient\ProxyURLQueryParameterValueController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SubSonicClient\VwMapConfigurationServiceGroupSelectorQueryParameterValueController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SubSonicClient\ElementsCPSSqlDataProvider.cs" />
+    <Compile Include="SubSonicClient\EntityTypeController.cs" />
+    <Compile Include="SubSonicClient\EntityTypeIdentifier.cs" />
+    <Compile Include="SubSonicClient\IStatefulEntity.cs" />
+    <Compile Include="SubSonicClient\Note.cs" />
+    <Compile Include="SubSonicClient\NoteController.cs" />
+    <Compile Include="SubSonicClient\NoteTypeController.cs" />
+    <Compile Include="SubSonicClient\NoteTypeIdentifier.cs" />
+    <Compile Include="SubSonicClient\PersonRoleController.cs" />
+    <Compile Include="SubSonicClient\VwMapConfigurationServiceGroupController.cs" />
+    <Compile Include="SubSonicClient\QueryParameterConfigurationServiceGroupType.cs" />
+    <Compile Include="SubSonicClient\QueryParameterConfigurationServiceGroupTypeController.cs" />
+    <Compile Include="SubSonicClient\VwMapConfigurationServiceGroupSelectorController.cs" />
+    <Compile Include="SubSonicClient\VwMapEntityTypeController.cs" />
+    <Compile Include="SubSonicClient\VwMapNote.cs" />
+    <Compile Include="SubSonicClient\VwMapNoteController.cs" />
+    <Compile Include="SubSonicClient\VwMapNoteTypeController.cs" />
+    <Compile Include="SubSonicClient\VwMapPerson.cs" />
+    <Compile Include="SubSonicClient\VwMapProxyURLQueryParameterValueController.cs" />
+    <Compile Include="SubSonicClient\VwMapQueryParameterConfigurationServiceGroupTypeController.cs" />
+    <Compile Include="SubSonicClient\VwMapConfigurationServiceLabelValueController.cs" />
+    <Compile Include="SubSonicClient\VwMapConfigurationServiceLabelConfigurationServiceGroupTypeController.cs" />
+    <Compile Include="SubSonicClient\VwMapConfigurationServiceItemController.cs" />
+    <Compile Include="SubSonicClient\VwMapConfigurationServiceGroupTagTagController.cs" />
+    <Compile Include="SubSonicClient\ProxyURL.cs" />
+    <Compile Include="SubSonicClient\VwMapConfigurationServiceGroupCollection.cs" />
+    <Compile Include="SubSonicClient\ProxyURLGroupTypeController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SubSonicClient\ProxyURLQueryParameterValue.cs" />
+    <Compile Include="SubSonicClient\ConfigurationServiceGroup.cs" />
+    <Compile Include="SubSonicClient\ProxyURLStateId.cs" />
+    <Compile Include="SubSonicClient\ProxyURLTag.cs" />
+    <Compile Include="SubSonicClient\QueryParameter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SubSonicClient\Tag.cs" />
+    <Compile Include="SubSonicClient\TagController.cs" />
+    <Compile Include="SubSonicClient\VwMapConfigurationServiceApplicationController.cs" />
+    <Compile Include="SubSonicClient\VwMapConfigurationServiceGroupTypeController.cs" />
+    <Compile Include="SubSonicClient\VwMapProxyURLGroupTypeController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SubSonicClient\VwMapProxyURLCollection.cs" />
+    <Compile Include="SubSonicClient\VwMapProxyURLTagTagController.cs" />
+    <Compile Include="SubSonicClient\VwMapQueryParameterProxyURLTypeController.cs" />
+    <Compile Include="SubSonicClient\QueryParameterProxyURLTypeController.cs" />
+    <Compile Include="SubSonicClient\ProxyURLController.cs" />
+    <Compile Include="SubSonicClient\ProxyURLCollection.cs" />
+    <Compile Include="SubSonicClient\VwMapProxyURLController.cs" />
+    <Compile Include="SubSonicClient\ProxyURLTypeCollection.cs" />
+    <Compile Include="SubSonicClient\QueryParameterProxyURLType.cs" />
+    <Compile Include="SubSonicClient\VwMapQueryParameterValueController.cs" />
+    <Compile Include="SubSonicClient\VwMapQueryParameterController.cs" />
+    <Compile Include="SubSonicClient\QueryParameterValueController.cs" />
+    <Compile Include="SubSonicClient\QueryParameterController.cs" />
+    <Compile Include="SubSonicClient\VwMapProxyURLTypeController.cs" />
+    <Compile Include="SubSonicClient\ProxyURLTypeController.cs" />
+    <Compile Include="SubSonicClient\ProxyURLDomainController.cs" />
+    <Compile Include="SubSonicClient\IActiveRecordController.cs" />
+    <Compile Include="SubSonicClient\IRecord.cs" />
+    <Compile Include="SubSonicClient\IRecordCollection.cs" />
+    <Compile Include="SubSonicClient\IRecordController.cs" />
+    <Compile Include="SubSonicClient\LogController.cs" />
+    <Compile Include="SubSonicClient\Person.cs" />
+    <Compile Include="SubSonicClient\PersonController.cs" />
+    <Compile Include="SubSonicClient\PersonRole.cs" />
+    <Compile Include="SubSonicClient\Role.cs" />
+    <Compile Include="SubSonicClient\RoleCollection.cs" />
+    <Compile Include="SubSonicClient\RowStatus.cs" />
+    <Compile Include="SubSonicClient\VwMapProxyURLDomainController.cs" />
+    <Compile Include="SubSonicClient\VwMapPersonController.cs" />
+    <Compile Include="SubSonicClient\VwMapPersonRoleController.cs" />
+    <Compile Include="SubSonicClient\VwMapQueryParameterWorkflowTypeController.cs" />
+    <Compile Include="SubSonicClient\VwMapWorkflowApplicationController.cs" />
+    <Compile Include="SubSonicClient\VwMapWorkflowApplicationTypeController.cs" />
+    <Compile Include="SubSonicClient\VwMapWorkflowCollection.cs" />
+    <Compile Include="SubSonicClient\VwMapWorkflowConditionController.cs" />
+    <Compile Include="SubSonicClient\VwMapWorkflowController.cs" />
+    <Compile Include="SubSonicClient\VwMapWorkflowModuleCategoryController.cs" />
+    <Compile Include="SubSonicClient\VwMapWorkflowModuleController.cs" />
+    <Compile Include="SubSonicClient\VwMapWorkflowModuleSubCategoryController.cs" />
+    <Compile Include="SubSonicClient\VwMapWorkflowModuleTagTagController.cs" />
+    <Compile Include="SubSonicClient\VwMapWorkflowModuleWorkflowConditionController.cs" />
+    <Compile Include="SubSonicClient\VwMapWorkflowSelectorCollection.cs" />
+    <Compile Include="SubSonicClient\VwMapWorkflowSelectorController.cs" />
+    <Compile Include="SubSonicClient\VwMapWorkflowSelectorQueryParameterValueController.cs" />
+    <Compile Include="SubSonicClient\VwMapWorkflowTagTagController.cs" />
+    <Compile Include="SubSonicClient\VwMapWorkflowTypeController.cs" />
+    <Compile Include="SubSonicClient\VwMapWorkflowWorkflowModuleController.cs" />
+    <Compile Include="SubSonicClient\Workflow.cs" />
+    <Compile Include="SubSonicClient\WorkflowApplicationController.cs" />
+    <Compile Include="SubSonicClient\WorkflowApplicationTypeController.cs" />
+    <Compile Include="SubSonicClient\WorkflowCollection.cs" />
+    <Compile Include="SubSonicClient\WorkflowConditionController.cs" />
+    <Compile Include="SubSonicClient\WorkflowController.cs" />
+    <Compile Include="SubSonicClient\WorkflowModule.cs" />
+    <Compile Include="SubSonicClient\WorkflowModuleCategoryController.cs" />
+    <Compile Include="SubSonicClient\WorkflowModuleController.cs" />
+    <Compile Include="SubSonicClient\WorkflowModuleSubCategoryController.cs" />
+    <Compile Include="SubSonicClient\WorkflowModuleTag.cs" />
+    <Compile Include="SubSonicClient\WorkflowModuleWorkflowCondition.cs" />
+    <Compile Include="SubSonicClient\WorkflowModuleWorkflowConditionController.cs" />
+    <Compile Include="SubSonicClient\WorkflowSelector.cs" />
+    <Compile Include="SubSonicClient\WorkflowSelectorCollection.cs" />
+    <Compile Include="SubSonicClient\WorkflowSelectorController.cs" />
+    <Compile Include="SubSonicClient\WorkflowSelectorQueryParameterValue.cs" />
+    <Compile Include="SubSonicClient\WorkflowSelectorQueryParameterValueController.cs" />
+    <Compile Include="SubSonicClient\WorkflowStateId.cs" />
+    <Compile Include="SubSonicClient\WorkflowTag.cs" />
+    <Compile Include="SubSonicClient\WorkflowTypeCollection.cs" />
+    <Compile Include="SubSonicClient\WorkflowTypeController.cs" />
+    <Compile Include="SubSonicClient\WorkflowWorkflowModule.cs" />
+    <Compile Include="SubSonicClient\WorkflowWorkflowModuleController.cs" />
+    <Compile Include="Utility\DataAccess.cs" />
+    <Compile Include="Utility\ElementsCPSDataUtility.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utility\ElementsCPSSqlUtility.cs" />
+    <Compile Include="Utility\ElementsCPSSubSonicUtility.cs" />
+    <Compile Include="Utility\ImportUtility\ImportUtility.cs" />
+    <Compile Include="Utility\ImportUtility\ImportUtilityForStatefulEntity.cs" />
+    <Compile Include="Utility\PeopleFinder.cs" />
+    <Compile Include="Utility\Profiler.cs" />
+    <Compile Include="Utility\SearchType.cs" />
+    <Compile Include="Utility\SiteMinderUtility.cs" />
+    <Compile Include="Utility\SupplierPortalUtility.cs" />
+    <Compile Include="Web References\ElementsDataPublishingService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="bin\Debug\HP.ElementsCPS.Data.dll.config" />
+    <None Include="obj\Debug\build.force" />
+    <None Include="obj\Debug\Data.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\ResolveAssemblyReference.cache" />
+    <None Include="obj\Release\build.force" />
+    <None Include="obj\Release\Data.csproj.AssemblyReference.cache" />
+    <None Include="obj\Release\ResolveAssemblyReference.cache" />
+    <None Include="PreBuild.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ElementsDataPublishingService\deleteCfgGroupByIDResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ElementsDataPublishingService\deleteJumpstationMacroByIDResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ElementsDataPublishingService\deleteJumpstationRedirectByIDResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ElementsDataPublishingService\deleteReachModuleByIDResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ElementsDataPublishingService\deleteReachWorkflowByIDResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ElementsDataPublishingService\deleteRedirectTargetByIDResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ElementsDataPublishingService\ElementsDataPublishingService.wsdl" />
+    <None Include="Web References\ElementsDataPublishingService\ElementsDataPublishingService.xsd" />
+    <None Include="Web References\ElementsDataPublishingService\ElementsDataPublishingService0.xsd" />
+    <None Include="Web References\ElementsDataPublishingService\ElementsDataPublishingService1.xsd" />
+    <None Include="Web References\ElementsDataPublishingService\ElementsDataPublishingService2.xsd" />
+    <None Include="Web References\ElementsDataPublishingService\ElementsDataPublishingService3.xsd" />
+    <None Include="Web References\ElementsDataPublishingService\getCfgGroupByIDResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ElementsDataPublishingService\getJumpstationMacroByIDResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ElementsDataPublishingService\getJumpstationRedirectByIDResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ElementsDataPublishingService\getReachModuleByIDResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ElementsDataPublishingService\getReachWorkflowByIDResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ElementsDataPublishingService\getRedirectTargetByIDResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ElementsDataPublishingService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ElementsDataPublishingService\updateCfgGroupResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ElementsDataPublishingService\updateJumpstationMacroResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ElementsDataPublishingService\updateJumpstationRedirectResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ElementsDataPublishingService\updateReachModuleResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ElementsDataPublishingService\updateReachWorkflowResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ElementsDataPublishingService\updateRedirectTargetResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://erroj2.americas.hpqcorp.net:50038/dps/ElementsDataPublishingService%3fWSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ElementsDataPublishingService\</RelPath>
+      <UpdateFromURL>http://erroj2.americas.hpqcorp.net:50038/dps/ElementsDataPublishingService%3fWSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>HP_ElementsCPS_Data_ElementsDataPublishingService_ElementsDataPublishingService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\HP.ElementsCPS.Core.dll" />
+    <Content Include="bin\Debug\HP.ElementsCPS.Core.pdb" />
+    <Content Include="bin\Debug\HP.ElementsCPS.Data.dll" />
+    <Content Include="bin\Debug\HP.ElementsCPS.Data.pdb" />
+    <Content Include="bin\Debug\HP.HPFx.Core.dll" />
+    <Content Include="bin\Debug\HP.HPFx.Core.pdb" />
+    <Content Include="bin\Debug\HP.HPFx.Core.xml" />
+    <Content Include="bin\Debug\HP.HPFx.Extensions.Log4net.dll" />
+    <Content Include="bin\Debug\HP.HPFx.Extensions.Log4net.pdb" />
+    <Content Include="bin\Debug\HP.HPFx.Extensions.Log4net.xml" />
+    <Content Include="bin\Debug\HP.HPFx.Extensions.SubSonic.dll" />
+    <Content Include="bin\Debug\HP.HPFx.Extensions.SubSonic.pdb" />
+    <Content Include="bin\Debug\HP.HPFx.Extensions.SubSonic.xml" />
+    <Content Include="bin\Debug\HP.HPFx.Web.dll" />
+    <Content Include="bin\Debug\HP.HPFx.Web.pdb" />
+    <Content Include="bin\Debug\HP.HPFx.Web.xml" />
+    <Content Include="bin\Debug\log4net.dll" />
+    <Content Include="bin\Debug\log4net.xml" />
+    <Content Include="bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+    <Content Include="bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll" />
+    <Content Include="bin\Debug\Microsoft.Practices.ObjectBuilder.dll" />
+    <Content Include="bin\Debug\MySql.Data.dll" />
+    <Content Include="bin\Debug\SubSonic.dll" />
+    <Content Include="bin\Debug\SubSonic.pdb" />
+    <Content Include="bin\Debug\SubSonic.xml" />
+    <Content Include="bin\Debug\System.Data.SQLite.dll" />
+    <Content Include="obj\Debug\Data.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\Refactor\HP.ElementsCPS.Data.dll" />
+    <Content Include="obj\Debug\TempPE\Web References.ElementsDataPublishingService.Reference.cs.dll" />
+    <Content Include="obj\Release\Data.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Release\HP.ElementsCPS.Data.dll" />
+    <Content Include="obj\Release\HP.ElementsCPS.Data.pdb" />
+    <Content Include="obj\Release\HP.ElementsCPS.Data.XmlSerializers.dll" />
+    <Content Include="obj\Release\TempPE\Web References.ElementsDataPublishingService.Reference.cs.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{db01d5dc-cd0c-4816-b36b-3e58aaec1c6e}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+</Project>

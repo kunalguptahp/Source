@@ -1,0 +1,449 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HP.HPFx.Extensions.Log4net</name>
+    </assembly>
+    <members>
+        <member name="T:HP.HPFx.Diagnostics.Logging.DisposableCollection`1">
+            <summary>
+            A generic collection which Disposes all the <see cref="T:System.IDisposable"/> objects contained in the collection when the collection is Disposed.
+            </summary>
+            <remarks>
+            The primary purpose of this class is that it can be used to collect multiple <see cref="T:System.IDisposable"/> objects 
+            that all need to be Disposed at the same time, and to make it easy for client code to 
+            initiate such "group disposal" simply by disposing of the collection.
+            <para>
+            NOTE: This class is used to reduce the amount of complexity in the logging code associated with the use of ThreadContext properties.
+            </para>
+            <para>
+            NOTE: This class is based upon the Microsoft code found here: http://blogs.msdn.com/kcwalina/archive/2006/02/10/Disposable-Collection.aspx.
+            </para>
+            </remarks>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:HP.HPFx.Diagnostics.Logging.FuncWrapper`1">
+            <summary>
+            A fairly simple wrapper for a <see cref="T:System.Func`1"/> instance.
+            </summary>
+            <remarks>
+            The primary purpose of this class is that it can be used to easily create object instances 
+            which can be used as "active property values" for log4net Context Properties.
+            See http://logging.apache.org/log4net/release/manual/contexts.html for details.
+            For example, using this class, you could create an object instance that would do the same thing 
+            as the "GCAllocatedBytesHelper" example class (see the link above), but without defining a new class.
+            You would simply use an existing method (or define an anonymous method) with an instance of this class.
+            </remarks>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:HP.HPFx.Diagnostics.Logging.FuncWrapper`1.#ctor(System.Func{`0})">
+            <summary>
+            Convenience overload.
+            </summary>
+            <param name="function"></param>
+        </member>
+        <member name="M:HP.HPFx.Diagnostics.Logging.FuncWrapper`1.#ctor(System.Boolean,System.Func{`0})">
+            <summary>
+            Convenience overload.
+            </summary>
+            <param name="function"></param>
+            <param name="enableExceptions"></param>
+        </member>
+        <member name="M:HP.HPFx.Diagnostics.Logging.FuncWrapper`1.ToString">
+            <summary>
+            Overridden to return the ToString() value of the instance returned by calling the Invoke method.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Diagnostics.Logging.FuncWrapper`1.Invoke">
+            <summary>
+            Returns the result of invoking the Func stored in the instance's Function property.
+            </summary>
+            <remarks>
+            This method is guaranteed not to throw an Exception if the instance's EnableExceptions property is <c>false</c>.
+            </remarks>
+            <returns>the result of invoking the Function property.</returns>
+        </member>
+        <member name="P:HP.HPFx.Diagnostics.Logging.FuncWrapper`1.Function">
+            <summary>
+            The Func instance being wrapped.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Diagnostics.Logging.FuncWrapper`1.EnableExceptions">
+            <summary>
+            If <c>false</c>, then any Exception thrown by the Invoke method will be caught and ignored.
+            </summary>
+            <remarks>
+            This property ensures that the object can be "safely" used within methods that must not throw any Exceptions (e.g. Object.GetHashCode) 
+            without relying on the user to properly handle the Exceptions in every place the object is used.
+            </remarks>
+        </member>
+        <member name="T:HP.HPFx.Diagnostics.Logging.Log4netLogManager">
+            <summary>
+            Provides a simple, unified API for the most commonly needed logging-related functionality.
+            </summary>
+            <remarks>
+            <para>
+            This class is implemented as a wrapper around the log4net framework.
+            </para>
+            <para>
+            The primary reasons that this wrapper is used (instead of directly using the log4net API) are:
+             * to encapsulate the log4net framework from the rest of the system (e.g. so that log4net could be replaced with minimal difficulty); 
+             * to enable easy and centralized extension of the system's logging functionality
+             * to provide a more intuitive and easy to use logging API 
+             (e.g. by having the caller pass a Severity as a method parameter instead of using separate methods for each Severity level).
+            </para>
+            <para>
+            NOTE: Most of the functionality of this class must be configured by including a "&lt;log4net&gt;" section in the application's configuration file (.e.g. "web.config").
+            See the log4net documentation for details and examples.
+            </para>
+            <para>
+            NOTE: Most of the functionality of this class will be non-functional unless the code is compiled with the "LOG" compilation switch.
+            </para>
+            <para>
+            NOTE: Much of the functionality of this class is "conditionally compiled" based upon the "LOG" compilation switch.
+            The reason for the conditional compilation is to provide a simple way to disable logging 
+            that will simultaneously minimize the amount of runtime code execution that occurs, 
+            and thereby minimize the performance and resource impact of whatever logging-related code exists throughout the applicatin's codebase.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:HP.HPFx.Diagnostics.Logging.Log4netLogManager.#cctor">
+            <summary>
+            Type constructor.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Diagnostics.Logging.Log4netLogManager.InitializeLoggingEnabledProperty">
+            <summary>
+            Correctly initializes the value of the <see cref="P:HP.HPFx.Diagnostics.Logging.Log4netLogManager.LoggingEnabled"/> property.
+            </summary>
+            <remarks>
+            The reason this works is that the <see cref="P:HP.HPFx.Diagnostics.Logging.Log4netLogManager.LoggingEnabled"/> property defaults to <c>false</c>, 
+            and this method will do nothing unless the code is compiled with the "LOG" compilation switch.
+            </remarks>
+        </member>
+        <member name="M:HP.HPFx.Diagnostics.Logging.Log4netLogManager.InitializeLogging">
+            <summary>
+            Performs one-time (per application lifetime) initializations required by the logging infrastructure.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Diagnostics.Logging.Log4netLogManager.UpdateGlobalContext(System.String,System.Object)">
+            <summary>
+            Sets the value of a specified "global" logging property.
+            </summary>
+            <param name="propertyName">The name of the global logging property to update.</param>
+            <param name="propertyValue">
+            The new value of the global logging property. This should either be: 
+            a <see cref="T:System.String"/>; 
+            or an <see cref="T:System.Object"/> whose <see cref="M:System.Object.ToString"/> method returns a value suitable for logging.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown if <paramref name="propertyName"/> is <c>null</c>.
+            </exception>
+        </member>
+        <member name="M:HP.HPFx.Diagnostics.Logging.Log4netLogManager.UpdateThreadContext(System.String,System.String)">
+            <summary>
+            Adds/pushes a string value into/onto a specified logging property/stack.
+            </summary>
+            <remarks>
+            NOTE: When called by external code, this method should be called prior to calling a "Log" method, 
+            and the returned object should be Disposed of immediately after the Log method is invoked 
+            (to ensure that no other log event unintentionally "inherits" the context info).
+            </remarks>
+            <param name="stackName">The name of the stack (i.e. logging property name) to update.</param>
+            <param name="value">The value to add/prepend to the stack/property.</param>
+            <returns>An <see cref="T:System.IDisposable"/> object that will undo the change to the stack when Disposed.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown if <paramref name="stackName"/> is <c>null</c>.
+            </exception>
+        </member>
+        <member name="M:HP.HPFx.Diagnostics.Logging.Log4netLogManager.UpdateThreadContext(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Adds misc. event info to whichever stacks/properties are specified by <paramref name="eventProperties"/>.
+            </summary>
+            <param name="eventProperties">A collection of event-related context info that should be added to the context stack(s).</param>
+            <returns>An <see cref="T:System.IDisposable"/> object that will undo the change(s) to the stack(s) when Disposed.</returns>
+        </member>
+        <member name="M:HP.HPFx.Diagnostics.Logging.Log4netLogManager.UpdateThreadContext(HP.HPFx.Diagnostics.Logging.DisposableCollection{System.IDisposable},System.Exception)">
+            <summary>
+            Adds exception-related info (if <paramref name="ex"/> is not <c>null</c>) to several different stacks/properties in the Thread Context.
+            </summary>
+            <param name="contextCleanUpItems"></param>
+            <param name="ex"></param>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown if <paramref name="contextCleanUpItems"/> is <c>null</c>.
+            </exception>
+        </member>
+        <member name="M:HP.HPFx.Diagnostics.Logging.Log4netLogManager.UpdateThreadContext(HP.HPFx.Diagnostics.Logging.DisposableCollection{System.IDisposable},System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Adds misc. event info to whichever stacks/properties are specified by <paramref name="eventProperties"/>.
+            </summary>
+            <param name="contextCleanUpItems"></param>
+            <param name="eventProperties">A collection of event-related context info that should be added to the context stack(s).</param>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown if <paramref name="contextCleanUpItems"/> is <c>null</c>.
+            </exception>
+        </member>
+        <member name="M:HP.HPFx.Diagnostics.Logging.Log4netLogManager.Log(HP.HPFx.Diagnostics.Logging.Severity,System.Object,System.String,System.Exception,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Logs a message (plus optional <see cref="T:System.Exception"/> info), 
+            with a specified <see cref="T:HP.HPFx.Diagnostics.Logging.Severity"/>, 
+            to the event log(s) appropriate for the source of the log request.
+            </summary>
+            <param name="severity">The severity (i.e. level) of the message.</param>
+            <param name="source">
+            The object instance that the log event is associated with 
+            (or a <see cref="T:System.Type"/> instance if the log event originates from a static method).
+            </param>
+            <param name="message">The message to be logged.</param>
+            <param name="ex">The <see cref="T:System.Exception"/> instance the log event is associated with (or <c>null</c> if inapplicable).</param>
+            <param name="eventProperties">An optional collection of additional event-related context info that should be logged.</param>
+            <exception cref="T:System.ArgumentException">
+            Thrown when an unrecognized <paramref name="severity"/> is passed.
+            </exception>
+        </member>
+        <member name="M:HP.HPFx.Diagnostics.Logging.Log4netLogManager.Log(HP.HPFx.Diagnostics.Logging.Severity,System.Object,System.String,System.Exception)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Diagnostics.Logging.Log4netLogManager.Log(HP.HPFx.Diagnostics.Logging.Severity,System.Object,System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Diagnostics.Logging.Log4netLogManager.Log(HP.HPFx.Diagnostics.Logging.Severity,System.Object,System.String)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Diagnostics.Logging.Log4netLogManager.Log(HP.HPFx.Diagnostics.Logging.Severity,System.Object,System.Func{System.String},System.Exception,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Logs a message (plus optional <see cref="T:System.Exception"/> info), 
+            with a specified <see cref="T:HP.HPFx.Diagnostics.Logging.Severity"/>, 
+            to the event log(s) appropriate for the source of the log request.
+            </summary>
+            <param name="severity">The severity (i.e. level) of the message.</param>
+            <param name="source">
+            The object instance that the log event is associated with 
+            (or a <see cref="T:System.Type"/> instance if the log event originates from a static method).
+            </param>
+            <param name="message">The message to be logged.</param>
+            <param name="ex">The <see cref="T:System.Exception"/> instance the log event is associated with (or <c>null</c> if inapplicable).</param>
+            <param name="eventProperties">An optional collection of additional event-related context info that should be logged.</param>
+            <exception cref="T:System.ArgumentException">
+            Thrown when an unrecognized <paramref name="severity"/> is passed.
+            </exception>
+        </member>
+        <member name="M:HP.HPFx.Diagnostics.Logging.Log4netLogManager.Log(HP.HPFx.Diagnostics.Logging.Severity,System.Object,System.Func{System.String},System.Exception)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Diagnostics.Logging.Log4netLogManager.Log(HP.HPFx.Diagnostics.Logging.Severity,System.Object,System.Func{System.String},System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Diagnostics.Logging.Log4netLogManager.Log(HP.HPFx.Diagnostics.Logging.Severity,System.Object,System.Func{System.String})">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Diagnostics.Logging.Log4netLogManager.LogHelper(HP.HPFx.Diagnostics.Logging.Severity,System.Object,System.Func{System.String},System.Exception,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Logs a message (plus optional <see cref="T:System.Exception"/> info), 
+            with a specified <see cref="T:HP.HPFx.Diagnostics.Logging.Severity"/>, 
+            to the event log(s) appropriate for the source of the log request.
+            </summary>
+            <remarks>
+            <para>
+            NOTE: Logging operations are automatically excluded from any ambient transactions that they may be nested/invoked within, 
+            and therefore will neither affect any such transaction (e.g. by causing a transaction rollback due to a logging exception) 
+            or be affected by such a transaction (e.g. rolling back a transaction will not rollback, cancel, or otherwise affect any logging operations 
+            which were completed prior to the rollback).
+            </para>
+            </remarks>
+            <param name="severity">The severity (i.e. level) of the message.</param>
+            <param name="source">
+            The object instance that the log event is associated with 
+            (or a <see cref="T:System.Type"/> instance if the log event originates from a static method).
+            </param>
+            <param name="message">The message to be logged.</param>
+            <param name="ex">The <see cref="T:System.Exception"/> instance the log event is associated with (or <c>null</c> if inapplicable).</param>
+            <param name="eventProperties">An optional collection of additional event-related context info that should be logged.</param>
+            <exception cref="T:System.ArgumentException">
+            Thrown when an unrecognized <paramref name="severity"/> is passed.
+            </exception>
+        </member>
+        <member name="M:HP.HPFx.Diagnostics.Logging.Log4netLogManager.LogHelper(log4net.ILog,HP.HPFx.Diagnostics.Logging.Severity,System.Func{System.String},System.Exception)">
+            <summary>
+            Invokes the appropriate <see cref="T:log4net.ILog"/> logging method based upon a specified <see cref="T:HP.HPFx.Diagnostics.Logging.Severity"/> level.
+            </summary>
+            <param name="logger">The logger to log the message to.</param>
+            <param name="severity">The severity (i.e. level) of the message.</param>
+            <param name="message">The message to be logged.</param>
+            <param name="ex">The <see cref="T:System.Exception"/> instance the log event is associated with (or <c>null</c> if inapplicable).</param>
+            <exception cref="T:System.ArgumentException">
+            Thrown when an unrecognized <paramref name="severity"/> is passed.
+            </exception>
+        </member>
+        <member name="M:HP.HPFx.Diagnostics.Logging.Log4netLogManager.GetLogger(System.Object)">
+            <summary>
+            Utility method for getting the correct log4net logger from either a <see cref="T:System.Type"/>, a <see cref="T:System.String"/> (containing the name of a <see cref="T:System.Type"/>), or a specific instance of a <see cref="T:System.Type"/>.
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown when <paramref name="source"/> is <c>null</c>.
+            </exception>
+        </member>
+        <member name="M:HP.HPFx.Diagnostics.Logging.Log4netLogManager.IsLoggingEnabled(HP.HPFx.Diagnostics.Logging.Severity,System.Func{log4net.ILog})">
+            <summary>
+            Indicates whether logging is enabled for a specified <see cref="T:HP.HPFx.Diagnostics.Logging.Severity"/> level and <see cref="T:log4net.ILog"/> instance.
+            </summary>
+            <param name="severity"></param>
+            <param name="logger"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown when <paramref name="logger"/> is <c>null</c>.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            Thrown when an unrecognized <paramref name="severity"/> is passed.
+            </exception>
+        </member>
+        <member name="M:HP.HPFx.Diagnostics.Logging.Log4netLogManager.IsLoggingEnabled(HP.HPFx.Diagnostics.Logging.Severity,System.String)">
+            <summary>
+            Indicates whether logging is enabled for a specified <see cref="T:HP.HPFx.Diagnostics.Logging.Severity"/> level and a log source.
+            </summary>
+            <seealso cref="M:HP.HPFx.Diagnostics.Logging.Log4netLogManager.GetLogger(System.String)"/>
+        </member>
+        <member name="M:HP.HPFx.Diagnostics.Logging.Log4netLogManager.IsLoggingEnabled(HP.HPFx.Diagnostics.Logging.Severity,System.Type)">
+            <summary>
+            Indicates whether logging is enabled for a specified <see cref="T:HP.HPFx.Diagnostics.Logging.Severity"/> level and a log source.
+            </summary>
+            <seealso cref="M:HP.HPFx.Diagnostics.Logging.Log4netLogManager.GetLogger(System.Type)"/>
+        </member>
+        <member name="M:HP.HPFx.Diagnostics.Logging.Log4netLogManager.IsLoggingEnabled(HP.HPFx.Diagnostics.Logging.Severity,System.Object)">
+            <summary>
+            Indicates whether logging is enabled for a specified <see cref="T:HP.HPFx.Diagnostics.Logging.Severity"/> level and a log source.
+            </summary>
+            <seealso cref="M:HP.HPFx.Diagnostics.Logging.Log4netLogManager.GetLogger(System.Object)"/>
+        </member>
+        <member name="M:HP.HPFx.Diagnostics.Logging.Log4netLogManager.GetStackLocation(System.Int32,System.Boolean)">
+            <summary>
+            Returns a string representing a specified location (e.g. type name, method name, line number) in the current calling stack.
+            </summary>
+            <param name="stackFrameIndex">0 represents the location that directly calls this method. Each higher number increments by one location up the stack.</param>
+            <param name="trimFirstWord">If <c>true</c>, the first word of the requested location will be removed automatically from the returned string.</param>
+            <returns></returns>
+        </member>
+        <member name="P:HP.HPFx.Diagnostics.Logging.Log4netLogManager.LoggingEnabled">
+            <summary>
+            Indicates whether the code is compiled with the "LOGGING" compilation switch.
+            </summary>
+            <remarks>
+            This property can be used to perform conditional logic within a method to achieve an effect 
+            similar to decorating an entire method with a '[Conditional("LOG")]' attribute.
+            <para>
+            Note that this property is primarily used to enable conditional logic that will prevent "expensive" logging-related code from executing unnecessarily 
+            if logging is completely disabled.
+            </para>
+            </remarks>
+        </member>
+        <member name="T:HP.HPFx.Diagnostics.Logging.LogManager">
+            <summary>
+            Provides a simple, unified API for the most commonly needed logging-related functionality.
+            </summary>
+            <remarks>
+            <para>
+            This class is implemented as a wrapper around the log4net framework.
+            </para>
+            <para>
+            The primary reasons that this wrapper is used (instead of directly using the log4net API) are:
+             * to encapsulate the log4net framework from the rest of the system (e.g. so that log4net could be replaced with minimal difficulty); 
+             * to enable easy and centralized extension of the system's logging functionality
+             * to provide a more intuitive and easy to use logging API 
+             (e.g. by having the caller pass a Severity as a method parameter instead of using separate methods for each Severity level).
+            </para>
+            <para>
+            NOTE: Most of the functionality of this class must be configured by including a "&lt;log4net&gt;" section in the application's configuration file (.e.g. "web.config").
+            See the log4net documentation for details and examples.
+            </para>
+            <para>
+            NOTE: Most of the functionality of this class will be non-functional unless the code is compiled with the "LOG" compilation switch.
+            </para>
+            <para>
+            NOTE: Much of the functionality of this class is "conditionally compiled" based upon the "LOG" compilation switch.
+            The reason for the conditional compilation is to provide a simple way to disable logging 
+            that will simultaneously minimize the amount of runtime code execution that occurs, 
+            and thereby minimize the performance and resource impact of whatever logging-related code exists throughout the applicatin's codebase.
+            </para>
+            </remarks>
+        </member>
+        <member name="T:HP.HPFx.Diagnostics.Logging.Severity">
+            <summary>
+            This enum's values correspond to instances of the log4net.Core.Level class.
+            </summary>
+        </member>
+        <member name="T:HP.HPFx.Diagnostics.Logging.SeverityHelper">
+            <summary>
+            Contains various utility and conversion methods related to the <see cref="T:HP.HPFx.Diagnostics.Logging.Severity"/> enumeration.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Diagnostics.Logging.SeverityHelper.ConvertToSeverity(System.Diagnostics.EventLogEntryType)">
+            <summary>
+            Converts a <see cref="T:System.Diagnostics.EventLogEntryType"/> value into a 
+            <see cref="T:HP.HPFx.Diagnostics.Logging.Severity"/> value.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException">
+            Thrown when an invalid or non-convertible <paramref name="value"/> is passed.
+            </exception>
+        </member>
+        <member name="M:HP.HPFx.Diagnostics.Logging.SeverityHelper.ConvertToSeverity(System.Diagnostics.TraceLevel)">
+            <summary>
+            Converts a <see cref="T:System.Diagnostics.TraceLevel"/> value into a 
+            <see cref="T:HP.HPFx.Diagnostics.Logging.Severity"/> value.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException">
+            Thrown when an invalid or non-convertible <paramref name="value"/> is passed.
+            </exception>
+        </member>
+        <member name="M:HP.HPFx.Diagnostics.Logging.SeverityHelper.ConvertToSeverity(log4net.Core.Level)">
+            <summary>
+            Converts a <see cref="T:log4net.Core.Level"/> value into a 
+            <see cref="T:HP.HPFx.Diagnostics.Logging.Severity"/> value.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Diagnostics.Logging.SeverityHelper.ConvertToSeverity(System.String)">
+            <summary>
+            Converts a <see cref="T:System.String"/> value into a 
+            <see cref="T:HP.HPFx.Diagnostics.Logging.Severity"/> value.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown when <paramref name="value"/> value is <c>null</c>.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            Thrown when <paramref name="value"/> value is not one of the named constants defined for the enumeration.
+            </exception>
+        </member>
+        <member name="M:HP.HPFx.Diagnostics.Logging.SeverityHelper.ConvertToLog4netLevel(HP.HPFx.Diagnostics.Logging.Severity)">
+            <summary>
+            Converts a <see cref="T:HP.HPFx.Diagnostics.Logging.Severity"/> value into a 
+            <see cref="T:log4net.Core.Level"/> value.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException">
+            Thrown when an unrecognized <paramref name="value"/> is passed.
+            </exception>
+        </member>
+    </members>
+</doc>

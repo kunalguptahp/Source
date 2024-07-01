@@ -1,0 +1,414 @@
+﻿body
+{
+}
+
+div.DebugSection
+{
+	background-color: Silver;
+}
+
+/**
+ ** See the following URL for the inspiration of the pre.SourceCode class:
+ ** http://www.sohtanaka.com/web-design/styling-pre-tags-with-css-code-block/
+**/
+pre.SourceCode {
+	background:url("pre_SourceCode_bg.gif") repeat scroll left top #FFFFFF;
+	border:1px solid #999999;
+	color:#000000;
+	display:block;
+	font-family:"Courier New",Courier,monospace;
+	font-size:13px;
+	line-height:18px; /*--Note that line height is exactly half the height of the background image--*/
+	margin:10px 0 20px;
+	overflow: auto; /*--If the Code exceeds the width, scrolling is available--*/
+	overflow-Y: hidden;  /*--Hides vertical scroll created by IE--*/
+/*	overflow-x:scroll;
+	overflow-y:auto;
+*/
+/*	padding:18px 10px 17px;
+*/
+	padding:0px 10px 36px; /*--Note that the top padding must be a multiple of the line height or it will misalign the text with the background image--*/
+	position:relative;
+	z-index:50;
+/*	max-width: 95%;
+	max-height: 95%;
+*/
+}
+/*
+pre.SourceCode code {
+	margin: 0 0 0 40px;  /*--Left Margin--* /
+	padding: 18px 0;
+	display: block;
+}
+*/
+
+/**
+ ** HACK: See the following URLs for info on the csshover3 behavior:
+ ** http://www.xs4all.nl/~peterned/csshover.html
+ ** http://www.webmasterworld.com/css/3208265.htm
+**/
+body {
+   behavior: url("/scripts/csshover3.htc");
+}
+
+div.PortalHeaderTitle
+{
+	font-size: Medium;
+	color: Blue;
+}
+
+span.PageHeader
+{
+	font-size: xx-large;
+	color: Blue;
+	text-align: center;
+}
+
+.SecurityNotice
+{
+	color: Red;
+	background-color: Yellow;
+}
+
+.CautionNotice
+{
+	background-color: lemonchiffon;
+	color: InfoText;
+	padding: 5;
+}
+
+h1.SecurityNotice
+{
+	text-align: center;
+}
+
+table.layoutTable, TABLE.ajaxCollapsiblePanelTitleTable
+{
+	border-style: none;
+	border-spacing: 0;
+	border-width: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.Validator
+{
+}
+
+.ContentAreaTitle, div.ChildGridTitle
+{
+	font-size: x-large;
+	color: Blue;
+	text-align: left;
+}
+
+.GridColumnRelatedToLinkLabel
+{
+	font-weight: bolder;
+}
+
+.GridCellValueInfo
+{
+	font-weight: bolder;
+	color: InfoText;
+	background-color: InfoBackground;
+}
+
+.GridCellValueWarning
+{
+	font-weight: bolder;
+	color: Red;
+	background-color: Yellow;
+}
+
+.GridCellValueError
+{
+	font-size: larger;
+	font-weight: bold;
+	color: Yellow;
+	background-color: Red;
+}
+
+/** AJAX Extender-related styles **/
+
+.AjaxDynamicContentIframe
+{
+	border: 1;
+	margin: 5;
+	width: 100%;
+	height: 100%;
+}
+
+.AjaxPopupControlExtenderTargetControl, .AjaxPopupControlExtenderTargetControlInline
+{
+	cursor: pointer;
+
+	border-top-width: medium;
+	border-bottom-width: medium;
+	border-left-width: 0;
+	border-right-width: 0;
+	border-style: hidden;
+}
+
+.AjaxPopupControlExtenderTargetControlInline
+{
+	display: inline;
+}
+
+.AjaxPopupControlExtenderTargetControl:hover, .AjaxPopupControlExtenderTargetControlInline:hover
+{
+	background-color: Highlight;
+	color: HighlightText;
+
+	text-decoration: underline;
+	font-weight: bolder;
+
+	border-style: solid;
+	border-color: Highlight;
+}
+
+.AjaxPopupControlExtenderPopupControl
+{
+}
+
+.AjaxPopupControlExtenderPopupControlDynamicContent
+{
+}
+
+/** AJAX Calendar Theme overrides/extensions **/
+
+/*
+NOTE: Since Calendar popups stay open until manually closed, 
+we've overridden to be just barely below the app's "standard" popup level.
+*/
+.ajax__calendar_container
+{
+	z-index: 99; /*NOTE: Needs to be >=1 in order to make it appear above Sliders, etc. */
+}
+
+.ajaxListSearchExtenderPrompt
+{
+	font-style:italic;
+	color:Gray;
+	background-color:white;
+	font-size: medium;
+	border-style: ridge;
+	z-index: 100; /*NOTE: Needs to be >=1 in order to make it appear above Sliders, etc. */
+}
+
+.ajaxCollapsiblePanelHeader
+{
+	cursor: pointer;
+	background-color: ButtonFace;
+	width: 100%;
+}
+
+.ajaxCollapsiblePanelTitle
+{
+	padding: 1em 0 1em 0;
+	color:#5377A9;
+	font-family:Arial, Sans-Serif;
+	font-weight:bold;
+	font-size:1.2em;
+	text-align:center;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+TD.ajaxCollapsiblePanelTitleTD
+{
+	width: 1%;
+	text-align: center;
+}
+
+TD.ajaxCollapsiblePanelToggleTD
+{
+	width: 1%;
+}
+
+TD.ajaxCollapsiblePanelRightTD
+{
+	width: 1%;
+}
+
+TABLE.ajaxCollapsiblePanelTitleTable
+{
+	width: 100%;
+}
+
+.ajaxMaskedEditFocus
+{
+    background-color: #ffffcc;
+    color: #000000;
+}
+
+.ajaxMaskedEditMessage
+{
+	color: #ff0000;
+	font-weight: bold;
+}
+
+.ajaxMaskedEditError
+{
+	background-color: #ffcccc;
+}
+
+.ajaxMaskedEditFocusNegative
+{
+	background-color: #ffffcc;
+	color: #ff0000;
+}
+
+.ajaxMaskedEditBlurNegative
+{
+	color: #ff0000;
+}
+
+.ajaxTextBoxWatermark
+{
+/*
+	padding:2px 0 0 2px;
+	border:1px solid #BEBEBE;
+*/
+	background-color:#F0F8FF;
+	color:gray;
+}	
+
+.ajaxValidatorCalloutHighlight
+{
+/*
+	background-color: lemonchiffon;
+*/
+}
+
+/*AutoComplete flyout */
+
+.ajaxAutoCompleteExtender_CompletionList
+{
+
+	visibility : hidden;
+	margin : 0px!important;
+	background-color : inherit;
+	color : windowtext;
+	border : buttonshadow;
+	border-width : 1px;
+	border-style : solid;
+	cursor : 'default';
+	overflow : auto;
+	/*height : 200px;*/
+	text-align : left; 
+	list-style-type : none;
+	z-index: 100; /*NOTE: Needs to be >=1 in order to make it appear above Sliders, etc. */
+
+}
+
+/* AutoComplete highlighted item */
+
+.ajaxAutoCompleteExtender_CompletionListItemHighlighted
+{
+	background-color: #ffff99;
+	color: black;
+	padding: 1px;
+}
+
+/* AutoComplete item */
+
+.ajaxAutoCompleteExtender_CompletionListItem
+{
+	background-color : window;
+	color : windowtext;
+	padding : 1px;
+}
+
+.ajaxSliderTextBox
+{
+	right: 0px;
+}
+
+td
+{
+	font-size: small; 
+	font-family:Arial;
+}
+
+/* ResizableControl */
+
+.AjaxResizableControlFrameImage
+{
+	width:130px;
+	height:65px;
+	overflow:hidden;
+	float:left;
+	padding:3px;
+}
+
+.AjaxResizableControlFrameText
+{
+	width:100px;
+	height:100px;
+	overflow:auto;
+	float:left;
+	background-color:#ffffff;
+	border-style:solid;
+	border-width:2px;
+	border-color:Gray;
+	font-family:Helvetica;
+	line-height:normal;
+}
+
+.AjaxResizableControlHandleImage
+{
+	width:15px;
+	height:16px;
+	background-image:url(HandleHand.png);
+	overflow:hidden;
+	cursor:se-resize;
+}
+
+.AjaxResizableControlHandleText
+{
+	width:16px;
+	height:16px;
+	background-image:url(HandleGrip.png);
+	overflow:hidden;
+	cursor:se-resize;
+}
+
+.AjaxResizableControlResizingImage
+{
+	padding:0px;
+	border-style:solid;
+	border-width:3px;
+	border-color:#B4D35D;
+}
+
+.AjaxResizableControlResizingText
+{
+	padding:0px;
+	border-style:solid;
+	border-width:2px;
+	border-color:#7391BA;
+}
+
+
+/* Printer-friendly CSS formatting */
+
+@media print
+{
+/*****   Styles that only apply when printed   ******/
+/*
+	h1, h2, h3 {color:black;}
+	#navigation {display:none}
+
+	input {display:none}
+	input[type="button"] {display:none}
+	input[type="reset"] {display:none}
+	input[type="submit"] {display:none}
+*/
+}
+
+@media screen
+{
+/*****   Styles that only apply when displayed on the screen   ******/
+}
+

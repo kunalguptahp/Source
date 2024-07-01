@@ -1,0 +1,1233 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HP.HPFx.Web</name>
+    </assembly>
+    <members>
+        <member name="T:HP.HPFx.Extensions.Web.UI.WebControls.ControlEnhancements.WebControlEnhancements.ControlEnhancementExtensions">
+            <summary>
+            This class contains extension methods related to <see cref="T:System.Web.UI.Control"/> controls.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Web.UI.WebControls.ControlEnhancements.WebControlEnhancements.ControlEnhancementExtensions.SetInvisibleIf(System.Web.UI.Control,System.Boolean)">
+            <summary>
+            Hides (i.e. sets <see cref="P:System.Web.UI.Control.Visible"/> to <c>true</c>) a specified <see cref="T:System.Web.UI.Control"/> only if <paramref name="shouldBeInvisible"/> is <c>true</c>; else does nothing.
+            </summary>
+            <param name="c"></param>
+            <param name="shouldBeInvisible">If <c>true</c> then <paramref name="c"/> will be disabled; else the method will do nothing.</param>
+            <returns><c>true</c> if <paramref name="c"/> was affected; else <c>false</c>.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Web.UI.WebControls.ControlEnhancements.WebControlEnhancements.ControlEnhancementExtensions.SetVisibleIf(System.Web.UI.Control,System.Boolean)">
+            <summary>
+            Enables a specified <see cref="T:System.Web.UI.Control"/> only if <paramref name="shouldBeVisible"/> is <c>true</c>; else does nothing.
+            </summary>
+            <param name="c"></param>
+            <param name="shouldBeVisible">If <c>true</c> then <paramref name="c"/> will be enabled; else the method will do nothing.</param>
+            <returns><c>true</c> if <paramref name="c"/> was affected; else <c>false</c>.</returns>
+        </member>
+        <member name="T:HP.HPFx.Extensions.Web.UI.WebControls.ControlEnhancements.WebControlEnhancements.WebControlEnhancementExtensions">
+            <summary>
+            This class contains extension methods related to <see cref="T:System.Web.UI.WebControls.WebControl"/> controls.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Web.UI.WebControls.ControlEnhancements.WebControlEnhancements.WebControlEnhancementExtensions.DisableIf(System.Web.UI.WebControls.WebControl,System.Boolean)">
+            <summary>
+            Disables a specified <see cref="T:System.Web.UI.WebControls.WebControl"/> only if <paramref name="shouldDisable"/> is <c>true</c>; else does nothing.
+            </summary>
+            <param name="c"></param>
+            <param name="shouldDisable">If <c>true</c> then <paramref name="c"/> will be disabled; else the method will do nothing.</param>
+            <returns><c>true</c> if <paramref name="c"/> was affected; else <c>false</c>.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Web.UI.WebControls.ControlEnhancements.WebControlEnhancements.WebControlEnhancementExtensions.EnableIf(System.Web.UI.WebControls.WebControl,System.Boolean)">
+            <summary>
+            Enables a specified <see cref="T:System.Web.UI.WebControls.WebControl"/> only if <paramref name="shouldEnable"/> is <c>true</c>; else does nothing.
+            </summary>
+            <param name="c"></param>
+            <param name="shouldEnable">If <c>true</c> then <paramref name="c"/> will be enabled; else the method will do nothing.</param>
+            <returns><c>true</c> if <paramref name="c"/> was affected; else <c>false</c>.</returns>
+        </member>
+        <member name="T:HP.HPFx.Extensions.Web.UI.WebControls.ControlEnhancements.ListControlEnhancements.ListControlEnhancementExtensions">
+            <summary>
+            This class contains extension methods related to <see cref="T:System.Web.UI.WebControls.ListControl"/> controls.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Web.UI.WebControls.ControlEnhancements.ListControlEnhancements.ListControlEnhancementExtensions.ForceSelectedValue(System.Web.UI.WebControls.ListControl,System.String,System.String)">
+            <summary>
+            Sets the <see cref="P:System.Web.UI.WebControls.ListControl.SelectedValue"/> of the <paramref name="lc"/> (and adds a new <see cref="T:System.Web.UI.WebControls.ListItem"/> if necessary).
+            </summary>
+            <param name="lc"></param>
+            <param name="itemValue"></param>
+            <param name="itemText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Web.UI.WebControls.ControlEnhancements.ListControlEnhancements.ListControlEnhancementExtensions.ForceSelectedValue(System.Web.UI.WebControls.ListControl,System.String)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Web.UI.WebControls.ControlEnhancements.ListControlEnhancements.ListControlEnhancementExtensions.ForceSelectedValue(System.Web.UI.WebControls.ListControl,System.Enum)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Web.UI.WebControls.ControlEnhancements.ListControlEnhancements.ListControlEnhancementExtensions.ForceSelectedValue(System.Web.UI.WebControls.ListControl,System.Nullable{System.Int32})">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Web.UI.WebControls.ControlEnhancements.ListControlEnhancements.ListControlEnhancementExtensions.InsertItem(System.Web.UI.WebControls.ListControl,System.Int32,System.String,System.String,System.Boolean)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Web.UI.WebControls.ControlEnhancements.ListControlEnhancements.ListControlEnhancementExtensions.InsertItem(System.Web.UI.WebControls.ListControl,System.Int32,System.String,System.String)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Web.UI.WebControls.ControlEnhancements.ListControlEnhancements.ListControlEnhancementExtensions.InsertItem(System.Web.UI.WebControls.ListControl,System.Int32,System.String)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Web.UI.WebControls.ControlEnhancements.ListControlEnhancements.ListControlEnhancementExtensions.ClearItems(System.Web.UI.WebControls.ListControl,System.Boolean)">
+            <summary>
+            Clears/removes all of the control's items.
+            </summary>
+            <param name="lc"></param>
+            <param name="clearSelectedValue">If <c>true</c>, the list's <see cref="P:System.Web.UI.WebControls.ListControl.SelectedValue"/> will be reset to null.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Web.UI.WebControls.ControlEnhancements.ListControlEnhancements.ListControlEnhancementExtensions.ClearItems(System.Web.UI.WebControls.ListControl)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Web.UI.WebControls.ControlEnhancements.ListControlEnhancements.ListControlEnhancementExtensions.BindToDataSource(System.Web.UI.WebControls.ListControl,System.Object,System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Safely (re)DataBinds a <see cref="T:System.Web.UI.WebControls.ListControl"/> to populate it with <see cref="T:System.Web.UI.WebControls.ListItem"/>s.
+            </summary>
+            <param name="lc"></param>
+            <param name="dataSource"></param>
+            <param name="dataTextField"></param>
+            <param name="dataValueField"></param>
+            <param name="appendDataBoundItems">If <c>false</c>, all existing <see cref="T:System.Web.UI.WebControls.ListItem"/>s are removed or replaced.</param>
+            <param name="clearSelection">If <c>true</c>, the list's current selection will be automatically cleared.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Web.UI.WebControls.ControlEnhancements.ListControlEnhancements.ListControlEnhancementExtensions.BindToDataSource(System.Web.UI.WebControls.ListControl,System.Object,System.String,System.String,System.Boolean)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Web.UI.WebControls.ControlEnhancements.ListControlEnhancements.ListControlEnhancementExtensions.BindToDataSource(System.Web.UI.WebControls.ListControl,System.Object,System.String,System.String)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Web.UI.WebControls.ControlEnhancements.ListControlEnhancements.ListControlEnhancementExtensions.BindToEnum(System.Web.UI.WebControls.ListControl,System.Type)">
+            <summary>
+            Safely (re)DataBinds a <see cref="T:System.Web.UI.WebControls.ListControl"/> to populate it with <see cref="T:System.Web.UI.WebControls.ListItem"/>s 
+            generated from the values of a specified <see cref="T:System.Enum"/>.
+            </summary>
+            <param name="lc"></param>
+            <param name="enumType"></param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Web.UI.WebControls.ControlEnhancements.ListControlEnhancements.ListControlEnhancementExtensions.GetDataBoundControlDataSourceForEnum(System.Type)">
+            <summary>
+            Creates a collection of objects that can be used as a <see cref="P:System.Web.UI.WebControls.BaseDataBoundControl.DataSource"/> 
+            by setting <see cref="P:System.Web.UI.WebControls.ListControl.DataTextField"/> to <c>"Name"</c> 
+            and <see cref="P:System.Web.UI.WebControls.ListControl.DataValueField"/> to <c>"Value"</c>.
+            </summary>
+            <param name="enumType">The <see cref="T:System.Type"/> object of an <see cref="T:System.Enum"/>.</param>
+            <returns>A <see cref="T:System.Collections.Generic.ICollection`1"/> of objects that have Name and Value properties.</returns>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.ClientScript.JSKeyCode">
+            <summary>
+            Enumerates the valid "keyCode" values that can be used with the javascript KeyDown and KeyUp client-side events.
+            </summary>
+            <remarks>
+            <para>
+            NOTE: The keyCode value associated with the KeyDown and KeyUp events is often different 
+            than the keyCode value for any KeyPress events related to those same KeyDown and KeyUp events.
+            </para>
+            <para>
+            This is because the keyCode of KeyDown and KeyUp events represents the physical keyboard key that was depressed by the user, 
+            but the keyCode of KeyPress events represents the text character that was/will be used as the input text the user was typing.
+            </para>
+            <para>
+            Different browsers may fire different sets of events (or potentially the same events in a different sequence) for the same keystrokes.
+            For example Internet Explorer does not call KeyPress for the arrow keys, but it does fire KeyDown and KeyUp).
+            </para>
+            <para>
+            For example, when typing an uppercase 'A' followed by a lowercase 'a', 2 KeyDown and 2 KeyUp events will be generated with the same keyCode (i.e. 65), 
+            because there is only one physical "A" key on the keyboard.
+            However, the 2 KeyPress events related to each of the typed characters will be different (i.e. 65 for the 'A' and 97 for the 'a') 
+            because they represent the integer values of the _character_ that was typed, not the physical keyboard key(s) that were used to type it.
+            </para>
+            </remarks>
+            <seealso href="http://www.aspdotnetfaq.com/Faq/What-is-the-list-of-KeyCodes-for-JavaScript-KeyDown-KeyPress-and-KeyUp-events.aspx"/>
+            <seealso href="http://www.cryer.co.uk/resources/javascript/script20_respond_to_keypress.htm"/>
+            <seealso href="http://www.quirksmode.org/js/keys.html"/>
+            <seealso href="http://msdn.microsoft.com/en-us/library/system.windows.forms.control.keypress.aspx"/>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.ClientScript.JSCode">
+            <summary>
+            Summary description for JSCode.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.ClientScript.JSCode.Render(System.Web.UI.HtmlTextWriter)">
+            <summary> 
+            Render this control to the writer parameter specified.
+            </summary>
+            <param name="writer"> The HTML writer to write out to </param>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.ClientScript.JSCode.RenderChildren(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Overridden to allow compression of the control's contents 
+            (e.g. child control output).
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.ClientScript.JSCode.RenderCode(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            NOTE: This is a low-level method intended primarily for custom control authors.
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.ClientScript.JSCode.AddParsedSubObject(System.Object)">
+            <summary>
+            Overridden to ignore any "pure whiteSpace" child controls.
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.ClientScript.JSCode.RenderCodeToString(System.Int32)">
+            <summary>
+            Utility method used when compressing the code during rendering.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.ClientScript.JSCode.SaveViewState">
+            <summary>
+            NOTE: Refer to the base method's documentation for details.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.ClientScript.JSCode.LoadViewState(System.Object)">
+            <summary>
+            NOTE: Refer to the base method's documentation for details.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.ClientScript.JSCode.PreserveWhitespace">
+            <summary>
+            If false, the control will ignore certain types of whiteSpace content.
+            </summary>
+            <remarks>
+            This property allows the control's content to contain whiteSpace 
+            that will not be rendered to the output.
+            </remarks>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.ClientScript.JSCode.CompressionMode">
+            <summary>
+            Contains all of the Compression mode/levels supported by the JSCode control.
+            </summary>
+            <seealso cref="P:HP.HPFx.Web.UI.ClientScript.JSCode.Compression"/>
+        </member>
+        <member name="F:HP.HPFx.Web.UI.ClientScript.JSCode.CompressionMode.None">
+            <summary>
+            Indicates zero compression (i.e. no modifications) should be performed.
+            </summary>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.ClientScript.JSCompressor">
+            <summary>
+            This class is used to compress JavaScript code.
+            </summary>
+            <remarks>Compression in this case consists of removing comments
+            and unnecessary whiteSpace.  It can also remove almost all line
+            feed characters between lines provided that semi-colons have been
+            used to indicate all statement endpoints.</remarks>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.ClientScript.JSCompressor.#ctor">
+            <summary>
+            Default constructor.  Line feed removal defaults to true.
+            </summary>
+            <overloads>There are two overloads for the constructor.</overloads>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.ClientScript.JSCompressor.#ctor(System.Boolean)">
+            <summary>
+            This version takes the line feed removal option.
+            </summary>
+            <param name="deleteLinefeeds">Pass true to remove line feeds wherever
+            possible, false to leave them in the script.</param>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.ClientScript.JSCompressor.Compress(System.String)">
+            <summary>
+            Compress the specified JavaScript code.
+            </summary>
+            <param name="scriptCode">The script to compress</param>
+            <returns>The compressed script</returns>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.ClientScript.JSCompressor.LinefeedRemoval">
+            <summary>
+            Get or set the line feed removal option.
+            </summary>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.ClientScript.JSScript">
+            <summary>
+            Summary description for JSScript.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.ClientScript.JSScript.Render(System.Web.UI.HtmlTextWriter)">
+            <summary> 
+            Render this control to the writer parameter specified.
+            </summary>
+            <param name="writer"> The HTML writer to write out to </param>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.ClientScript.JSScript.SaveViewState">
+            <summary>
+            NOTE: Refer to the base method's documentation for details.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.ClientScript.JSScript.LoadViewState(System.Object)">
+            <summary>
+            NOTE: Refer to the base method's documentation for details.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.ClientScript.JSScript.RenderContentOnly">
+            <summary>
+            If true, the control will not render SCRIPT tags.
+            </summary>
+            <remarks>
+            This property allows a JSScript control to be placed 
+            inside of an external set of SCRIPT tags 
+            (e.g. inside of another JSScript control or 
+            inside of SCRIPT tags hardcoded in the layout).
+            </remarks>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.ClientScript.JSScriptLink">
+            <summary>
+            Summary description for JSScriptLink.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.ClientScript.JSScriptLink.Render(System.Web.UI.HtmlTextWriter)">
+            <summary> 
+            Render this control to the writer parameter specified.
+            </summary>
+            <param name="writer"> The HTML writer to write out to </param>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.ClientScript.JSScriptLink.SaveViewState">
+            <summary>
+            NOTE: Refer to the base method's documentation for details.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.ClientScript.JSScriptLink.LoadViewState(System.Object)">
+            <summary>
+            NOTE: Refer to the base method's documentation for details.
+            </summary>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.ClientScript.JSUtility">
+            <summary>
+            Contains static utility methods related to javascript.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.ClientScript.JSUtility.StringLiteralEncode(System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Encodes a String so that it can be safely included inside a JScript String literal.
+            </summary>
+            <remarks>
+            This method does not add single or double quotes around the returned String, 
+            since that would make it harder to construct partial literals.
+            </remarks>
+            <param name="value"></param>
+            <param name="isUseAsciiEscapeSequences"></param>
+            <param name="isEscapeSingleQuotes"></param>
+            <param name="isEscapeDoubleQuotes"></param>
+            <param name="isEscapeScriptTags"></param>
+            <param name="isEscapeLessThans"></param>
+            <param name="isEscapeGreaterThans"></param>
+            <param name="isEscapeSlashes"></param>
+            <param name="isConvertNewlines"></param>
+            <param name="isConvertTabs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.ClientScript.JSUtility.CreateStringLiteral(System.String,System.Char)">
+            <summary>
+            Creates a JScript String literal that can be used in client side script from a String.
+            </summary>
+            <remarks>
+            This method automatically adds quotes (single or double as specified) around the returned String.
+            </remarks>
+            <param name="value">the literal's content</param>
+            <param name="literalDelimiter">the type of quotes to use as the delimiter</param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.ClientScript.JSUtility.CreateStringLiteral(System.String)">
+            <summary>
+            Creates a JScript String literal that can be used in client side script from a String.
+            </summary>
+            <remarks>
+            This method automatically adds quotes (single or double as appropriate) around the returned String.
+            </remarks>
+            <param name="value">the literal's content</param>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.ClientScript.JSUtility.CompressScript(System.String,System.Boolean)">
+            <summary>
+            Reduces the size of a script by removing unnecessary whitespace, newlines, etc.
+            </summary>
+            <param name="originalScript"></param>
+            <param name="preserveNewlines"></param>
+            <returns>A compact version of the original script.</returns>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.ControlUtility">
+            <summary>
+            Contains static utility methods related to controls.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.ControlUtility.RenderControl(System.Web.UI.Control,System.Int32)">
+            <summary>
+            Renders a Control and returns the result as a string.
+            </summary>
+            <param name="c">The Control to render.</param>
+            <param name="indentLevel">The number of levels that the first line of ouput should be indented.</param>
+            <returns>The Control's rendered output.</returns>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.ControlUtility.IsPureWhitespaceControl(System.Object)">
+            <summary>
+            Utility method for use during control parsing and rendering.
+            </summary>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.MessageBox">
+            <summary>
+            Implements a Web-based message box.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.MessageBox.Show(System.String)">
+            <summary>
+            Adds the specified message to the current page's message queue
+            to be rendered after the page has rendered its main content.
+            </summary>
+            <param name="message">
+            String containing the message to display.
+            </param>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.MessageBox.Show(System.String,System.Object[])">
+            <summary>
+            Similar to Show(string), but accepts and processes arguments like string.Format().
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.MessageBox.ExecutingPage_Unload(System.Object,System.EventArgs)">
+            <summary>
+            Renders the JavaScript after the page content has been fully
+            rendered but before the page is unloaded.  This allows the alerts
+            to be displayed after the main page content has been displayed.
+            </summary>
+            <param name="sender">
+            Source of the event.
+            </param>
+            <param name="e">
+            An EventArgs containing the event data.
+            </param>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.WebControls.BoundField">
+            <summary>
+            An improved version of the <see cref="T:System.Web.UI.WebControls.BoundField"/> class.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.WebControls.BoundField.InitializeCell(System.Web.UI.WebControls.DataControlFieldCell,System.Web.UI.WebControls.DataControlCellType,System.Web.UI.WebControls.DataControlRowState,System.Int32)">
+            <summary>
+            Overridden to implement the <see cref="P:HP.HPFx.Web.UI.WebControls.BoundField.HeaderToolTip"/> property's rendering functionality.
+            </summary>
+            <param name="cell"></param>
+            <param name="cellType"></param>
+            <param name="rowState"></param>
+            <param name="rowIndex"></param>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.WebControls.BoundField.HeaderToolTip">
+            <summary>
+            Gets or sets the text displayed when the mouse pointer hovers over the header item of a data control field.
+            </summary>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.WebControls.CompareValidator">
+            <summary>
+            This class provides more flexible support for ASP.NET Themes than the base class.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.WebControls.CompareValidator.Display">
+            <summary>
+            Overridden to enable theming.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.WebControls.CompareValidator.SetFocusOnError">
+            <summary>
+            Overridden to enable theming.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.WebControls.CompareValidator.Operator">
+            <summary>
+            Overridden to enable theming.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.WebControls.CompareValidator.Type">
+            <summary>
+            Overridden to enable theming.
+            </summary>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.WebControls.CurrentUserDomainParameter">
+            <summary>
+            This Parameter control evaluates to the "Domain" portion of the current user's Identity.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.WebControls.CurrentUserDomainParameter.Evaluate(System.Web.HttpContext,System.Web.UI.Control)">
+            <summary>
+            NOTE: Refer to the base method's documentation for details.
+            </summary>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.WebControls.CurrentUserIdentityParameter">
+            <summary>
+            This Parameter control evaluates to the Name of the current user's Identity.
+            </summary>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.WebControls.CurrentUserUsernameParameter">
+            <summary>
+            This Parameter control evaluates to the "NT Login" portion of the current user's Identity.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.WebControls.CurrentUserUsernameParameter.Evaluate(System.Web.HttpContext,System.Web.UI.Control)">
+            <summary>
+            Evaluates to the "NT Login" portion of the current user's Identity.
+            </summary>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.WebControls.CustomValidator">
+            <summary>
+            This class provides more flexible support for ASP.NET Themes than the base class.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.WebControls.CustomValidator.Display">
+            <summary>
+            Overridden to enable theming.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.WebControls.CustomValidator.SetFocusOnError">
+            <summary>
+            Overridden to enable theming.
+            </summary>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.WebControls.EnhancedGridView">
+            <summary>
+            An enhanced <see cref="T:System.Web.UI.WebControls.GridView"/> that supports multiple-row selection.
+            </summary>
+            <remarks>
+            <para>
+            Adapted from Dino Esposito's article at:
+            http://msdn.microsoft.com/en-us/magazine/cc163612.aspx
+            </para>
+            <para>
+            The object model of the base GridView control is extended with two new properties: AutoGenerateCheckBoxColumn and CheckBoxColumnIndex.
+            </para>
+            </remarks>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.WebControls.PageableItemContainerGridView">
+            <summary>
+            PageableItemContainerGridView is a custom control that inherits <see cref="T:System.Web.UI.WebControls.GridView"/> and implements <see cref="T:System.Web.UI.WebControls.IPageableItemContainer"/>.
+            </summary>
+            <remarks>
+            <para>
+            NOTE: The implementation of the <see cref="T:System.Web.UI.WebControls.IPageableItemContainer"/> interface is based upon the articles found here:
+            http://mattberseth.com/blog/2008/04/using_a_datapager_with_the_gri.html
+            http://www.c-sharpcorner.com/UploadFile/nipuntomar/DataPagerGridView08012008123240PM/DataPagerGridView.aspx
+            </para>
+            </remarks>
+        </member>
+        <member name="F:HP.HPFx.Web.UI.WebControls.PageableItemContainerGridView.EventTotalRowCountAvailable">
+            <summary>
+            TotalRowCountAvailable event key
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.WebControls.PageableItemContainerGridView.CreateChildControls(System.Collections.IEnumerable,System.Boolean)">
+            <summary>
+            Call base control's CreateChildControls method and determine the number of rows in the source 
+            then fire off the event with the derived data and then we return the original result.
+            </summary>
+            <param name="dataSource"></param>
+            <param name="dataBinding"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.WebControls.PageableItemContainerGridView.System#Web#UI#WebControls#IPageableItemContainer#SetPageProperties(System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Set the control with appropriate parameters and bind to right chunk of data.
+            </summary>
+            <param name="startRowIndex"></param>
+            <param name="maximumRows"></param>
+            <param name="databind"></param>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.WebControls.PageableItemContainerGridView.OnTotalRowCountAvailable(System.Web.UI.WebControls.PageEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.WebControls.PageableItemContainerGridView.System#Web#UI#WebControls#IPageableItemContainer#StartRowIndex">
+            <summary>
+            IPageableItemContainer's StartRowIndex = PageSize * PageIndex properties
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.WebControls.PageableItemContainerGridView.System#Web#UI#WebControls#IPageableItemContainer#MaximumRows">
+            <summary>
+            IPageableItemContainer's MaximumRows  = PageSize property
+            </summary>
+        </member>
+        <member name="E:HP.HPFx.Web.UI.WebControls.PageableItemContainerGridView.System#Web#UI#WebControls#IPageableItemContainer#TotalRowCountAvailable">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.WebControls.EnhancedGridView.GetSelectedIndexes">
+            <summary>
+            Returns a list containing the indexes of each of the control's selected rows.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.WebControls.EnhancedGridView.GetSelectedDataKeyValues``1">
+            <summary>
+            Returns a list containing the <see cref="P:System.Web.UI.WebControls.DataKey.Value"/> of each of the control's selected rows' <see cref="T:System.Web.UI.WebControls.DataKey"/>s.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.WebControls.EnhancedGridView.AddCheckBoxColumn(System.Collections.ICollection)">
+            <summary>
+            Add a new checkbox column
+            </summary>
+            <param name="columnList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.WebControls.EnhancedGridView.GetRowStyleFromState(System.Web.UI.WebControls.DataControlRowState)">
+            <summary>
+            Retrieves the style object based on the row state
+            </summary>
+            <param name="state"></param>
+            <returns></returns>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.WebControls.EnhancedGridView.AutoGenerateCheckBoxColumn">
+            <summary>
+            Indicates whether a checkbox column should be generated automatically at run time.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.WebControls.EnhancedGridView.CheckBoxColumnIndex">
+            <summary>
+            Indicates the (0-based) index of the column generated as a result of the <see cref="P:HP.HPFx.Web.UI.WebControls.EnhancedGridView.AutoGenerateCheckBoxColumn"/> property.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.WebControls.EnhancedGridView.SelectedIndexes">
+            <summary>
+            Returns a list containing the indexes of each of the control's selected rows.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.WebControls.EnhancedGridView.SelectedDataKeys">
+            <summary>
+            Returns a list containing the <see cref="T:System.Web.UI.WebControls.DataKey"/>s of each of the control's selected rows.
+            </summary>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.WebControls.InputCheckBoxField">
+            <summary>
+            Helper class for the <see cref="T:HP.HPFx.Web.UI.WebControls.EnhancedGridView"/> control.
+            </summary>
+            <remarks>
+            <para>
+            Adapted from Dino Esposito's article at:
+            http://msdn.microsoft.com/en-us/magazine/cc163612.aspx
+            </para>
+            <para>
+            The InputCheckBoxField class overrides the InitializeDataCell method, which is the nerve centre of a grid column class 
+            where the UI of a cell is determined. 
+            The overridden method calls the base version and then, 
+            if no controls have been created, adds an unbound checkbox with a predefined ID.
+            </para>
+            </remarks>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.WebControls.Label">
+            <summary>
+            This class provides more flexible support for ASP.NET Themes than the base class.
+            </summary>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.WebControls.PeopleFinderHyperLinkField">
+            <summary>
+            Renders a Hyperlink that opens a new PeopleFinder window to search for the data being rendered.
+            </summary>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.WebControls.PropertyParameter">
+            <summary>
+            This control is similar to the SessionParameter control, 
+            except that it gets the parameter value from a public Property of the Page that contains the control 
+            (instead of getting the value from the Session).
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.WebControls.PropertyParameter.#ctor">
+            <summary>
+            Initializes a new instance of the PropertyParameter class.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.WebControls.PropertyParameter.#ctor(HP.HPFx.Web.UI.WebControls.PropertyParameter)">
+            <summary>
+            Initializes a new instance of the PropertyParameter class.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.WebControls.PropertyParameter.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the PropertyParameter class.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.WebControls.PropertyParameter.#ctor(System.String,System.TypeCode,System.String)">
+            <summary>
+            Initializes a new instance of the PropertyParameter class.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.UI.WebControls.PropertyParameter.Clone">
+            <summary>
+            NOTE: Refer to the base method's documentation for details.
+            </summary>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.WebControls.RangeValidator">
+            <summary>
+            This class provides more flexible support for ASP.NET Themes than the base class.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.WebControls.RangeValidator.Display">
+            <summary>
+            Overridden to enable theming.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.WebControls.RangeValidator.SetFocusOnError">
+            <summary>
+            Overridden to enable theming.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.WebControls.RangeValidator.Type">
+            <summary>
+            Overridden to enable theming.
+            </summary>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.WebControls.RegularExpressionValidator">
+            <summary>
+            This class provides more flexible support for ASP.NET Themes than the base class.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.WebControls.RegularExpressionValidator.Display">
+            <summary>
+            Overridden to enable theming.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.WebControls.RegularExpressionValidator.SetFocusOnError">
+            <summary>
+            Overridden to enable theming.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.WebControls.RegularExpressionValidator.ValidationExpression">
+            <summary>
+            Overridden to enable theming.
+            </summary>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.WebControls.RequiredFieldValidator">
+            <summary>
+            This class provides more flexible support for ASP.NET Themes than the base class.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.WebControls.RequiredFieldValidator.Display">
+            <summary>
+            Overridden to enable theming.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.WebControls.RequiredFieldValidator.SetFocusOnError">
+            <summary>
+            Overridden to enable theming.
+            </summary>
+        </member>
+        <member name="T:HP.HPFx.Web.UI.WebControls.TextBox">
+            <summary>
+            This class provides more flexible support for ASP.NET Themes than the base class.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Web.UI.WebControls.TextBox.MaxLength">
+            <summary>
+            Overridden to enable theming.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.ScrollToControl(System.Web.UI.Page,System.Web.UI.Control)">
+            <summary>
+            Registers client script(s) that will scroll a specified control into view when the page loads.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.GetSelectedValues(System.Web.UI.WebControls.ListControl)">
+            <summary>
+            Returns a string array containing the values of each of the selected ListItem of a ListControl.
+            </summary>
+            <param name="c">The ListControl that contains the items.</param>
+            <returns>A string array containing the values of each of the control's selected items.</returns>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.GetMasterPage``1(System.Web.UI.Page)">
+            <summary>
+            Returns the first <see cref="T:System.Web.UI.MasterPage"/> that inherits from a specified <see cref="T:System.Type"/>.
+            </summary>
+            <typeparam name="TMaster">The <see cref="T:System.Type"/> of the master page.</typeparam>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.TransmitTextFile(System.Web.HttpResponse,System.String,System.String,System.String)">
+            <summary>
+            Convenience method for sending a text file back to the client (as an attachment) in the HTTP Response.
+            </summary>
+            <remarks>
+            NOTE: The <see cref="M:HP.HPFx.Web.Utility.WebUtility.TransmitTextFile(System.Web.HttpResponse,System.String,System.String)"/> overload of this method 
+            is typically preferred over this one, as it allows for better runtime performance and memory optimization.
+            </remarks>
+            <param name="response">The <see cref="T:System.Web.HttpResponse"/> that will be sent to the client.</param>
+            <param name="mimeType">The MIME type of the file (so that the browser knows how to handle the attachment).</param>
+            <param name="fileName">The name of the file.</param>
+            <param name="fileContent">The file's entire content.</param>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.TransmitTextFile(System.Web.HttpResponse,System.String,System.String)">
+            <summary>
+            Convenience method for sending a text file back to the client (as an attachment) in the HTTP Response.
+            </summary>
+            <remarks>
+            NOTE: You should call <see cref="M:System.Web.HttpResponse.End"/> 
+            after you finish writing all of the file content to the returned <see cref="T:System.IO.TextWriter"/>.
+            </remarks>
+            <param name="response">The <see cref="T:System.Web.HttpResponse"/> that will be sent to the client.</param>
+            <param name="mimeType">The MIME type of the file (so that the browser knows how to handle the attachment).</param>
+            <param name="fileName">The name of the file.</param>
+            <returns>The <see cref="T:System.IO.TextWriter"/> that the text file's content should be written to.</returns>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.TransmitBinaryFile(System.Web.HttpResponse,System.String,System.String,System.Byte[])">
+            <summary>
+            Convenience method for sending a binary file back to the client (as an attachment) in the HTTP Response.
+            </summary>
+            <remarks>
+            NOTE: The <see cref="M:HP.HPFx.Web.Utility.WebUtility.TransmitBinaryFile(System.Web.HttpResponse,System.String,System.String)"/> overload of this method 
+            is typically preferred over this one, as it allows for better runtime performance and memory optimization.
+            </remarks>
+            <param name="response">The <see cref="T:System.Web.HttpResponse"/> that will be sent to the client.</param>
+            <param name="mimeType">The MIME type of the file (so that the browser knows how to handle the attachment).</param>
+            <param name="fileName">The name of the file.</param>
+            <param name="fileContent">The file's entire content.</param>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.TransmitBinaryFile(System.Web.HttpResponse,System.String,System.String)">
+            <summary>
+            Convenience method for sending a binary file back to the client (as an attachment) in the HTTP Response.
+            </summary>
+            <remarks>
+            NOTE: You should call <see cref="M:System.Web.HttpResponse.End"/> 
+            after you finish writing all of the file content to the returned <see cref="T:System.IO.Stream"/>.
+            </remarks>
+            <param name="response">The <see cref="T:System.Web.HttpResponse"/> that will be sent to the client.</param>
+            <param name="mimeType">The MIME type of the file (so that the browser knows how to handle the attachment).</param>
+            <param name="fileName">The name of the file.</param>
+            <returns>The <see cref="T:System.IO.Stream"/> that the binary file's content should be written to.</returns>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.IsUriLengthValid(System.String)">
+            <summary>
+            Indicates whether a specified URI's length is valid or not (e.g. a URI that is too long for compatibility with certain browsers).
+            </summary>
+            <param name="uri"></param>
+            <returns><c>true</c> if the length is valid; else <c>false</c>.</returns>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.IsViewStateException(System.Exception)">
+            <summary>
+            Indicates whether a specified <see cref="T:System.Exception"/> (or any of it's nested <see cref="P:System.Exception.InnerException"/>s) 
+            represents an Exception related to a (typically non-critical) page ViewState exception.
+            </summary>
+            <param name="exc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.ResolveApplicationRelativeUrl(System.String)">
+            <summary>
+            Converts an app-relative URI (i.e. one that begins with the "~" character) into a <see cref="T:System.Uri"/> 
+            based upon the current <see cref="P:System.Web.HttpContext.Request"/>'s <see cref="P:System.Web.HttpRequest.Url"/>.
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.GetCurrentRequest">
+            <summary>
+            Returns the current <see cref="T:System.Web.HttpRequest"/> using <see cref="P:System.Web.HttpContext.Request"/>, else <c>null</c>.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.GetCurrentRequestAbsoluteUri">
+            <summary>
+            Returns the current <see cref="T:System.Web.HttpRequest"/>'s absolute URI, else <c>null</c>.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.GetCachedItemFromHttpContextCache``1(System.String,System.Action{System.String,``0,System.Boolean,System.Web.Caching.Cache},System.Func{``0})">
+            <summary>
+            Utility method that helps separate the implementation of the data cacheing algorithm from the implementation of the direct (i.e. cache-unaware) item accessor algorithm.
+            </summary>
+            <remarks>
+            <para>
+            This method considers a cache miss to have occurred if the <paramref name="cacheKey"/> is associated with a value that is equal to the default value for the <typeparamref name="TItem"/> type, 
+            and also when no value is associated with the <paramref name="cacheKey"/>.
+            When any other value is associated with the key, it is considered a cache hit.
+            </para>
+            </remarks>
+            <typeparam name="TItem">The type of the cached item.</typeparam>
+            <param name="cacheKey">The key that the item is (or will be) associated with in the cache.</param>
+            <param name="cacheMutator">
+            An action that will be called after every cache access, and that is intended to update or maintain the state of the cache.
+            <para>
+            The action's parameters are:
+            the cacheKey; 
+            the Item that was returned (whether from the cache or not); 
+            a "wasCached" bool with value <c>true</c> if the item was successfully retrieved from the cache (i.e. a cache hit) 
+            or <c>false</c> if the the value had to be retrieved using the <paramref name="itemAccessor"/>.
+            </para>
+            <para>
+            This action is intended to be used primarily to store (i.e. put in the cache) the returned item in the cache when there was a cache miss.
+            However, it could potentially be used for other purposes as well.
+            </para>
+            </param>
+            <param name="itemAccessor">An accessor function (e.g. a lambda, delegate, anonymous method, or whatever) that is used to retrieve the item when there is a cache miss.</param>
+            <returns>An item of the appropriate type that was retrieved either from the cache, or else by the <paramref name="itemAccessor"/> function.</returns>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.GetCachedItemFromHttpContextSession``1(System.String,System.Action{System.String,``0,System.Boolean,System.Web.SessionState.HttpSessionState},System.Func{``0})">
+            <summary>
+            Utility method that helps separate the implementation of the data cacheing algorithm from the implementation of the direct (i.e. cache-unaware) item accessor algorithm.
+            </summary>
+            <remarks>
+            <para>
+            This method considers a cache miss to have occurred if the <paramref name="cacheKey"/> is associated with a value that is equal to the default value for the <typeparamref name="TItem"/> type, 
+            and also when no value is associated with the <paramref name="cacheKey"/>.
+            When any other value is associated with the key, it is considered a cache hit.
+            </para>
+            </remarks>
+            <typeparam name="TItem">The type of the cached item.</typeparam>
+            <param name="cacheKey">The key that the item is (or will be) associated with in the cache.</param>
+            <param name="cacheMutator">
+            An action that will be called after every cache access, and that is intended to update or maintain the state of the cache.
+            <para>
+            The action's parameters are:
+            the cacheKey; 
+            the Item that was returned (whether from the cache or not); 
+            a "wasCached" bool with value <c>true</c> if the item was successfully retrieved from the cache (i.e. a cache hit) 
+            or <c>false</c> if the the value had to be retrieved using the <paramref name="itemAccessor"/>.
+            </para>
+            <para>
+            This action is intended to be used primarily to store (i.e. put in the cache) the returned item in the cache when there was a cache miss.
+            However, it could potentially be used for other purposes as well.
+            </para>
+            </param>
+            <param name="itemAccessor">An accessor function (e.g. a lambda, delegate, anonymous method, or whatever) that is used to retrieve the item when there is a cache miss.</param>
+            <returns>An item of the appropriate type that was retrieved either from the cache, or else by the <paramref name="itemAccessor"/> function.</returns>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.GetCachedItemFromHttpContext``1(System.String,System.Action{System.String,``0,System.Boolean,System.Web.HttpContext},System.Func{``0})">
+            <summary>
+            Utility method that helps separate the implementation of the data cacheing algorithm from the implementation of the direct (i.e. cache-unaware) item accessor algorithm.
+            </summary>
+            <remarks>
+            <para>
+            This method considers a cache miss to have occurred if the <paramref name="cacheKey"/> is associated with a value that is equal to the default value for the <typeparamref name="TItem"/> type, 
+            and also when no value is associated with the <paramref name="cacheKey"/>.
+            When any other value is associated with the key, it is considered a cache hit.
+            </para>
+            </remarks>
+            <typeparam name="TItem">The type of the cached item.</typeparam>
+            <param name="cacheKey">The key that the item is (or will be) associated with in the cache.</param>
+            <param name="cacheMutator">
+            An action that will be called after every cache access, and that is intended to update or maintain the state of the cache.
+            <para>
+            The action's parameters are:
+            the cacheKey; 
+            the Item that was returned (whether from the cache or not); 
+            a "wasCached" bool with value <c>true</c> if the item was successfully retrieved from the cache (i.e. a cache hit) 
+            or <c>false</c> if the the value had to be retrieved using the <paramref name="itemAccessor"/>.
+            </para>
+            <para>
+            This action is intended to be used primarily to store (i.e. put in the cache) the returned item in the cache when there was a cache miss.
+            However, it could potentially be used for other purposes as well.
+            </para>
+            </param>
+            <param name="itemAccessor">An accessor function (e.g. a lambda, delegate, anonymous method, or whatever) that is used to retrieve the item when there is a cache miss.</param>
+            <returns>An item of the appropriate type that was retrieved either from the cache, or else by the <paramref name="itemAccessor"/> function.</returns>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.CacheInsert(System.Web.Caching.Cache,System.String,System.Object,System.Nullable{System.TimeSpan},System.Nullable{System.DateTime},System.Web.Caching.CacheItemPriority)">
+            <summary>
+            Convenience method.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.CacheInsert(System.Web.Caching.Cache,System.String,System.Object,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan},System.Web.Caching.CacheItemPriority)">
+            <summary>
+            Convenience method.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.FocusOnPostBackControl(System.Web.UI.Page,System.Boolean)">
+            <summary>
+            Sets the Page focus on whichever Control caused the current PostBack request.
+            </summary>
+            <param name="p">The Page that is the target of the PostBack.</param>
+            <param name="onlyFocusIfAutoPostBack">
+            <c>true</c> indicates that the method should do nothing unless the PostBack was caused by an "AutoPostBack" Control 
+            (i.e. one with the AutoPostBack property set to <c>true</c>).
+            </param>
+            <returns><c>true</c> if the method sets focus on a Control, or <c>false</c> if it does nothing</returns>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.FocusOnControl(System.Web.UI.Page,System.Web.UI.Control)">
+            <summary>
+            An AJAX-compatible version of <see cref="M:System.Web.UI.Control.Focus"/>.
+            </summary>
+            <param name="p">The <see cref="T:System.Web.UI.Page"/> containing <paramref name="focusTarget"/>.</param>
+            <param name="focusTarget">The <see cref="T:System.Web.UI.Control"/> to set the focus on.</param>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.IsAutoPostBack(System.Web.UI.Control,System.Boolean)">
+            <summary>
+            Returns a Nullable bool indicating whether a specified Control supports the AutoPostBack property, 
+            and if so it's current value.
+            </summary>
+            <param name="targetControl"></param>
+            <param name="allowReflection">
+            If <c>true</c>, the method may use Reflection to determine whether the 
+            <paramref name="targetControl"/> 
+            has a public Boolean-typed AutoPostBack property and (if so) the property's current value.
+            Otherwise, this method will only work for BCL types that are known to have such a property.
+            </param>
+            <returns>
+            <c>null</c> if <paramref name="targetControl"/> doesn't support the AutoPostBack property. 
+            Else, returns the value of the control's AutoPostBack property.
+            </returns>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.GetPropertyValue_bool(System.Object,System.String)">
+            <summary>
+            Returns a Nullable bool indicating whether a specified object supports a specified public, instance property, 
+            and if so it's current value.
+            </summary>
+            <remarks>
+            NOTE: This method treats the property name as case-insensitive.
+            </remarks>
+            <param name="o">The object instance to get the value from.</param>
+            <param name="propertyName">The name of the property.</param>
+            <returns>
+            <c>null</c> if <paramref name="o"/> doesn't support the specified property. 
+            Else, returns the value of the specified property.
+            </returns>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.GetPostBackControl(System.Web.UI.Page)">
+            <summary>
+            Returns the Control that caused the PostBack to the specified Page.
+            </summary>
+            <remarks>
+            This method was copied from 
+            http://www.eggheadcafe.com/articles/20050609.asp 
+            and authored by Peter A. Bromberg, Ph.D.
+            </remarks>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.DisableClientCacheing(System.Web.HttpResponse)">
+            <summary>
+            Prevents this page/response from being cached by the client/browser
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.ShowAlertBox(System.Web.UI.Page,System.String)">
+            <summary>
+            Registers client script(s) that will display a client-side Alert dialog.
+            </summary>
+            <remarks>
+            This method is AJAX-compatible.
+            </remarks>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.ShowAlertBox(System.Web.UI.Control,System.String)">
+            <summary>
+            Registers client script(s) that will display a client-side Alert dialog.
+            </summary>
+            <remarks>
+            This method is AJAX-compatible.
+            </remarks>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.OpenClientWindow(System.Web.UI.Control,System.String,System.String)">
+            <summary>
+            Registers client script(s) that will open a client/browser window.
+            </summary>
+            <remarks>
+            This method is AJAX-compatible.
+            </remarks>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.RedirectUsingClientHistory(System.Web.UI.Control,System.Int32)">
+            <summary>
+            Registers client script(s) that will cause the client to reload a previous loaded page.
+            This method will cause the client browser to behave as if the browser's Back, Forward, or Refresh button were clicked (possibly several times), 
+            depending on the method parameters used.
+            </summary>
+            <remarks>
+            This method is AJAX-compatible.
+            </remarks>
+            <param name="registeringControl">The control that is requesting the script to be emitted to the response.</param>
+            <param name="historyOffset">
+            Indicates which entry from the client's browser history the client should be redirected to.
+            Using <c>0</c> will cause the current page to refresh (like the browser's Refresh button).
+            Using <c>-1</c> will load the previous page (like clicking the browser's Back button once).
+            Using <c>1</c> will load the next page (like clicking the browser's Forward button once).
+            Using a larger positive or negative number is equivelent to clicking the browser's Back or Forward button multiple times.
+            For example, using <c>-3</c> is equivelent to clicking the browser's Back button 3 times.
+            </param>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.RedirectClientBack(System.Web.UI.Control,System.Int32)">
+            <summary>
+            This method will cause the client browser to behave as if the browser's Back button were clicked a specified number of times.
+            </summary>
+            <remarks>
+            This method is AJAX-compatible.
+            </remarks>
+            <param name="registeringControl">The control that is requesting the script to be emitted to the response.</param>
+            <param name="numberOfPages">
+            Indicates how many times times the browser's Back button should be clicked.
+            </param>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.RedirectClientBack(System.Web.UI.Control)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.RedirectClientForward(System.Web.UI.Control,System.Int32)">
+            <summary>
+            This method will cause the client browser to behave as if the browser's Forward button were clicked a specified number of times.
+            </summary>
+            <remarks>
+            This method is AJAX-compatible.
+            </remarks>
+            <param name="registeringControl">The control that is requesting the script to be emitted to the response.</param>
+            <param name="numberOfPages">
+            Indicates how many times times the browser's Back button should be clicked.
+            </param>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.RedirectClientForward(System.Web.UI.Control)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.RefreshClient(System.Web.UI.Control)">
+            <summary>
+            This method will cause the client browser to behave as if the browser's Refresh button were clicked.
+            </summary>
+            <remarks>
+            This method is AJAX-compatible.
+            </remarks>
+            <param name="registeringControl">The control that is requesting the script to be emitted to the response.</param>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.ParseUserIdentityName(System.String)">
+            <summary>
+            Parses the UserName and Domain out of a user's identity name.
+            </summary>
+            <param name="identityName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.IsValidWebResource(System.String,System.Reflection.Assembly,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <remarks>
+            <para>
+            NOTE: Adapted from: http://geekswithblogs.net/mnf/archive/2006/05/26/79669.aspx
+            </para>
+            <para>
+            NOTE: If resource is located in subfolder of C# project, path of subfolder should be specified (it is included as part of namespace)
+            Resources are named using a fully qualified name ((including namespace).
+            </para>
+            </remarks>
+            <param name="resourceName"></param>
+            <param name="assembly"></param>
+            <param name="throwIfInvalid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.HasManifestResource(System.String,System.Reflection.Assembly,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <remarks>
+            <para>
+            NOTE: Adapted from: http://geekswithblogs.net/mnf/archive/2006/05/26/79669.aspx
+            </para>
+            <para>
+            NOTE: If resource is located in subfolder of C# project, path of subfolder should be specified (it is included as part of namespace)
+            Resources are named using a fully qualified name ((including namespace).
+            </para>
+            </remarks>
+            <param name="resourceName"></param>
+            <param name="assembly"></param>
+            <param name="throwIfNotFound"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.AddToQuery(System.Uri,System.String)">
+            <summary>
+            Safely adds a specified string to the Query portion of a <see cref="T:System.Uri"/>.
+            </summary>
+            <param name="uri"></param>
+            <param name="queryParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.ReplaceQuery(System.Uri,System.String)">
+            <summary>
+            Safely adds a specified string to the Query portion of a <see cref="T:System.Uri"/>.
+            </summary>
+            <param name="uri"></param>
+            <param name="queryParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.ForceSelectedValue(System.Web.UI.WebControls.ListControl,System.String,System.String)">
+            <summary>
+            Sets the <see cref="P:System.Web.UI.WebControls.ListControl.SelectedValue"/> of the <paramref name="lc"/> (and adds a new <see cref="T:System.Web.UI.WebControls.ListItem"/> if necessary).
+            </summary>
+            <param name="lc"></param>
+            <param name="itemValue"></param>
+            <param name="itemText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.ForceSelectedValue(System.Web.UI.WebControls.ListControl,System.String)">
+            <summary>
+            Convenience overload.
+            </summary>
+            <param name="lc"></param>
+            <param name="itemValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.ForceSelectedValue(System.Web.UI.WebControls.ListControl,System.Enum)">
+            <summary>
+            Convenience overload.
+            </summary>
+            <param name="lc"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.ForceSelectedValue(System.Web.UI.WebControls.ListControl,System.Nullable{System.Int32})">
+            <summary>
+            Convenience overload.
+            </summary>
+            <param name="lc"></param>
+            <param name="itemValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.AddItemToListControl(System.Web.UI.WebControls.ListControl,System.String)">
+            <summary>
+            Convenience overload.
+            </summary>
+            <param name="lc"></param>
+            <param name="itemText"></param>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.ConvertToMailToUri(System.Collections.Generic.IEnumerable{System.Net.Mail.MailAddress},System.Collections.Generic.IEnumerable{System.Net.Mail.MailAddress},System.Collections.Generic.IEnumerable{System.Net.Mail.MailAddress},System.String,System.String)">
+            <summary>
+            Creates a "mailto://" URI based upon specified input values.
+            </summary>
+            <param name="to"></param>
+            <param name="cc"></param>
+            <param name="bcc"></param>
+            <param name="subject"></param>
+            <param name="body"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.ConvertToMailToUri(System.Net.Mail.MailMessage)">
+            <summary>
+            Creates a "mailto://" URI based upon specified input values.
+            </summary>
+            <param name="mailMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Web.Utility.WebUtility.MailToUriEncode(System.String)">
+            <summary>
+            Performs functionality similar to <see cref="M:System.Web.HttpUtility.UrlEncode(System.String)"/>, 
+            but using an encoding process specifically designed for compatibility with the supported syntax of "mailto:"-type URIs.
+            </summary>
+            <param name="value">The value to encode.</param>
+            <returns>An encoded string that can be safely used within a "mailto:"-type URI.</returns>
+        </member>
+    </members>
+</doc>

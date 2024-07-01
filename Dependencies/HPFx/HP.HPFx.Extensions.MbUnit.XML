@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HP.HPFx.Extensions.MbUnit</name>
+    </assembly>
+    <members>
+        <member name="T:HP.HPFx.Extensions.MbUnit.DateAssert">
+            <summary>
+            Date Assertion class.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.MbUnit.DateAssert.AreNearlyEqual(System.DateTime,System.DateTime,System.TimeSpan)">
+            <summary>
+            Asserts that the values difference exceeds a specified <see cref="T:System.TimeSpan"/> value.
+            </summary>
+            <param name="expectedValue">The expected value.</param>
+            <param name="actualValue">The actual value.</param>
+            <param name="maximumAcceptableVariance">The maximum magnitude (in either direction) of variance that is considered acceptable.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.MbUnit.DateAssert.AreNearlyEqual(System.DateTime,System.DateTime)">
+            <summary>
+            Asserts that the values differ by less than 1 second.
+            </summary>
+            <param name="expectedValue">The expected value.</param>
+            <param name="actualValue">The actual value.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.MbUnit.DateAssert.AreNotNearlyEqual(System.DateTime,System.DateTime,System.TimeSpan)">
+            <summary>
+            Asserts that the values difference exceeds a specified <see cref="T:System.TimeSpan"/> value.
+            </summary>
+            <param name="expectedValue">The expected value.</param>
+            <param name="actualValue">The actual value.</param>
+            <param name="maximumAcceptableVariance">The maximum magnitude (in either direction) of variance that is considered acceptable.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.MbUnit.DateAssert.AreNotNearlyEqual(System.DateTime,System.DateTime)">
+            <summary>
+            Asserts that the values differ by at least 1 second.
+            </summary>
+            <param name="expectedValue">The expected value.</param>
+            <param name="actualValue">The actual value.</param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.MbUnit.DateAssert.AreNearlyEqualHelper(System.DateTime,System.DateTime,System.TimeSpan)">
+            <summary>
+            Indicates whether the difference between two values exceeds a specified threshold or not.
+            </summary>
+            <param name="value1"></param>
+            <param name="value2"></param>
+            <param name="maximumAcceptableVariance">The maximum magnitude (in either direction) of variance that is considered acceptable.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.MbUnit.DateAssert.GetDurationOfDifference(System.DateTime,System.DateTime)">
+            <summary>
+            Returns the non-negative value of the difference between two <see cref="T:System.DateTime"/> values.
+            </summary>
+            <param name="value1"></param>
+            <param name="value2"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

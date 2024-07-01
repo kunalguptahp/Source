@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:tns="http://dps.rssx.hp.com/dps/jumpstation" elementFormDefault="qualified" targetNamespace="http://dps.rssx.hp.com/dps/jumpstation" xmlns="http://www.w3.org/2001/XMLSchema">
+  <complexType name="JumpstationRedirector">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="site" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="selectionCriteria" type="tns:SelectionCriteria" />
+      <element minOccurs="1" maxOccurs="1" name="targetUrl" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="order" type="int" />
+    </sequence>
+    <attribute name="id" type="long" use="required" />
+  </complexType>
+  <complexType name="SelectionCriteria">
+    <sequence>
+      <element minOccurs="1" maxOccurs="unbounded" name="selectorItem" type="tns:SelectorItem" />
+    </sequence>
+  </complexType>
+  <complexType name="SelectorItem">
+    <sequence minOccurs="1" maxOccurs="unbounded">
+      <element name="selectorValue" type="string" />
+    </sequence>
+    <attribute name="selectorName" type="string" use="required" />
+    <attribute name="groupNumber" type="int" use="required" />
+    <attribute name="negation" type="boolean" use="required" />
+  </complexType>
+  <complexType name="Macro">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="name" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="description" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="defaultOut" type="string" />
+      <sequence minOccurs="1" maxOccurs="unbounded">
+        <element name="matchPattern" type="tns:MatchPattern" />
+      </sequence>
+    </sequence>
+    <attribute name="id" type="long" use="required" />
+  </complexType>
+  <complexType name="MatchPattern">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="in" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="out" type="string" />
+    </sequence>
+  </complexType>
+</schema>

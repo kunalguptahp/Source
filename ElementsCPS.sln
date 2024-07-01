@@ -1,0 +1,225 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34729.46
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D4D79084-4A48-436F-A77E-2E1309EF6478}"
+	ProjectSection(SolutionItems) = preProject
+		Scratch.build.xml = Scratch.build.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ElementsCPS.Core", "ElementsCPS.Core", "{AEEF6354-EFCB-4DD5-AF45-880C9B7B86C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ElementsCPS.Data", "ElementsCPS.Data", "{0F893779-09AE-4ED9-9AEF-99A7E7BF654B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ElementsCPS.Apps.WebUI", "ElementsCPS.Apps.WebUI", "{FC62D903-3153-4568-B82B-366122623648}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SubSonic Templates", "SubSonic Templates", "{252768E4-643A-431D-9024-2B6501124082}"
+	ProjectSection(SolutionItems) = preProject
+		..\Dependencies\SubSonic\Templates\CS_ClassTemplate.aspx = ..\Dependencies\SubSonic\Templates\CS_ClassTemplate.aspx
+		..\Dependencies\SubSonic\Templates\CS_DynamicScaffold.aspx = ..\Dependencies\SubSonic\Templates\CS_DynamicScaffold.aspx
+		..\Dependencies\SubSonic\Templates\CS_GeneratedScaffoldCodeBehind.aspx = ..\Dependencies\SubSonic\Templates\CS_GeneratedScaffoldCodeBehind.aspx
+		..\Dependencies\SubSonic\Templates\CS_GeneratedScaffoldMarkup.aspx = ..\Dependencies\SubSonic\Templates\CS_GeneratedScaffoldMarkup.aspx
+		..\Dependencies\SubSonic\Templates\CS_ODSController.aspx = ..\Dependencies\SubSonic\Templates\CS_ODSController.aspx
+		..\Dependencies\SubSonic\Templates\CS_SPTemplate.aspx = ..\Dependencies\SubSonic\Templates\CS_SPTemplate.aspx
+		..\Dependencies\SubSonic\Templates\CS_StructsTemplate.aspx = ..\Dependencies\SubSonic\Templates\CS_StructsTemplate.aspx
+		..\Dependencies\SubSonic\Templates\CS_ViewTemplate.aspx = ..\Dependencies\SubSonic\Templates\CS_ViewTemplate.aspx
+		..\Dependencies\SubSonic\Templates\VB_ClassTemplate.aspx = ..\Dependencies\SubSonic\Templates\VB_ClassTemplate.aspx
+		..\Dependencies\SubSonic\Templates\VB_DynamicScaffold.aspx = ..\Dependencies\SubSonic\Templates\VB_DynamicScaffold.aspx
+		..\Dependencies\SubSonic\Templates\VB_GeneratedScaffoldCodeBehind.aspx = ..\Dependencies\SubSonic\Templates\VB_GeneratedScaffoldCodeBehind.aspx
+		..\Dependencies\SubSonic\Templates\VB_GeneratedScaffoldMarkup.aspx = ..\Dependencies\SubSonic\Templates\VB_GeneratedScaffoldMarkup.aspx
+		..\Dependencies\SubSonic\Templates\VB_ODSController.aspx = ..\Dependencies\SubSonic\Templates\VB_ODSController.aspx
+		..\Dependencies\SubSonic\Templates\VB_SPTemplate.aspx = ..\Dependencies\SubSonic\Templates\VB_SPTemplate.aspx
+		..\Dependencies\SubSonic\Templates\VB_StructsTemplate.aspx = ..\Dependencies\SubSonic\Templates\VB_StructsTemplate.aspx
+		..\Dependencies\SubSonic\Templates\VB_ViewTemplate.aspx = ..\Dependencies\SubSonic\Templates\VB_ViewTemplate.aspx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{BEA2BD36-8CDE-461B-AE60-423E289FB9B2}"
+	ProjectSection(SolutionItems) = preProject
+		Production\Scripts\_BatchFileConfig.bat = Production\Scripts\_BatchFileConfig.bat
+		CodeGen.Data.SubSonicClient.bat = CodeGen.Data.SubSonicClient.bat
+		Production\Scripts\DB.Rebuild.bat = Production\Scripts\DB.Rebuild.bat
+		Production\Scripts\DB.Rebuild.SchemaOnly.bat = Production\Scripts\DB.Rebuild.SchemaOnly.bat
+		Production\Scripts\DB.RestoreData.Bootstrap.bat = Production\Scripts\DB.RestoreData.Bootstrap.bat
+		Production\Scripts\DB.RestoreData.Demo.bat = Production\Scripts\DB.RestoreData.Demo.bat
+		Production\Scripts\DB.RestoreData.QA.bat = Production\Scripts\DB.RestoreData.QA.bat
+		Production\Scripts\DB.RestoreData.Representative.bat = Production\Scripts\DB.RestoreData.Representative.bat
+		Production\Scripts\DB.RestoreData.Simple.bat = Production\Scripts\DB.RestoreData.Simple.bat
+		Production\Scripts\DB.RestoreData.SortingPaging.bat = Production\Scripts\DB.RestoreData.SortingPaging.bat
+		Production\Scripts\IIS.Setup.DEMO.bat = Production\Scripts\IIS.Setup.DEMO.bat
+		Production\Scripts\IIS.Setup.DEV.bat = Production\Scripts\IIS.Setup.DEV.bat
+		Production\Scripts\IIS.Setup.ITG.bat = Production\Scripts\IIS.Setup.ITG.bat
+		Production\Scripts\IIS.Setup.local.bat = Production\Scripts\IIS.Setup.local.bat
+		Production\Scripts\IIS.Setup.PROD.bat = Production\Scripts\IIS.Setup.PROD.bat
+		PostBuild.StandardTestsProject.bat = PostBuild.StandardTestsProject.bat
+		PreBuild.StandardTestsProject.bat = PreBuild.StandardTestsProject.bat
+		Production\Scripts\ScriptLib.Build.xml = Production\Scripts\ScriptLib.Build.xml
+		SynchronizeFile.bat = SynchronizeFile.bat
+		SynchronizeFileIfSourceFileExists.bat = SynchronizeFileIfSourceFileExists.bat
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DB Setup Scripts", "DB Setup Scripts", "{4B8BACE6-555C-45F9-83B3-8A785C368DCE}"
+	ProjectSection(SolutionItems) = preProject
+		Production\DB\ElementsCPSDB\Scripts\Utility\DB.Clean.Data.sql = Production\DB\ElementsCPSDB\Scripts\Utility\DB.Clean.Data.sql
+		Production\DB\ElementsCPSDB\Scripts\Utility\DB.Clean.Schema.sql = Production\DB\ElementsCPSDB\Scripts\Utility\DB.Clean.Schema.sql
+		Production\DB\ElementsCPSDB\Scripts\Setup\ElementsCPSDB.Setup.Data.TestData.001.BootstrapData.sql = Production\DB\ElementsCPSDB\Scripts\Setup\ElementsCPSDB.Setup.Data.TestData.001.BootstrapData.sql
+		Production\DB\ElementsCPSDB\Scripts\Setup\ElementsCPSDB.Setup.Data.TestData.001b.SortingPagingTestData.sql = Production\DB\ElementsCPSDB\Scripts\Setup\ElementsCPSDB.Setup.Data.TestData.001b.SortingPagingTestData.sql
+		Production\DB\ElementsCPSDB\Scripts\Setup\ElementsCPSDB.Setup.Data.TestData.002a.SimpleTestData.sql = Production\DB\ElementsCPSDB\Scripts\Setup\ElementsCPSDB.Setup.Data.TestData.002a.SimpleTestData.sql
+		Production\DB\ElementsCPSDB\Scripts\Setup\ElementsCPSDB.Setup.Data.TestData.002b.RepresentativeTestData.sql = Production\DB\ElementsCPSDB\Scripts\Setup\ElementsCPSDB.Setup.Data.TestData.002b.RepresentativeTestData.sql
+		Production\DB\ElementsCPSDB\Scripts\Setup\ElementsCPSDB.Setup.Data.TestData.002c.QATestData.sql = Production\DB\ElementsCPSDB\Scripts\Setup\ElementsCPSDB.Setup.Data.TestData.002c.QATestData.sql
+		Production\DB\ElementsCPSDB\Scripts\Setup\ElementsCPSDB.Setup.Data.TestData.002d.DemoTestData.sql = Production\DB\ElementsCPSDB\Scripts\Setup\ElementsCPSDB.Setup.Data.TestData.002d.DemoTestData.sql
+		Production\DB\ElementsCPSDB\Scripts\Setup\ElementsCPSDB.Setup.Data.TestData.002e.UnitTestData.sql = Production\DB\ElementsCPSDB\Scripts\Setup\ElementsCPSDB.Setup.Data.TestData.002e.UnitTestData.sql
+		Production\DB\ElementsCPSDB\Scripts\Setup\ElementsCPSDB.Setup.Data.TestData.002f.FetchMethodTestData.sql = Production\DB\ElementsCPSDB\Scripts\Setup\ElementsCPSDB.Setup.Data.TestData.002f.FetchMethodTestData.sql
+		Production\DB\ElementsCPSDB\Scripts\Setup\ElementsCPSDB.Setup.Migration.sql = Production\DB\ElementsCPSDB\Scripts\Setup\ElementsCPSDB.Setup.Migration.sql
+		Production\DB\ElementsCPSDB\Scripts\Setup\ElementsCPSDB.Setup.Schema.sql = Production\DB\ElementsCPSDB\Scripts\Setup\ElementsCPSDB.Setup.Schema.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ElementsCPS.SSIS", "ElementsCPS.SSIS", "{1F6FD15F-5543-4761-9023-3A02EB68D5D0}"
+	ProjectSection(SolutionItems) = preProject
+		Production\DB\ElementsCPSDB\Scripts\Setup\ElementsCPSDB.Setup.Data.TestData.002c.QATestData.sql = Production\DB\ElementsCPSDB\Scripts\Setup\ElementsCPSDB.Setup.Data.TestData.002c.QATestData.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ElementsCPS.Services", "ElementsCPS.Services", "{0D1044CB-0C91-4F75-A332-5901EB941125}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Production\Core\Core.csproj", "{DB01D5DC-CD0C-4816-B36B-3E58AAEC1C6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Tests", "Tests\Core.Tests\Core.Tests.csproj", "{6D8B1DDF-190A-4D21-BE9F-0A149D94A95D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Production\Data\Data.csproj", "{2682FA1E-EF27-4442-8278-A855C68FA4A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Tests", "Tests\Data.Tests\Data.Tests.csproj", "{E2B5CB8B-F3E6-4980-A88F-DA7418301803}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUI.Tests", "Tests\WebUI.Tests\WebUI.Tests.csproj", "{01186BDE-3CF2-42EE-8C15-637646991953}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUI", "Production\WebRoot\WebUI\WebUI.csproj", "{090D2102-12A7-41DE-9C95-BEF9558A2C49}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4D632A67-AB52-4533-8CBE-1E4B773F9A47} = {4D632A67-AB52-4533-8CBE-1E4B773F9A47}
+	EndProjectSection
+EndProject
+Project("{D183A3D8-5FD8-494B-B014-37F57B35E655}") = "SSIS", "Production\SSIS\SSIS.dtproj", "{B23C1347-646E-41F9-890A-36D794B96726}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Production\Services\Services.csproj", "{4D632A67-AB52-4533-8CBE-1E4B773F9A47}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CIDebug|Any CPU = CIDebug|Any CPU
+		CIRelease|Any CPU = CIRelease|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Development|Any CPU = Development|Any CPU
+		Offline|Any CPU = Offline|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB01D5DC-CD0C-4816-B36B-3E58AAEC1C6E}.CIDebug|Any CPU.ActiveCfg = CIDebug|Any CPU
+		{DB01D5DC-CD0C-4816-B36B-3E58AAEC1C6E}.CIDebug|Any CPU.Build.0 = CIDebug|Any CPU
+		{DB01D5DC-CD0C-4816-B36B-3E58AAEC1C6E}.CIRelease|Any CPU.ActiveCfg = CIRelease|Any CPU
+		{DB01D5DC-CD0C-4816-B36B-3E58AAEC1C6E}.CIRelease|Any CPU.Build.0 = CIRelease|Any CPU
+		{DB01D5DC-CD0C-4816-B36B-3E58AAEC1C6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB01D5DC-CD0C-4816-B36B-3E58AAEC1C6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB01D5DC-CD0C-4816-B36B-3E58AAEC1C6E}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB01D5DC-CD0C-4816-B36B-3E58AAEC1C6E}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{DB01D5DC-CD0C-4816-B36B-3E58AAEC1C6E}.Offline|Any CPU.ActiveCfg = Offline|Any CPU
+		{DB01D5DC-CD0C-4816-B36B-3E58AAEC1C6E}.Offline|Any CPU.Build.0 = Offline|Any CPU
+		{DB01D5DC-CD0C-4816-B36B-3E58AAEC1C6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB01D5DC-CD0C-4816-B36B-3E58AAEC1C6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D8B1DDF-190A-4D21-BE9F-0A149D94A95D}.CIDebug|Any CPU.ActiveCfg = CIDebug|Any CPU
+		{6D8B1DDF-190A-4D21-BE9F-0A149D94A95D}.CIDebug|Any CPU.Build.0 = CIDebug|Any CPU
+		{6D8B1DDF-190A-4D21-BE9F-0A149D94A95D}.CIRelease|Any CPU.ActiveCfg = CIRelease|Any CPU
+		{6D8B1DDF-190A-4D21-BE9F-0A149D94A95D}.CIRelease|Any CPU.Build.0 = CIRelease|Any CPU
+		{6D8B1DDF-190A-4D21-BE9F-0A149D94A95D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D8B1DDF-190A-4D21-BE9F-0A149D94A95D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D8B1DDF-190A-4D21-BE9F-0A149D94A95D}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D8B1DDF-190A-4D21-BE9F-0A149D94A95D}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{6D8B1DDF-190A-4D21-BE9F-0A149D94A95D}.Offline|Any CPU.ActiveCfg = Offline|Any CPU
+		{6D8B1DDF-190A-4D21-BE9F-0A149D94A95D}.Offline|Any CPU.Build.0 = Offline|Any CPU
+		{6D8B1DDF-190A-4D21-BE9F-0A149D94A95D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D8B1DDF-190A-4D21-BE9F-0A149D94A95D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2682FA1E-EF27-4442-8278-A855C68FA4A4}.CIDebug|Any CPU.ActiveCfg = CIDebug|Any CPU
+		{2682FA1E-EF27-4442-8278-A855C68FA4A4}.CIDebug|Any CPU.Build.0 = CIDebug|Any CPU
+		{2682FA1E-EF27-4442-8278-A855C68FA4A4}.CIRelease|Any CPU.ActiveCfg = CIRelease|Any CPU
+		{2682FA1E-EF27-4442-8278-A855C68FA4A4}.CIRelease|Any CPU.Build.0 = CIRelease|Any CPU
+		{2682FA1E-EF27-4442-8278-A855C68FA4A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2682FA1E-EF27-4442-8278-A855C68FA4A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2682FA1E-EF27-4442-8278-A855C68FA4A4}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{2682FA1E-EF27-4442-8278-A855C68FA4A4}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{2682FA1E-EF27-4442-8278-A855C68FA4A4}.Offline|Any CPU.ActiveCfg = Offline|Any CPU
+		{2682FA1E-EF27-4442-8278-A855C68FA4A4}.Offline|Any CPU.Build.0 = Offline|Any CPU
+		{2682FA1E-EF27-4442-8278-A855C68FA4A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2682FA1E-EF27-4442-8278-A855C68FA4A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2B5CB8B-F3E6-4980-A88F-DA7418301803}.CIDebug|Any CPU.ActiveCfg = CIDebug|Any CPU
+		{E2B5CB8B-F3E6-4980-A88F-DA7418301803}.CIDebug|Any CPU.Build.0 = CIDebug|Any CPU
+		{E2B5CB8B-F3E6-4980-A88F-DA7418301803}.CIRelease|Any CPU.ActiveCfg = CIRelease|Any CPU
+		{E2B5CB8B-F3E6-4980-A88F-DA7418301803}.CIRelease|Any CPU.Build.0 = CIRelease|Any CPU
+		{E2B5CB8B-F3E6-4980-A88F-DA7418301803}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2B5CB8B-F3E6-4980-A88F-DA7418301803}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2B5CB8B-F3E6-4980-A88F-DA7418301803}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2B5CB8B-F3E6-4980-A88F-DA7418301803}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{E2B5CB8B-F3E6-4980-A88F-DA7418301803}.Offline|Any CPU.ActiveCfg = Offline|Any CPU
+		{E2B5CB8B-F3E6-4980-A88F-DA7418301803}.Offline|Any CPU.Build.0 = Offline|Any CPU
+		{E2B5CB8B-F3E6-4980-A88F-DA7418301803}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2B5CB8B-F3E6-4980-A88F-DA7418301803}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01186BDE-3CF2-42EE-8C15-637646991953}.CIDebug|Any CPU.ActiveCfg = CIDebug|Any CPU
+		{01186BDE-3CF2-42EE-8C15-637646991953}.CIDebug|Any CPU.Build.0 = CIDebug|Any CPU
+		{01186BDE-3CF2-42EE-8C15-637646991953}.CIRelease|Any CPU.ActiveCfg = CIRelease|Any CPU
+		{01186BDE-3CF2-42EE-8C15-637646991953}.CIRelease|Any CPU.Build.0 = CIRelease|Any CPU
+		{01186BDE-3CF2-42EE-8C15-637646991953}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01186BDE-3CF2-42EE-8C15-637646991953}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01186BDE-3CF2-42EE-8C15-637646991953}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{01186BDE-3CF2-42EE-8C15-637646991953}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{01186BDE-3CF2-42EE-8C15-637646991953}.Offline|Any CPU.ActiveCfg = Offline|Any CPU
+		{01186BDE-3CF2-42EE-8C15-637646991953}.Offline|Any CPU.Build.0 = Offline|Any CPU
+		{01186BDE-3CF2-42EE-8C15-637646991953}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01186BDE-3CF2-42EE-8C15-637646991953}.Release|Any CPU.Build.0 = Release|Any CPU
+		{090D2102-12A7-41DE-9C95-BEF9558A2C49}.CIDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{090D2102-12A7-41DE-9C95-BEF9558A2C49}.CIDebug|Any CPU.Build.0 = Debug|Any CPU
+		{090D2102-12A7-41DE-9C95-BEF9558A2C49}.CIRelease|Any CPU.ActiveCfg = Release|Any CPU
+		{090D2102-12A7-41DE-9C95-BEF9558A2C49}.CIRelease|Any CPU.Build.0 = Release|Any CPU
+		{090D2102-12A7-41DE-9C95-BEF9558A2C49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{090D2102-12A7-41DE-9C95-BEF9558A2C49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{090D2102-12A7-41DE-9C95-BEF9558A2C49}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{090D2102-12A7-41DE-9C95-BEF9558A2C49}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{090D2102-12A7-41DE-9C95-BEF9558A2C49}.Offline|Any CPU.ActiveCfg = Release|Any CPU
+		{090D2102-12A7-41DE-9C95-BEF9558A2C49}.Offline|Any CPU.Build.0 = Release|Any CPU
+		{090D2102-12A7-41DE-9C95-BEF9558A2C49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{090D2102-12A7-41DE-9C95-BEF9558A2C49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B23C1347-646E-41F9-890A-36D794B96726}.CIDebug|Any CPU.ActiveCfg = Development
+		{B23C1347-646E-41F9-890A-36D794B96726}.CIDebug|Any CPU.Build.0 = Development
+		{B23C1347-646E-41F9-890A-36D794B96726}.CIRelease|Any CPU.ActiveCfg = Development
+		{B23C1347-646E-41F9-890A-36D794B96726}.CIRelease|Any CPU.Build.0 = Development
+		{B23C1347-646E-41F9-890A-36D794B96726}.Debug|Any CPU.ActiveCfg = Development
+		{B23C1347-646E-41F9-890A-36D794B96726}.Debug|Any CPU.Build.0 = Development
+		{B23C1347-646E-41F9-890A-36D794B96726}.Development|Any CPU.ActiveCfg = Development
+		{B23C1347-646E-41F9-890A-36D794B96726}.Development|Any CPU.Build.0 = Development
+		{B23C1347-646E-41F9-890A-36D794B96726}.Offline|Any CPU.ActiveCfg = Development
+		{B23C1347-646E-41F9-890A-36D794B96726}.Offline|Any CPU.Build.0 = Development
+		{B23C1347-646E-41F9-890A-36D794B96726}.Release|Any CPU.ActiveCfg = Development
+		{B23C1347-646E-41F9-890A-36D794B96726}.Release|Any CPU.Build.0 = Development
+		{4D632A67-AB52-4533-8CBE-1E4B773F9A47}.CIDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D632A67-AB52-4533-8CBE-1E4B773F9A47}.CIDebug|Any CPU.Build.0 = Debug|Any CPU
+		{4D632A67-AB52-4533-8CBE-1E4B773F9A47}.CIRelease|Any CPU.ActiveCfg = Release|Any CPU
+		{4D632A67-AB52-4533-8CBE-1E4B773F9A47}.CIRelease|Any CPU.Build.0 = Release|Any CPU
+		{4D632A67-AB52-4533-8CBE-1E4B773F9A47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D632A67-AB52-4533-8CBE-1E4B773F9A47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D632A67-AB52-4533-8CBE-1E4B773F9A47}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D632A67-AB52-4533-8CBE-1E4B773F9A47}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{4D632A67-AB52-4533-8CBE-1E4B773F9A47}.Offline|Any CPU.ActiveCfg = Release|Any CPU
+		{4D632A67-AB52-4533-8CBE-1E4B773F9A47}.Offline|Any CPU.Build.0 = Release|Any CPU
+		{4D632A67-AB52-4533-8CBE-1E4B773F9A47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D632A67-AB52-4533-8CBE-1E4B773F9A47}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1F6FD15F-5543-4761-9023-3A02EB68D5D0} = {BEA2BD36-8CDE-461B-AE60-423E289FB9B2}
+		{DB01D5DC-CD0C-4816-B36B-3E58AAEC1C6E} = {AEEF6354-EFCB-4DD5-AF45-880C9B7B86C3}
+		{6D8B1DDF-190A-4D21-BE9F-0A149D94A95D} = {AEEF6354-EFCB-4DD5-AF45-880C9B7B86C3}
+		{2682FA1E-EF27-4442-8278-A855C68FA4A4} = {0F893779-09AE-4ED9-9AEF-99A7E7BF654B}
+		{E2B5CB8B-F3E6-4980-A88F-DA7418301803} = {0F893779-09AE-4ED9-9AEF-99A7E7BF654B}
+		{01186BDE-3CF2-42EE-8C15-637646991953} = {FC62D903-3153-4568-B82B-366122623648}
+		{090D2102-12A7-41DE-9C95-BEF9558A2C49} = {FC62D903-3153-4568-B82B-366122623648}
+		{4D632A67-AB52-4533-8CBE-1E4B773F9A47} = {0D1044CB-0C91-4F75-A332-5901EB941125}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4F360390-4377-491F-8B24-9020B718195E}
+	EndGlobalSection
+EndGlobal

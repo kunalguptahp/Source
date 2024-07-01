@@ -1,0 +1,29 @@
+<%@ Master Language="C#" MasterPageFile="~/App_MasterPages/DefaultPortalMaster.master" AutoEventWireup="true" CodeBehind="ConfigurationServiceMaster.master.cs" Inherits="HP.ElementsCPS.Apps.WebUI.MasterPages.ConfigurationServiceMaster" %>
+<%@ Register TagPrefix="HPFxPortal" Namespace="HP.HPFx.Web.UI.Portal" Assembly="HP.HPFx.Web.Portal" %>
+<asp:Content ID="HeadContent" ContentPlaceHolderID="PageHead" runat="server">
+	<%--Leave this section to be filled by inheriting content pages. --%>
+	<asp:ContentPlaceHolder ID="PageHead" runat="server">
+	</asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="PortalNavigationContent" ContentPlaceHolderID="PortalNavigationTreeArea" runat="server">
+	<HPFxPortal:PortalNavigationTree runat="server" ID="hpNavTree">
+		<HPFxPortal:PortalNavigationControl id="ntiHome" runat="server" Text="Configuration Service Home" NavigateUrl="~/ConfigurationService/ConfigurationServiceDefault.aspx" />
+		<HPFxPortal:PortalNavigationSeparator ID="PortalNavigationSeparator" runat="server" />
+		
+		<HPFxPortal:PortalNavigationTreeNode id="ntnUsageTrackingInfo" runat="server" Text="Group Configuration">
+    		<HPFxPortal:PortalNavigationControl id="ntiConfigurationServiceGroupList" runat="server" Text="Group" NavigateUrl="~/ConfigurationService/ConfigurationServiceGroupList.aspx"  />
+    		<HPFxPortal:PortalNavigationControl id="ntiConfigurationServiceGroupImportList" runat="server" Text="Group Import" NavigateUrl="~/ConfigurationService/ConfigurationServiceGroupImportList.aspx"  />
+		</HPFxPortal:PortalNavigationTreeNode>		
+		
+		<HPFxPortal:PortalNavigationSpacer id="ntSpacer1" runat="server" />
+		<HPFxPortal:PortalNavigationSeparator id="ntSeparator1" runat="server" />
+		<HPFxPortal:PortalNavigationTreeNode id="ntnReach" runat="server" Text="Reach Configuration">
+			<HPFxPortal:PortalNavigationControl id="ntiWorkflowList" runat="server" Text="Workflow" NavigateUrl="~/ConfigurationService/WorkflowList.aspx" />
+		</HPFxPortal:PortalNavigationTreeNode>
+		<HPFxPortal:PortalNavigationSpacer id="ntSpacer2" runat="server" />	</HPFxPortal:PortalNavigationTree>
+</asp:Content>
+<asp:Content ID="PageContent" ContentPlaceHolderID="PageContentArea" runat="server">
+	<%--Leave this section to be filled by inheriting content pages. --%>
+	<asp:ContentPlaceHolder ID="PageContentArea" runat="server">
+	</asp:ContentPlaceHolder>
+</asp:Content>

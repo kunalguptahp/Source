@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="http://dps.rssx.hp.com/dps/error" targetNamespace="http://dps.rssx.hp.com/dps/error" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="T_Error">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="errorCode" type="xsd:int" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="errorDesc" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="errorDetail" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="DPSGenericFault">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="1" maxOccurs="unbounded" name="error" type="T_Error" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

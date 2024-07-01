@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="HP.ElementsCPS.Data.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="HP_ElementsCPS_Data_localhost_VirtualCMService" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost:1790/VirtualCMService.asmx</Value>
+    </Setting>
+    <Setting Name="HP_ElementsCPS_Data_ElementsDataPublishingService_ElementsDataPublishingService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://erroj2.americas.hpqcorp.net:50038/dps/ElementsDataPublishingService</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

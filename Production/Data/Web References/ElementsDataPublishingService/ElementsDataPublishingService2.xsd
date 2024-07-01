@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:tns="http://dps.rssx.hp.com/dps/reach" elementFormDefault="qualified" targetNamespace="http://dps.rssx.hp.com/dps/reach" xmlns="http://www.w3.org/2001/XMLSchema">
+  <complexType name="Workflow">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="platform" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="brand" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="subBrand" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="releaseStart" type="int" />
+      <element minOccurs="1" maxOccurs="1" name="releaseEnd" type="int" />
+      <element minOccurs="1" maxOccurs="1" name="country" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="modelNumber" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="productName" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="productNumber" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="osVersion" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="osType" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="osBit" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="mainUrl" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="mainVersion" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="offlineMode" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="languages" type="tns:LanguageSet" />
+      <element minOccurs="1" maxOccurs="1" name="modules" type="tns:WorkflowModules" />
+    </sequence>
+    <attribute name="id" type="int" />
+  </complexType>
+  <complexType name="WorkflowModule">
+    <sequence>
+      <element name="id" type="int" />
+      <element name="order" type="int" />
+    </sequence>
+  </complexType>
+  <complexType name="LanguageSet">
+    <sequence>
+      <element minOccurs="1" maxOccurs="unbounded" name="language" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="Module">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="name" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="url" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="version" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="title" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="conditions" type="tns:Conditions" />
+    </sequence>
+    <attribute name="id" type="int" />
+  </complexType>
+  <complexType name="WorkflowModules">
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="module" type="tns:WorkflowModule" />
+    </sequence>
+  </complexType>
+  <complexType name="Condition">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="name" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="operator" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="value" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="Conditions">
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="condition" type="tns:Condition" />
+    </sequence>
+  </complexType>
+</schema>

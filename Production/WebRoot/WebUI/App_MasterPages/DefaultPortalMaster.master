@@ -1,0 +1,105 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/App_MasterPages/SiteMaster.Master" AutoEventWireup="true" CodeBehind="DefaultPortalMaster.master.cs" Inherits="HP.ElementsCPS.Apps.WebUI.MasterPages.DefaultPortalMaster" %>
+<%@ MasterType TypeName="HP.ElementsCPS.Apps.WebUI.MasterPages.SiteMaster" %>
+<%@ Register TagPrefix="HPFxPortal" Namespace="HP.HPFx.Web.UI.Portal" Assembly="HP.HPFx.Web.Portal" %>
+<%@ Register Assembly="PostbackRitalin" Namespace="Encosia" TagPrefix="encosia" %>
+
+<asp:Content ID="HeadContent" ContentPlaceHolderID="PageHead" runat="server">
+	<%--Leave this section to be filled by inheriting content pages. --%>
+	<asp:ContentPlaceHolder ID="PageHead" runat="server">
+	</asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="HeaderContent" ContentPlaceHolderID="PortalHeaderArea" runat="server">
+	<HPFxPortal:PortalHeader runat="server" ID="hpHeader" OnPreRender="hpHeader_PreRender">
+		<HPFxPortal:PortalMenu id="hpMenu" runat="server">
+			<HPFxPortal:PortalMenuItem id="hpMenuItem_Home" runat="server" NavigateUrl="~/" Text="Home" />
+			<HPFxPortal:PortalMenuItem id="hpMenuItem_MyInfo" runat="server" NavigateUrl="~/MyInfo/MyInfoDefault.aspx" Text="My Info" />
+			<HPFxPortal:PortalMenuItem id="hpMenuItem_Redirect" runat="server" NavigateUrl="~/Redirect/ProxyURLList.aspx" Text="Redirect" />
+			<HPFxPortal:PortalMenuItem id="hpMenuItem_ConfigurationService" runat="server" NavigateUrl="~/ConfigurationService/ConfigurationServiceDefault.aspx" Text="Configuration Service"   />
+			<HPFxPortal:PortalMenuItem id="hpMenuItem_Jumpstation" runat="server" NavigateUrl="~/Jumpstation/JumpstationDefault.aspx" Text="Jumpstation"  />
+			<HPFxPortal:PortalMenuItem id="hpMenuItem_Admin_DataAdmin" runat="server" NavigateUrl="~/DataAdmin/DataAdminDefault.aspx" Text="Data Admin" />
+			<HPFxPortal:PortalMenuItem id="hpMenuItem_Admin_UserAdmin" runat="server" NavigateUrl="~/UserAdmin/UserAdminDefault.aspx" Text="User Admin" />
+			<HPFxPortal:PortalMenuItem id="hpMenuItem_Admin_SystemAdmin" runat="server" NavigateUrl="~/SystemAdmin/SystemAdminDefault.aspx" Text="System Admin" />
+		</HPFxPortal:PortalMenu>
+	</HPFxPortal:PortalHeader>
+</asp:Content>
+<asp:Content ID="PortalNavigationContent" ContentPlaceHolderID="PortalNavigationTreeArea" runat="server">
+	<%--Leave this section to be filled by inheriting content pages. --%>
+	<asp:ContentPlaceHolder ID="PortalNavigationTreeArea" runat="server">
+	</asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="PageContent" ContentPlaceHolderID="PageContentArea" runat="server">
+	<%--
+	The following control prevents multiple concurrent partial (i.e. asynchronous) PostBacks.
+	When any button on the page causes a Partial PostBack, the button's text will disabled and blurred, and its Text will be replaced with "Processing...".
+	Once the Partial PostBack completes, the button will revert to its previous state (if it is still present on the page after the PostBack).
+	See here for more info: http://encosia.com/downloads/postback-ritalin/
+	--%>
+	<encosia:PostBackRitalin runat="server" ID="ajaxPartialPostBackSynchronizer" />
+
+	<%--
+	This AJAX UpdatePanel will cause all PostBacks that occur within the PageContentArea to update only the content area.
+	This will prevent the typical (pre-AJAX) problems related to using the browser's Back button.
+	However, should specific child pages need to, they can access the UpdatePanel control via the public property defined in the codebehind 
+	and modify its configuration as appropriate.
+	--%>
+	<asp:UpdatePanel ID="ajaxContentAreaUpdatePanel" runat="server" 
+		ChildrenAsTriggers="true"
+		UpdateMode="Always"
+	>
+	<ContentTemplate>
+		<asp:Label ID="lblPageContentAreaTitle" runat="server" Text="" CssClass="ContentAreaTitle" />
+		<%--Leave this section to be filled by inheriting content pages. --%>
+		<asp:ContentPlaceHolder ID="PageContentArea" runat="server">
+		</asp:ContentPlaceHolder>
+	</ContentTemplate>
+	</asp:UpdatePanel>
+
+	<%--
+	The following control will disable the entire PageContentArea for the duration of any Partial PostBacks the ajaxContentAreaUpdatePanel performs.
+	--%>
+	<asp:UpdatePanelAnimationExtender ID="ajaxUpdatePanelAnimationExtender" runat="server"
+		TargetControlID="ajaxContentAreaUpdatePanel">
+		<Animations>
+			<OnUpdating>
+				<Sequence>
+					<EnableAction AnimationTarget="PageContentArea" Enabled="false" />
+					<%--<FadeOut AnimationTarget="PageContentArea" minimumOpacity=".3" />--%>
+				</Sequence>
+			</OnUpdating>
+				<OnUpdated>
+					<Sequence>
+						<%--<FadeIn AnimationTarget="PageContentArea" minimumOpacity=".3" />--%>
+						<EnableAction AnimationTarget="PageContentArea" Enabled="true" />
+					</Sequence>
+				</OnUpdated>
+		</Animations>
+	</asp:UpdatePanelAnimationExtender>
+
+	<%--
+	The following control will display a message for the duration of any Partial PostBacks the ajaxContentAreaUpdatePanel performs.
+	--%>
+<%--	<asp:UpdateProgress ID="ajaxUpdateProgress" runat="server" DisplayAfter="1" >
+		<ProgressTemplate>
+			Update in progress...
+			<input type="button" value="stop" onclick="AbortPostBack()" />
+		</ProgressTemplate>
+	</asp:UpdateProgress>
+--%>
+
+	<%--HACK:
+	As described in the following 2 links, the CalendarExtender control's CSS/styles get messed up when it is within an UpdatePanel.
+	The hack/workaround is to include an invisible CalendarExtender outside of any UpdatePanels, which will fix the styles of the real ones.
+	References:
+		http://forums.asp.net/p/1078690/1590343.aspx#1590343
+		http://forums.asp.net/p/1088647/1626422.aspx#1626422
+	--%>
+	<div style="display: none;">
+		<!-- This control loads the css style for the calendar control -->
+		<asp:TextBox ID="txtCalendarExtenderHack" Text="" runat="server" />
+		<!-- Remove this extender to see the wrong behavior -->
+		<asp:CalendarExtender id="ajaxCalendarExtenderHack" targetcontrolid="txtCalendarExtenderHack" runat="server" format="dd.MM.yyyy" />
+	</div>
+</asp:Content>
+<asp:Content ID="FooterContent" ContentPlaceHolderID="PortalFooterArea" runat="server">
+	<HPFxPortal:PortalFooter runat="server" ID="hpFooter" />
+</asp:Content>

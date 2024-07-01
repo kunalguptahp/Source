@@ -1,0 +1,41 @@
+BODY {
+
+	background: #ffffff;
+
+	margin-top:0px;
+}
+
+
+
+BODY, #bodytext, P, A, TD, TH, DIV, INPUT, SELECT, TEXTAREA {
+
+	font-size: x-small;
+
+	font-family: Arial, Verdana, Helvetica;
+
+}
+
+
+
+BODY, #bodytext, P, TD, TH, DIV, INPUT, SELECT, TEXTAREA {
+
+	color: #000000;
+
+}
+
+
+
+A {
+
+	color: #003366;
+
+}
+
+
+
+A:visited {
+
+	color: #660066;
+
+}
+

@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6D8B1DDF-190A-4D21-BE9F-0A149D94A95D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HP.ElementsCPS.Core.Tests</RootNamespace>
+    <AssemblyName>HP.ElementsCPS.Core.Tests</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;LOG TEST</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;LOG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\HP.ElementsCPS.Core.Tests.XML</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'CIDebug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\CIDebug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;LOG TEST</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'CIRelease|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\CIRelease\</OutputPath>
+    <DefineConstants>TRACE;LOG</DefineConstants>
+    <DocumentationFile>bin\CIRelease\HP.ElementsCPS.Core.Tests.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Offline|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Offline\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;LOG TEST OFFLINE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HP.HPFx.Core, Version=1.0.0.127, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\HPFx\HP.HPFx.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="HP.HPFx.Extensions.Log4net, Version=1.0.0.14, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\HPFx\HP.HPFx.Extensions.Log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="HP.HPFx.Extensions.MbUnit, Version=1.0.0.12, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\HPFx\HP.HPFx.Extensions.MbUnit.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\log4net\bin\net\2.0\release\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Gallio, Version=3.1.0.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Gallio\bin\Gallio.dll</HintPath>
+    </Reference>
+    <Reference Include="Gallio35, Version=3.1.0.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Gallio\bin\Gallio35.dll</HintPath>
+    </Reference>
+    <Reference Include="MbUnit, Version=3.1.0.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Gallio\bin\MbUnit.dll</HintPath>
+    </Reference>
+    <Reference Include="MbUnit.Compatibility, Version=3.1.0.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Gallio\bin\MbUnit.Compatibility.dll</HintPath>
+    </Reference>
+    <Reference Include="MbUnit35, Version=3.1.0.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Gallio\bin\MbUnit35.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Production\ProjectInfo.cs" />
+    <Compile Include="Fixtures\DefaultFixture.cs" />
+    <Compile Include="Fixtures\RemindersFixture.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Production\Core\Core.csproj">
+      <Project>{DB01D5DC-CD0C-4816-B36B-3E58AAEC1C6E}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="appSettings.CIDebug.config" />
+    <None Include="appSettings.CIRelease.config" />
+    <None Include="appSettings.config" />
+    <None Include="appSettings.Debug.config" />
+    <None Include="appSettings.Offline.config" />
+    <None Include="appSettings.Release.config" />
+    <None Include="log4net.CIDebug.config" />
+    <None Include="log4net.CIRelease.config" />
+    <None Include="log4net.Debug.config" />
+    <None Include="log4net.Offline.config" />
+    <None Include="log4net.Release.config" />
+    <None Include="PostBuild.bat" />
+    <None Include="PreBuild.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Utility\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>	@echo off
+	echo PREBUILD STARTED for $(ProjectName)
+	CALL "$(ProjectDir)PreBuild.bat" $(ConfigurationName) $(ProjectDir)
+	echo PREBUILD COMPLETE for $(ProjectName)</PreBuildEvent>
+    <PostBuildEvent>	@echo off
+	echo POSTBUILD STARTED for $(ProjectName)
+	CALL "$(ProjectDir)PostBuild.bat" $(ConfigurationName) $(ProjectDir) $(OutDir)
+	echo POSTBUILD COMPLETE for $(ProjectName)
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,90 @@
+<%@ Master Language="C#" MasterPageFile="~/App_MasterPages/DefaultPortalMaster.master" AutoEventWireup="true" CodeBehind="DataAdminMaster.master.cs" Inherits="HP.ElementsCPS.Apps.WebUI.MasterPages.DataAdminMaster" %>
+
+<%@ Register TagPrefix="HPFxPortal" Namespace="HP.HPFx.Web.UI.Portal" Assembly="HP.HPFx.Web.Portal" %>
+<asp:Content ID="HeadContent" ContentPlaceHolderID="PageHead" runat="server">
+    <%--Leave this section to be filled by inheriting content pages. --%>
+	<asp:ContentPlaceHolder ID="PageHead" runat="server">
+	</asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="PortalNavigationContent" ContentPlaceHolderID="PortalNavigationTreeArea" runat="server">
+    <HPFxPortal:PortalNavigationTree runat="server" ID="hpNavTree">
+			<HPFxPortal:PortalNavigationControl id="ntiHome" runat="server" Text="Data Admin Home" NavigateUrl="~/DataAdmin/DataAdminDefault.aspx" />
+
+		<HPFxPortal:PortalNavigationSeparator ID="PortalNavigationSeparator1" runat="server" />
+		<HPFxPortal:PortalNavigationTreeNode id="ntnRedirectInfo" runat="server" Text="Redirect"  >
+			<HPFxPortal:PortalNavigationControl id="ntiProxyURLDomainList" runat="server" Text="Domain"    NavigateUrl="~/DataAdmin/ProxyURLDomainList.aspx" />
+			<HPFxPortal:PortalNavigationControl id="ntiProxyURLGroupTypeList" runat="server" Text="Group Type"  NavigateUrl="~/DataAdmin/ProxyURLGroupTypeList.aspx" />
+			<HPFxPortal:PortalNavigationControl id="ntiProxyURLTypeList" runat="server" Text="Redirector Type"   NavigateUrl="~/DataAdmin/ProxyURLTypeList.aspx" />
+			<HPFxPortal:PortalNavigationControl id="ntiQueryParameterProxyURLType" runat="server" Text="Parameter/Proxy URL Type"   NavigateUrl="~/DataAdmin/QueryParameterProxyURLTypeList.aspx" />
+		</HPFxPortal:PortalNavigationTreeNode>
+		
+		<HPFxPortal:PortalNavigationSpacer id="ntSpacer1" runat="server"  />
+		<HPFxPortal:PortalNavigationSeparator id="ntSeparator1" runat="server"/>
+
+		<HPFxPortal:PortalNavigationTreeNode id="ntnConfigurationServiceInfo" runat="server" Text="Configuration Service"   >
+			<HPFxPortal:PortalNavigationControl id="ntiConfigurationServiceApplicationList" runat="server" Text="Application"   NavigateUrl="~/DataAdmin/ConfigurationServiceApplicationList.aspx" />
+			<HPFxPortal:PortalNavigationControl id="ntiConfigurationServiceApplicationTypeList" runat="server" Text="Application Type" NavigateUrl="~/DataAdmin/ConfigurationServiceApplicationTypeList.aspx" />
+			<HPFxPortal:PortalNavigationControl id="ntiConfigurationServiceGroupTypeList" runat="server" Text="Group Type"   NavigateUrl="~/DataAdmin/ConfigurationServiceGroupTypeList.aspx" />
+			<HPFxPortal:PortalNavigationControl id="ntiConfigurationServiceItemList" runat="server" Text="Item"   NavigateUrl="~/DataAdmin/ConfigurationServiceItemList.aspx" />
+			<HPFxPortal:PortalNavigationControl id="ntiConfigurationServiceLabelList" runat="server" Text="Label"  NavigateUrl="~/DataAdmin/ConfigurationServiceLabelList.aspx" />
+			<HPFxPortal:PortalNavigationControl id="ntiQueryParameterConfigurationServiceGroupType" runat="server" Text="Parameter/Configuration Service Group Type"  NavigateUrl="~/DataAdmin/QueryParameterConfigurationServiceGroupTypeList.aspx" />
+		</HPFxPortal:PortalNavigationTreeNode>
+		
+		<HPFxPortal:PortalNavigationSpacer id="PortalNavigationSpacer1" runat="server" />
+		<HPFxPortal:PortalNavigationSeparator id="PortalNavigationSeparator2" runat="server" />
+		
+		<%--  <asp:Panel   ID="JS" runat="server"  Enabled='<%# this.IsJSDataModificationAllowed() %>' >  --%>
+		<HPFxPortal:PortalNavigationTreeNode id="ntnJumpstation" runat="server" Text="Jumpstation"   >
+			<HPFxPortal:PortalNavigationControl id="ntiJumpstationApplicationList" runat="server" Text="Application"   NavigateUrl="~/DataAdmin/JumpstationApplicationList.aspx" />
+			<HPFxPortal:PortalNavigationControl id="ntiJumpstationDomainList" runat="server" Text="Domain"   NavigateUrl="~/DataAdmin/JumpstationDomainList.aspx" />
+			<HPFxPortal:PortalNavigationControl id="ntiJumpstationGroupTypeList" runat="server" Text="Jumpstation Type"  NavigateUrl="~/DataAdmin/JumpstationGroupTypeList.aspx" />
+			<HPFxPortal:PortalNavigationControl id="ntiJumpstationMacroList" runat="server" Text="Macro"  NavigateUrl="~/DataAdmin/JumpstationMacroList.aspx" />
+			<HPFxPortal:PortalNavigationControl id="ntiQueryParameterJumpstationGroupType" runat="server" Text="Parameter/Jumpstation Type"  NavigateUrl="~/DataAdmin/QueryParameterJumpstationGroupTypeList.aspx" />
+		</HPFxPortal:PortalNavigationTreeNode>
+      
+
+		<HPFxPortal:PortalNavigationSpacer id="ntSpacer2" runat="server" />
+		<HPFxPortal:PortalNavigationSeparator id="ntSeparator2" runat="server" />
+
+		<HPFxPortal:PortalNavigationTreeNode id="ntWorkflowInfo" runat="server" Text="Workflow"    >
+			<HPFxPortal:PortalNavigationControl id="ntiWorkflowApplicationList" runat="server" Text="Application"    NavigateUrl="~/DataAdmin/WorkflowApplicationList.aspx" />
+			<HPFxPortal:PortalNavigationControl id="ntiWorkflowApplicationTypeList" runat="server" Text="Application Type"  NavigateUrl="~/DataAdmin/WorkflowApplicationTypeList.aspx" />
+			<HPFxPortal:PortalNavigationControl id="ntiWorkflowConditionList" runat="server" Text="Condition"   NavigateUrl="~/DataAdmin/WorkflowConditionList.aspx" />
+			<HPFxPortal:PortalNavigationControl id="ntiWorkflowModuleList" runat="server" Text="Module"   NavigateUrl="~/DataAdmin/WorkflowModuleList.aspx" />
+			<HPFxPortal:PortalNavigationControl id="ntiWorkflowModuleCategoryList" runat="server" Text="Module Category"   NavigateUrl="~/DataAdmin/WorkflowModuleCategoryList.aspx" />
+			<HPFxPortal:PortalNavigationControl id="ntiWorkflowModuleSubCategoryList" runat="server" Text="Module Sub-Category"   NavigateUrl="~/DataAdmin/WorkflowModuleSubCategoryList.aspx" />
+			<HPFxPortal:PortalNavigationControl id="ntiQueryParameterWorkflowTypeList" runat="server" Text="Parameter/Workflow Type"   NavigateUrl="~/DataAdmin/QueryParameterWorkflowTypeList.aspx" />
+			<HPFxPortal:PortalNavigationControl id="ntiWorkflowTypeList" runat="server" Text="Workflow Type"  NavigateUrl="~/DataAdmin/WorkflowTypeList.aspx" />
+		</HPFxPortal:PortalNavigationTreeNode>
+
+		<HPFxPortal:PortalNavigationSpacer id="ntSpacer3" runat="server" />
+		<HPFxPortal:PortalNavigationSeparator id="ntSeparator3" runat="server" />
+
+		<HPFxPortal:PortalNavigationTreeNode id="ntnCPSInfo" runat="server" Text="CPS (Shared)">
+			<HPFxPortal:PortalNavigationControl id="ntiQueryParameterList" runat="server" Text="Parameter"  NavigateUrl="~/DataAdmin/QueryParameterList.aspx" />
+			<HPFxPortal:PortalNavigationControl id="ntiQueryParameterValueList" runat="server" Text="Parameter Value" NavigateUrl="~/DataAdmin/QueryParameterValueList.aspx" />
+				<HPFxPortal:PortalNavigationControl id="ntiApplicationList" runat="server" Text="Application"  NavigateUrl="~/DataAdmin/ApplicationList.aspx" />
+		</HPFxPortal:PortalNavigationTreeNode>
+
+	<HPFxPortal:PortalNavigationSpacer id="ntSpacer4" runat="server" />
+		<HPFxPortal:PortalNavigationSeparator id="ntSeparator4" runat="server" />
+		
+		<HPFxPortal:PortalNavigationTreeNode id="ntTenantInfo" runat="server" Text="Tenant Management">
+			<HPFxPortal:PortalNavigationControl id="ntiTenantGroupList" runat="server" Text="Tenant"  NavigateUrl="~/DataAdmin/TenantGroupList.aspx" />
+			<HPFxPortal:PortalNavigationControl id="ntiAppClientList" runat="server" Text="App Client"  NavigateUrl="~/DataAdmin/AppClientList.aspx" />
+		</HPFxPortal:PortalNavigationTreeNode>
+
+		<HPFxPortal:PortalNavigationSpacer id="ntSpacer5" runat="server" />
+		<HPFxPortal:PortalNavigationSeparator id="ntSeparator5" runat="server" />
+
+		<HPFxPortal:PortalNavigationTreeNode id="ntnSystem" runat="server" Text="System">
+			<HPFxPortal:PortalNavigationControl id="ntiNoteList" runat="server" Text="Note" NavigateUrl="~/DataAdmin/NoteList.aspx" />
+			<HPFxPortal:PortalNavigationControl id="ntiEntityTypeList" runat="server" Text="Entity Type" NavigateUrl="~/DataAdmin/EntityTypeList.aspx" />
+			<HPFxPortal:PortalNavigationControl id="ntiNoteTypeList" runat="server" Text="Note Type"  NavigateUrl="~/DataAdmin/NoteTypeList.aspx" />
+		</HPFxPortal:PortalNavigationTreeNode>
+
+		<HPFxPortal:PortalNavigationSpacer id="ntSpacer6" runat="server" />
+	</HPFxPortal:PortalNavigationTree></asp:Content><asp:Content ID="PageContent" ContentPlaceHolderID="PageContentArea" runat="server">
+	<%--Leave this section to be filled by inheriting content pages. --%> <asp:ContentPlaceHolder ID="PageContentArea" runat="server">
+	</asp:ContentPlaceHolder>
+</asp:Content>

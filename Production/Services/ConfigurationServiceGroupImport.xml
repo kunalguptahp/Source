@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ConfigurationServiceGroups>  
+  <ConfigurationServiceGroup>
+    <Name>AAAAAAA</Name>
+    <Description>AAAAAAA</Description>
+    <ConfigurationServiceGroupTypeName>KumoSoftware</ConfigurationServiceGroupTypeName>
+    <ConfigurationSeviceGroupApplicationName>Kumo</ConfigurationSeviceGroupApplicationName>
+    <ImportMessage>AAAAAAA</ImportMessage>
+    <ImportStatus>Add</ImportStatus>
+    <PublicationId>1</PublicationId>
+    <Items>
+      <Item>
+        <ItemName>CROBC</ItemName>
+        <LabelName>CCCCCC</LabelName>
+        <LabelValue>CCCCCC</LabelValue>
+      </Item>
+      <Item>
+        <ItemName>DDDDDD</ItemName>
+        <LabelName>DDDDDD</LabelName>
+        <LabelValue>DDDDDD</LabelValue>
+      </Item>
+      <Item>
+        <ItemName>EEEEEE</ItemName>
+        <LabelName>EEEEEE</LabelName>
+        <LabelValue>EEEEEE</LabelValue>
+      </Item>
+    </Items>
+    <ParaValueItems>
+      <ParaValueItem>
+        <QueryParameterName>QPN1</QueryParameterName>
+        <QueryParameterValue>QPV1</QueryParameterValue>
+      </ParaValueItem>
+      <ParaValueItem>
+        <QueryParameterName>QPN2</QueryParameterName>
+        <QueryParameterValue>QPV2</QueryParameterValue>      
+    </ParaValueItem>
+      <ParaValueItem>
+        <QueryParameterName>QPN3</QueryParameterName>
+        <QueryParameterValue>QPV3</QueryParameterValue>
+      </ParaValueItem>
+    </ParaValueItems>
+  </ConfigurationServiceGroup>  
+</ConfigurationServiceGroups>

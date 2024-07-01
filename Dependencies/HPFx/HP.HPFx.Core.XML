@@ -1,0 +1,2604 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HP.HPFx.Core</name>
+    </assembly>
+    <members>
+        <member name="T:HP.HPFx.Collections.Generic.BigArray`1">
+            <summary>
+            A custom <see cref="T:System.Array"/>-like data structure that supports very large <see cref="P:HP.HPFx.Collections.Generic.BigArray`1.Length"/>s.
+            </summary>
+            <remarks>
+            <para>
+            This data structure stores elements in an <see cref="T:System.Array"/> of <see cref="T:System.Array"/>s, 
+            instead of in a single <see cref="T:System.Array"/> instance.
+            </para>
+            <para>
+            As a result, this class supports a maximum <see cref="P:HP.HPFx.Collections.Generic.BigArray`1.Length"/> of <see cref="F:HP.HPFx.Collections.Generic.BigArray`1.BLOCK_SIZE"/> * <see cref="F:System.Int32.MaxValue"/>
+            </para>
+            <para>
+            Also as a result, this class does not require as much contiguous memory as a regular <see cref="T:System.Array"/>. 
+            Therefore, instantiating a <see cref="T:HP.HPFx.Collections.Generic.BigArray`1"/> with a large <see cref="P:HP.HPFx.Collections.Generic.BigArray`1.Length"/> 
+            is less likely to cause an <see cref="T:System.OutOfMemoryException"/> as a result of large object heap fragmentation.
+            </para>
+            <para>
+            This class was based upon the following article:
+            http://blogs.msdn.com/joshwil/archive/2005/08/10/450202.aspx
+            </para>
+            </remarks>
+            <typeparam name="T">The type of the <see cref="T:HP.HPFx.Collections.Generic.BigArray`1"/>'s data elements.</typeparam>
+        </member>
+        <member name="P:HP.HPFx.Collections.Generic.BigArray`1.MaxLength">
+            <summary>
+            Gets the maximum <see cref="P:HP.HPFx.Collections.Generic.BigArray`1.Length"/> of any <see cref="T:HP.HPFx.Collections.Generic.BigArray`1"/>.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Collections.Generic.BigArray`1.Length">
+            <summary>
+            Gets the total number of elements in all the dimensions of the <see cref="T:HP.HPFx.Collections.Generic.BigArray`1"/>.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Collections.Generic.BigArray`1.Item(System.UInt64)">
+            <summary>
+            Array indexer.
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:HP.HPFx.Collections.Generic.Iterator`1" -->
+        <member name="M:HP.HPFx.Collections.Generic.Iterator`1.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the collection.
+            </summary>
+            <returns>
+            A <see cref="T:System.Collections.Generic.IEnumerator`1"/> that can be used to iterate through the collection.
+            </returns>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:HP.HPFx.Collections.Generic.Iterator`1.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through a collection.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through the collection.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="T:HP.HPFx.Collections.Generic.EquatableDictionary`2">
+            <summary>
+            An implementation of the <see cref="T:System.Collections.Generic.Dictionary`2"/> generic type that implements equality methods and operators.
+            </summary>
+            <remarks>
+            If you try to compare the hascodes of two identical (but distinct) list instances, the hashcodes would normally be different.
+            <para>
+            This class explicitly implements equality and hashcode methods and operators to allow for easy equality comparison of distinct list instances.
+            E.g. To compare the equality of two deserialized instances.
+            </para>
+            </remarks>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+        </member>
+        <member name="M:HP.HPFx.Collections.Generic.EquatableDictionary`2.Equals(HP.HPFx.Collections.Generic.EquatableDictionary{`0,`1})">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <returns>
+            true if the current object is equal to the <paramref name="other" /> parameter; otherwise, false.
+            </returns>
+            <param name="other">An object to compare with this object.</param>
+        </member>
+        <member name="M:HP.HPFx.Collections.Generic.EquatableDictionary`2.GetHashCode">
+            <summary>
+            Serves as a hash function for a particular type. 
+            </summary>
+            <returns>
+            A hash code for the current <see cref="T:System.Object" />.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="T:HP.HPFx.Collections.Generic.EquatableList`1">
+            <summary>
+            An implementation of the <see cref="T:System.Collections.Generic.List`1"/> generic type that implements equality methods and operators.
+            </summary>
+            <remarks>
+            If you try to compare the hascodes of two identical (but distinct) list instances, the hashcodes would normally be different.
+            <para>
+            This class explicitly implements equality and hashcode methods and operators to allow for easy equality comparison of distinct list instances.
+            E.g. To compare the equality of two deserialized instances.
+            </para>
+            </remarks>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:HP.HPFx.Collections.Generic.EquatableList`1.Equals(HP.HPFx.Collections.Generic.EquatableList{`0})">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <returns>
+            true if the current object is equal to the <paramref name="other" /> parameter; otherwise, false.
+            </returns>
+            <param name="other">An object to compare with this object.</param>
+        </member>
+        <member name="M:HP.HPFx.Collections.Generic.EquatableList`1.GetHashCode">
+            <summary>
+            Serves as a hash function for a particular type. 
+            </summary>
+            <returns>
+            A hash code for the current <see cref="T:System.Object" />.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="T:HP.HPFx.Collections.Generic.Pooling.Pool`1">
+            <summary>
+            A generic implementation of the Object Pool design pattern.
+            </summary>
+            <remarks>
+            <para>
+            This class and it's related classes implementations were influenced by the following article and sample code:
+            http://stackoverflow.com/questions/2510975/c-object-pooling-pattern-implementation
+            http://pastebin.com/he1fYC29
+            http://pastebin.com/kbbaSnPL
+            </para>
+            </remarks>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="F:HP.HPFx.Collections.Generic.Pooling.Pool`1._Count">
+            <remarks>
+            This can't be an automatic property because of the use of <c>Interlocked.Increment(ref this._Count);</c>.
+            </remarks>
+        </member>
+        <member name="M:HP.HPFx.Collections.Generic.Pooling.Pool`1.#ctor(System.Int32,HP.HPFx.Collections.Generic.Pooling.IPoolCache{`0})">
+            <summary>
+            Primary constructor.
+            </summary>
+            <param name="capacity"></param>
+            <param name="poolCache"></param>
+        </member>
+        <member name="M:HP.HPFx.Collections.Generic.Pooling.Pool`1.#ctor(System.Int32,HP.HPFx.Collections.Generic.Pooling.PoolCacheRecycleMode)">
+            <summary>
+            Convenience constructor.
+            </summary>
+            <param name="capacity"></param>
+            <param name="poolCacheRecycleMode"></param>
+        </member>
+        <member name="M:HP.HPFx.Collections.Generic.Pooling.Pool`1.CreatePoolCache(HP.HPFx.Collections.Generic.Pooling.PoolCacheRecycleMode,System.Int32)">
+            <summary>
+            A factory method for <see cref="T:HP.HPFx.Collections.Generic.Pooling.IPoolCache`1"/> instances.
+            </summary>
+            <param name="mode"></param>
+            <param name="capacity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Collections.Generic.Pooling.Pool`1.Acquire(System.Predicate{`0})">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Collections.Generic.Pooling.Pool`1.Acquire">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Collections.Generic.Pooling.Pool`1.HasAvailable">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Collections.Generic.Pooling.Pool`1.CreateNewUnpooledInstance">
+            <summary>
+            Creates a new instance using the pool's <see cref="P:HP.HPFx.Collections.Generic.Pooling.Pool`1.Factory"/>.
+            </summary>
+            <remarks>
+            <para>
+            The Pool uses this method when adding a new pooled instance to the Pool,
+            but when called directly the Pool's <see cref="P:HP.HPFx.Collections.Generic.Pooling.Pool`1.Count"/>, <see cref="P:HP.HPFx.Collections.Generic.Pooling.Pool`1.Capacity"/>, etc. 
+            are unaffected (and ignored).
+            </para>
+            <para>
+            Or in other words, it allows you to create a new instance 
+            using the same creation logic that is used by the Pool, 
+            but without filling the Pool, 
+            and can do so even if the Pool is already at maximum <see cref="P:HP.HPFx.Collections.Generic.Pooling.Pool`1.Capacity"/>.
+            </para>
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="T:HP.HPFx.Collections.Generic.SerializableDictionary`2">
+            <summary>
+            An implementation of the <see cref="T:System.Collections.Generic.Dictionary`2"/> generic type that supports XML Serialization.
+            </summary>
+            <remarks>
+            If you try to XmlSerialize an object that inherits from <see cref="T:System.Collections.IDictionary"/> or <see cref="T:System.Collections.DictionaryBase"/>, 
+            the serializer will throw an exception saying that you can't serialize objects of that type.
+            The exception may look something like this:
+            <c>Message: Cannot serialize member MyNamespaceName.MyClassName.MyMemberName of type System.Collections.Generic.Dictionary`2[[System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], because it implements IDictionary.</c>
+            <para>
+            Therefore, this class explicitly implements XML Serialization, bypassing the normal serialization restriction (and exception).
+            </para>
+            </remarks>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+        </member>
+        <member name="M:HP.HPFx.Collections.Generic.SerializableDictionary`2.System#Xml#Serialization#IXmlSerializable#GetSchema">
+            <summary>
+            This method is reserved and should not be used. 
+            When implementing the IXmlSerializable interface, you should return null (Nothing in Visual Basic) from this method, 
+            and instead, if specifying a custom schema is required, apply the <see cref="T:System.Xml.Serialization.XmlSchemaProviderAttribute" /> to the class.
+            </summary>
+            <returns>
+            An <see cref="T:System.Xml.Schema.XmlSchema" /> that describes the XML representation of the object that is produced by the 
+            <see cref="M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)" /> method and consumed by the 
+            <see cref="M:System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)" /> method.
+            </returns>
+        </member>
+        <member name="M:HP.HPFx.Collections.Generic.SerializableDictionary`2.System#Xml#Serialization#IXmlSerializable#ReadXml(System.Xml.XmlReader)">
+            <summary>
+            Generates an object from its XML representation.
+            </summary>
+            <param name="reader">The <see cref="T:System.Xml.XmlReader" /> stream from which the object is deserialized. </param>
+        </member>
+        <member name="M:HP.HPFx.Collections.Generic.SerializableDictionary`2.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Converts an object into its XML representation.
+            </summary>
+            <param name="writer">The <see cref="T:System.Xml.XmlWriter" /> stream to which the object is serialized. </param>
+        </member>
+        <member name="M:HP.HPFx.Collections.Generic.SerializableDictionary`2.GetSerializableDictionaryTypeParameters">
+            <summary>
+            Returns the Type objects for the Types of this class' "Generic Type Parameters".
+            </summary>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:HP.HPFx.Collections.Iterator" -->
+        <member name="M:HP.HPFx.Collections.Iterator.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through a collection.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through the collection.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="T:HP.HPFx.Data.Query.GenericQuerySpecificationWrapper">
+            <summary>
+            A generic "query specification" implementation that exposes a variety of members corresponding to 
+            different types of common query conditions that occur frequently in queries.
+            that can store all of the filter criteria data needed to generate and execute a specific, filtered query.
+            </summary>
+            <remarks>
+            <para>
+            This class exposes a variety of strongly-typed members that can be used to store and retrieve.
+            </para>
+            <para>
+            This class may also be usd as a base class for custom, app-specific "query specification" data structures.
+            </para>
+            </remarks>
+        </member>
+        <member name="T:HP.HPFx.Data.Query.QuerySpecificationWrapper">
+            <summary>
+            A class that inheritors can use as the basis for custom "query specification" data structures 
+            that can store all of the filter criteria data needed to generate and execute a specific, filtered query.
+            </summary>
+            <remarks>
+            <para>
+            This class is primarily intended to be used as a base class for custom, app-specific "query specification" data structures.
+            </para>
+            </remarks>
+        </member>
+        <member name="T:HP.HPFx.Data.Query.IQuerySpecification">
+            <summary>
+            An interface that inheritors can use as the basis for custom "query specification" data structures.
+            that can store all of the filter criteria data needed to generate and execute a specific, filtered query.
+            </summary>
+            <remarks>
+            <para>
+            This interface is intended to be used as a the base class for custom, app-specific "query specification" data structures.
+            </para>
+            <para>
+            A "Query Specification" data structure is a data structure which implements the "Query Specification" design pattern (defined below).
+            </para>
+            <para>
+            A "Query Object" is an object that implements the "Query Object" pattern 
+            (as defined in the book "Patterns of Enterprise Application Architecture" by Martin Fowler).
+            Basically, the Query Object pattern is a specialization of the standard "Interpreter" design pattern 
+            (see the Interpreter design pattern in the Gang of Four book or elsewhere) that exposes a structured (and usually simplified) interface 
+            for defining and or generating data query (usually SQL queries).
+            </para>
+            <para>
+            The "Query Specification" design pattern is (as far as I know) not officially defined anywhere (yet) except here. [NOTE: See below for further info.] 
+            However, this pattern is an extension of the Query Object pattern, where the Query Object is strictly an Interpreter (and not a data structure) 
+            but which can dynamically generate a data query by interpreting a caller-supplied set of "query parameters" (contained within a "Query Specification" object).
+            This separation of the "Query Specification" from the "Query Interpreter" makes it easier to serialize or otherwise transfer the "data definition" of a specific query 
+            separately from the object (or possibly objects if multiple different interpreters exist) that contain the nehavior will actually generate the 
+            A "query specification" data structure is a data structure which contains all of the data (parameters, input, settings, etc.) 
+            that a "Query Object" (see below) needs in order to generate or execute a specific data query.
+            </para>
+            <para>
+            NOTE: After writing the above and implementing the pattern, I have since discovered that Eric Evans and Martin Fowler have also discovered the 
+            "Specification" pattern, which they have documented here:
+            http://www.martinfowler.com/apsupp/spec.pdf
+            Additional references can also be found here:
+            http://en.wikipedia.org/wiki/Specification_pattern
+            </para>
+            </remarks>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySpecificationWrapper.#ctor(HP.HPFx.Data.Query.IQuerySpecification)">
+            <summary>
+            Using this constructor will create a new <see cref="T:HP.HPFx.Data.Query.QuerySpecificationWrapper"/> that wraps the same <see cref="T:HP.HPFx.Data.Query.QuerySpecification"/> instance as <paramref name="original"/>.
+            </summary>
+            <remarks>
+            This constructor enables a single <see cref="T:HP.HPFx.Data.Query.IQuerySpecification"/> instance to be easily converted from one <see cref="T:HP.HPFx.Data.Query.QuerySpecificationWrapper"/> type to another (and back again) 
+            without actually creating any new <see cref="T:HP.HPFx.Data.Query.QuerySpecification"/> instances (and therefore without copying the actual query data).
+            <para>
+            This therefore allows any <see cref="T:HP.HPFx.Data.Query.IQuerySpecification"/> instance to be easily converted to whichever specific <see cref="T:HP.HPFx.Data.Query.QuerySpecificationWrapper"/> class or subclassthe caller prefers or expects.
+            </para>
+            </remarks>
+            <param name="original"></param>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySpecificationWrapper.ToString">
+            <summary>
+            Overridden to return the XML generated by the <see cref="M:HP.HPFx.Data.Query.QuerySpecificationWrapper.ToXml"/> method.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySpecificationWrapper.ToXml">
+            <summary>
+            Serializes the current instance into XML.
+            </summary>
+            <returns>The XML generated by serializing this instance.</returns>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySpecificationWrapper.FromXml(System.String)">
+            <summary>
+            Deserializes an instance from a previously serialized instance's XML.
+            </summary>
+            <remarks>
+            Note to inheritors: Inheritors should consider re-implementing this static method in each subclass of this class, 
+            in order to return an instance of the subclass rather than this class.
+            </remarks>
+            <param name="serializedInstanceXml">The XML generated by serializing the original instance.</param>
+            <returns>A deserialized copy of the original instance.</returns>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySpecificationWrapper.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object" /> is equal to the current <see cref="T:System.Object" />.
+            </summary>
+            <returns>
+            true if the specified <see cref="T:System.Object" /> is equal to the current <see cref="T:System.Object" />; otherwise, false.
+            </returns>
+            <param name="obj">The <see cref="T:System.Object" /> to compare with the current <see cref="T:System.Object" />. </param>
+            <exception cref="T:System.NullReferenceException">The <paramref name="obj" /> parameter is null.</exception><filterpriority>2</filterpriority>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySpecificationWrapper.Equals(HP.HPFx.Data.Query.QuerySpecificationWrapper)">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <returns>
+            true if the current object is equal to the <paramref name="other" /> parameter; otherwise, false.
+            </returns>
+            <param name="other">An object to compare with this object.</param>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySpecificationWrapper.Equals(HP.HPFx.Data.Query.QuerySpecification)">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <returns>
+            true if the current object is equal to the <paramref name="other" /> parameter; otherwise, false.
+            </returns>
+            <param name="other">An object to compare with this object.</param>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySpecificationWrapper.Equals(HP.HPFx.Data.Query.IQuerySpecification)">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <returns>
+            true if the current object is equal to the <paramref name="other" /> parameter; otherwise, false.
+            </returns>
+            <param name="other">An object to compare with this object.</param>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySpecificationWrapper.GetHashCode">
+            <summary>
+            Serves as a hash function for a particular type. 
+            </summary>
+            <returns>
+            A hash code for the current <see cref="T:System.Object" />.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySpecificationWrapper.Copy">
+            <summary>
+            Returns a copy of this instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySpecificationWrapper.CopyAs``1(HP.HPFx.Data.Query.IQuerySpecification)">
+            <summary>
+            Copies an instance's <see cref="P:HP.HPFx.Data.Query.QuerySpecificationWrapper.InnerData"/> into a new instance of the type specified by <typeparamref name="TQuerySpecification"/>.
+            </summary>
+            <typeparam name="TQuerySpecification">The type of the new instance (i.e. the copy).</typeparam>
+            <param name="original">The instance being copied.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySpecificationWrapper.CopyAs``1(``0)">
+            <summary>
+            Convenience overload that allows the Type parameter to be inferred from the method parameters.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySpecificationWrapper.CopyAs``1">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySpecificationWrapper.Split``1(HP.HPFx.Data.Query.IQuerySpecification,System.Int32)">
+            <summary>
+            Returns a set (of 1 or more) <see cref="T:HP.HPFx.Data.Query.IQuerySpecification"/> instances 
+            that will (as a combined set) retrieve an identical set of results as this instance 
+            using "sub-queries" that each have a specified maximum <see cref="P:HP.HPFx.Data.Query.QueryPaginationSpecification.PageSize"/>.
+            </summary>
+            <remarks>
+            This method is essentially used to convert a single <see cref="T:HP.HPFx.Data.Query.IQuerySpecification"/> 
+            into an equivelent "batch" of queries that can be executed separately.
+            </remarks>
+            <typeparam name="TQuerySpecification">The <see cref="T:System.Type"/> of the <see cref="T:HP.HPFx.Data.Query.IQuerySpecification"/> instances in the returned set.</typeparam>
+            <param name="original">The query to be split.</param>
+            <param name="maxPageSize">The maximum <see cref="P:HP.HPFx.Data.Query.QueryPaginationSpecification.PageSize"/> of each instance in the returned set.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySpecificationWrapper.Split``1(``0,System.Int32)">
+            <summary>
+            Convenience overload that allows the Type parameter to be inferred from the method parameters.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySpecificationWrapper.Split``1(System.Int32)">
+            <summary>
+            Returns a set (of 1 or more) <see cref="T:HP.HPFx.Data.Query.IQuerySpecification"/> instances 
+            that will (as a combined set) retrieve an identical set of results as this instance 
+            using "sub-queries" that each have a specified maximum <see cref="P:HP.HPFx.Data.Query.QueryPaginationSpecification.PageSize"/>.
+            </summary>
+            <remarks>
+            This method is essentially used to convert a single <see cref="T:HP.HPFx.Data.Query.IQuerySpecification"/> 
+            into an equivelent "batch" of queries that can be executed separately.
+            </remarks>
+            <typeparam name="TQuerySpecification">The <see cref="T:System.Type"/> of the <see cref="T:HP.HPFx.Data.Query.IQuerySpecification"/> instances in the returned set.</typeparam>
+            <param name="maxPageSize"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:HP.HPFx.Data.Query.QuerySpecificationWrapper.YieldQuerySpecificationsForEachPage``1(HP.HPFx.Data.Query.IQuerySpecification,System.Int32,System.Int32,System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "M:HP.HPFx.Data.Query.QuerySpecificationWrapper.YieldQuerySpecificationsForEachPage``1(HP.HPFx.Data.Query.IQuerySpecification,System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "M:HP.HPFx.Data.Query.QuerySpecificationWrapper.YieldQueryResults``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})" -->
+        <member name="M:HP.HPFx.Data.Query.GenericQuerySpecificationWrapper.ParseIntList(System.String)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Data.Query.GenericQuerySpecificationWrapper.IdListAsString">
+            <summary>
+            A string-typed convenience wrapper of the <see cref="P:HP.HPFx.Data.Query.GenericQuerySpecificationWrapper.IdList"/> property.
+            </summary>
+        </member>
+        <member name="T:HP.HPFx.Data.Query.QueryConditionsSpecification">
+            <summary>
+            Specifies all of the information necessary to completely define the query conditions that restrict the results data returned by a query 
+            (e.g. ones that correspond to the where and having SQL clauses).
+            </summary>
+            <remarks>
+            Note: This class adds additional methods and properties (specific to this class' purpose) to the base class, but does not add any new data or fields.
+            </remarks>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QueryConditionsSpecification.GetInvalidKeys(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Returns the set of keys contained by the dictionary that do not exist in a specified set of <paramref name="validKeys"/>.
+            </summary>
+            <param name="validKeys">The set of valid keys.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QueryConditionsSpecification.ContainsInvalidKeys(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Determines whether the dictionary contains any keys other than those in a specified set of <paramref name="validKeys"/>.
+            </summary>
+            <param name="validKeys">The set of valid keys.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QueryConditionsSpecification.Add(HP.HPFx.Data.Query.QueryConditionsSpecification)">
+            <summary>
+            Adds (or replaces) each key/value pair in <paramref name="conditions"/> to this object.
+            </summary>
+            <param name="conditions"></param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:HP.HPFx.Data.Query.QueryPaginationSpecification" -->
+        <member name="M:HP.HPFx.Data.Query.QueryPaginationSpecification.ResetPageIndex">
+            <summary>
+            Resets the <see cref="P:HP.HPFx.Data.Query.QueryPaginationSpecification.PageIndex"/>, but leaves the <see cref="P:HP.HPFx.Data.Query.QueryPaginationSpecification.PageSize"/> unaffected.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QueryPaginationSpecification.Clear">
+            <summary>
+            Resets both the <see cref="P:HP.HPFx.Data.Query.QueryPaginationSpecification.PageIndex"/> and <see cref="P:HP.HPFx.Data.Query.QueryPaginationSpecification.PageSize"/>.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QueryPaginationSpecification.Equals(HP.HPFx.Data.Query.QueryPaginationSpecification)">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <returns>
+            true if the current object is equal to the <paramref name="other" /> parameter; otherwise, false.
+            </returns>
+            <param name="other">An object to compare with this object.</param>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QueryPaginationSpecification.GetHashCode">
+            <summary>
+            Serves as a hash function for a particular type. 
+            </summary>
+            <returns>
+            A hash code for the current <see cref="T:System.Object" />.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QueryPaginationSpecification.System#Xml#Serialization#IXmlSerializable#GetSchema">
+            <summary>
+            This method is reserved and should not be used. 
+            When implementing the IXmlSerializable interface, you should return null (Nothing in Visual Basic) from this method, 
+            and instead, if specifying a custom schema is required, apply the <see cref="T:System.Xml.Serialization.XmlSchemaProviderAttribute" /> to the class.
+            </summary>
+            <returns>
+            An <see cref="T:System.Xml.Schema.XmlSchema" /> that describes the XML representation of the object that is produced by the 
+            <see cref="M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)" /> method and consumed by the 
+            <see cref="M:System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)" /> method.
+            </returns>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QueryPaginationSpecification.System#Xml#Serialization#IXmlSerializable#ReadXml(System.Xml.XmlReader)">
+            <summary>
+            Generates an object from its XML representation.
+            </summary>
+            <param name="reader">The <see cref="T:System.Xml.XmlReader" /> stream from which the object is deserialized. </param>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QueryPaginationSpecification.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Converts an object into its XML representation.
+            </summary>
+            <param name="writer">The <see cref="T:System.Xml.XmlWriter" /> stream to which the object is serialized. </param>
+        </member>
+        <member name="P:HP.HPFx.Data.Query.QueryPaginationSpecification.DefaultPageSize">
+            <summary>
+            Indicates the system-wide default for page sizes, when <see cref="P:HP.HPFx.Data.Query.QueryPaginationSpecification.PageSize"/> is <c>null</c>.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Data.Query.QueryPaginationSpecification.HasValue">
+            <summary>
+            Indicates whether a value is specified for either the <see cref="P:HP.HPFx.Data.Query.QueryPaginationSpecification.PageIndex"/> or <see cref="P:HP.HPFx.Data.Query.QueryPaginationSpecification.PageSize"/>.
+            </summary>
+        </member>
+        <member name="T:HP.HPFx.Data.Query.QuerySortDirection">
+            <summary>
+            Specifies all of the information necessary to define the order in which a single column, field, or property results data should be returned by a query.
+            </summary>
+            <remarks>
+            NOTE: In order to define a query with a "unique sort order" 
+            (i.e. one in which there is only and exactly one permutation of the the result set that satisfies the sort order), 
+            it is often necessary to use multiple <see cref="T:HP.HPFx.Data.Query.QuerySortDirection"/> instances, which is possible using the <see cref="T:HP.HPFx.Data.Query.QuerySortSpecification"/> object.
+            </remarks>
+        </member>
+        <member name="F:HP.HPFx.Data.Query.QuerySortDirection._DefaultComparer">
+            <summary>
+            Used by the <see cref="T:System.IComparable"/> method implementations.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortDirection.ReverseDirection(System.Boolean)">
+            <summary>
+            Modifies the current value <see cref="P:HP.HPFx.Data.Query.QuerySortDirection.SortDescending"/> so that this instance represents a sort direction that is the reverse of the current one.
+            </summary>
+            <remarks>
+            NOTE: A <see cref="P:HP.HPFx.Data.Query.QuerySortDirection.SortDescending"/> value of <c>null</c> is considered to indicate that <see cref="P:HP.HPFx.Data.Query.QuerySortDirection.SortDescending"/> is "not specified" or "doesn't matter", and will therefore not be reversed.
+            </remarks>
+            <param name="onlyReverseIfUnambiguous">If <c>true</c>, this method will do nothing if <see cref="P:HP.HPFx.Data.Query.QuerySortDirection.SortDescending"/> is <c>null</c>; else it will reverse such an ambiguous direction as if the current direction were "Ascending".</param>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortDirection.IsReverseOf(HP.HPFx.Data.Query.QuerySortDirection)">
+            <summary>
+            Indicates whether this instance represents a sort direction that is the reverse of the specified one.
+            </summary>
+            <remarks>
+            NOTE: A <see cref="P:HP.HPFx.Data.Query.QuerySortDirection.SortDescending"/> value of <c>null</c> is considered to indicate that <see cref="P:HP.HPFx.Data.Query.QuerySortDirection.SortDescending"/> is "not specified" or "doesn't matter", and will therefore not be considered the reverse of a value with a non-<c>null</c> <see cref="P:HP.HPFx.Data.Query.QuerySortDirection.SortDescending"/>.
+            </remarks>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortDirection.AreReverse(HP.HPFx.Data.Query.QuerySortDirection,HP.HPFx.Data.Query.QuerySortDirection)">
+            <summary>
+            Indicates whether two instances represent a sort direction that the reverse of each other.
+            </summary>
+            <remarks>
+            NOTE: A <see cref="P:HP.HPFx.Data.Query.QuerySortDirection.SortDescending"/> value of <c>null</c> is considered to indicate that <see cref="P:HP.HPFx.Data.Query.QuerySortDirection.SortDescending"/> is "not specified" or "doesn't matter", and will therefore not be considered the reverse of a value with a non-<c>null</c> <see cref="P:HP.HPFx.Data.Query.QuerySortDirection.SortDescending"/>.
+            </remarks>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortDirection.IsSimilarTo(HP.HPFx.Data.Query.QuerySortDirection)">
+            <summary>
+            Indicates whether this instance represents a sort direction that is either the same as or the reverse of the specified one.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortDirection.AreSimilar(HP.HPFx.Data.Query.QuerySortDirection,HP.HPFx.Data.Query.QuerySortDirection)">
+            <summary>
+            Indicates whether two instances represent a sort direction that is either the same as or the reverse of each other.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortDirection.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object" /> is equal to the current <see cref="T:System.Object" />.
+            </summary>
+            <returns>
+            true if the specified <see cref="T:System.Object" /> is equal to the current <see cref="T:System.Object" />; otherwise, false.
+            </returns>
+            <param name="obj">The <see cref="T:System.Object" /> to compare with the current <see cref="T:System.Object" />. </param>
+            <exception cref="T:System.NullReferenceException">The <paramref name="obj" /> parameter is null.</exception><filterpriority>2</filterpriority>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortDirection.Equals(HP.HPFx.Data.Query.QuerySortDirection)">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <returns>
+            true if the current object is equal to the <paramref name="other" /> parameter; otherwise, false.
+            </returns>
+            <param name="other">An object to compare with this object.</param>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortDirection.GetHashCode">
+            <summary>
+            Serves as a hash function for a particular type. 
+            </summary>
+            <returns>
+            A hash code for the current <see cref="T:System.Object" />.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortDirection.CompareTo(System.Object)">
+            <summary>
+            Compares the current instance with another object of the same type.
+            </summary>
+            <returns>
+            A 32-bit signed integer that indicates the relative order of the objects being compared. The return value has these meanings: Value Meaning Less than zero This instance is less than <paramref name="obj" />. Zero This instance is equal to <paramref name="obj" />. Greater than zero This instance is greater than <paramref name="obj" />. 
+            </returns>
+            <param name="obj">An object to compare with this instance. </param>
+            <exception cref="T:System.ArgumentException"><paramref name="obj" /> is not the same type as this instance. </exception><filterpriority>2</filterpriority>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortDirection.CompareTo(HP.HPFx.Data.Query.QuerySortDirection)">
+            <summary>
+            Compares the current object with another object of the same type.
+            </summary>
+            <returns>
+            A 32-bit signed integer that indicates the relative order of the objects being compared. The return value has the following meanings: Value Meaning Less than zero This object is less than the <paramref name="other" /> parameter.Zero This object is equal to <paramref name="other" />. Greater than zero This object is greater than <paramref name="other" />. 
+            </returns>
+            <param name="other">An object to compare with this object.</param>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortDirection.System#Xml#Serialization#IXmlSerializable#GetSchema">
+            <summary>
+            This method is reserved and should not be used. 
+            When implementing the IXmlSerializable interface, you should return null (Nothing in Visual Basic) from this method, 
+            and instead, if specifying a custom schema is required, apply the <see cref="T:System.Xml.Serialization.XmlSchemaProviderAttribute" /> to the class.
+            </summary>
+            <returns>
+            An <see cref="T:System.Xml.Schema.XmlSchema" /> that describes the XML representation of the object that is produced by the 
+            <see cref="M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)" /> method and consumed by the 
+            <see cref="M:System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)" /> method.
+            </returns>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortDirection.System#Xml#Serialization#IXmlSerializable#ReadXml(System.Xml.XmlReader)">
+            <summary>
+            Generates an object from its XML representation.
+            </summary>
+            <param name="reader">The <see cref="T:System.Xml.XmlReader" /> stream from which the object is deserialized. </param>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortDirection.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Converts an object into its XML representation.
+            </summary>
+            <param name="writer">The <see cref="T:System.Xml.XmlWriter" /> stream to which the object is serialized. </param>
+        </member>
+        <member name="P:HP.HPFx.Data.Query.QuerySortDirection.SortDescending">
+            <summary>
+            Indicates whether the data that will be sorted (as indicated by <see cref="P:HP.HPFx.Data.Query.QuerySortDirection.SortExpression"/>) should be sequenced in ascending (small before large) or descending (large before small) order.
+            </summary>
+            <remarks>
+            NOTE: A <see cref="P:HP.HPFx.Data.Query.QuerySortDirection.SortDescending"/> value of <c>null</c> is considered to indicate that <see cref="P:HP.HPFx.Data.Query.QuerySortDirection.SortDescending"/> is "not specified" or "doesn't matter", 
+            and is therefore not considered to be the the "reverse" of a non-<c>null</c> <see cref="P:HP.HPFx.Data.Query.QuerySortDirection.SortDescending"/> value.
+            </remarks>
+            <seealso cref="M:HP.HPFx.Data.Query.QuerySortDirection.AreReverse(HP.HPFx.Data.Query.QuerySortDirection,HP.HPFx.Data.Query.QuerySortDirection)"/>
+            <seealso cref="M:HP.HPFx.Data.Query.QuerySortDirection.IsReverseOf(HP.HPFx.Data.Query.QuerySortDirection)"/>
+        </member>
+        <member name="T:HP.HPFx.Data.Query.QuerySortDirectionComparer">
+            <summary>
+            Compares two <see cref="T:HP.HPFx.Data.Query.QuerySortDirection"/> instances and returns a value indicating whether one is less than, equal to, or greater than the other.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortDirectionComparer.Compare(HP.HPFx.Data.Query.QuerySortDirection,HP.HPFx.Data.Query.QuerySortDirection)">
+            <summary>
+            Compares two objects and returns a value indicating whether one is less than, equal to, or greater than the other.
+            </summary>
+            <remarks>
+            NOTE: For consistency with the .NET BCL, null is considered to be smaller than any non-null value.
+            </remarks>
+            <returns>
+            Value Condition Less than zero<paramref name="x" /> is less than <paramref name="y" />.Zero<paramref name="x" /> equals <paramref name="y" />.Greater than zero<paramref name="x" /> is greater than <paramref name="y" />.
+            </returns>
+            <param name="x">The first object to compare.</param>
+            <param name="y">The second object to compare.</param>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortDirectionComparer.Compare(System.Nullable{System.Boolean},System.Nullable{System.Boolean})">
+            <summary>
+            Compares two <see cref="T:System.Nullable`1"/> instances and returns a value indicating whether one is less than, equal to, or greater than the other.
+            </summary>
+            <remarks>
+            NOTE: For consistency with the .NET BCL, null is considered to be smaller than any non-null value.
+            </remarks>
+            <returns>
+            Value Condition Less than zero<paramref name="x"/> is less than <paramref name="y"/>.Zero<paramref name="x"/> equals <paramref name="y"/>.Greater than zero<paramref name="x"/> is greater than <paramref name="y"/>.
+            </returns>
+            <param name="x">The first object to compare.</param>
+            <param name="y">The second object to compare.</param>
+        </member>
+        <member name="T:HP.HPFx.Data.Query.QuerySortDirectionExpressionComparer">
+            <summary>
+            Compares two <see cref="T:HP.HPFx.Data.Query.QuerySortDirection"/> instances (by their <see cref="P:HP.HPFx.Data.Query.QuerySortDirection.SortExpression"/> only) 
+            and returns a value indicating whether one is less than, equal to, or greater than the other.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortDirectionExpressionComparer.Compare(HP.HPFx.Data.Query.QuerySortDirection,HP.HPFx.Data.Query.QuerySortDirection)">
+            <summary>
+            Compares two objects and returns a value indicating whether one is less than, equal to, or greater than the other.
+            </summary>
+            <remarks>
+            NOTE: For consistency with the .NET BCL, null is considered to be smaller than any non-null value.
+            </remarks>
+            <returns>
+            Value Condition Less than zero<paramref name="x" /> is less than <paramref name="y" />.Zero<paramref name="x" /> equals <paramref name="y" />.Greater than zero<paramref name="x" /> is greater than <paramref name="y" />.
+            </returns>
+            <param name="x">The first object to compare.</param>
+            <param name="y">The second object to compare.</param>
+        </member>
+        <member name="T:HP.HPFx.Data.Query.QuerySortSpecification">
+            <summary>
+            Specifies all of the information necessary to completely define the order in which results data should be returned by a query.
+            </summary>
+            <remarks>
+            Note that this class can be used like a regular <see cref="T:HP.HPFx.Collections.Generic.EquatableList`1"/>, except that adding (or inserting) items to the list 
+            will automatically cause any "similar" item to be removed from the list, 
+            therefore ensuring not only that the contents of the list are unique, 
+            but also that no two items in the list are even "similar".
+            <para>
+            Two items are "similar" if one of the items would be totally redundant or ignored (i.e. would be guaranteed not to affect the results returned by the query) 
+            if it had a higher list index than the other item. 
+            E.g. The items corresponding to "FirstName ASC" and "FirstName DESC" are similar, 
+            because only the first such item in the list would actually affect the query results' sort order if both were present in the list.
+            </para>
+            <para>
+            Note that this class' implementation is based on the Adapter design pattern.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortSpecification.PromoteToPrimary(System.String)">
+            <summary>
+            This method will either insert the specified <see cref="T:HP.HPFx.Data.Query.QuerySortDirection"/> at the start of the list, 
+            or else reverse the direction of the current first element (if it is "similar" to the specified one).
+            </summary>
+            <param name="sortExpression"></param>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortSpecification.RemoveMatchingSortParameters(HP.HPFx.Data.Query.QuerySortDirection,System.Int32)">
+            <summary>
+            Removes all values that "match" (i.e. equal when ignoring the SortDirection) a specified value, starting at the specified index position.
+            </summary>
+            <param name="valueToMatch"></param>
+            <param name="startIndex"></param>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortSpecification.RemoveMatchingSortParameters(HP.HPFx.Data.Query.QuerySortDirection)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortSpecification.IndexOfMatchingSortParameter(System.Int32,System.Int32,HP.HPFx.Data.Query.QuerySortDirection)">
+            <summary>
+            Finds the first value that "matches" (i.e. equal when ignoring the SortDirection) a specified value, examining the specified count of items starting at the specified index position.
+            </summary>
+            <param name="startIndex"></param>
+            <param name="count"></param>
+            <param name="valueToMatch"></param>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortSpecification.IndexOfMatchingSortParameter(System.Int32,HP.HPFx.Data.Query.QuerySortDirection)">
+            <summary>
+            Finds the first value that "matches" (i.e. equal when ignoring the SortDirection) a specified value, starting at the specified index position.
+            </summary>
+            <param name="startIndex"></param>
+            <param name="valueToMatch"></param>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortSpecification.IndexOfMatchingSortParameter(HP.HPFx.Data.Query.QuerySortDirection)">
+            <summary>
+            Finds the first value that "matches" (i.e. equal when ignoring the SortDirection) a specified value.
+            </summary>
+            <param name="valueToMatch"></param>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortSpecification.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the collection.
+            </summary>
+            <returns>
+            A <see cref="T:System.Collections.Generic.IEnumerator`1" /> that can be used to iterate through the collection.
+            </returns>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortSpecification.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through a collection.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerator" /> object that can be used to iterate through the collection.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortSpecification.Add(HP.HPFx.Data.Query.QuerySortDirection)">
+            <summary>
+            Adds an item to the <see cref="T:System.Collections.Generic.ICollection`1" />.
+            </summary>
+            <param name="item">The object to add to the <see cref="T:System.Collections.Generic.ICollection`1" />.</param>
+            <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1" /> is read-only.</exception>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortSpecification.Clear">
+            <summary>
+            Removes all items from the <see cref="T:System.Collections.Generic.ICollection`1" />.
+            </summary>
+            <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1" /> is read-only. </exception>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortSpecification.Contains(HP.HPFx.Data.Query.QuerySortDirection)">
+            <summary>
+            Determines whether the <see cref="T:System.Collections.Generic.ICollection`1" /> contains a specific value.
+            </summary>
+            <returns>
+            true if <paramref name="item" /> is found in the <see cref="T:System.Collections.Generic.ICollection`1" />; otherwise, false.
+            </returns>
+            <param name="item">The object to locate in the <see cref="T:System.Collections.Generic.ICollection`1" />.</param>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortSpecification.CopyTo(HP.HPFx.Data.Query.QuerySortDirection[],System.Int32)">
+            <summary>
+            Copies the elements of the <see cref="T:System.Collections.Generic.ICollection`1"/> to an <see cref="T:System.Array"/>, starting at a particular <see cref="T:System.Array"/> index.
+            </summary>
+            <param name="array">The one-dimensional <see cref="T:System.Array"/> that is the destination of the elements copied from <see cref="T:System.Collections.Generic.ICollection`1"/>. The <see cref="T:System.Array"/> must have zero-based indexing.</param>
+            <param name="arrayIndex">The zero-based index in <paramref name="array"/> at which copying begins.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="array"/> is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="arrayIndex"/> is less than 0.</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="array"/> is multidimensional.-or-<paramref name="arrayIndex"/> is equal to or greater than the length of <paramref name="array"/>.-or-The number of elements in the source <see cref="T:System.Collections.Generic.ICollection`1"/> is greater than the available space from <paramref name="arrayIndex"/> to the end of the destination <paramref name="array"/>.-or-Type <see cref="T:HP.HPFx.Data.Query.QuerySortDirection"/> cannot be cast automatically to the type of the destination <paramref name="array"/>.</exception>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortSpecification.Remove(HP.HPFx.Data.Query.QuerySortDirection)">
+            <summary>
+            Removes the first occurrence of a specific object from the <see cref="T:System.Collections.Generic.ICollection`1" />.
+            </summary>
+            <returns>
+            true if <paramref name="item" /> was successfully removed from the <see cref="T:System.Collections.Generic.ICollection`1" />; otherwise, false. This method also returns false if <paramref name="item" /> is not found in the original <see cref="T:System.Collections.Generic.ICollection`1" />.
+            </returns>
+            <param name="item">The object to remove from the <see cref="T:System.Collections.Generic.ICollection`1" />.</param>
+            <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1" /> is read-only.</exception>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortSpecification.IndexOf(HP.HPFx.Data.Query.QuerySortDirection)">
+            <summary>
+            Determines the index of a specific item in the <see cref="T:System.Collections.Generic.IList`1" />.
+            </summary>
+            <returns>
+            The index of <paramref name="item" /> if found in the list; otherwise, -1.
+            </returns>
+            <param name="item">The object to locate in the <see cref="T:System.Collections.Generic.IList`1" />.</param>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortSpecification.Insert(System.Int32,HP.HPFx.Data.Query.QuerySortDirection)">
+            <summary>
+            Inserts an item to the <see cref="T:System.Collections.Generic.IList`1" /> at the specified index.
+            </summary>
+            <param name="index">The zero-based index at which <paramref name="item" /> should be inserted.</param>
+            <param name="item">The object to insert into the <see cref="T:System.Collections.Generic.IList`1" />.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> is not a valid index in the <see cref="T:System.Collections.Generic.IList`1" />.</exception>
+            <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.IList`1" /> is read-only.</exception>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortSpecification.RemoveAt(System.Int32)">
+            <summary>
+            Removes the <see cref="T:System.Collections.Generic.IList`1" /> item at the specified index.
+            </summary>
+            <param name="index">The zero-based index of the item to remove.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> is not a valid index in the <see cref="T:System.Collections.Generic.IList`1" />.</exception>
+            <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.IList`1" /> is read-only.</exception>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortSpecification.ContainsSimilar(HP.HPFx.Data.Query.QuerySortDirection)">
+            <summary>
+            Determines whether the <see cref="T:System.Collections.Generic.ICollection`1"/> contains a <see cref="T:HP.HPFx.Data.Query.QuerySortDirection"/> that is "similar" to a specific value.
+            </summary>
+            <returns>
+            true if a similar <paramref name="item"/> is found in the <see cref="T:System.Collections.Generic.ICollection`1"/>; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortSpecification.RemoveAllSimilar(HP.HPFx.Data.Query.QuerySortDirection)">
+            <summary>
+            Removes all occurrences of a "similar" <see cref="T:HP.HPFx.Data.Query.QuerySortDirection"/> objects from the <see cref="T:System.Collections.Generic.ICollection`1"/>.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortSpecification.RemoveAllSimilar(HP.HPFx.Data.Query.QuerySortDirection,System.Int32)">
+            <summary>
+            Removes all occurrences of a "similar" <see cref="T:HP.HPFx.Data.Query.QuerySortDirection"/> objects from the <see cref="T:System.Collections.Generic.ICollection`1"/>.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortSpecification.RemoveAllRedundancies">
+            <summary>
+            Removes all redundant occurrences (i.e. all occurrences except the first) of "similar" <see cref="T:HP.HPFx.Data.Query.QuerySortDirection"/> objects from the <see cref="T:System.Collections.Generic.ICollection`1"/>.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortSpecification.IndexOfSimilar(HP.HPFx.Data.Query.QuerySortDirection)">
+            <summary>
+            Determines the index in the <see cref="T:System.Collections.Generic.IList`1"/> of the first occurrence of a <see cref="T:HP.HPFx.Data.Query.QuerySortDirection"/> that is "similar" to a specific item.
+            </summary>
+            <returns>
+            The index of <paramref name="item"/> (or a similar object) if found in the list; otherwise, -1.
+            </returns>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortSpecification.Equals(HP.HPFx.Data.Query.QuerySortSpecification)">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <returns>
+            true if the current object is equal to the <paramref name="other" /> parameter; otherwise, false.
+            </returns>
+            <param name="other">An object to compare with this object.</param>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortSpecification.GetHashCode">
+            <summary>
+            Serves as a hash function for a particular type. 
+            </summary>
+            <returns>
+            A hash code for the current <see cref="T:System.Object" />.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortSpecification.AddRange(System.Collections.Generic.IEnumerable{HP.HPFx.Data.Query.QuerySortDirection})">
+            <summary>
+            Adds a collection of <see cref="T:HP.HPFx.Data.Query.QuerySortDirection"/> to the <see cref="T:System.Collections.Generic.ICollection`1"/>.
+            </summary>
+            <param name="collection">The objects to add to the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySortSpecification.ReplaceAllItems(System.Collections.Generic.IEnumerable{HP.HPFx.Data.Query.QuerySortDirection})">
+            <summary>
+            Clears the list, and then adds a collection of <see cref="T:HP.HPFx.Data.Query.QuerySortDirection"/> to the <see cref="T:System.Collections.Generic.ICollection`1"/>.
+            </summary>
+            <param name="collection">The objects to add to the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param>
+        </member>
+        <member name="P:HP.HPFx.Data.Query.QuerySortSpecification.Count">
+            <summary>
+            Gets the number of elements contained in the <see cref="T:System.Collections.Generic.ICollection`1" />.
+            </summary>
+            <returns>
+            The number of elements contained in the <see cref="T:System.Collections.Generic.ICollection`1" />.
+            </returns>
+        </member>
+        <member name="P:HP.HPFx.Data.Query.QuerySortSpecification.IsReadOnly">
+            <summary>
+            Gets a value indicating whether the <see cref="T:System.Collections.Generic.ICollection`1" /> is read-only.
+            </summary>
+            <returns>
+            true if the <see cref="T:System.Collections.Generic.ICollection`1" /> is read-only; otherwise, false.
+            </returns>
+        </member>
+        <member name="P:HP.HPFx.Data.Query.QuerySortSpecification.Item(System.Int32)">
+            <summary>
+            Gets or sets the element at the specified index.
+            </summary>
+            <returns>
+            The element at the specified index.
+            </returns>
+            <param name="index">The zero-based index of the element to get or set.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> is not a valid index in the <see cref="T:System.Collections.Generic.IList`1" />.</exception>
+            <exception cref="T:System.NotSupportedException">The property is set and the <see cref="T:System.Collections.Generic.IList`1" /> is read-only.</exception>
+        </member>
+        <member name="T:HP.HPFx.Data.Query.QuerySpecification">
+            <summary>
+            A default, weakly-typed implementation of <see cref="T:HP.HPFx.Data.Query.IQuerySpecification"/>.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySpecification.Copy">
+            <summary>
+            Returns a (deep copy) clone of the instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySpecification.ToString">
+            <summary>
+            Overridden to return the XML generated by the <see cref="M:HP.HPFx.Data.Query.QuerySpecification.ToXml"/> method.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySpecification.ToXml">
+            <summary>
+            Serializes the current instance into XML.
+            </summary>
+            <returns>The XML generated by serializing this instance.</returns>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySpecification.FromXml(System.String)">
+            <summary>
+            Deserializes an instance from a previously serialized instance's XML.
+            </summary>
+            <param name="serializedInstanceXml">The XML generated by serializing the original instance.</param>
+            <returns>A deserialized copy of the original instance.</returns>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySpecification.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object" /> is equal to the current <see cref="T:System.Object" />.
+            </summary>
+            <returns>
+            true if the specified <see cref="T:System.Object" /> is equal to the current <see cref="T:System.Object" />; otherwise, false.
+            </returns>
+            <param name="obj">The <see cref="T:System.Object" /> to compare with the current <see cref="T:System.Object" />. </param>
+            <exception cref="T:System.NullReferenceException">The <paramref name="obj" /> parameter is null.</exception><filterpriority>2</filterpriority>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySpecification.Equals(HP.HPFx.Data.Query.QuerySpecification)">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <returns>
+            true if the current object is equal to the <paramref name="other" /> parameter; otherwise, false.
+            </returns>
+            <param name="other">An object to compare with this object.</param>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySpecification.Equals(HP.HPFx.Data.Query.IQuerySpecification)">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <returns>
+            true if the current object is equal to the <paramref name="other" /> parameter; otherwise, false.
+            </returns>
+            <param name="other">An object to compare with this object.</param>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySpecification.GetHashCode">
+            <summary>
+            Serves as a hash function for a particular type. 
+            </summary>
+            <returns>
+            A hash code for the current <see cref="T:System.Object" />.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySpecification.AreEqualExceptForPaging(HP.HPFx.Data.Query.IQuerySpecification,HP.HPFx.Data.Query.IQuerySpecification)">
+            <summary>
+            Indicates whether two instances are equal (ignoring any <see cref="T:HP.HPFx.Data.Query.QueryPaginationSpecification"/> differences).
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Data.Query.QuerySpecification.Merge(HP.HPFx.Data.Query.IQuerySpecification,HP.HPFx.Data.Query.IQuerySpecification)">
+            <summary>
+            Combines two <see cref="T:HP.HPFx.Data.Query.IQuerySpecification"/>s into a single, combined <see cref="T:HP.HPFx.Data.Query.IQuerySpecification"/> 
+            that matches (as best as possible) the specifications in both of the original instances.
+            </summary>
+            <param name="mutableSpecification">The instance that will be used as the initial state of the returned instance.</param>
+            <param name="immutableSpecification">The instance that will be used to selectively overwrite the state of the <paramref name="mutableSpecification"/> instance in the returned instance.</param>
+            <returns></returns>
+        </member>
+        <member name="T:HP.HPFx.Data.Utility.SqlUtility">
+            <summary>
+            Contains utility methods related to SQL, SQL Server, etc.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Data.Utility.SqlUtility.OpenConnection(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            Opens a specified command's connection (if it was not already open).
+            </summary>
+            <param name="command">The command containing the connection to close.</param>
+            <returns><c>true</c> if the connection was opened, else <c>false</c> (e.g. if the connection was already open).</returns>
+        </member>
+        <member name="M:HP.HPFx.Data.Utility.SqlUtility.CloseConnection(System.Data.IDbConnection)">
+            <summary>
+            Closes a specified connection.
+            </summary>
+            <param name="connection">The connection to close.</param>
+            <returns><c>true</c> if the connection was successfully closed, else <c>false</c>.</returns>
+        </member>
+        <member name="M:HP.HPFx.Data.Utility.SqlUtility.CloseConnection(System.Data.IDbCommand)">
+            <summary>
+            Closes a specified command's connection.
+            </summary>
+            <param name="command">The command containing the connection to close.</param>
+            <returns><c>true</c> if the connection was successfully closed, else <c>false</c>.</returns>
+        </member>
+        <member name="M:HP.HPFx.Data.Utility.SqlUtility.GetConnectionString(System.String)">
+            <summary>
+            Returns a named connection string from the configuration settings.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Data.Utility.SqlUtility.ExecuteAsNonQuery(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            Executes a specified "non-query" command.
+            </summary>
+            <param name="command">The command to execute.</param>
+            <returns>The number of rows affected by the command.</returns>
+        </member>
+        <member name="M:HP.HPFx.Data.Utility.SqlUtility.ExecuteAsNonQuery(System.String,System.String)">
+            <summary>
+            Executes (as a non-query) a specified SQL script using a specified connection string.
+            </summary>
+            <param name="connectionString"></param>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Data.Utility.SqlUtility.ExecuteAsScalar``1(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            Executes a specified "scalar" command.
+            </summary>
+            <param name="command">The command to execute.</param>
+            <returns>The scalar value returned by the command.</returns>
+        </member>
+        <member name="M:HP.HPFx.Data.Utility.SqlUtility.CreateSqlCommandForSP(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Factory method for creating a SqlCommand that executes a DB stored procedure.
+            </summary>
+            <param name="connection"></param>
+            <param name="storedProcedureName"></param>
+            <param name="cmdParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Data.Utility.SqlUtility.CreateSqlCommandForSql(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Factory method for creating a SqlCommand that executes a specified SQL script.
+            </summary>
+            <param name="connection"></param>
+            <param name="sql">The SQL script (i.e. command text) the command will execute.</param>
+            <param name="cmdParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Data.Utility.SqlUtility.CreateSqlCommand(System.Data.SqlClient.SqlConnection,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Factory method for creating a SqlCommand.
+            </summary>
+            <param name="connection"></param>
+            <param name="cmdType"></param>
+            <param name="cmdText"></param>
+            <param name="cmdParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Data.Utility.SqlUtility.CreateSqlParameter(System.String,System.Data.SqlDbType,System.Object)">
+            <summary>
+            Factory method for creating a SqlParameter that executes a DB stored procedure.
+            </summary>
+            <param name="parameterName"></param>
+            <param name="sqlDbType"></param>
+            <param name="sqlValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Data.Utility.SqlUtility.ConvertSql_ReplaceGoWithSemicolon(System.String)">
+            <summary>
+            Replaces all GO statements (that occur on their own line) in a specified script with semicolons.
+            </summary>
+            <param name="sql">The original SQL script.</param>
+            <returns>The new SQL script.</returns>
+        </member>
+        <member name="M:HP.HPFx.Data.Utility.SqlUtility.ValidateSqlLikeComparisonOperand(System.String,System.Boolean)">
+            <summary>
+            Validates that a specified string value that will be used as the operand of a SQL LIKE comparison is safe and valid.
+            </summary>
+            <param name="likeComparisonOperand">A string value that is intended to be used as the operand of a SQL LIKE comparison.</param>
+            <param name="allowWildcards">If <c>false</c>, any SQL wildcards in <paramref name="likeComparisonOperand"/> will be removed from the validated operand.</param>
+            <returns>A validated value that is safe for use as the operand of a SQL LIKE comparison.</returns>
+        </member>
+        <member name="M:HP.HPFx.Data.Utility.SqlUtility.CreateListOfColumnValues``1(System.Data.DataTable,System.Int32)">
+            <summary>
+            Creates a list and populates it with the values in specified <see cref="T:System.Data.DataColumn"/> of a <see cref="T:System.Data.DataTable"/>.
+            </summary>
+            <typeparam name="TColumnValue">The Type of the data values in the specified column.</typeparam>
+            <param name="dt">The <see cref="T:System.Data.DataTable"/> containing the values.</param>
+            <param name="columnIndex">The index of the column.</param>
+            <returns>A new list containing the values in the specified column.</returns>
+        </member>
+        <member name="M:HP.HPFx.Data.Utility.SqlUtility.CreateSqlStringLiteral(System.String)">
+            <summary>
+            Creates a properly escaped SQL string literal for a specified string.
+            </summary>
+            <remarks>
+            The value returned by this method can be safely used in an SQL query without any danger of SQL injections, etc.
+            </remarks>
+            <param name="literalValue">The intended value of the string literal</param>
+            <returns></returns>
+        </member>
+        <member name="T:HP.HPFx.Extensions.Conversion.DateTimeManipulation.DateTimeManipulationExtensions">
+            <summary>
+            This class contains extension methods for manipulating and converting <see cref="T:System.DateTime"/> data.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Conversion.DateTimeManipulation.DateTimeManipulationExtensions.StartOfDay(System.Nullable{System.DateTime})">
+            <summary>
+            Returns a new <see cref="T:System.DateTime"/> instance that represents the beginning (i.e. midnight) of 
+            the same day as the date represented by the specified <see cref="T:System.DateTime"/>.
+            </summary>
+            <param name="d">The <see cref="T:System.DateTime"/> that the returned value will be relative to.</param>
+            <returns><c>null</c> if <paramref name="d"/> is <c>null</c>.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Conversion.DateTimeManipulation.DateTimeManipulationExtensions.EndOfDay(System.Nullable{System.DateTime})">
+            <summary>
+            Returns a new <see cref="T:System.DateTime"/> instance that represents the end (i.e. one Tick before midnight of the following day) of 
+            the same day as the date represented by the specified <see cref="T:System.DateTime"/>.
+            </summary>
+            <param name="d">The <see cref="T:System.DateTime"/> that the returned value will be relative to.</param>
+            <returns><c>null</c> if <paramref name="d"/> is <c>null</c>.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Conversion.DateTimeManipulation.DateTimeManipulationExtensions.StartOfNextDay(System.Nullable{System.DateTime})">
+            <summary>
+            Returns a new <see cref="T:System.DateTime"/> instance that represents the beginning (i.e. midnight) of 
+            the day that follows the date represented by the specified <see cref="T:System.DateTime"/>.
+            </summary>
+            <param name="d">The <see cref="T:System.DateTime"/> that the returned value will be relative to.</param>
+            <returns><c>null</c> if <paramref name="d"/> is <c>null</c>.</returns>
+        </member>
+        <member name="T:HP.HPFx.Extensions.Conversion.Transform.TransformExtensions">
+            <summary>
+            This class contains extension methods for transforming or converting data.
+            </summary>
+        </member>
+        <member name="T:HP.HPFx.Extensions.Data.Export.ExportDataExtensions">
+            <summary>
+            Contains extension methods for easily exporting <see cref="T:System.Data.DataTable"/> data to CSV, Excel, and other file formats.
+            </summary>
+            <remarks>
+            <para>
+            NOTE: This class was adapted from this article: 
+            http://elegantcode.com/2007/11/14/subsonic-collection-to-csv/
+            </para>
+            </remarks>
+            <seealso cref="!:HP.HPFx.Extensions.Data.Import.ImportDataExtensions"/>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Data.Export.ExportDataExtensions.Write(System.IO.TextWriter,System.Data.DataTable,HP.HPFx.Extensions.Data.Export.ExportDataExtensions.ExportOptions)">
+            <summary>
+            Exports/formats the data in a <see cref="T:System.Data.DataTable"/> as a CSV-formatted string (which can easily be saved as a CSV file).
+            </summary>
+            <param name="output">The <see cref="T:System.IO.TextWriter"/> that the CSV data should be written to.</param>
+            <param name="data">The <see cref="T:System.Data.DataTable"/> containing the data to export.</param>
+            <param name="options">A set of options that can be used to configure specific details of how the data is formatted/converted.</param>
+            <seealso cref="!:ExportAsCsv(System.Data.DataTable,System.IO.TextWriter,HP.HPFx.Extensions.Data.Export.ExportDataExtensions.ExportOptions)"/>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Data.Export.ExportDataExtensions.Write(System.IO.TextWriter,System.Collections.Generic.IEnumerable{System.Data.DataTable},HP.HPFx.Extensions.Data.Export.ExportDataExtensions.ExportOptions,System.Boolean,System.Func{System.Data.DataTable,System.Boolean},System.Func{System.Data.DataTable,System.Boolean})">
+            <summary>
+            Exports/formats the data in a <see cref="T:System.Data.DataTable"/> as a CSV-formatted string (which can easily be saved as a CSV file).
+            </summary>
+            <param name="output">The <see cref="T:System.IO.TextWriter"/> that the CSV data should be written to.</param>
+            <param name="data">The <see cref="T:System.Data.DataTable"/> containing the data to export.</param>
+            <param name="options">A set of options that can be used to configure specific details of how the data is formatted/converted.</param>
+            <param name="stopAtEmptyDataTable">If <c>true</c>, then writing will cease upon encountering any empty <see cref="T:System.Data.DataTable"/>.</param>
+            <param name="exportingCallback">An optional callback delegate that will be invoked just before each <see cref="T:System.Data.DataTable"/> is processed.</param>
+            <param name="exportedCallback">An optional callback delegate that will be invoked just after each <see cref="T:System.Data.DataTable"/> is processed.</param>
+            <seealso cref="!:ExportAsCsv(System.Collections.Generic.IEnumerable&lt;System.Data.DataTable&gt;,System.IO.TextWriter,HP.HPFx.Extensions.Data.Export.ExportDataExtensions.ExportOptions,bool,System.Func&lt;System.Data.DataTable,bool&gt;,System.Func&lt;System.Data.DataTable,bool&gt;)"/>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Data.Export.ExportDataExtensions.ExportAsCsv(System.Data.DataTable,HP.HPFx.Extensions.Data.Export.ExportDataExtensions.ExportOptions)">
+            <summary>
+            Exports/formats the data in a <see cref="T:System.Data.DataTable"/> as a CSV-formatted string (which can easily be saved as a CSV file).
+            </summary>
+            <remarks>
+            <para>
+            NOTE: This method can cause significant large object heap memory fragmentation.
+            Consider using <see cref="M:HP.HPFx.Extensions.Data.Export.ExportDataExtensions.Write(System.IO.TextWriter,System.Data.DataTable,HP.HPFx.Extensions.Data.Export.ExportDataExtensions.ExportOptions)"/> instead 
+            to optimize memory allocation and utilization.
+            </para>
+            </remarks>
+            <param name="data">The <see cref="T:System.Data.DataTable"/> containing the data to export.</param>
+            <param name="options">A set of options that can be used to configure specific details of how the data is formatted/converted.</param>
+            <returns>A CSV-formatted string.</returns>
+            <seealso cref="M:HP.HPFx.Extensions.Data.Export.ExportDataExtensions.Write(System.IO.TextWriter,System.Data.DataTable,HP.HPFx.Extensions.Data.Export.ExportDataExtensions.ExportOptions)"/>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Data.Export.ExportDataExtensions.ExportAsCsv(System.Collections.Generic.IEnumerable{System.Data.DataTable},HP.HPFx.Extensions.Data.Export.ExportDataExtensions.ExportOptions,System.Boolean,System.Func{System.Data.DataTable,System.Boolean},System.Func{System.Data.DataTable,System.Boolean})">
+            <summary>
+            Exports/formats the data in a <see cref="T:System.Data.DataTable"/> as a CSV-formatted string (which can easily be saved as a CSV file).
+            </summary>
+            <remarks>
+            <para>
+            NOTE: This method can cause significant large object heap memory fragmentation.
+            Consider using <see cref="M:HP.HPFx.Extensions.Data.Export.ExportDataExtensions.Write(System.IO.TextWriter,System.Data.DataTable,HP.HPFx.Extensions.Data.Export.ExportDataExtensions.ExportOptions)"/> instead 
+            to optimize memory allocation and utilization.
+            </para>
+            </remarks>
+            <param name="data">The <see cref="T:System.Data.DataTable"/> containing the data to export.</param>
+            <param name="options">A set of options that can be used to configure specific details of how the data is formatted/converted.</param>
+            <param name="stopAtEmptyDataTable">If <c>true</c>, then writing will cease upon encountering any empty <see cref="T:System.Data.DataTable"/>.</param>
+            <param name="exportingCallback">An optional callback delegate that will be invoked just before each <see cref="T:System.Data.DataTable"/> is processed.</param>
+            <param name="exportedCallback">An optional callback delegate that will be invoked just after each <see cref="T:System.Data.DataTable"/> is processed.</param>
+            <seealso cref="M:HP.HPFx.Extensions.Data.Export.ExportDataExtensions.Write(System.IO.TextWriter,System.Collections.Generic.IEnumerable{System.Data.DataTable},HP.HPFx.Extensions.Data.Export.ExportDataExtensions.ExportOptions,System.Boolean,System.Func{System.Data.DataTable,System.Boolean},System.Func{System.Data.DataTable,System.Boolean})"/>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Data.Export.ExportDataExtensions.ExportToTextWriter(System.Data.DataTable,System.IO.TextWriter,HP.HPFx.Extensions.Data.Export.ExportDataExtensions.ExportOptions)">
+            <summary>
+            Exports/formats the data in a <see cref="T:System.Data.DataTable"/> as a CSV-formatted string (which can easily be saved as a CSV file).
+            </summary>
+            <remarks>
+            <para>
+            NOTE: This method can cause significant large object heap memory fragmentation.
+            Consider using <see cref="M:HP.HPFx.Extensions.Data.Export.ExportDataExtensions.Write(System.IO.TextWriter,System.Data.DataTable,HP.HPFx.Extensions.Data.Export.ExportDataExtensions.ExportOptions)"/> instead 
+            to optimize memory allocation and utilization.
+            NOTE: This method overload will remain Obsolete forever. 
+            It is implemented to make the export functionality easier to find with intellisense, 
+            since someone might find this extension method using a DataTable instance 
+            whereas they might not find it using a TextWriter instance.
+            </para>
+            <para>
+            Consider using <see cref="M:HP.HPFx.Extensions.Data.Export.ExportDataExtensions.Write(System.IO.TextWriter,System.Data.DataTable,HP.HPFx.Extensions.Data.Export.ExportDataExtensions.ExportOptions)"/> instead.
+            </para>
+            </remarks>
+            <param name="data">The <see cref="T:System.Data.DataTable"/> containing the data to export.</param>
+            <param name="output">The <see cref="T:System.IO.TextWriter"/> that the CSV data should be written to.</param>
+            <param name="options">A set of options that can be used to configure specific details of how the data is formatted/converted.</param>
+            <seealso cref="M:HP.HPFx.Extensions.Data.Export.ExportDataExtensions.Write(System.IO.TextWriter,System.Data.DataTable,HP.HPFx.Extensions.Data.Export.ExportDataExtensions.ExportOptions)"/>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Data.Export.ExportDataExtensions.ExportToCSV(System.Data.DataTable,HP.HPFx.Extensions.Data.Export.ExportDataExtensions.ExportOptions)">
+            <summary>
+            Exports/formats the data in a <see cref="T:System.Data.DataTable"/> as a CSV-formatted string (which can easily be saved as a CSV file).
+            </summary>
+            <param name="data">The <see cref="T:System.Data.DataTable"/> containing the data to export.</param>
+            <param name="options">A set of options that can be used to configure specific details of how the data is formatted/converted.</param>
+            <returns>A CSV-formatted string.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Data.Export.ExportDataExtensions.ExportToCSV(System.Data.DataTable)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Data.Export.ExportDataExtensions.GetCsvData(System.Data.DataTable,System.IO.TextWriter,HP.HPFx.Extensions.Data.Export.ExportDataExtensions.ExportOptions)">
+            <summary>
+            Helper method that appends the data section (i.e. data rows) of the CSV data to <paramref name="output"/>.
+            The content of the section is dependent upon the specified <paramref name="options"/> and <paramref name="dt"/>.
+            </summary>
+            <param name="dt"></param>
+            <param name="output"></param>
+            <param name="options"></param>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Data.Export.ExportDataExtensions.GetCsvHeader(System.Data.DataTable,System.IO.TextWriter,HP.HPFx.Extensions.Data.Export.ExportDataExtensions.ExportOptions)">
+            <summary>
+            Helper method that appends the header section of the CSV data to <paramref name="output"/>.
+            The content of the section is dependent upon the specified <paramref name="options"/> and <paramref name="dt"/>.
+            </summary>
+            <param name="dt"></param>
+            <param name="output"></param>
+            <param name="options"></param>
+        </member>
+        <member name="T:HP.HPFx.Extensions.Text.StringAnalysis.StringAnalysisExtensions">
+            <summary>
+            This class contains extension methods for examining and analyzing <see cref="T:System.String"/>s.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringAnalysis.StringAnalysisExtensions.IndexOfAny(System.String,System.Collections.Generic.IEnumerable{System.String},System.Int32,System.Int32,System.StringComparison)">
+            <summary>
+            Reports the index of the first occurrence of any of a set of specified Strings in this instance.
+            The search starts at a specified character position and examines a specified number of character positions.
+            </summary>
+            <param name="s">The String to seek within.</param>
+            <param name="anyOf">The Strings to seek.</param>
+            <param name="startIndex">The search starting position. </param>
+            <param name="count">The number of character positions to examine. </param>
+            <param name="comparisonType">One of the <see cref="T:System.StringComparison"/> values.</param>
+            <returns>The index position of the first value found, or -1 if none are found.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringAnalysis.StringAnalysisExtensions.IndexOfAny(System.String,System.Collections.Generic.IEnumerable{System.String},System.Int32,System.Int32)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringAnalysis.StringAnalysisExtensions.IndexOfAny(System.String,System.Collections.Generic.IEnumerable{System.String},System.Int32)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringAnalysis.StringAnalysisExtensions.IndexOfAny(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringAnalysis.StringAnalysisExtensions.IndexOfAny(System.String,System.Collections.Generic.IEnumerable{System.String},System.StringComparison)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringAnalysis.StringAnalysisExtensions.IndexOfAny(System.String,System.Collections.Generic.IEnumerable{System.String},System.Int32,System.StringComparison)">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringAnalysis.StringAnalysisExtensions.ContainsAny(System.String,System.Collections.Generic.IEnumerable{System.String},System.StringComparison)">
+            <summary>
+            Reports whether the string contains any of a set of specified Strings in this instance.
+            </summary>
+            <param name="s">The String to seek within.</param>
+            <param name="anyOf">The Strings to seek.</param>
+            <param name="comparisonType">One of the <see cref="T:System.StringComparison"/> values.</param>
+            <returns>true if any value is found, else false.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringAnalysis.StringAnalysisExtensions.ContainsAny(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringAnalysis.StringAnalysisExtensions.ContainsAll(System.String,System.Collections.Generic.IEnumerable{System.String},System.StringComparison)">
+            <summary>
+            Reports whether the string contains each of a set of specified Strings in this instance.
+            </summary>
+            <param name="s">The String to seek within.</param>
+            <param name="substrings">The Strings to seek.</param>
+            <param name="comparisonType">One of the <see cref="T:System.StringComparison"/> values.</param>
+            <returns>true if all values are found, else false.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringAnalysis.StringAnalysisExtensions.ContainsAll(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringAnalysis.StringAnalysisExtensions.ContainsSequentially(System.String,System.Collections.Generic.IEnumerable{System.String},System.StringComparison)">
+            <summary>
+            Reports whether the string contains each of a set of specified substrings in this instance and in the sequence specified (without overlapping).
+            </summary>
+            <param name="s">The String to seek within.</param>
+            <param name="substrings">The Strings to seek.</param>
+            <param name="comparisonType">One of the <see cref="T:System.StringComparison"/> values.</param>
+            <returns>true if all of the values are found (in the same order as they occur in the <paramref name="substrings"/> array), else false.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown if <paramref name="s"/> is null.
+            </exception>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown if <paramref name="substrings"/> is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            Thrown if <paramref name="substrings"/> is empty.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            Thrown if any of the items in the <paramref name="substrings"/> array are null or empty.
+            </exception>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringAnalysis.StringAnalysisExtensions.ContainsSequentially(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringAnalysis.StringAnalysisExtensions.CountOfSequentialSubstrings(System.String,System.Collections.Generic.IEnumerable{System.String},System.StringComparison)">
+            <summary>
+            Indicates the number of substrings (from of a set of specified substrings) 
+            that occur (in the sequence specified and without overlapping) in this instance.
+            </summary>
+            <param name="s">The String to seek within.</param>
+            <param name="substrings">The Strings to seek.</param>
+            <param name="comparisonType">One of the <see cref="T:System.StringComparison"/> values.</param>
+            <returns>The integer count of the number of substrings in <paramref name="substrings"/> (starting with the first) 
+            that can be found sequentially in <paramref name="s"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown if <paramref name="s"/> is null.
+            </exception>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown if <paramref name="substrings"/> is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            Thrown if <paramref name="substrings"/> is empty.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            Thrown if any of the items in the <paramref name="substrings"/> array are null or empty.
+            </exception>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringAnalysis.StringAnalysisExtensions.CountOfSequentialSubstrings(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringAnalysis.StringAnalysisExtensions.RegExIsMatch(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
+            <summary>
+            Convenience extension for <see cref="M:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String,System.Text.RegularExpressions.RegexOptions)"/>.
+            </summary>
+        </member>
+        <member name="T:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions">
+            <summary>
+            This class contains extension methods for the <see cref="T:System.String"/> type.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.TryParseBoolean(System.String)">
+            <summary>
+            Parses a string value and returns an equivelent <see cref="T:System.Boolean"/> value, or <c>null</c> if conversion fails.
+            </summary>
+            <param name="value">The value to parse/convert.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.TryParseGuid(System.String)">
+            <summary>
+            Parses a string value and returns an equivelent <see cref="T:System.Guid"/> value, or <c>null</c> if conversion fails.
+            </summary>
+            <param name="value">The value to parse/convert.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.TryParseInt32(System.String)">
+            <summary>
+            Parses a string value and returns an equivelent <see cref="T:System.Int32"/> value, or <c>null</c> if conversion fails.
+            </summary>
+            <param name="value">The value to parse/convert.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.TryParseInt64(System.String)">
+            <summary>
+            Parses a string value and returns an equivelent <see cref="T:System.Int64"/> value, or <c>null</c> if conversion fails.
+            </summary>
+            <param name="value">The value to parse/convert.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.TryParseDecimal(System.String)">
+            <summary>
+            Parses a string value and returns an equivelent <see cref="T:System.Decimal"/> value, or <c>null</c> if conversion fails.
+            </summary>
+            <param name="value">The value to parse/convert.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.TryParseDouble(System.String)">
+            <summary>
+            Parses a string value and returns an equivelent <see cref="T:System.Double"/> value, or <c>null</c> if conversion fails.
+            </summary>
+            <param name="value">The value to parse/convert.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.ParseEnum``1(System.String,System.Boolean)">
+            <summary>
+            Parses a string value and returns the equivelent value from the specified <see cref="T:System.Enum"/>.
+            </summary>
+            <param name="value">
+            The value to parse/convert.
+             Should contain a value, a named constant, or a list of named constants delimited by commas (,).
+             One or more blanks spaces can precede or follow each value, name, or comma in value.
+             If value is a list, the return value is the value of the specified names combined with a bitwise OR operation.
+            </param>
+            <param name="ignoreCase">Indicates whether to parse the value case-insensitively.</param>
+            <returns>An instance of type TEnum whose value is represented by <paramref name="value"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown if <paramref name="value"/> is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            TEnum is not an <see cref="T:System.Enum"/>.
+            -or- 
+            <paramref name="value"/> is either an empty string or only contains white space.
+            -or- 
+            <paramref name="value"/> is a name, but not one of the named constants defined for the enumeration. 
+            </exception>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.TryParseEnum``1(System.String,System.Boolean)">
+            <summary>
+            Parses a string value and returns an equivelent <see cref="T:System.Enum"/> value, or <c>null</c> if conversion fails.
+            </summary>
+            <param name="value">
+            The value to parse/convert.
+             Should contain a value, a named constant, or a list of named constants delimited by commas (,).
+             One or more blanks spaces can precede or follow each value, name, or comma in value.
+             If value is a list, the return value is the value of the specified names combined with a bitwise OR operation.
+            </param>
+            <param name="ignoreCase"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.IsValidCodeIdentifier(System.String)">
+            <summary>
+            Indicates whether a specified string is a valid variable identifier (according to the C# specification).
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.TryParseDateTime(System.String)">
+            <summary>
+            Parses a string value and returns an equivelent <see cref="T:System.DateTime"/> value, or <c>null</c> if conversion fails.
+            </summary>
+            <param name="value">The value to parse/convert.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.TryParseExactDateTime(System.String,System.String,System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <summary>
+            Parses a string value and returns an equivelent <see cref="T:System.DateTime"/> value, or <c>null</c> if conversion fails.
+            </summary>
+            <param name="value">The value to parse/convert.</param>
+            <param name="format"></param>
+            <param name="provider"></param>
+            <param name="style"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.TryParseExactDateTime(System.String,System.String[],System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <summary>
+            Parses a string value and returns an equivelent <see cref="T:System.DateTime"/> value, or <c>null</c> if conversion fails.
+            </summary>
+            <param name="value">The value to parse/convert.</param>
+            <param name="formats"></param>
+            <param name="provider"></param>
+            <param name="style"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.TryParseTimeSpan(System.String)">
+            <summary>
+            Parses a string value and returns an equivelent <see cref="T:System.TimeSpan"/> value, or <c>null</c> if conversion fails.
+            </summary>
+            <param name="value">The value to parse/convert.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.ConvertToBoolean(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Converts a set of strings to a list of <see cref="T:System.Boolean"/>s.
+            </summary>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.ConvertToDateTime(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Converts a set of strings to a list of <see cref="T:System.DateTime"/>s.
+            </summary>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.ConvertToDateTime(System.Collections.Generic.IEnumerable{System.String},System.String,System.IFormatProvider)">
+            <summary>
+            Converts a set of strings to a list of <see cref="T:System.DateTime"/>s.
+            </summary>
+            <param name="values"></param>
+            <param name="format">The DateTime format specifier to use while parsing.</param>
+            <param name="provider">The <see cref="T:System.IFormatProvider"/> to use while parsing.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.ConvertToDecimal(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Converts a set of strings to a list of <see cref="T:System.Decimal"/>s.
+            </summary>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.ConvertToDouble(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Converts a set of strings to a list of <see cref="T:System.Double"/>s.
+            </summary>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.ConvertToGuid(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Converts a set of strings to a list of <see cref="T:System.Guid"/>s.
+            </summary>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.ConvertToInt32(System.Collections.Generic.IEnumerable{System.String},System.Boolean)">
+            <summary>
+            Converts a set of strings to a list of <see cref="T:System.Int32"/>s.
+            </summary>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.ConvertToInt32(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.ConvertToInt(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            This method was renamed.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.ConvertToInt64(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Converts a set of strings to a list of <see cref="T:System.Int64"/>s.
+            </summary>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.ConvertToSingle(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Converts a set of strings to a list of <see cref="T:System.Single"/>s.
+            </summary>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.ToStrings(System.Collections.Generic.IEnumerable{System.Boolean},System.IFormatProvider)">
+            <summary>
+            Converts a set of <see cref="T:System.Boolean"/>s to a list of strings.
+            </summary>
+            <param name="values"></param>
+            <param name="format">The <see cref="T:System.IFormatProvider"/> to use when formatting the values.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.ToStrings(System.Collections.Generic.IEnumerable{System.Boolean})">
+            <summary>
+            Converts a set of <see cref="T:System.Boolean"/>s to a list of strings.
+            </summary>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.ToStrings(System.Collections.Generic.IEnumerable{System.DateTime},System.String)">
+            <summary>
+            Converts a set of <see cref="T:System.DateTime"/>s to a list of strings.
+            </summary>
+            <param name="values"></param>
+            <param name="format">The format specifier string to use when formatting the DateTime values.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.ToStrings(System.Collections.Generic.IEnumerable{System.DateTime})">
+            <summary>
+            Converts a set of <see cref="T:System.DateTime"/>s to a list of strings.
+            </summary>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.ToStrings(System.Collections.Generic.IEnumerable{System.Decimal},System.String)">
+            <summary>
+            Converts a set of <see cref="T:System.Decimal"/>s to a list of strings.
+            </summary>
+            <param name="values"></param>
+            <param name="format">The format specifier string to use when formatting the values.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.ToStrings(System.Collections.Generic.IEnumerable{System.Decimal})">
+            <summary>
+            Converts a set of <see cref="T:System.Decimal"/>s to a list of strings.
+            </summary>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.ToStrings(System.Collections.Generic.IEnumerable{System.Double},System.String)">
+            <summary>
+            Converts a set of <see cref="T:System.Double"/>s to a list of strings.
+            </summary>
+            <param name="values"></param>
+            <param name="format">The format specifier string to use when formatting the values.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.ToStrings(System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+            Converts a set of <see cref="T:System.Double"/>s to a list of strings.
+            </summary>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.ToStrings(System.Collections.Generic.IEnumerable{System.Guid},System.String)">
+            <summary>
+            Converts a set of <see cref="T:System.Guid"/>s to a list of strings.
+            </summary>
+            <param name="values"></param>
+            <param name="format">The format specifier string to use when formatting the values.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.ToStrings(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            Converts a set of <see cref="T:System.Guid"/>s to a list of strings.
+            </summary>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.ToStrings(System.Collections.Generic.IEnumerable{System.Int32},System.String)">
+            <summary>
+            Converts a set of <see cref="T:System.Int32"/>s to a list of strings.
+            </summary>
+            <param name="values"></param>
+            <param name="format">The format specifier string to use when formatting the values.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.ToStrings(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Converts a set of <see cref="T:System.Int32"/>s to a list of strings.
+            </summary>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.ToStrings(System.Collections.Generic.IEnumerable{System.Int64},System.String)">
+            <summary>
+            Converts a set of <see cref="T:System.Int64"/>s to a list of strings.
+            </summary>
+            <param name="values"></param>
+            <param name="format">The format specifier string to use when formatting the values.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.ToStrings(System.Collections.Generic.IEnumerable{System.Int64})">
+            <summary>
+            Converts a set of <see cref="T:System.Int64"/>s to a list of strings.
+            </summary>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.ToStrings(System.Collections.Generic.IEnumerable{System.Single},System.String)">
+            <summary>
+            Converts a set of <see cref="T:System.Single"/>s to a list of strings.
+            </summary>
+            <param name="values"></param>
+            <param name="format">The format specifier string to use when formatting the values.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringConversionExtensions.ToStrings(System.Collections.Generic.IEnumerable{System.Single})">
+            <summary>
+            Converts a set of <see cref="T:System.Single"/>s to a list of strings.
+            </summary>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HP.HPFx.Extensions.Text.StringManipulation.StringManipulationExtensions">
+            <summary>
+            This class contains extension methods for manipulating and converting <see cref="T:System.String"/> data.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringManipulationExtensions.EmptyToNull(System.String)">
+            <summary>
+            Returns null if the specified string is <see cref="F:System.String.Empty"/>; else returns the specified string unchanged.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringManipulationExtensions.TrimToNull(System.String)">
+            <summary>
+            Trims a specified <see cref="T:System.String"/> value, and returns null if the trimmed value would be the empty string; else returns the trimmed value.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringManipulationExtensions.YieldTrim(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Returns an enumerable set of the of the values in a set of strings after they have each been trimmed.
+            </summary>
+            <param name="values">An enumerable set of original strings.</param>
+            <returns>An enumerable set of the strings after they have been trimmed.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringManipulationExtensions.YieldTrim(System.Collections.Generic.IEnumerable{System.String},System.Char[])">
+            <summary>
+            Returns an enumerable set of the values in a set of strings after they have each been trimmed.
+            </summary>
+            <param name="values">An enumerable set of original strings.</param>
+            <param name="trimChars">The set of characters to remove from the beginning and end of each string.</param>
+            <returns>An enumerable set of the strings after they have been trimmed.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringManipulationExtensions.YieldTrimEnd(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Returns an enumerable set of the values in a set of strings after they have each been "TrimEnd"-ed.
+            </summary>
+            <param name="values">An enumerable set of original strings.</param>
+            <returns>An enumerable set of the strings after they have been "TrimEnd"-ed.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringManipulationExtensions.YieldTrimEnd(System.Collections.Generic.IEnumerable{System.String},System.Char[])">
+            <summary>
+            Returns an enumerable set of the values in a set of strings after they have each been "TrimEnd"-ed.
+            </summary>
+            <param name="values">An enumerable set of original strings.</param>
+            <param name="trimChars">The set of characters to remove from the end of each string.</param>
+            <returns>An enumerable set of the strings after they have been "TrimEnd"-ed.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringManipulationExtensions.YieldTrimStart(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Returns an enumerable set of the values in a set of strings after they have each been "TrimStart"-ed.
+            </summary>
+            <param name="values">An enumerable set of original strings.</param>
+            <returns>An enumerable set of the strings after they have been "TrimStart"-ed.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringManipulationExtensions.YieldTrimStart(System.Collections.Generic.IEnumerable{System.String},System.Char[])">
+            <summary>
+            Returns an enumerable set of the values in a set of strings after they have each been "TrimStart"-ed.
+            </summary>
+            <param name="values">An enumerable set of original strings.</param>
+            <param name="trimChars">The set of characters to remove from the end of each string.</param>
+            <returns>An enumerable set of the strings after they have been "TrimStart"-ed.</returns>
+        </member>
+        <member name="M:HP.HPFx.Extensions.Text.StringManipulation.StringManipulationExtensions.RemoveDuplicates(System.Collections.Generic.IEnumerable{System.String},System.StringComparer)">
+            <summary>
+            Returns an enumerable set of the distinct values in a set of strings.
+            </summary>
+            <param name="values">An enumerable set of original strings.</param>
+            <param name="comparer">The comparer to use to determine value equality/duplication.</param>
+            <returns>An enumerable set containing the distinct strings from the original set.</returns>
+        </member>
+        <member name="T:HP.HPFx.Security.AbstractSecurityManager`1">
+            <summary>
+            Provides a simple, unified API for the most commonly needed security-related functionality.
+            </summary>
+            <remarks>
+            <para>
+            This class is implemented as a wrapper around the .NET (and ASP.NET) Authorization and Role Based Security framework.
+            </para>
+            </remarks>
+            <typeparam name="TRoleEnum">A <see cref="T:System.Enum"/> that enumerates all of the roles supported by the security manager instance.</typeparam>
+        </member>
+        <member name="T:HP.HPFx.Security.SimpleSecurityManager">
+            <summary>
+            Provides a simple, unified API for the most commonly needed security-related functionality.
+            </summary>
+            <remarks>
+            <para>
+            This class is implemented as a wrapper around the .NET (and ASP.NET) Authorization and Role Based Security framework.
+            </para>
+            </remarks>
+            <typeparam name="TRoleEnum">A <see cref="T:System.Enum"/> that enumerates all of the roles supported by the security manager instance.</typeparam>
+        </member>
+        <member name="M:HP.HPFx.Security.SimpleSecurityManager.CreatePrincipal(System.Security.Principal.IIdentity,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new IPrincipal based upon the specified parameters.
+            </summary>
+            <param name="identity">The IIdentity of the new IPrincipal.</param>
+            <param name="roles">The roles of the new IPrincipal.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Security.SimpleSecurityManager.CreatePrincipal(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Security.SimpleSecurityManager.ToPrincipalRolesArray(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Converts a set of role strings into a string array suitable for use in creating an IPrincipal instance.
+            </summary>
+            <param name="roles"></param>
+            <returns></returns>
+        </member>
+        <member name="P:HP.HPFx.Security.SimpleSecurityManager.CurrentUser">
+            <summary>
+            Returns the IPrincipal that represents the current user.
+            </summary>
+            <remarks>
+            NOTE: The dual-location of the current user's IPrincipal is confusing, but necessary.
+            See below for details.
+            
+            The reason for this implementation is that ASP.NET stores the "current user" info in the 
+            <see cref="P:System.Web.HttpContext.User"/> property, which is initialized during the 
+            <see cref="E:System.Web.HttpApplication.AuthenticateRequest"/> phase of the application's lifecycle.
+            However, while the <see cref="P:System.Threading.Thread.CurrentPrincipal"/> property is already initialized 
+            (with an anonymous <see cref="T:System.Security.Principal.GenericPrincipal"/>) before and during the 
+            <see cref="E:System.Web.HttpApplication.AuthenticateRequest"/> phase of the application's lifecycle,
+            the <see cref="P:System.Threading.Thread.CurrentPrincipal"/> property is not updated 
+            (i.e. by initializing it to the same <see cref="T:System.Security.Principal.IPrincipal"/> instance stored in <see cref="P:System.Web.HttpContext.User"/>) 
+            until after the <see cref="E:System.Web.HttpApplication.AuthenticateRequest"/> phase of the application's lifecycle,
+            <para>
+            NOTE: The info in this section was compiled from a combination of runtime debugging and the info in this MSDN article:
+             Explained: Windows Authentication in ASP.NET 2.0
+              http://msdn.microsoft.com/en-us/library/aa480475.aspx
+              patterns and practices Developer Center
+              J.D. Meier, Alex Mackman, Blaine Wastell, Prashant Bansode, Chaitanya Bijwe
+              Microsoft Corporation
+              November 2005
+            </para>
+            <para>
+            The <see cref="T:System.Web.Security.WindowsAuthenticationModule"/> class is responsible for creating the 
+            <see cref="T:System.Security.Principal.WindowsPrincipal"/> and <see cref="T:System.Security.Principal.WindowsIdentity"/> objects that represent the authenticated user, 
+            and for attaching these objects to the current Web request. 
+            </para>
+            <para>
+            The <see cref="T:System.Web.Security.DefaultAuthenticationModule"/> class, 
+            which is also part of the ASP.NET pipeline, 
+            is responsible for setting the <see cref="P:System.Threading.Thread.CurrentPrincipal"/> property to the same value as the 
+            <see cref="P:System.Web.HttpContext.User"/> property. However, it does so _after_ the 
+            <see cref="E:System.Web.HttpApplication.AuthenticateRequest"/> event is handled, 
+            meaning the 2 properties are out of sync during the 
+            <see cref="E:System.Web.HttpApplication.AuthenticateRequest"/> event 
+            (although they are back in sync by the time the 
+            <see cref="E:System.Web.HttpApplication.PostAuthenticateRequest"/> event occurs).
+            </para>
+            <para>
+            As a consequence of the above timing and behavior differences, directly checking only the 
+            <see cref="P:System.Threading.Thread.CurrentPrincipal"/> property could result in incorrect data 
+            (and corresponding application behavior) during some points in the application's lifecycle.
+            However, checking only the <see cref="P:System.Web.HttpContext.User"/> property would break any non-ASP.NET applications.
+            Therefore, both are used below, so that the correct one will be used for the type and state of the application 
+            which is actually executing the code at runtime.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:HP.HPFx.Security.SimpleSecurityManager.CurrentUserIdentity">
+            <summary>
+            Returns the IIdentity that represents the current user.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Security.SimpleSecurityManager.CurrentUserIdentityName">
+            <summary>
+            Returns the name of the IIdentity that represents the current user.
+            </summary>
+        </member>
+        <member name="P:HP.HPFx.Security.SimpleSecurityManager.IsCurrentUserAuthenticated">
+            <summary>
+            Indicates whether the current user is authenticated or anonymous.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Security.AbstractSecurityManager`1.GetEffectiveRoles(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Returns a list of "effective" roles (based on Role-inheritance and business logic rules) that are implied by a set of explicit roles.
+            </summary>
+            <param name="explicitRoles">The explicit (i.e. directly assigned/possessed) set of roles.</param>
+            <returns>The "effective" set of roles implied by the <paramref name="explicitRoles"/> set of roles.</returns>
+        </member>
+        <member name="M:HP.HPFx.Security.AbstractSecurityManager`1.EnforceRuntimeTypeParameterConstraints">
+            <summary>
+            Performs runtime validation of the class' Type Parameters in order to prevent 
+            </summary>
+            <remarks>
+            NOTE: Since Type Parameter constraints cannot explicitly specify the <see cref="T:System.Enum"/> <see cref="T:System.Type"/> as a constraint, 
+            it is therefore necessary to explicitly validate (at runtime) that the <typeparamref name="TRoleEnum"/> Type Parameter is an enumeration.
+            Otherwise, it would be possible to create compilable code which satisfies the class' Type Constraints, 
+            but still represent an "invalid" set of Type Parameters.
+            </remarks>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if <see cref="M:HP.HPFx.Security.AbstractSecurityManager`1.HasValidTypeParameters"/> returns <c>false</c>.
+            </exception>
+        </member>
+        <member name="M:HP.HPFx.Security.AbstractSecurityManager`1.IsCurrentUserInRole(`0)">
+            <summary>
+            Indicates whether the current user possesses a specified role.
+            </summary>
+            <remarks>
+            NOTE: The implementation of this method depends upon 
+            the correct initialization of the IPrincipal object 
+            using all of the user's roles.
+            </remarks>
+            <param name="role"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Security.AbstractSecurityManager`1.CreatePrincipal(System.Security.Principal.IIdentity,System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Creates a new IPrincipal based upon the specified parameters.
+            </summary>
+            <param name="identity">The IIdentity of the new IPrincipal.</param>
+            <param name="roles">The roles of the new IPrincipal.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Security.AbstractSecurityManager`1.CreatePrincipal(System.String,System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Convenience overload.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Security.AbstractSecurityManager`1.ToPrincipalRolesArray(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Converts a list of TRoleEnum values into a string array suitable for use in creating an IPrincipal instance.
+            </summary>
+            <param name="roles"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HP.HPFx.Utility.SpecializedSerializationUtility">
+            <summary>
+            Contains a set of related utility methods that perform serialization (and deserialization) of objects to (and from) strings 
+            based upon a specialized algorithm that is optimized to generate serialized strings that are more compact and more human-readable 
+            for instances of common <see cref="T:System.Type"/>s like <see cref="T:System.String"/> and most of the <see cref="T:System.ValueType"/>s and <see cref="T:System.Nullable`1"/> ValueTypes.
+            </summary>
+            <remarks>
+            This class is primarily used (currently) by the <see cref="T:HP.HPFx.Collections.Generic.SerializableDictionary`2"/> class.
+            <para>
+            Note that this algorithm is not optimized for serialization speed/performance, which has not been measured against "standard" XML serialization.
+            </para>
+            </remarks>
+            <seealso cref="T:HP.HPFx.Collections.Generic.SerializableDictionary`2"/>
+        </member>
+        <member name="M:HP.HPFx.Utility.SpecializedSerializationUtility.GetSpecializedSerializationFormat(System.Object)">
+            <summary>
+            Returns the name of the appropriate "specialized serialization" format for a specified object instance.
+            </summary>
+            <param name="instance"></param>
+            <returns>
+            The name of the appropriate "specialized serialization" format for a specified object instance; 
+            or <c>null</c> if no such format is supported for the instance.
+            </returns>
+            <seealso cref="M:HP.HPFx.Utility.SpecializedSerializationUtility.IsValidSpecializedSerializationFormat(System.String)"/>
+            <seealso cref="M:HP.HPFx.Utility.SpecializedSerializationUtility.PerformSpecializedSerialization(System.String,System.Object)"/>
+            <seealso cref="M:HP.HPFx.Utility.SpecializedSerializationUtility.PerformSpecializedDeserialization(System.String,System.String)"/>
+        </member>
+        <member name="M:HP.HPFx.Utility.SpecializedSerializationUtility.IsValidSpecializedSerializationFormat(System.String)">
+            <summary>
+            Indicates whether a specified string is a valid and supported "specialized serialization" format string.
+            </summary>
+            <param name="specializedSerializationFormat"></param>
+            <returns></returns>
+            <seealso cref="M:HP.HPFx.Utility.SpecializedSerializationUtility.GetSpecializedSerializationFormat(System.Object)"/>
+            <seealso cref="M:HP.HPFx.Utility.SpecializedSerializationUtility.PerformSpecializedSerialization(System.String,System.Object)"/>
+            <seealso cref="M:HP.HPFx.Utility.SpecializedSerializationUtility.PerformSpecializedDeserialization(System.String,System.String)"/>
+        </member>
+        <member name="M:HP.HPFx.Utility.SpecializedSerializationUtility.PerformSpecializedDeserialization(System.String,System.String)">
+            <summary>
+            Uses one of several specialized algorithms (as determined by a specified format) 
+            to deserialize a specified string into an object instance, based upon a specified.
+            </summary>
+            <param name="specializedSerializationFormat"></param>
+            <param name="serializedInstance"></param>
+            <returns></returns>
+            <seealso cref="M:HP.HPFx.Utility.SpecializedSerializationUtility.PerformSpecializedSerialization(System.String,System.Object)"/>
+        </member>
+        <member name="M:HP.HPFx.Utility.SpecializedSerializationUtility.PerformSpecializedSerialization(System.String,System.Object)">
+            <summary>
+            Uses one of several specialized algorithms (as determined by a specified format) 
+            to serialize a specified instance into a string that can be reliably deserialized back into an equivelent object instance.
+            </summary>
+            <param name="specializedSerializationFormat"></param>
+            <param name="instance"></param>
+            <returns></returns>
+            <seealso cref="M:HP.HPFx.Utility.SpecializedSerializationUtility.PerformSpecializedDeserialization(System.String,System.String)"/>
+        </member>
+        <member name="T:HP.HPFx.Utility.ExceptionUtility">
+            <summary>
+            This class contains utility methods for the <see cref="T:System.Exception"/> type (and its descendants).
+            </summary>
+            <remarks>
+            NOTE: The ThrowIf methods purpose is both for convenience and also because 
+            using them to implement defensive coding checks for "unreachable" conditions doesn't impact code coverage 
+            as much as using a regular if-then-throw type construct.
+            </remarks>
+        </member>
+        <member name="M:HP.HPFx.Utility.ExceptionUtility.ArgumentNullEx_ThrowIfNull(System.Object,System.String)">
+            <summary>
+            Factory-like method that throws an <see cref="T:System.ArgumentNullException"/> if <paramref name="paramValue"/> is null.
+            </summary>
+            <param name="paramValue">The value of the argument/parameter to test.</param>
+            <param name="paramName">The name (in the calling method) of the argument/parameter to test.</param>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown when <paramref name="paramValue"/> value is <c>null</c>.
+            </exception>
+        </member>
+        <member name="M:HP.HPFx.Utility.ExceptionUtility.ArgumentNullEx_ThrowIfNullOrEmpty(System.String,System.String)">
+            <summary>
+            Factory-like method that throws an <see cref="T:System.ArgumentNullException"/> if <paramref name="paramValue"/> is null or <see cref="F:System.String.Empty"/>.
+            </summary>
+            <param name="paramValue">The value of the argument/parameter to test.</param>
+            <param name="paramName">The name (in the calling method) of the argument/parameter to test.</param>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown when <paramref name="paramValue"/> value is <c>null</c> or <see cref="F:System.String.Empty"/>.
+            </exception>
+        </member>
+        <member name="M:HP.HPFx.Utility.ExceptionUtility.ArgumentEx_ThrowIfNullOrEmpty(System.Array,System.String)">
+            <summary>
+            Factory-like method that throws an appropriate <see cref="T:System.ArgumentException"/> if <paramref name="paramValue"/> is null or empty.
+            </summary>
+            <param name="paramValue">The value of the argument/parameter to test.</param>
+            <param name="paramName">The name (in the calling method) of the argument/parameter to test.</param>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown when <paramref name="paramValue"/> value is <c>null</c>.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            Thrown when <paramref name="paramValue"/> value is empty (i.e. contains no elements).
+            </exception>
+        </member>
+        <member name="M:HP.HPFx.Utility.ExceptionUtility.ArgumentEx_ThrowIfNullOrEmpty(System.Collections.ICollection,System.String)">
+            <summary>
+            Factory-like method that throws an appropriate <see cref="T:System.ArgumentException"/> if <paramref name="paramValue"/> is null or empty.
+            </summary>
+            <param name="paramValue">The value of the argument/parameter to test.</param>
+            <param name="paramName">The name (in the calling method) of the argument/parameter to test.</param>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown when <paramref name="paramValue"/> value is <c>null</c>.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            Thrown when <paramref name="paramValue"/> value is empty (i.e. contains no elements).
+            </exception>
+        </member>
+        <member name="M:HP.HPFx.Utility.ExceptionUtility.ArgumentEx_ThrowIfNullOrEmpty``1(System.Collections.Generic.IEnumerable{``0},System.String)">
+            <summary>
+            Factory-like method that throws an appropriate <see cref="T:System.ArgumentException"/> if <paramref name="paramValue"/> is null or empty.
+            </summary>
+            <param name="paramValue">The value of the argument/parameter to test.</param>
+            <param name="paramName">The name (in the calling method) of the argument/parameter to test.</param>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown when <paramref name="paramValue"/> value is <c>null</c>.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            Thrown when <paramref name="paramValue"/> value is empty (i.e. contains no elements).
+            </exception>
+        </member>
+        <member name="M:HP.HPFx.Utility.ExceptionUtility.ArgumentOutOfRangeEx_ThrowIfInvalidEnumValue(System.Object,System.String,System.Type)">
+            <summary>
+            Factory-like method that throws an appropriate <see cref="T:System.ArgumentOutOfRangeException"/> if <paramref name="paramValue"/> 
+            is not a valid value of the Enum Type specified by <paramref name="enumType"/>.
+            </summary>
+            <param name="paramValue">The value of the argument/parameter to test.</param>
+            <param name="paramName">The name (in the calling method) of the argument/parameter to test.</param>
+            <param name="enumType">The <see cref="T:System.Type"/> of the Enum.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            Thrown when <paramref name="paramValue"/> value is not defined by the <paramref name="enumType"/> Enum.
+            </exception>
+        </member>
+        <member name="M:HP.HPFx.Utility.ExceptionUtility.ArgumentOutOfRangeEx_ThrowIfLessThan``1(``0,System.String,``0,System.Boolean)">
+            <summary>
+            Factory-like method that throws an appropriate <see cref="T:System.ArgumentOutOfRangeException"/> if <paramref name="paramValue"/> 
+            is less than a specified minimum value.
+            </summary>
+            <typeparam name="T">The Type of the parameter being validated.</typeparam>
+            <param name="paramValue">The value of the argument/parameter to test.</param>
+            <param name="paramName">The name (in the calling method) of the argument/parameter to test.</param>
+            <param name="minValue">The minimum valid value for <paramref name="paramValue"/>.</param>
+            <param name="throwWhenEqual">If <c>false</c>, an exception will still be thrown if <paramref name="paramValue"/> equals <paramref name="minValue"/>; else it won't.</param>
+        </member>
+        <member name="M:HP.HPFx.Utility.ExceptionUtility.ArgumentOutOfRangeEx_ThrowIfGreaterThan``1(``0,System.String,``0,System.Boolean)">
+            <summary>
+            Factory-like method that throws an appropriate <see cref="T:System.ArgumentOutOfRangeException"/> if <paramref name="paramValue"/> 
+            is greater than a specified maximum value.
+            </summary>
+            <typeparam name="T">The Type of the parameter being validated.</typeparam>
+            <param name="paramValue">The value of the argument/parameter to test.</param>
+            <param name="paramName">The name (in the calling method) of the argument/parameter to test.</param>
+            <param name="maxValue">The maximum valid value for <paramref name="paramValue"/>.</param>
+            <param name="throwWhenEqual">If <c>false</c>, an exception will still be thrown if <paramref name="paramValue"/> equals <paramref name="maxValue"/>; else it won't.</param>
+        </member>
+        <member name="M:HP.HPFx.Utility.ExceptionUtility.InvalidOperationEx_ThrowIfInvalidEnumValue(System.Object,System.Type)">
+            <summary>
+            Factory-like method that throws an appropriate <see cref="T:System.ArgumentOutOfRangeException"/> if <paramref name="value"/> 
+            is not a valid value of the Enum Type specified by <paramref name="enumType"/>.
+            </summary>
+            <param name="value">The value of the argument/parameter to test.</param>
+            <param name="enumType">The <see cref="T:System.Type"/> of the Enum.</param>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown when <paramref name="value"/> value is not defined by the <paramref name="enumType"/> Enum.
+            </exception>
+        </member>
+        <member name="M:HP.HPFx.Utility.ExceptionUtility.YieldNestedExceptions(System.Exception,System.Boolean)">
+            <summary>
+            Returns a set containing a specified <see cref="T:System.Exception"/> and all of it's nested <see cref="P:System.Exception.InnerException"/>s 
+            </summary>
+            <remarks>
+            The set of items is returned in order of the outermost first, and the most deeply nested last.
+            </remarks>
+            <param name="exception"></param>
+            <param name="innerExceptionsOnly">If <c>true</c>, then <paramref name="exception"/> is excluded from the returned set.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="exception"/> is null.</exception>
+        </member>
+        <member name="M:HP.HPFx.Utility.ExceptionUtility.YieldNestedExceptions(System.Exception)">
+            <summary>
+            Convenience overload.
+            </summary>
+            <param name="exception"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Utility.ExceptionUtility.ContainsExceptionOfType(System.Exception,System.Type)">
+            <summary>
+            Indicates whether a specified <see cref="T:System.Exception"/>'s contains any <see cref="P:System.Exception.InnerException"/> that is of a specified <see cref="T:System.Type"/> 
+            (regardless of how deeply nested the InnerException is).
+            </summary>
+            <param name="exception"></param>
+            <param name="exceptionType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Utility.ExceptionUtility.IsOrContainsExceptionOfType(System.Exception,System.Type)">
+            <summary>
+            Indicates whether a specified <see cref="T:System.Exception"/> is of a specified <see cref="T:System.Type"/> OR contains any <see cref="P:System.Exception.InnerException"/> that is of the specified <see cref="T:System.Type"/> 
+            (regardless of how deeply nested the InnerException is).
+            </summary>
+            <param name="exception"></param>
+            <param name="exceptionType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Utility.ExceptionUtility.IsOrContainsExceptionOfType(System.Exception,System.Type,System.Func{System.Exception,System.Boolean})">
+            <summary>
+            Convenience method.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Utility.ExceptionUtility.IsOrContainsExceptionOfType``1(System.Exception,System.Func{``0,System.Boolean})">
+            <summary>
+            Convenience method.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Utility.ExceptionUtility.GetInnerExceptionOfType(System.Exception,System.Type)">
+            <summary>
+            Returns a specified <see cref="T:System.Exception"/>'s outermost (i.e. least nested) <see cref="P:System.Exception.InnerException"/> that is of a specified <see cref="T:System.Type"/> 
+            (regardless of how deeply nested the InnerException is); else <c>null</c>.
+            </summary>
+            <remarks>
+            This method will never return the specified <paramref name="exception"/> itself, it will only return contained InnerExceptions.
+            </remarks>
+            <param name="exception"></param>
+            <param name="exceptionType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Utility.ExceptionUtility.GetExceptionOfType(System.Exception,System.Type)">
+            <summary>
+            Returns whether a specified <see cref="T:System.Exception"/> is of a specified <see cref="T:System.Type"/> OR contains any <see cref="P:System.Exception.InnerException"/> that is of the specified <see cref="T:System.Type"/> 
+            (regardless of how deeply nested the InnerException is); else <c>null</c>.
+            </summary>
+            <remarks>
+            This method will return the original, specified <paramref name="exception"/> itself if it is of the specified type.
+            Otherwise, it behaves like <see cref="!:ReflectionUtility.GetInnerExceptionOfType"/>.
+            </remarks>
+            <param name="exception"></param>
+            <param name="exceptionType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Utility.ExceptionUtility.GetExceptionOfType(System.Exception,System.Type,System.Func{System.Exception,System.Boolean})">
+            <summary>
+            Convenience method.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Utility.ExceptionUtility.GetExceptionOfType``1(System.Exception,System.Func{``0,System.Boolean})">
+            <summary>
+            Convenience method.
+            </summary>
+        </member>
+        <member name="M:HP.HPFx.Utility.HpfxUtility.DeserializeFromXml``1(System.String,System.Text.Encoding)">
+            <summary>
+            Deserializes an object (of type <typeparamref name="T"/>) previously serialized by the <see cref="M:HP.HPFx.Utility.HpfxUtility.SerializeToXml``1(``0,System.Text.Encoding,System.Boolean)"/> method.
+            </summary>
+            <typeparam name="T">The original <see cref="T:System.Type"/> of the serialized object.</typeparam>
+            <param name="xmlString">The XML string returned by the <see cref="M:HP.HPFx.Utility.HpfxUtility.SerializeToXml``1(``0,System.Text.Encoding,System.Boolean)"/> method.</param>
+            <param name="encoding">The <see cref="T:System.Text.Encoding"/> to use for deserialization.</param>
+            <returns>A new instance of type <typeparamref name="T"/>.</returns>
+            <seealso cref="M:HP.HPFx.Utility.HpfxUtility.SerializeToXml``1(``0,System.Text.Encoding,System.Boolean)"/>
+        </member>
+        <member name="M:HP.HPFx.Utility.HpfxUtility.SerializeToXml``1(``0,System.Text.Encoding,System.Boolean)">
+            <summary>
+            XML-serializes a specified object.
+            </summary>
+            <typeparam name="T">The <see cref="T:System.Type"/> of <paramref name="objectToSerialize"/>.</typeparam>
+            <param name="objectToSerialize">The object to be serialized.</param>
+            <param name="encoding">The <see cref="T:System.Text.Encoding"/> to use for serialization.</param>
+            <param name="useXmlNamespaces">If <c>true</c>, then XML namespaces will be used in the XML.</param>
+            <returns>A string containing an XML-formatted representation of <paramref name="objectToSerialize"/>.</returns>
+            <seealso cref="M:HP.HPFx.Utility.HpfxUtility.DeserializeFromXml``1(System.String,System.Text.Encoding)"/>
+        </member>
+        <member name="M:HP.HPFx.Utility.HpfxUtility.ConvertByteArrayToString(System.Byte[],System.Text.Encoding)">
+            <summary>
+            Converts a byte array into an UTF8 string.
+            </summary>
+            <seealso cref="M:HP.HPFx.Utility.HpfxUtility.ConvertToByteArray(System.String,System.Text.Encoding)"/>
+        </member>
+        <member name="M:HP.HPFx.Utility.HpfxUtility.ConvertToByteArray(System.String,System.Text.Encoding)">
+            <summary>
+            Converts an UTF8 string into a byte array.
+            </summary>
+            <seealso cref="M:HP.HPFx.Utility.HpfxUtility.ConvertByteArrayToString(System.Byte[],System.Text.Encoding)"/>
+        </member>
+        <member name="M:HP.HPFx.Utility.HpfxUtility.GetLocalPathFileName(System.Uri)">
+            <summary>
+            Returns the filename of the file indicated by a specified <see cref="T:System.Uri"/>'s <see cref="P:System.Uri.LocalPath"/>.
+            </summary>
+            <param name="uri"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Utility.HpfxUtility.GetLocalPathFileInfo(System.Uri)">
+            <summary>
+            Returns a <see cref="T:System.IO.FileInfo"/> that represents the file indicated by a specified <see cref="T:System.Uri"/>'s <see cref="P:System.Uri.LocalPath"/>.
+            </summary>
+            <param name="uri"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Utility.HpfxUtility.GetLocalPathDirectoryInfo(System.Uri)">
+            <summary>
+            Returns a <see cref="T:System.IO.DirectoryInfo"/> that represents the directory indicated by a specified <see cref="T:System.Uri"/>'s <see cref="P:System.Uri.LocalPath"/>.
+            </summary>
+            <param name="uri"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Utility.HpfxUtility.EncodeStringFormatPattern(System.String)">
+            <summary>
+            Encodes a non-format-pattern string containing curly brackets so that it can be safely passed to formatting methods 
+            such as <see cref="M:System.String.Format(System.String,System.Object)"/> 
+            or <see cref="M:System.Text.StringBuilder.AppendFormat(System.String,System.Object)"/> 
+            without causing an error.
+            </summary>
+            <param name="formatPattern"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Utility.HpfxUtility.InvokeWithCallback(System.Action,System.Action{System.DateTime,System.TimeSpan,System.Exception})">
+            <summary>
+            Utility method that allows the caller to easily intercept the outcome of a <see cref="T:System.Action"/> invocation by specifying a callback action.
+            </summary>
+            <param name="action">The <see cref="T:System.Action"/> to be invoked.</param>
+            <param name="callback">
+            An <see cref="T:System.Action`3"/> that is invoked immediately after invoking <paramref name="action"/>.
+            The callback action's parameters provide information about the outcome of the <paramref name="action"/>, including:
+            the (start) time at which the invocation occurred; 
+            the execution duration of the invocation; 
+            and the <see cref="T:System.Exception"/> thrown by the invocation (or <c>null</c> if none was thrown).
+            </param>
+            <exception cref="T:System.Exception">Any <see cref="T:System.Exception"/> that is thrown while invoking either the action or the callback will be raised to the caller normally.</exception>
+        </member>
+        <member name="M:HP.HPFx.Utility.HpfxUtility.InvokeWithCallback``1(System.Func{``0},System.Action{System.DateTime,System.TimeSpan,System.Exception,``0})">
+            <summary>
+            Utility method that allows the caller to easily intercept the outcome of a <see cref="T:System.Func`1"/> invocation by specifying a callback action.
+            </summary>
+            <typeparam name="TFuncResult"></typeparam>
+            <param name="action">The <see cref="T:System.Func`1"/> to be invoked.</param>
+            <param name="callback">
+            An <see cref="T:System.Action`4"/> that is invoked immediately after invoking <paramref name="action"/>.
+            The callback action's parameters provide information about the outcome of the <paramref name="action"/>, including:
+            the (start) time at which the invocation occurred; 
+            the execution duration of the invocation; 
+            the <see cref="T:System.Exception"/> thrown by the invocation (or <c>null</c> if none was thrown); 
+            and the value returned by the invocation (or the default value for the action's return type if an <see cref="T:System.Exception"/> was thrown).
+            </param>
+            <returns>The value returned by the successful invocation of the action.</returns>
+            <exception cref="T:System.Exception">Any <see cref="T:System.Exception"/> that is thrown while invoking either the action or the callback will be raised to the caller normally.</exception>
+        </member>
+        <member name="M:HP.HPFx.Utility.HpfxUtility.GetCachedItem``2(``0,System.Func{``0,``1},System.Action{``0,``1,System.Boolean},System.Func{``1})">
+            <summary>
+            Utility method that helps separate the implementation of the data cacheing algorithm from the implementation of the direct (i.e. cache-unaware) item accessor algorithm.
+            </summary>
+            <remarks>
+            <para>
+            This method considers a cache miss to have occurred any time the <paramref name="cacheAccessor"/> function returns a value that is equal to the default value for the <typeparamref name="TItem"/> type.
+            When any other value is returned by the <paramref name="cacheAccessor"/> function, it is considered a cache hit.
+            </para>
+            </remarks>
+            <typeparam name="TCacheKey">The type of the cache's keys.</typeparam>
+            <typeparam name="TItem">The type of the cached item.</typeparam>
+            <param name="cacheKey">The key that the item is (or will be) associated with in the cache.</param>
+            <param name="cacheAccessor">
+            <para>
+            An accessor function (e.g. a lambda, delegate, anonymous method, or whatever) that is used to (attempt to) retrieve the item from the cache 
+            (i.e. when there is a cache hit).
+            </para>
+            <para>
+            When this function returns a value that is equal to the default value for the <typeparamref name="TItem"/> type, it is considered a cache miss.
+            When any other value is returned, it is considered a cache hit.
+            </para>
+            </param>
+            <param name="cacheMutator">
+            An action that will be called after every cache access, and that is intended to update or maintain the state of the cache.
+            <para>
+            The action's parameters are:
+            the cacheKey; 
+            the Item that was returned (whether from the cache or not); 
+            a "wasCached" bool with value <c>true</c> if the item was successfully retrieved from the cache (i.e. a cache hit) 
+            or <c>false</c> if the the value had to be retrieved using the <paramref name="itemAccessor"/>.
+            </para>
+            <para>
+            This action is intended to be used primarily to store (i.e. put in the cache) the returned item in the cache when there was a cache miss.
+            However, it could potentially be used for other purposes as well.
+            </para>
+            </param>
+            <param name="itemAccessor">
+            An accessor function (e.g. a lambda, delegate, anonymous method, or whatever) that is used to retrieve the item when there is a cache miss.
+            </param>
+            <returns>An item of the appropriate type that was retrieved either from the cache, or else by the <paramref name="itemAccessor"/> function.</returns>
+            <exception cref="T:System.Exception">Any <see cref="T:System.Exception"/> that is thrown while invoking the <paramref name="cacheAccessor"/>, <paramref name="cacheMutator"/> or the <paramref name="itemAccessor"/> will be raised to the caller normally.</exception>
+        </member>
+        <member name="M:HP.HPFx.Utility.ReflectionUtility.GetPropertyInfo``1(System.Type,System.String,System.Boolean)">
+            <summary>
+            Returns the <see cref="T:System.Reflection.PropertyInfo"/> instance for a specified property of a <see cref="T:System.Type"/>.
+            </summary>
+            <typeparam name="TProperty">The data type of the property.</typeparam>
+            <param name="type">A <see cref="T:System.Type"/> that declares or inherits the property.</param>
+            <param name="propertyName">The name of the property.</param>
+            <param name="throwIfNotFound">If <c>true</c>, the method will throw an exception if the specified property is not found.</param>
+            <returns>
+            A <see cref="T:System.Reflection.PropertyInfo"/> instance; 
+            or null if <paramref name="throwIfNotFound"/> is <c>false</c> and the specified <paramref name="type"/> does not contain the specified property.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if <paramref name="throwIfNotFound"/> is <c>true</c> and the specified <paramref name="type"/> does not contain the specified property.
+            </exception>
+        </member>
+        <member name="M:HP.HPFx.Utility.ReflectionUtility.GetMethodInfo(System.Type,System.String,System.Reflection.BindingFlags,System.Boolean)">
+            <summary>
+            Returns the <see cref="T:System.Reflection.MethodInfo"/> instance for a specified method of a <see cref="T:System.Type"/>.
+            </summary>
+            <param name="type">A <see cref="T:System.Type"/> that declares or inherits the method.</param>
+            <param name="methodName">The name of the method.</param>
+            <param name="bindingFlags"></param>
+            <param name="throwIfNotFound">If <c>true</c>, this method will throw an exception if the specified method is not found.</param>
+            <returns>
+            A <see cref="T:System.Reflection.MethodInfo"/> instance; 
+            or null if <paramref name="throwIfNotFound"/> is <c>false</c> and the specified <paramref name="type"/> does not contain the specified method.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if <paramref name="throwIfNotFound"/> is <c>true</c> and the specified <paramref name="type"/> does not contain the specified method.
+            </exception>
+        </member>
+        <member name="M:HP.HPFx.Utility.ReflectionUtility.GetStaticPropertyValue``1(System.Type,System.String,System.Boolean)">
+            <summary>
+            Invokes the getter of a specified static property of a Type and returns the resulting value.
+            </summary>
+            <typeparam name="TProperty"></typeparam>
+            <param name="type"></param>
+            <param name="propertyName"></param>
+            <param name="throwIfNotFound"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Utility.ReflectionUtility.GetStaticPropertyValue``1(System.Type,System.String)">
+            <summary>
+            Convenience overload.
+            </summary>
+            <typeparam name="TProperty"></typeparam>
+            <param name="type"></param>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Utility.ReflectionUtility.GetPropertyValue``1(System.Object,System.String,System.Boolean)">
+            <summary>
+            Invokes the getter of a specified property of an instance and returns the resulting value.
+            </summary>
+            <typeparam name="TProperty"></typeparam>
+            <param name="instance"></param>
+            <param name="propertyName"></param>
+            <param name="throwIfNotFound"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Utility.ReflectionUtility.GetPropertyValue``1(System.Object,System.String)">
+            <summary>
+            Convenience overload.
+            </summary>
+            <typeparam name="TProperty"></typeparam>
+            <param name="instance"></param>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Utility.ReflectionUtility.SetPropertyValue``1(System.Object,System.String,``0)">
+            <summary>
+            Invokes the setter of a specified property of an instance.
+            </summary>
+            <typeparam name="TProperty"></typeparam>
+            <param name="instance"></param>
+            <param name="propertyName"></param>
+            <param name="propertyValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Utility.ReflectionUtility.InvokeMethod``1(System.Object,System.String,System.Reflection.BindingFlags,System.Boolean)">
+            <summary>
+            Invokes a specified method of an instance and returns the resulting value.
+            </summary>
+            <typeparam name="TMethodReturnType"></typeparam>
+            <param name="instance"></param>
+            <param name="methodName"></param>
+            <param name="bindingFlags"></param>
+            <param name="throwIfNotFound"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Utility.ReflectionUtility.InvokeMethod``1(System.Object,System.String,System.Reflection.BindingFlags)">
+            <summary>
+            Convenience overload.
+            </summary>
+            <typeparam name="TMethodReturnType"></typeparam>
+            <param name="instance"></param>
+            <param name="methodName"></param>
+            <param name="bindingFlags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Utility.ReflectionUtility.InvokeMethod``1(System.Object,System.String)">
+            <summary>
+            Convenience overload.
+            </summary>
+            <typeparam name="TMethodReturnType"></typeparam>
+            <param name="instance"></param>
+            <param name="methodName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Utility.ReflectionUtility.GetDefaultConstructor(System.Type)">
+            <summary>
+            Returns a <see cref="T:System.Reflection.ConstructorInfo"/> object for a specified <see cref="T:System.Type"/>'s default constructor.
+            </summary>
+            <exception cref="T:System.ArgumentNullException"><paramref name="type"/> is null.</exception>
+        </member>
+        <member name="M:HP.HPFx.Utility.ReflectionUtility.InvokeDefaultConstructor(System.Type)">
+            <summary>
+            Creates a new instance (of the specified Type), using the Type's default constructor
+            </summary>
+            <param name="type">The Type to instantiate a new instance of.</param>
+            <returns>A new instance of <paramref name="type"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="type" /> is null.</exception>
+        </member>
+        <member name="M:HP.HPFx.Utility.ReflectionUtility.GetGenericType(System.Type,System.String)">
+            <summary>
+            Returns the Generic <see cref="T:System.Type"/> that is the least-removed from a specified <see cref="T:System.Type"/> 
+            and that has a <see cref="P:System.Type.FullName"/> that starts with a specified prefix.
+            
+            Returns the Generic <see cref="T:System.Type"/> that is the least-removed from a specified <see cref="T:System.Type"/>.
+            </summary>
+            <param name="type"></param>
+            <param name="typeFullNameStartsWith"></param>
+            <returns><paramref name="type"/> (if it is generic), the nearest generic base class of <paramref name="type"/>, or <c>null</c>.</returns>
+        </member>
+        <member name="M:HP.HPFx.Utility.ReflectionUtility.GetGenericType(System.Type)">
+            <summary>
+            Returns the Generic <see cref="T:System.Type"/> that is the least-removed from a specified <see cref="T:System.Type"/>.
+            </summary>
+            <param name="type"></param>
+            <returns><paramref name="type"/> (if it is generic), the nearest generic base class of <paramref name="type"/>, or <c>null</c>.</returns>
+        </member>
+        <member name="M:HP.HPFx.Utility.ReflectionUtility.GetGenericType(System.Object)">
+            <summary>
+            Returns the Generic <see cref="T:System.Type"/> that is the least-removed from a specified instance's <see cref="T:System.Type"/>.
+            </summary>
+            <param name="instance"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Utility.ReflectionUtility.GetBaseType(System.Type,System.String)">
+            <summary>
+            Returns the <see cref="T:System.Type"/> that is the least-removed from a specified <see cref="T:System.Type"/> 
+            and that has a <see cref="P:System.Type.FullName"/> that starts with a specified prefix.
+            </summary>
+            <param name="type"></param>
+            <param name="typeFullNameStartsWith"></param>
+            <returns><paramref name="type"/> (if it matches the criteria), the nearest matching base class of <paramref name="type"/>, or <c>null</c>.</returns>
+        </member>
+        <member name="M:HP.HPFx.Utility.ReflectionUtility.GetBaseType(System.Object,System.String)">
+            <summary>
+            Returns the <see cref="T:System.Type"/> that is the least-removed from a specified instance's <see cref="T:System.Type"/> 
+            and that has a <see cref="P:System.Type.FullName"/> that starts with a specified prefix.
+            </summary>
+            <param name="instance"></param>
+            <param name="typeFullNameStartsWith"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HP.HPFx.Utility.ReflectionUtility.GetSignature(System.Reflection.MethodBase,System.Boolean)">
+            <summary>
+            Returns a string representation of a specified <see cref="T:System.Reflection.MethodBase"/> instance.
+            </summary>
+            <param name="method">The <see cref="T:System.Reflection.MethodBase"/> instance to format as a string.</param>
+            <param name="fullSignature">
+            <c>true</c> indicates that the returned string should represent the entire signature. 
+            <c>false</c> indicates that an abbreviated representation should be returned.
+            </param>
+            <returns>a string representation of a method signature.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown when <paramref name="method"/> value is <c>null</c>.
+            </exception>
+        </member>
+    </members>
+</doc>
